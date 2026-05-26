@@ -1,0 +1,14 @@
+Variation,H,Iexc,Rin,T,a,g,Start,Stop,Elapsed,Analysis Machine
+1,200mm,1mA,100mm,2.6mm,0.5mm,0.2mm,15:56:05:726,16:08:18:657,00:12:12:931,Local   Machine
+2,200mm,1mA,100mm,3.5mm,0.5mm,0.5mm,16:08:18:686,16:13:14:158,00:04:55:472,Local   Machine
+3,200mm,1mA,100mm,5mm,0.5mm,1mm,16:13:14:177,16:16:29:750,00:03:15:573,Local   Machine
+4,200mm,1mA,100mm,6.5mm,0.5mm,1.5mm,16:16:29:772,16:18:49:224,00:02:19:452,Local   Machine
+5,200mm,1mA,100mm,4.6mm,1mm,0.2mm,16:18:49:242,16:25:02:219,00:06:12:977,Local   Machine
+6,200mm,1mA,100mm,5.5mm,1mm,0.5mm,16:25:02:237,16:28:09:923,00:03:07:686,Local   Machine
+7,200mm,1mA,100mm,7mm,1mm,1mm,16:28:09:944,16:30:15:110,00:02:05:166,Local   Machine
+8,200mm,1mA,100mm,8.5mm,1mm,1.5mm,16:30:15:137,16:32:06:823,00:01:51:686,Local   Machine
+9,200mm,1mA,100mm,6.6mm,1.5mm,0.2mm,16:32:06:845,16:36:39:607,00:04:32:762,Local   Machine
+10,200mm,1mA,100mm,7.5mm,1.5mm,0.5mm,16:36:39:632,16:39:13:902,00:02:34:270,Local   Machine
+11,200mm,1mA,100mm,9mm,1.5mm,1mm,16:39:13:922,16:41:27:524,00:02:13:602,Local   Machine
+12,200mm,1mA,100mm,8.6mm,2mm,0.2mm,16:41:27:544,16:45:24:553,00:03:57:009,Local   Machine
+13,200mm,1mA,100mm,9.5mm,2mm,0.5mm,16:45:24:575,16:47:59:587,00:02:35:012,Local   Machine

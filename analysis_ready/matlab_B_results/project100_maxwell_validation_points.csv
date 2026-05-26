@@ -1,0 +1,4 @@
+purpose,layer,a_mm,g_mm,T_mm,B_pred_fT,source
+response_surface_optimum,2,2,0.2,4.2,1.25288582941673,quadratic_response_surface
+response_surface_optimum,3,2,0.2,6.4,1.0516599413515,quadratic_response_surface
+response_surface_optimum,4,2,0.2,8.6,0.941279292545093,quadratic_response_surface

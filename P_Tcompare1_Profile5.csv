@@ -1,0 +1,4 @@
+Variation,H,Iexc,Rin,T,a,g,Start,Stop,Elapsed,Analysis Machine
+1,200mm,1mA,100mm,10mm,2.125mm,0.5mm,17:19:08:956,17:19:08:956,00:00:00:000,
+2,200mm,1mA,100mm,5mm,2.125mm,0.5mm,17:19:08:972,17:21:22:080,00:02:13:108,Local   Machine
+3,200mm,1mA,100mm,8mm,2.125mm,0.5mm,17:21:22:107,17:23:32:902,00:02:10:795,Local   Machine

@@ -1,0 +1,2 @@
+T_K,N,I_A,R_m,r_m,A_m2,Qint,mu_pp_over_mu0_current,mu_pp_current_H_per_m,B_avg_current_T_per_sqrtHz,B_avg_current_fT_per_sqrtHz,B_avg_target_fT_per_sqrtHz,mu_pp_over_mu0_required,mu_pp_required_H_per_m,B_avg_check_fT_per_sqrtHz,B_max_current_fT_per_sqrtHz,f_at_B_max_Hz,B_min_current_fT_per_sqrtHz,f_at_B_min_Hz
+300,1,0.001,0.005,0.0005,9.86960440108936e-05,3.45825559217975e-18,6.1,7.6654860747591e-06,8.55889579763904e-16,0.855889579763903,1,8.32711106171596,1.04641563748453e-05,1,2.67880424365243,1,0.489080503796334,30

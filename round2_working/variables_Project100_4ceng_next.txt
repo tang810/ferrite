@@ -1,0 +1,7 @@
+Design variables for Project100_4ceng_next / Maxwell3DDesign1
+Rin = 100mm
+H = 200mm
+Iexc = 1mA
+a = 2.125mm
+g = 0.5mm
+T = 10mm

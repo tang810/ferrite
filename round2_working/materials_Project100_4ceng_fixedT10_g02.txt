@@ -1,0 +1,7 @@
+Object materials in Project100_4ceng_fixedT10_g02
+Cylinder2 -> Geometry3DAttributeTab:Material="ferrite"; Geometry3DAttributeTab:Solve Inside=true; Geometry3DAttributeTab:Name=Cylinder2
+Cylinder4 -> Geometry3DAttributeTab:Material="ferrite"; Geometry3DAttributeTab:Solve Inside=true; Geometry3DAttributeTab:Name=Cylinder4
+Torus1 -> Geometry3DAttributeTab:Material="copper"; Geometry3DAttributeTab:Solve Inside=true; Geometry3DAttributeTab:Name=Torus1
+Box1 -> Geometry3DAttributeTab:Material="vacuum"; Geometry3DAttributeTab:Solve Inside=true; Geometry3DAttributeTab:Name=Box1
+Cylinder6 -> Geometry3DAttributeTab:Material="ferrite"; Geometry3DAttributeTab:Solve Inside=true; Geometry3DAttributeTab:Name=Cylinder6
+Cylinder8 -> Geometry3DAttributeTab:Material="ferrite"; Geometry3DAttributeTab:Solve Inside=true; Geometry3DAttributeTab:Name=Cylinder8

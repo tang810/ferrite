@@ -1,0 +1,13 @@
+source_file,layer,experiment,variation,T_mm,a_mm,g_mm,IntH2_total
+result_1ceng_Tcompare.csv,1,Tcompare,1,5.0,5.0,0.0,3.0406487e-18
+result_1ceng_Tcompare.csv,1,Tcompare,2,8.0,8.0,0.0,3.0406487e-18
+result_1ceng_Tcompare.csv,1,Tcompare,3,10.0,10.0,0.0,4.2032584e-19
+result_2ceng_Tcompare.csv,2,Tcompare,1,5.0,2.25,0.5,3.3078266e-18
+result_2ceng_Tcompare.csv,2,Tcompare,2,8.0,3.75,0.5,3.3078266e-18
+result_2ceng_Tcompare.csv,2,Tcompare,3,10.0,4.75,0.5,3.3078266e-18
+result_3ceng_Tcompare.csv,3,Tcompare,1,5.0,1.3333333333333333,0.5,3.6796776e-18
+result_3ceng_Tcompare.csv,3,Tcompare,2,8.0,2.3333333333333335,0.5,3.6796776e-18
+result_3ceng_Tcompare.csv,3,Tcompare,3,10.0,3.0,0.5,3.6981286e-18
+result_4ceng_Tcompare.csv,4,Tcompare,1,10.0,2.125,0.5,4.1236206e-18
+result_4ceng_Tcompare.csv,4,Tcompare,2,5.0,0.875,0.5,4.1236206e-18
+result_4ceng_Tcompare.csv,4,Tcompare,3,8.0,1.625,0.5,4.1236206e-18

@@ -1,0 +1,21 @@
+* 1;ExternalCircuit.ckt
+* Project: D:/tangyumengnew/aaaaaaaaximukeji/halbach_catapult.aedt
+* Design: ExternalCircuit
+
+*BeginParamDef
+.PARAM $r_out=0.01
+.PARAM $r_in=0.005
+.PARAM $l_arm=0.02
+.PARAM $m_arm=0.1
+.PARAM $C_total=6.8e-16
+*EndParamDef
+
+
+*begin toplevel circuit
+D1 net_4 net_5 required 
+C6 0 net_5 0.68 IC=35
+R7 0 net_4 0.05
+Lcurrentwinding net_5 net_4 1 Winding
+
+*end toplevel circuit
+.end

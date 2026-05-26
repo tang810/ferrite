@@ -1,0 +1,19 @@
+AEDT project inspection
+Project path: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_next.aedt
+AEDT version: 2025.1.0
+Active project: Project100_4ceng_next
+Top design list: ['Maxwell3DDesign1']
+Project variables: []
+Design list: ['Maxwell3DDesign1']
+
+Design: Maxwell3DDesign1
+Design type: Maxwell 3D
+Design variables: ['Rin', 'H', 'Iexc', 'a', 'g', 'T']
+Module available: Optimetrics
+Optimetrics setups: ['P_asweep1', 'P_Tcompare1', 'P_agmatrix_4ceng_T1']
+Module available: ReportSetup
+Reports: []
+Module available: FieldsReporter
+Module available: BoundarySetup
+Module available: AnalysisSetup
+Done.

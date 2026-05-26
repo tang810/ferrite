@@ -1,0 +1,5 @@
+Solid objects in Project100_4ceng_fixedT10_g02
+Solids: ['Cylinder2', 'Cylinder4', 'Torus1', 'Box1', 'Cylinder6', 'Cylinder8']
+Sheets: ['Torus1_Section1']
+Lines: []
+Unclassified: []

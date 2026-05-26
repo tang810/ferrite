@@ -1,0 +1,2 @@
+T_K,N,I_A,R_m,r_m,A_m2,mu_pp_over_mu0,mu_pp_H_per_m,Qint,B_avg_T_per_sqrtHz,B_avg_fT_per_sqrtHz,B_max_fT_per_sqrtHz,f_at_B_max_Hz,B_min_fT_per_sqrtHz,f_at_B_min_Hz
+300,1,0.001,0.005,0.0005,9.86960440108936e-05,6.1,7.6654860747591e-06,5.4464984407578e-18,1.07410784077552e-15,1.07410784077552,3.36179421976782,1,0.613776842619106,30

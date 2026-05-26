@@ -1,0 +1,2 @@
+experiment,layer,T_mm,a_mm,g_mm,IntH2_total,Qint,g_eff_mm,T_calc_mm,GeometryMismatch_mm,a_expected_from_T_mm,B_1Hz_fT,B_avg_1_30_fT,B_max_1_30_fT,MaterialVolume_mm3,ScoreWithinExperiment,ScoreGlobal
+Tcompare,1,5,5,0,3.0406487e-18,3.0406487e-18,0,5,0,5,2.51186073883442,0.802550405570203,2.51186073883442,644026.493985908,0.554705491960188,0.283828024839631

@@ -1,0 +1,7 @@
+Set variables for 4-layer fixed T=10mm, g=0.2mm case
+Rin = 100mm
+H = 200mm
+Iexc = 1mA
+a = 2.35mm
+g = 0.2mm
+T = 10mm

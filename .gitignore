@@ -1,0 +1,13 @@
+# AEDT field solution & mesh cache (auto-generated, very large)
+*.aedtresults/
+*.aedt.lock
+*.batchinfo/
+*.semaphore
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# MATLAB auto-save
+*.asv

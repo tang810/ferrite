@@ -1,0 +1,4 @@
+model,R2,coef_c0,coef_eta,coef_gamma,coef_extra
+eta+gamma,0.3520,0.707054,0.616566,0.395832,
+eta+gamma+eta*gamma,0.4742,-0.716099,1.905124,0.149148,1.535568
+eta+gamma+1overN,0.4978,1.210154,-0.558513,0.147743,1.458976

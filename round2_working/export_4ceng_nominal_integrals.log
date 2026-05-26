@@ -1,0 +1,14 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_4ceng_nominal_integrals.py
+Starting Batch Run: 12:11:38 PM  May 18, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Exception: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_nominal.aedt) - call failed. Logs or message window might have more details  In file "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_4ceng_nominal_integrals.py", line 28 ---- While executing script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_4ceng_nominal_integrals.py
+-- Message Window --
+Stopping Batch Run: 12:12:06 PM  May 18, 2026

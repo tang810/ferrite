@@ -1,0 +1,22 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/inspect_project.py
+Starting Batch Run: 11:46:33 AM  May 18, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] TypeErrorException: argument of type 'str' is not iterable  In file "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/inspect_project.py", line 45 ---- While executing script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/inspect_project.py
+-- Message Window --
+Stopping Batch Run: 11:47:14 AM  May 18, 2026
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/inspect_project.py
+Starting Batch Run: 11:48:10 AM  May 18, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+Stopping Batch Run: 11:48:38 AM  May 18, 2026

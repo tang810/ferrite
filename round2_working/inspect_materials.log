@@ -1,0 +1,50 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/inspect_materials.py
+Starting Batch Run: 11:53:11 AM  May 18, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+      Project100_4ceng_fixedT10_g02 (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [error] Script macro error: Property 'Material' does not exist. (11:53:40 AM  May 18, 2026)
+          [error] Script macro error: Property 'Solve Inside' does not exist. (11:53:40 AM  May 18, 2026)
+          [error] Script macro error: Property 'Name' does not exist. (11:53:40 AM  May 18, 2026)
+          [error] Script macro error: Property 'Material' does not exist. (11:53:40 AM  May 18, 2026)
+          [error] Script macro error: Property 'Solve Inside' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Name' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Material' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Solve Inside' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Name' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Material' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Solve Inside' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Name' does not exist. (11:53:41 AM  May 18, 2026)
+          [error] Script macro error: Property 'Material' does not exist. (11:53:42 AM  May 18, 2026)
+          [error] Script macro error: Property 'Solve Inside' does not exist. (11:53:42 AM  May 18, 2026)
+          [error] Script macro error: Property 'Name' does not exist. (11:53:42 AM  May 18, 2026)
+          [error] Script macro error: Property 'Material' does not exist. (11:53:42 AM  May 18, 2026)
+          [error] Script macro error: Property 'Solve Inside' does not exist. (11:53:42 AM  May 18, 2026)
+          [error] Script macro error: Property 'Name' does not exist. (11:53:42 AM  May 18, 2026)
+-- Message Window --
+Stopping Batch Run: 11:53:44 AM  May 18, 2026

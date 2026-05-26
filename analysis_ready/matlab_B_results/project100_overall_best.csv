@@ -1,0 +1,2 @@
+source_file,layer,experiment,variation,T_mm,a_mm,g_mm,IntH2_total,Qint,B_1Hz_fT,B_avg_1_30_fT,B_max_1_30_fT,MaterialVolume_mm3,Score
+result_1ceng_Tcompare.csv,1,Tcompare,3,10,10,0,4.2032584e-19,4.2032584e-19,0.933910974962897,0.298388608944432,0.933910974962897,2638937.82901543,0.3
