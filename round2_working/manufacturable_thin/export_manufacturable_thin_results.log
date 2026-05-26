@@ -1,0 +1,540 @@
+export_manufacturable_thin_results 2026-05-26 18:09:15
+
+======================================================================
+Exporting C1_N1_t008
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_B0.aedt
+  B0_T = 3.65943171503e-08
+  B0_Bx_T = -1.64663946855e-08
+  B0_By_T = 5.63735384572e-09
+  B0_Bz_T = 3.32604898501e-08
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt
+  Bcenter_T = 5.84086676874e-08
+  Bcenter_Bx_T = -2.62262880729e-08
+  Bcenter_By_T = 2.56769867924e-08
+  Bcenter_Bz_T = 4.49358214277e-08
+OpenProject warning: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N
+  IntH2_L1/IntH2_total = 9.68325565605e-07
+  IntH2_total/IntH2_total = 9.68325565605e-07
+
+======================================================================
+Exporting C1_N1_t020
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t020_B0.aedt
+  B0_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t020_shield.aedt
+  Bcenter_T = 2.71427178943e-09
+  Bcenter_Bx_T = 3.8724961626e-10
+  Bcenter_By_T = -2.43256451484e-09
+  Bcenter_Bz_T = -7.30013375867e-10
+OpenProject warning: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N
+  IntH2_L1/IntH2_total = 8.35098925202e-07
+  IntH2_total/IntH2_total = 8.35098925202e-07
+
+======================================================================
+Exporting C1_N1_t040
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t040_B0.aedt
+  B0_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t040_shield.aedt
+  Bcenter_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject warning: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N
+  IntH2_L1/IntH2_total FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_total/IntH2_total FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+
+======================================================================
+Exporting C1_N1_t060
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_B0.aedt
+  B0_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_shield.aedt
+  Bcenter_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject warning: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N
+  IntH2_L1/IntH2_total FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_total/IntH2_total FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+
+======================================================================
+Exporting C2_N2_t020_g010
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N2_t020_g010_B0.aedt
+  B0_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N2_t020_g010_shield.aedt
+  Bcenter_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject warning: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N
+  IntH2_L1/IntH2_cyl2 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_total/IntH2_total FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_L2/IntH2_cyl4 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+
+======================================================================
+Exporting C2_N3_t020_g010
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_B0.aedt
+  B0_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_shield.aedt
+  Bcenter_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject warning: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N
+  IntH2_L3/IntH2_s3 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_L1/IntH2_s1 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_total/IntH2_total FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_L2/IntH2_s2 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+
+======================================================================
+Exporting C2_N4_t015_g008
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_B0.aedt
+  B0_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  B0_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject OK: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt
+  Bcenter_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bx_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_By_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  Bcenter_Bz_T FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 103, in export_b_fields
+    row[key] = eval_b_component(fields, comp)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 75, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+OpenProject warning: OpenProject(string itemPath, [Structured Array argPassword /*optional*/]) -> IDispatch(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N
+  IntH2_L4/InH2_s4 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_L2/IntH2_s2 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_L1/IntH2_s1 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_total/IntH2_total FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+  IntH2_L3/IntH2_s3 FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 120, in export_int_h2
+    row[out_key] = eval_named_expr(fields, expr)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/export_manufacturable_thin_results.py", line 81, in eval_named_expr
+    fields.ClcEval(SOLN, [])
+Exception: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Wrote D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\manufacturable_thin_center_fields_exported.csv

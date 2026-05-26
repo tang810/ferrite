@@ -1,0 +1,93 @@
+open project: OK
+delete boundary Iext_plus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 40, in <lambda$94>
+    safe("delete boundary " + bnd, lambda n=bnd: oBoundary.DeleteBoundaries([n]), f)
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_minus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 40, in <lambda$94>
+    safe("delete boundary " + bnd, lambda n=bnd: oBoundary.DeleteBoundaries([n]), f)
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 40, in <lambda$94>
+    safe("delete boundary " + bnd, lambda n=bnd: oBoundary.DeleteBoundaries([n]), f)
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 40, in <lambda$94>
+    safe("delete boundary " + bnd, lambda n=bnd: oBoundary.DeleteBoundaries([n]), f)
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Iext_plus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 50, in <lambda$95>
+    safe("delete object " + obj, lambda n=obj: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Iext_minus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 50, in <lambda$95>
+    safe("delete object " + obj, lambda n=obj: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Torus2_Section1: OK
+delete object Torus3_Section1: OK
+delete object Torus2_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 50, in <lambda$95>
+    safe("delete object " + obj, lambda n=obj: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 50, in <lambda$95>
+    safe("delete object " + obj, lambda n=obj: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+set Torus2 parameters: OK
+set Torus3 parameters: OK
+section Torus2: OK
+section Torus3: OK
+assign Iext_plus on Torus2_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 100, in <lambda$100>
+    safe("assign Iext_plus on Torus2_Section1", lambda: assign_current_object("Iext_plus", "Torus2_Section1", False), f)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 90, in assign_current_object
+    return oBoundary.AssignCurrent(
+Exception: AssignCurrent(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+assign Iext_minus on Torus3_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 101, in <lambda$101>
+    safe("assign Iext_minus on Torus3_Section1", lambda: assign_current_object("Iext_minus", "Torus3_Section1", True), f)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_sections.py", line 90, in assign_current_object
+    return oBoundary.AssignCurrent(
+Exception: AssignCurrent(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+save project: OK
+Done

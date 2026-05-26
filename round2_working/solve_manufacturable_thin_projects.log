@@ -1,0 +1,22 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/solve_manufacturable_thin_projects.py
+Starting Batch Run: 5:48:41 PM  May 26, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/solve_manufacturable_thin_projects.py
+Starting Batch Run: 5:50:01 PM  May 26, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] MissingMemberException: 'NoneType' object has no attribute 'SetActiveDesign'  In file "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/solve_manufacturable_thin_projects.py", line 58 ---- While executing script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/solve_manufacturable_thin_projects.py
+-- Message Window --
+Stopping Batch Run: 5:50:30 PM  May 26, 2026

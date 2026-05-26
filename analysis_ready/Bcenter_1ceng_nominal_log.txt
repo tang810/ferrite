@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/export_Bcenter_1ceng_nominal.py", line 97, in main
+    bcenter = eval_magB_center(fields, soln_name)
+  File "D:/tangyumengnew/aaaaaaaaximukeji/export_Bcenter_1ceng_nominal.py", line 78, in eval_magB_center
+    raise RuntimeError("Could not evaluate Mag_B at center point. " + " | ".join(errors))
+RuntimeError: Could not evaluate Mag_B at center point. point_then_Mag_B: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details | Mag_B_then_point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details | point_then_B_mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details | B_mag_then_point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details

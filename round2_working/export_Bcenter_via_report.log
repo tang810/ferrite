@@ -1,0 +1,29 @@
+export_Bcenter_via_report  2026-05-20 15:07:43
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt
+OpenProject: OK
+  a = 2.35mm
+  g = 0.2mm
+  T = 10mm
+
+=== Creating field report ===
+  CreateReport: OK
+
+=== Exporting report ===
+  ExportToFile(BcenterExport): OK -> D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_bcenter_raw.csv
+
+=== Parsing exported data ===
+  No raw CSV to parse (export_ok=True, exists=False)
+
+=== CreateFieldPlot fallback ===
+  CreateFieldPlot: CreateFieldPlot(Structured Array data, [Structured Array plotType /*optional*/]) expects no more tStopping Batch Run: 3:07:47 PM  May 20, 2026
+e: D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv
+  experiment = fixedT10_g02_ext
+  layer = 4
+  T_mm = 10.0
+  a_mm = 2.35
+  g_mm = 0.2
+  Bcenter_T = N/A
+  Bcenter_Bx_T = N/A
+  Bcenter_By_T = N/A
+  Bcenter_Bz_T = N/A
+Done.

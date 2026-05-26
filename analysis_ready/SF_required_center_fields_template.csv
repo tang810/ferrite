@@ -1,0 +1,2 @@
+case,layer,source_model,external_field_direction,B0_T,Bcenter_T,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,notes
+4ceng_fixedT10_g02,4,external_field_model,+X,,,,,,

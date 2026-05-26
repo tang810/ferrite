@@ -1518,7 +1518,7 @@ $begin 'AnsoftProject'
 					IsEnabled=true
 					NextUniqueID=1
 					MoveBackwards=false
-					GoalSetupVersion=1
+					GoalSetupVersion=2
 					Version=0
 					$begin 'ProdOptiSetupDataV2'
 						SaveFields=false
@@ -1552,6 +1552,48 @@ $begin 'AnsoftProject'
 							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 							Calculation='IntH2_total'
 							Name='IntH2_total'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=391
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_s1'
+							Name='IntH2_s1'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=391
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_s2'
+							Name='IntH2_s2'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=391
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_s3'
+							Name='IntH2_s3'
 							$begin 'Ranges'
 							$end 'Ranges'
 						$end 'Goal'
@@ -1886,6 +1928,7 @@ $begin 'AnsoftProject'
 						SimValue('IntH2_s2', 1, 90, false, SimValueID=840, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
 						SimValue('SolidLoss', 1, 58, false, SimValueID=841, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
 						SimValue('IntH2_cyl2', 1, 90, false, SimValueID=842, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_legacy2', 1, 90, false, SimValueID=874, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
 						$begin 'Sweeps'
 							$begin 'PostprocessSweep'
 								Variable='NormalizedDistance'
@@ -2014,7 +2057,7 @@ $begin 'AnsoftProject'
 				DesignInstanceID=1
 				$begin 'WindowPosition'
 					$begin 'EditorWindow'
-						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -13, -58, -351, 27, 1601, 565), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -2.95910787582397, 2.95910787582397, -1, 1, 4.48055982589722, 7.02862882614136), Drawings[5: 'Cylinder2', 'Cylinder4', 'Torus1', 'Torus1_Section1', 'Cylinder6'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=100, dYForGrid=100, dZForGrid=100, dRForGrid=100, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
+						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(5, -1, -1, -13, -58, -351, 27, 1601, 565), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -3.25485968589783, 3.25485968589783, -1, 1, 4.48055982589722, 7.02862882614136), Drawings[5: 'Cylinder2', 'Cylinder4', 'Torus1', 'Torus1_Section1', 'Cylinder6'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=100, dYForGrid=100, dZForGrid=100, dRForGrid=100, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
 					$end 'EditorWindow'
 				$end 'WindowPosition'
 				$begin 'ReportSetup'

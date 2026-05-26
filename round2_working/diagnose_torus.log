@@ -1,0 +1,91 @@
+open project: OK -> IDispatch(ISProject2)
+
+=== All objects ===
+Solids: ['Cylinder2', 'Cylinder4', 'Torus1', 'Box1', 'Cylinder6', 'Cylinder8', 'Torus2', 'Torus3']
+Sheets: ['Torus1_Section1', 'Torus2_Section1', 'Torus3_Section1']
+Lines: []
+Unclassified: []
+
+=== Torus2 properties ===
+  Geometry3DAttributeTab/Material = "copper"
+  Geometry3DAttributeTab/Solve Inside = true
+  Geometry3DAttributeTab/Name = Torus2
+
+=== Torus2_Section1 details ===
+Sheets: ['Torus1_Section1', 'Torus2_Section1', 'Torus3_Section1']
+  Object: Torus1_Section1
+    Faces: ['90']
+    Edges: could not get
+  Object: Torus2_Section1
+    Faces: ['294', '295']
+    Edges: could not get
+  Object: Torus3_Section1
+    Faces: ['301', '302']
+    Edges: could not get
+
+=== Attempting to separate Torus2_Section1 ===
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+
+=== Objects after separation ===
+Solids: ['Cylinder2', 'Cylinder4', 'Torus1', 'Box1', 'Cylinder6', 'Cylinder8', 'Torus2', 'Torus3']
+Sheets: ['Torus1_Section1', 'Torus2_Section1', 'Torus3_Section1', 'Torus2_Section1_Separate1']
+Lines: []
+Unclassified: []
+
+=== Attempting current assignment on separated part ===
+Trying to assign current on: Torus2_Section1
+assign Iext_plus on Torus2_Section1: OK -> None
+Trying to assign current on: Torus2_Section1_Separate1
+assign Iext_plus on Torus2_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/diagnose_torus.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/diagnose_torus.py", line 96, in <lambda$95>
+    lambda n=obj: oBoundary.AssignCurrent(
+Exception: AssignCurrent(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+=== Attempting Torus3 section handling ===
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+
+=== Objects after Torus3 separation ===
+Solids: ['Cylinder2', 'Cylinder4', 'Torus1', 'Box1', 'Cylinder6', 'Cylinder8', 'Torus2', 'Torus3']
+Sheets: ['Torus1_Section1', 'Torus2_Section1', 'Torus3_Section1', 'Torus2_Section1_Separate1', 'Torus3_Section1_Separate1']
+Lines: []
+Unclassified: []
+Trying to assign current on: Torus3_Section1
+assign Iext_minus on Torus3_Section1: OK -> None
+Trying to assign current on: Torus3_Section1_Separate1
+assign Iext_minus on Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/diagnose_torus.py", line 18, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/diagnose_torus.py", line 121, in <lambda$97>
+    lambda n=obj: oBoundary.AssignCurrent(
+Exception: AssignCurrent(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+=== Alternative: Check Torus2 faces ===
+Torus2 faces: ['287']
+  Face 287: trying to query
+
+=== Validation ===
+validate: OK -> 1
+save: OK -> None
+Done
+, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Property 'Center Position' does not exist. (02:07:50 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Property 'Axis' does not exist. (02:07:50 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Property 'XCenter' does not exist. (02:07:50 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Property 'YCenter' does not exist. (02:07:50 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Property 'ZCenter' does not exist. (02:07:50 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Duplicate excitation name: 'Iext_plus' (02:07:50 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Duplicate excitation name: 'Iext_minus' (02:07:50 PM  May 20, 2026)
+[error] Error in command execution
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:07:50 PM  May 20, 2026)
+Stopping Batch Run: 2:07:50 PM  May 20, 2026

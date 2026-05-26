@@ -1,0 +1,38 @@
+export_Bcenter_reports  2026-05-20 15:01:50
+OpenProject: OK
+  a = 2.35mm
+  g = 0.2mm
+  T = 10mm
+
+=== Adding named expressions ===
+  AddNamedExpression(Mag_B): FAILED (AddNamedExpression(string exprName, string fieldType, [Struc / AddNamedExpr(string exprName) expects no more than 1 argumen)
+  AddNamedExpression(ComplexMag_Bx): FAILED (AddNamedExpression(string exprName, string fieldType, [Struc / AddNamedExpr(string exprName) expects no more than 1 argumen)
+  AddNamedExpression(ComplexMag_By): FAILED (AddNamedExpression(string exprName, string fieldType, [Struc / AddNamedExpr(string exprName) expects no more than 1 argumen)
+  AddNamedExpression(ComplexMag_Bz): FAILED (AddNamedExpression(string exprName, string fieldType, [Struc / AddNamedExpr(string exprName) expects no more than 1 argumen)
+
+=== Field Data Table Report ===
+  CreateReport: CreateReport(string reportNameArg, string reportTypeArg, string displayTypeArg, string solutionNameArg, Structured Array simValueCtxtArg, Structured Array pointSetArg, Structured Array expressionsOfTracesArg, [Structured Array extTraceInfoArg /*optional*/]) expects at least 7 arguments. 6 arguments 
+
+=== ExportToFile with point list ===
+  ExportToFile(['Mag_B']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_field_0
+  ExportToFile(['ComplexMag_B']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_field_1
+  ExportToFile(['B']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_field_2
+  ExportToFile(['ComplexMag_Bx', 'ComplexMag_By', 'ComplexMag_Bz']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_field_[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDes  Mag_B+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or mess[error] Project:Project100_4ceng_fix  point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details[error] Project:Project100  Mag_B+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List,Fields) - call failed. Logs or message window might have more details
+  point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List,Fields) - call failed. Logs or message window might have more details
+--- fldType=Mag_B ---
+  Mag_B+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List,Mag_B) - call failed. Logs or message window might have more details
+  point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List,Mag_B) - call failed. Logs or message window might have more details
+--- fldType=Field ---
+  Mag_B+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List,Field) - call failed. Logs or message window might have more details
+  point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List,Field) - call failed. Logs or message window might have more details
+
+Wrote: D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv
+ Stopping Batch Run: 3:01:58 PM  May 20, 2026
+ T_mm = 10.0
+  a_mm = 2.35
+  g_mm = 0.2
+  Bcenter_T = N/A
+  Bcenter_Bx_T = N/A
+  Bcenter_By_T = N/A
+  Bcenter_Bz_T = N/A
+Done.

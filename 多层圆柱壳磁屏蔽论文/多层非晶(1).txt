@@ -1,0 +1,591 @@
+                                                                        Measurement 227 (2024) 114276
+
+
+                                                                  Contents lists available at ScienceDirect
+
+
+                                                                             Measurement
+                                                    journal homepage: www.elsevier.com/locate/measurement
+
+
+
+
+Quantitative evaluation and investigation of shielding coefficient and
+magnetic noise in stacked nanocrystalline magnetic shielding system
+Ling Wang a,b , Minxia Shi a,b ,∗, Yun Le a,b ,∗, Xu Zhang a,b , Jianzhi Yang a,b , Shuai Yuan a,b ,
+Yuzheng Ma a,b
+a
+  Key Laboratory of Ultra-Weak Magnetic Field Measurement Technology, Ministry of Education, School of Instrumentation and Optoelectronic Engineering, Beihang
+University, Beijing, 100191, China
+b Zhejiang Provincial Key Laboratory of Ultra-Weak Magnetic-Field Space and Applied Technology, Hangzhou Innovation Institute, Beihang
+
+University, Hangzhou, 310051, China
+
+
+
+ARTICLE                  INFO                            ABSTRACT
+
+Keywords:                                                The utilization of nanocrystalline magnetic shielding can provide a low-noise weak magnetic environment
+Nanocrystalline shield                                   for various ultra-high sensitivity measurements. Their interlayer insulation properties effectively impede eddy
+Stacked coefficient                                      currents, thereby ameliorating eddy current losses and diminishing magnetic noise within the magnetic
+Shielding performance
+                                                         shielding structure. However, the nanocrystal’s thin-layered structure and stacking process greatly impact
+Magnetic noise
+                                                         its effective magnetic permeability and conductivity. Hence, this article presents a quantitative evaluation
+                                                         and research methodology for the shielding coefficient and magnetic noise in nanocrystal shielding systems,
+                                                         considering the influence of layer stacking. Firstly, the complex magnetic permeability of nanocrystal annulus
+                                                         with different stacking coefficients is measured, demonstrating a linear relationship. Secondly, based on the
+                                                         test results, a cubic nanocrystal shielding effectiveness model is constructed and validated against finite
+                                                         element results. Finally, an improved magnetic noise calculation model is analyzed and developed for square
+                                                         nanocrystal shielding bodies by utilizing the linear relationship and considering the truncation of eddy currents
+                                                         in different directions within the stacked nanocrystal shielding layer. The accuracy of the model is verified
+                                                         through experimental validation.
+
+
+
+1. Introduction                                                                               material that shields low-frequency external magnetic fields using the
+                                                                                              magnetic shunt effect principle and the latter being a high-conductivity
+    Atomic gyroscopes [1], magnetometers [2], and other highly sensi-                         material that shields high-frequency magnetic fields using the eddy
+tive atomic sensors [3] have a wide range of applications in fundamen-                        current effect. However, the high conductivity and high permeability
+tal physics research [4], aerospace [5], and biomedical fields [6] due                        characteristics of these shielding devices lead to the presence of John-
+to their high-resolution measuring capabilities. In biomedical research,                      son noise and thermal magnetic noise, which limit the sensitivity of
+the presence of calibration errors in optically-pumped magnetometers                          atomic sensors [11]. Therefore, to improve the shielding effect while
+(OPMs) [7] can lead to the obfuscation of biological magnetic fields,                         reducing the magnetic noise caused by eddy currents and hystere-
+causing measurement inaccuracies when measuring magnetic fields of                            sis, researchers are constantly exploring the application scenarios and
+the heart [8], brain [9], muscles, and cells [10]. High shielding and low                     scope of new materials, such as superconducting materials, ferrites,
+noise are essential for ensuring the proper functioning of high-precision
+                                                                                              and iron-based nanocrystals. Superconducting materials [12,13] can
+atomic sensors; however, the intrinsic noise of the materials that make
+                                                                                              maintain a constant shielding coefficient below 10 Hz and reduce noise
+up the magnetic shielding system remains a major source of constraint
+                                                                                              by a hundredfold compared to permalloy, but they require extremely
+on their sensitivity and accuracy. In the future, nanocrystalline shield-
+                                                                                              low temperatures and have high manufacturing and usage costs. The
+ing material holds promise for providing a low residual magnetism and
+                                                                                              extremely low electrical conductivity of ferrites makes them an ideal
+low magnetic noise calibration environment.
+                                                                                              shielding material for providing a low-noise environment for many
+    Traditional magnetic shielding devices are composed of permalloy
+layers and aluminum layers, with the former being a high-permeability                         atomic sensors [14], but their texture is thick, stress-sensitive, and
+
+
+
+ ∗ Corresponding authors at: Key Laboratory of Ultra-Weak Magnetic Field Measurement Technology, Ministry of Education, School of Instrumentation and
+Optoelectronic Engineering, Beihang University, Beijing, 100191, China.
+    E-mail addresses: shiminxia@buaa.edu.cn (M. Shi), leyun@buaa.edu.cn (Y. Le).
+
+https://doi.org/10.1016/j.measurement.2024.114276
+Received 14 September 2023; Received in revised form 2 January 2024; Accepted 4 February 2024
+Available online 6 February 2024
+0263-2241/© 2024 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-
+nc-nd/4.0/).
+L. Wang et al.                                                                                                                       Measurement 227 (2024) 114276
+
+
+difficult to demagnetize due to their subferromagnetic ceramic prop-
+erties. Nanocrystalline materials, in comparison to other soft magnetic
+materials, possess high saturation magnetization, low coercivity, high
+magnetic permeability, and high electrical resistivity [15]. Further-
+more, their unique nanoscale structure and relatively thin laminations
+can block eddy currents, improve eddy current losses, and thus serve as
+a new material for manufacturing magnetic shields to reduce internal
+noise within the shields [16].
+    Currently, research on nanocrystalline magnetic shielding devices
+has been limited to barrel-shaped structures, overlooking the impact of
+laminations on magnetic noise assessment. Simultaneously, the higher
+spatial utilization of a cubic hexahedral enclosure presents new chal-
+lenges for magnetic noise modeling and assessment. Fu et al. [17]
+have demonstrated the potential of nanocrystalline material in low-
+noise magnetic shielding for SERF magnetometers by applying it to
+the inner layer of the shielding. Additionally, Liu et al. [18] have
+experimentally proven that nanocrystalline magnetic shielding exhibits
+lower thermal-magnetic noise and better temperature stability com-
+                                                                                Fig. 1. Schematic diagram of testing the complex magnetic susceptibility of the ring
+pared to amorphous shielding. However, the aforementioned studies               using an LCR meter.
+only focused on magnetic noise testing of nanocrystalline barrels and
+did not consider the influence of lamination structures on eddy current
+noise from the material itself.
+                                                                                complex magnetic permeability can be derived and calculated [21,22]:
+    In this study, we employed a quantitative evaluation method to
+consider the influence of layered structure on permeability. Addi-
+                                                                                              𝑙𝑒
+tionally, we introduced the concept of layered electrical conductivity          𝜇′ =                    𝐿                                                       (1)
+                                                                                                2
+                                                                                         𝜇0 𝐴𝑒 𝑁coil
+and conducted magnetic noise modeling for a regular hexahedron
+laminated nanocrystalline magnetic shielding device. Compared to con-                              𝑙𝑒       (       )
+ventional methods for evaluating shielding effectiveness and magnetic           𝜇 ′′ =                       𝑅 − 𝑅𝑤                                             (2)
+                                                                                                    2
+                                                                                         2𝜋𝑓 𝜇0 𝐴𝑒 𝑁𝑐𝑜𝑖𝑙
+noise that are only applicable to conventional dense materials, this
+improved calculation method for the shielding coefficient and magnetic          where 𝜇 ′ and 𝜇′′ are the real part and imaginary part of the relative
+noise in nanocrystal magnetic shielding systems takes into account the          complex permeability respectively, 𝐿 and 𝑅 represent the measured
+interlayer insulation achieved between the laminates to block eddy              inductance and resistance, respectively. 𝑅𝑤 is the resistance of the wire,
+currents [19,20]. The remaining parts of this paper are organized as            𝐴𝑒 is the cross-sectional area, 𝑁𝑐𝑜𝑖𝑙 is the number of turns, 𝑓 is the
+follows: In Section 2, the complex magnetic permeability of nanocrystal         frequency, and 𝑙𝑒 is the equivalent length:
+                                                                                       (       )
+annulus with different laminate coefficients is tested, and a model is               𝜋 𝑑𝑜 − 𝑑𝑖
+summarized for the variation of the effective magnetic permeability             𝑙𝑒 =    (      )                                                      (3)
+                                                                                     ln 𝑑𝑜 ∕𝑑𝑖
+and electrical conductivity with the laminate coefficient. In Section 3,
+based on the model of effective magnetic permeability, a model for              where 𝑑𝑜 and 𝑑𝑖 represent the outer and inner diameters of the toroidal
+the shielding effectiveness of nanocrystal cubic shields is constructed,        sample, respectively.
+and its effectiveness is validated by comparison with finite element                In a multi-layer magnetic shielding system, the nanocrystalline
+results. Section 4 analyzes and improves the magnetic noise calculation         magnetic shielding layer is typically located in the innermost layer.
+model applicable to square nanocrystal magnetic shields and verifies            Since the innermost layer experiences a low-frequency weak magnetic
+the accuracy of the model through experiments.                                  environment, the complex magnetic permeability used to calculate
+                                                                                the nanocrystalline magnetic noise and shielding coefficient should be
+2. The model of permeability and conductivity considering lami-                 measured under weak low-frequency excitation. However, due to the
+nation coefficient                                                              limited accuracy range of the LCR meter (16089B) at low-frequency
+                                                                                weak magnetic excitations, directly measuring the complex magnetic
+2.1. The model of permeability                                                  permeability is challenging. Therefore, the Rayleigh relationship needs
+                                                                                to be applied to fit and predict the complex magnetic permeability.
+    The complex magnetic permeability is the evaluation criterion for           Under a fixed frequency of 20 Hz, the LCR meter is used to apply
+the shielding performance of nanocrystalline shielding materials. The           a driving voltage to the toroidal coil. When the driving voltage is
+complex magnetic permeability is greatly influenced by the laminated            sufficiently small, the initial complex magnetic permeability can be
+process (interlayer insulation) of the nanocrystals. Therefore, mea-            linearly related to the amplitude magnetic permeability. Thus, in the
+suring and studying the laminated structures of nanocrystals with               case of a small-amplitude external magnetic field, the magnetization
+different laminate coefficients is necessary. Traditional measurements          curve in the Rayleigh region [23] is described by:
+of the magnetic permeability of nanocrystal annulus mainly focus on
+                                                                                𝜇𝑎 = 𝜇𝑖 + 𝜂𝐻                                                                    (4)
+experiments conducted on bare nanocrystal rings without interlayer
+insulation treatment. However, these measurement results cannot be              where 𝜇𝑎 represents the amplitude magnetic permeability, 𝜇𝑖 repre-
+applied to evaluating the shielding effectiveness of actual laminated           sents the initial magnetic permeability, and 𝜂 represents the Rayleigh
+nanocrystal magnetic shielding devices.                                         constant.
+    To consider the effect of lamination, the traditional toroidal sample           In order to validate the effect of the laminating process on the
+is improved by introducing non-magnetic materials between the layers,           complex magnetic permeability, experiments were conducted using
+thereby changing its laminate coefficient and measuring its complex             nanocrystalline toroidal samples with varying laminating coefficients.
+magnetic permeability. As shown in Fig. 1, by winding a coil with 60            The laminating process involved the application of a silicon dioxide
+turns around the circular nanocrystalline sample, the measured vari-            sol–gel coating as an interlayer insulation between the nanocrystalline
+ables are resistance and inductance. Based on the ‘‘coil method’’, the          ribbon layers. By keeping the thickness of the nanocrystalline ribbon
+
+                                                                            2
+L. Wang et al.                                                                                                                                      Measurement 227 (2024) 114276
+
+Table 1
+Measured permeability at different frequencies.
+ Frequency (Hz)    Test ring 1(e = 0.49)      Test ring 2(e = 0.54)      Test ring 3(e = 0.59)        Test ring 4(e = 0.63)     Test ring 5(e = 0.65)      Test ring 6(e = 0.68)
+                   𝜇′                𝜇′′      𝜇′                𝜇′′      𝜇′                  𝜇′′      𝜇′                𝜇′′     𝜇′                𝜇′′      𝜇′               𝜇′′
+ 20                17 810            86       19 361            95       20 740              106      22 763            114     23 512            120      24 811           128
+ 30                17 731            88       19 354            90       20 734              102      22 769            112     23 523            119      24 823           125
+ 40                17 815            79       19 362            91       20 747              104      22 759            115     23 519            121      24 815           130
+ 50                17 823            81       19 344            96       20 739              101      22 771            111     23 515            118      24 822           122
+ 60                17 803            76       19 378            98       20 756              99       22 761            118     23 528            119      24 825           129
+ 70                17 795            89       19 366            92       20 736              104      22 765            119     23 518            122      24 816           127
+ 80                17 813            85       19 387            95       20 748              102      22 758            114     23 525            117      24 817           126
+ 90                17 822            83       19 355            91       20 739              105      22 765            112     23 526            122      24 827           125
+ 100               17 808            89       19 374            93       20 745              106      22 767            113     23 514            121      24 808           128
+
+
+
+
+                                                                                              Fig. 3. Fitted curves of the complex permeability of iron-based nanocrystalline rings
+Fig. 2. Fitted curves of the complex permeability of iron-based nanocrystalline rings.
+                                                                                              concerning the stacking factor. (a) Real part of permeability concerning the stacking
+(a) Real part of permeability. (b) Imaginary part of permeability.
+                                                                                              factor. (b) Imaginary part of permeability concerning the stacking factor.
+
+
+
+consistent, different laminating coefficients were achieved by varying
+                                                                                              magnetic permeability fitting results at zero driving field from Fig. 2. By
+the thickness of the interlayer insulation coating. The effective thick-
+                                                                                              performing a linear fitting on the data in Fig. 3 as well, a linear relation-
+ness of the magnetic shielding layer on the nanocrystalline test ring
+                                                                                              ship between the complex magnetic permeability and the laminating
+was denoted as 𝑑1 , while the actual thickness was denoted as 𝑑2 . The
+                                                                                              coefficient can be obtained:
+laminating coefficient was defined as 𝑒(𝑒 = 𝑑1 ∕𝑑2 ). Using an LCR meter
+(16089B), the complex magnetic permeability was measured for the                              𝜇 ′ = 37340 ⋅ 𝑒 − 848.8                                                             (5)
+nanocrystalline samples with different laminating coefficients under
+the application of the same driving voltage to the coil. The measured                         𝜇 ′′ = 214.6 ⋅ 𝑒 − 20                                                               (6)
+results of the complex magnetic permeability corresponding to different
+driving fields are shown in Fig. 2.                                                           2.2. The model of conductivity
+    As shown in Table 1, the magnetic permeability of nanocrystalline
+materials remains almost constant within the low-frequency range of                               The magnitude of magnetic noise in nanocrystalline shielding ma-
+20–100 Hz. Fig. 2(a) and (b) represent the real and imaginary parts                           terial depends on the complex magnetic permeability and electrical
+of the complex magnetic permeability, respectively, at different mag-                         conductivity. The previous text has elaborated on the relationship
+netic field strengths. A linear fitting was performed based on Eq. (4).                       between the complex magnetic permeability and the laminating coef-
+The linear curve exhibited a consistent upward or downward trend                              ficient. The interlayer insulation process in nanocrystalline materials
+as the laminating coefficient varied. Fig. 3 represents the complex                           also affects the effective electrical conductivity by suppressing eddy
+
+                                                                                         3
+L. Wang et al.                                                                                                                                      Measurement 227 (2024) 114276
+
+
+
+
+Fig. 4. Cross-section of a laminated nanocrystalline magnetic shielding layer. (a) Solid
+core model. (b) Laminated nanocrystalline model.
+
+
+
+
+currents. Fig. 4 illustrates the cross-sections of different material mag-
+netic shielding layers, where Fig. 4(a) represents a conventional solid
+model, and Fig. 4(b) represents a laminated nanocrystalline model. 𝛼
+                                                                                               Fig. 5. The distribution of magnetic field components in the 𝑥 direction on different
+and 𝛽 denote the directions parallel and perpendicular to the shield-                          faces of the laminated nanocrystalline cube.
+ing layer. As shown in Fig. 4(a), the electrical conductivity of con-
+ventional solid materials is typically measured using the four-point
+probe method [24], where the tested sample requires uniform thickness
+                                                                                               and 𝜎𝛽 , respectively. Due to the limited symmetry of the rectangular
+and surface connectivity of eddy currents (𝐽(𝑒𝛼 ) and 𝐽(𝑒𝛽 ) ). However,
+                                                                                               structure, simplifications need to be made based on the geometric
+this method is not applicable to laminated nanocrystalline magnetic
+                                                                                               structure. In this case, we will only focus on the analysis of the effective
+shielding layers because the interlayer insulation process interrupts the
+                                                                                               conductivity in the case of a cube. In subsequent sections, this effective
+surface current flow between the nanocrystalline layers. As illustrated
+                                                                                               conductivity model will be applied to establish the current Johnson
+in Fig. 4(b), laminated nanocrystalline materials only interrupt the eddy                      noise model related to the nanocrystalline magnetic shielding box and
+currents in the thickness direction while allowing them to flow hori-                          eddy current losses. The model will be compared with actual magnetic
+zontally. Therefore, effective electrical conductivity differs in different                    noise testing and analysis.
+directions.
+    In electric motors, laminated iron cores are commonly used to                              3. The shielding factor considering lamination coefficient
+reduce eddy current losses. These operate on the same principle as
+laminated nanocrystalline materials, reducing magnetic noise by sup-                               In comparison to their larger counterparts, miniaturized biological
+pressing eddy currents. The issue of eddy currents in laminated iron                           magnetic shielding chambers offer the advantages of cost-effectiveness,
+cores is typically addressed by introducing anisotropic effective elec-                        shorter construction periods, and ease of portability. The cubic struc-
+trical conductivity for analytical calculations. Anisotropic electrical                        ture of the magnetic shielding box exhibits improved overall connectiv-
+conductivity is currently utilized for analyzing eddy current losses in                        ity, exceptional shielding performance, and a more regular attenuation
+laminated magnetic cores [25] and in applications like inductive power                         of residual magnetism and magnetic noise. Therefore, the assessment
+transfer (IPT) [26]. It has been shown to provide more accurate results                        target of the magnetic shielding system in this paper is the cubic
+than isotropic models [27,28]. Additionally, the calculation of Johnson                        structure magnetic shielding box.
+noise in nanocrystalline magnetic shielding devices aligns with the
+analysis of eddy current losses in laminated magnetic cores, further                           3.1. The model of shielding factor
+validating this method. The formula for the electrical conductivity par-
+allel to the laminations is given by Eq. (7) [29]. In contrast, the formula                       The key determinant of the shielding effectiveness in stacked
+for the effective anisotropic electrical conductivity in the perpendicular                     nanocrystalline cubes lies in the effective magnetic permeability. We
+direction of the laminations is given by Eq. (8) [30].                                         comprehensively assessed nanocrystalline annulus with varying stack-
+                                                                                               ing coefficients and obtained an accurate model depicting the complex
+𝜎𝛼 = 𝑒 ⋅ 𝜎                                                                          (7)        magnetic permeability as a function of stacking coefficient variations.
+        ( )                                                                                    Consequently, based on the nanocrystalline effective magnetic per-
+       1 𝑡 2                                                           (8)                     meability model, we can establish a computational model for the
+𝜎𝛽 =          𝜎
+       𝑒 𝑎                                                                                     nanocrystalline shielding coefficient under different stacking coeffi-
+where 𝜎 represents the conductivity of a single nanocrystalline mate-                          cients. The shielding coefficient is defined as the ratio between the
+rial, 𝜎𝛼 and 𝜎𝛽 represent the conductivities in the parallel and perpen-                       external magnetic field strength 𝐻0 under no shielding conditions and
+dicular directions, respectively, concerning the laminations. 𝑏 denotes                        the internal magnetic field strength H at the same point under shield-
+the cross-sectional width of the laminated nanocrystalline material, and                       ing conditions [31]. Eq. (9) represents the formula for the shielding
+𝑡 represents the thickness of a single nanocrystalline layer.                                  coefficient of a single-layer spherical shield:
+    The magnetic field can be analyzed in three directions (𝐵𝑥 , 𝐵𝑦 , 𝐵𝑧 ).                                                      (         )
+                                                                                                         𝐻          2 (𝜇 − 1)2          𝑅3
+Due to the geometric symmetry of the square magnetic shielding, the                            𝑆Sphere = 0 = 1 + ⋅              ⋅ 1− 2                             (9)
+eddy currents generated by the magnetic fields in these three directions
+                                                                                                          𝐻         9      𝜇            𝑅3     1
+exhibit equivalence. As shown in Fig. 5, when the magnetic field in the                        where 𝑆𝑆𝑝ℎ𝑒𝑟𝑒 represents the relative magnetic permeability, 𝜇 repre-
+X-direction (𝐵𝑥 ) is projected onto the square magnetic shielding device,                      sents the outer diameter, 𝑅1 and 𝑅2 represents the inner diameter of
+two faces have magnetic fields in the perpendicular direction (indicated                       the sphere. Simplification of Eq. (9) yields:
+in red), and four faces have magnetic fields in the parallel direction                                         2     𝑏
+(indicated in blue), corresponding to the effective conductivities 𝜎𝛼                          𝑆sphere = 1 +     ⋅𝜇⋅                                                          (10)
+                                                                                                               3     𝑅1
+
+                                                                                           4
+L. Wang et al.                                                                                                                                 Measurement 227 (2024) 114276
+
+Table 2
+Magnetic field noise from high-permeability and nonmagnetic plate and shells of
+conductivity.
+ Simulation parameter condition
+ Total thickness                                                    2 mm
+ Length of side                                                     250 mm
+ Electrical conductivity                                            (1∕1.2) × 106
+ Relative magnetic permeability of a single nanocrystalline layer   37 000
+ Number of nanocrystalline layers                                   100
+ Number of adhesive layers                                          99
+ Coil current                                                       38.3 A
+
+
+
+
+   For square shielding, when the effective radius is taken to be half
+the length of the side, the equation for a cube can be derived from the
+spherical Eq. (11):
+                            𝑏
+𝑆Square ≅ 1 + 2 ⋅ 𝜆 ⋅ 𝜇 ⋅                                                    (11)
+                            𝐿1
+where 𝐿1 represents the outer side length of the cube containing the
+magnetic shielding layer. Assuming that the coefficient 𝜆 for the cube
+formula is similar to the coefficient for the cylindrical formula, we can
+set the coefficient for the cube 𝜆 to 0.48 within the acceptable range of
+error [32]. Therefore, the empirical formula for the shielding coefficient
+of a single-layer cube can be defined as:
+                            𝑏
+𝑆Square ≅ 1 + 0.96 ⋅ 𝜇 ⋅                                                     (12)
+                            𝐿1
+    For the nanocrystalline layered structure, the magnetic permeability
+of the magnetic shielding layer varies with the stacking coefficient due
+to interlayer insulation effects. We have obtained the effective magnetic
+permeability considering the stacking coefficient under weak magnetic
+field conditions. Therefore, to more accurately simulate the impact of                  Fig. 6. Simulation of nanocrystalline magnetic shielding box with different stacking
+the stacking coefficient on the shielding performance, we can substitute                coefficients. (a) Magnetic flux density distribution of nanocrystalline cube under uni-
+the fitted magnetic permeability Eq. (5) into Eq. (12) to obtain the                    form magnetic field. (b) Comparison of simulated and calculated shielding coefficients
+shielding coefficient of a single-layer nanocrystalline cube:                           of magnetically shielded boxes with different stacking coefficients.
+
+                                          𝑏
+𝑆Nanocry ≅ 1 + (35846.4 ⋅ 𝑒 − 814.8) ⋅                                       (13)
+                                          𝐿1
+                                                                                        actual thickness of the nanocrystalline layer to the total thickness of
+3.2. The simulation of shielding factor                                                 the stacked nanocrystalline cube, while keeping the total thickness of
+                                                                                        the magnetic shielding layer unchanged at 2 mm. By varying the actual
+    The residual magnetization at the center is a criterion for evaluating              thickness of the nanocrystalline layer, the size of the stacking coeffi-
+the shielding effectiveness of a magnetic shielding device. By using                    cient can be adjusted accordingly. For the simulation of the shielding
+Finite Element Method (FEM) calculations to determine the residual                      coefficient, a uniform magnetic field is generated by a pair of parallel
+magnetization inside the magnetic shielding device, we can numerically                  and connected coaxial square coils (Helmholtz coils). These coils have
+simulate the shielding coefficient of the cube. Traditional modeling                    a length of 1350 mm and a width of 750 mm and are separated by a
+methods have primarily focused on conventional dense solid mod-                         distance of 500 mm. The current is set to 38.3 A, resulting in a magnetic
+els, necessitating improvements for multi-layer stacked nanocrystalline                 flux density of approximately 50 000 nT at the center point.
+magnetic shielding devices. In this article, we address the unique                          The internal magnetic field distribution within the nanocrystalline
+interlayer insulation and stacked structure of nanocrystalline materi-                  cube is depicted in Fig. 6(a). The shielding coefficient of the FEM
+als by introducing multi-layer transition boundary conditions in the                    simulation can be determined by evaluating the residual magnetization
+finite element simulation. This modeling method is suitable when the                    at the center of the stacked nanocrystalline magnetic shielding box for
+thickness of the conductor is comparable to the skin depth.                             different stacking coefficients. As depicted in Fig. 6(b), both the calcu-
+    The arrangement of the multi-layer stacked magnetic shielding                       lation from Eq. (13) and the finite element method (FEM) simulation
+layers follows the physical layout of the nanocrystalline magnetic                      yield linear curves for the shielding factor (SF), with the difference
+shielding box. The material is set as a stack of multiple layers, each                  between the two results not exceeding 5%. These two approaches mutu-
+consisting of alternating nanocrystalline and adhesive. The boundary                    ally corroborate the linearizing effect of the stacking coefficient on the
+condition module is designed to incorporate the multi-layer transition                  shielding factor. Therefore, Eq. (13) can be used to describe the trend of
+boundary conditions. As the transition boundary conditions can only be                  the shielding coefficient variation in the stacked nanocrystalline cube
+calculated in the frequency domain, a frequency of 0.1 Hz is chosen to                  magnetic shielding structure to a certain extent.
+calculate static magnetic shielding. As presented in Table 2, the total
+thickness of the stacked nanocrystalline cube is set to 2 mm, with a                    4. The magnetic noise considering the stacking effect
+side length of 250 mm. The electrical conductivity is (1∕1.2) × 106 and
+the relative permittivity is 1. In actual testing, the relative magnetic                4.1. The analysis of magnetic noise
+permeability of a single nanocrystalline layer without interlayer insu-
+lation conditions is found to be 37 000. The number of nanocrystalline                     The utilization of laminated nanocrystalline magnetic shielding de-
+layers is set to 100, while the number of adhesive layers is set to                     vices allows for the implementation of interlayer insulation techniques
+99. The stacking coefficient, denoted as e, represents the ratio of the                 to suppress eddy currents and improve eddy current losses, thereby
+
+                                                                                    5
+L. Wang et al.                                                                                                                            Measurement 227 (2024) 114276
+
+
+reducing internal noise. Therefore, it is necessary to refine the magnetic
+noise model for laminated nanocrystalline cubic structures.
+    According to the fluctuation–dissipation theory [33], magnetic noise
+can be calculated based on the energy dissipation in the material. By
+relating the magnetic noise to the power dissipation through the energy
+spectral density, the complex calculation of magnetic noise can be
+transformed into solving for the dissipation. According to the Nyquist
+relation, the magnetic field noise spectrum at a certain point inside
+a dissipative magnetic shield can be calculated based on the average
+power dissipation generated by the oscillating current flowing through
+the hypothetical excitation coil located at the same point within the
+shield material. Calculating the electric field on the inner surface of
+the conductive shell caused by the electric dipoles yields the Johnson
+current noise and thermal magnetization noise of an infinitely large
+plate, as shown in Eqs. (14) and (15) [34].
+                   √                                                               Fig. 7. The trend of total noise with varying stacking factors at different frequencies.
+            1    𝜇0 𝑘𝑇 𝑑𝜎𝑚
+𝛿𝐵curr = √ ⋅                                                          (14)
+            6𝜋        𝑟
+                 √         √
+            1      𝜇0 𝑘𝑇     𝜇 ′′                                                  4.2. The magnetic noise test system
+𝛿𝐵magn =       ⋅         ⋅                                            (15)
+           2𝜋𝑟      𝑓𝑑       𝜇′2
+                                                                                       A cubic magnetic shielding box consisting of laminated
+where 𝜇0 represents the vacuum permeability, 𝑘 is the Boltzmann con-
+                                                                                   nano-crystalline entities has been constructed for practical measure-
+stant, 𝑇 denotes the material temperature, 𝜎𝑚 represents the material
+                                                                                   ments, with a side length of 250 mm, a 12 mm thick magnetic shielding
+conductivity, 𝑓 represents the frequency, and 𝑑 indicates the effective
+                                                                                   layer, and a stacking factor of e = 0.6. The outer structure is made
+thickness of the material, and 𝑟 represents the vertical distance to the
+                                                                                   of acrylic transparent panels. Iron-based nano-crystalline materials are
+shielding layer.
+                                                                                   uniformly affixed to the interior surface of the cubic acrylic transparent
+     From Eq. (14), it can be inferred that the Johnson current noise is
+                                                                                   panels, with a single layer thickness of 20 μm and a double-sided
+directly proportional to the square of the equivalent conductivity of
+                                                                                   adhesive thickness of 10 μm. After affixing, the entire shell is cured
+the magnetic shielding layer. Due to the variation in the truncation of
+eddy currents in different directions caused by the laminating process,            and shaped. Through-cut optical holes are arranged on the front and
+Fig. 5 illustrates the distribution of the equivalent conductivity of the          back of the box, created by circular blades and sealed with non-
+nanocrystalline square magnetic shielding device, denoted as 𝜎𝛼 and                magnetic polyethylene insulating material at the blade positions to
+𝜎𝛽 . Due to the geometric symmetry of the square magnetic shield, the              isolate external wear.
+magnetic noise induced by the magnetic fields in three directions is                   The aim of this study is to examine the magnetic noise of nanocrys-
+equivalent. Hence, the equivalent conductivity of two of its faces can             talline materials. However, during the testing process, the magnetic
+be set as 𝜎𝛼 , and the equivalent magnetic conductivity of the other four          noise of the materials is easily masked by interferences from the
+faces can be set as 𝜎𝛽 . By substituting Eqs. (7) and (8) into Eq. (14), the       external environment. To more accurately assess the intrinsic noise
+magnitude of Johnson noise in the laminated nanocrystalline square                 level of the materials, we conducted magnetic noise tests by placing
+magnetic shielding device can be derived as expressed in Eq. (16). Like-           the nanocrystalline magnetic shielding box inside a magnetic shielding
+wise, according to Eq. (15), the thermal magnetization noise is directly           room and a double-layer Permalloy scaling model. This effectively
+proportional to the square of the imaginary magnetic conductivity                  shielded most of the external environmental noise, thereby achieving
+of the shielding layer and inversely proportional to its real magnetic             precise measurement of the material’s magnetic noise. Consequently,
+conductivity. Taking into account the unique pattern of variation in the           the testing results of the magnetic field measurement device (SERF
+complex magnetic conductivity of the nanocrystalline material with the             magnetometer) primarily reflect the magnetic noise generated by the
+lamination coefficient, Eqs. (5) and (6) can be substituted into Eq. (15),         innermost layer of the nanocrystalline magnetic shielding box, when
+resulting in the expression for the magnitude of thermal magnetization             the high-shielding coefficient Permalloy magnetic shielding device ef-
+noise in the laminated nanocrystalline square magnetic shielding device            fectively suppresses the external environmental magnetic noise inter-
+as given by Eq. (17).                                                              ference. The shielding coefficients of the double-layer Permalloy with
+                  √                  √                                             nanocrystalline magnetic shielding box at different frequencies are
+          2𝜇0       𝑘𝑇 𝑒𝜎𝑑 4𝜇0 𝑡        𝑘𝑇 𝑑𝜎
+𝛿𝐵curr =        ⋅           +      ⋅                                   (16)        shown in Table 3. The measurement results indicate that the shielding
+           𝑟          6𝜋       𝑎𝑟        6𝜋𝑒
+                  √         √                                                      coefficients are generally constant in the frequency range of 0.1–95 Hz.
+            3       𝜇0 𝑘𝑇        214.6 ⋅ 𝑒 − 16                                    The shielding coefficient slightly decreases at low frequencies and
+𝛿𝐵magn =        ⋅         ⋅                                            (17)
+           𝜋𝑟        𝑓𝑑       (37340 ⋅ 𝑒 − 848.8)2                                 increases with increasing frequency. It is important to note that due
+                                                                                   to power frequency interference, we did not measure the shielding
+𝛿𝐵 = 𝛿𝐵curr + 𝛿𝐵magn                                                   (18)        coefficients at 50 Hz and 100 Hz frequencies.
+                                                                                       As depicted in Fig. 8(a), the magnetic field measurement device
+   Based on Eq. (18), the calculated values of the total noise in the              (SERF magnetometer) was positioned at the center of the iron-based
+iron-based nanocrystalline cubic structure can be obtained by varying              nanocrystalline magnetic shielding box. The power spectral density of
+the lamination coefficient. As illustrated in Fig. 7, at lower frequencies         the sensor’s magnetic noise is shown in Fig. 8(b). The testing was con-
+(0.1–10 Hz), the low-frequency total noise gradually decreases as the              ducted in a temperature-stabilized underground chamber at 280.15 K
+lamination coefficient increases. As the frequency increases, although             during nighttime, ensuring a stable environmental noise level. When
+the total noise tends to increase with the lamination coefficient, the             the high shielding coefficient Permalloy magnetic shielding device
+trend is mild and not pronounced. As depicted in Fig. 6(b), it is evident          effectively suppressed the external environmental magnetic noise in-
+that the shielding coefficient increases with the lamination coefficient.          terference, the test results of the magnetic field measurement device
+Therefore, selecting materials with higher lamination coefficients for             primarily revealed the magnetic noise generated by the innermost
+practical applications is advisable to enhance shielding effectiveness             layer of the nanocrystalline magnetic shielding box. From Fig. 8(b),
+while reducing magnetic noise.                                                     it can be observed that in the frequency range of 10 to 100 Hz the
+
+                                                                               6
+L. Wang et al.                                                                                                                               Measurement 227 (2024) 114276
+
+Table 3                                                                                            By utilizing Eq. (18), we can calculate the thermal-magnetic and
+Shielding coefficients of 2-layer Permalloy with nanocrystalline magnetic shielding box
+                                                                                               Johnson noise of a 12 mm thick laminated nanocrystalline cubic sample
+at different frequencies.
+                                                                                               with a stacking factor of 0.6 and a side length of 250 mm. The
+ Frequency                X-position               Y-position               Z-position
+                                                                                               comparison between the measured values and the total noise calculated
+ 0.1                      465 ± 1.3                258 ± 2.4                432 ± 1.3
+                                                                                               using the formula is shown in Fig. 8(b). In the frequency range of
+ 1                        513 ± 2.4                287 ± 1.6                486 ± 1.5
+ 5                        898 ± 1.75               768 ± 1.4                912 ± 1.3          10 to 100 Hz, the Johnson current noise, which is uncorrelated with
+ 10                       1470 ± 0.3               1390 ± 1.35              1367 ± 1.2         frequency variations, remains constant. However, at frequencies below
+ 20                       2409 ± 1.4               2334 ± 0.5               2506 ± 2.3         10 Hz, the low shielding effectiveness of the iron-based nanocrystalline
+ 30                       3212 ± 1.9               3112 ± 1.3               3123 ± 1.3
+                                                                                               magnetic shield box results in incomplete shielding of some Permalloy
+ 40                       3854 ± 1.3               3439 ± 1.73              3780 ± 1.8
+ 60                       5256 ± 2.3               5027 ± 1.8               5363 ± 1.3         magnetic noise and environmental noise. This interference error causes
+ 70                       6195 ± 1.4               5941 ± 1.6               5906 ± 2.8         the measured values in the low-frequency range to be slightly higher
+ 80                       6671 ± 2.6               6261 ± 2.3               6543 ± 1.6         than the calculated magnetic noise from the formula.
+ 90                       7227 ± 1.5               6535 ± 1.3               7084 ± 1.3
+ 95                       7541 ± 1.6               7378 ± 1.9               7346 ± 1.7
+                                                                                               5. Conclusion
+
+                                                                                                   In summary, this paper presents a methodology for the quantitative
+                                                                                               evaluation and investigation of the shielding factor and magnetic noise
+                                                                                               in a nanocrystalline magnetic shielding system, considering the effects
+                                                                                               of lamination. By examining the complex permeability of nanocrys-
+                                                                                               talline test rings with different lamination factors, we summarize a
+                                                                                               model of equivalent permeability that varies with the lamination factor
+                                                                                               and incorporate it into the shielding factor formula. Furthermore,
+                                                                                               through the introduction of a multilayer transition boundary condi-
+                                                                                               tion module, we have refined the finite element method (FEM) for
+                                                                                               nanocrystalline magnetic shielding devices, facilitating the simulation
+                                                                                               of spatial magnetic field distribution under the influence of lamination,
+                                                                                               and compared it with the proposed shielding factor model, verifying
+                                                                                               their effectiveness with a margin of error within 5%. Lastly, consid-
+                                                                                               ering the model of equivalent conductivity in different directions due
+                                                                                               to lamination, we have analyzed and enhanced the magnetic noise
+                                                                                               calculation model applicable to square nanocrystalline magnetic shields
+                                                                                               and validated the precision of the model through experimentation.
+
+
+                                                                                               CRediT authorship contribution statement
+
+                                                                                                  Ling Wang: Conceptualization, Methodology, Resources, Software,
+                                                                                               Writing – original draft, Writing – review & editing, Visualization.
+                                                                                               Minxia Shi: Conceptualization, Methodology, Writing – original draft,
+                                                                                               Writing – review & editing, Funding acquisition. Yun Le: Funding
+                                                                                               acquisition, Investigation, Resources, Supervision, Writing – review
+                                                                                               & editing. Xu Zhang: Investigation, Supervision, Writing – review &
+                                                                                               editing. Jianzhi Yang: Methodology, Writing – original draft, Writing
+                                                                                               – review & editing. Shuai Yuan: Methodology, Visualization, Writing
+                                                                                               – review & editing. Yuzheng Ma: Supervision, Validation, Writing –
+                                                                                               review & editing.
+
+
+                                                                                               Declaration of competing interest
+
+                                                                                                   The authors declare that they have no known competing finan-
+                                                                                               cial interests or personal relationships that could have appeared to
+                                                                                               influence the work reported in this paper.
+Fig. 8. Magnetic noise as a function of frequency test for iron-based nanocrystalline
+magnetic shielding boxes with different thicknesses. (a) Magnetic noise testing environ-
+ment for iron-based nanocrystalline. (b) Comparison between the measured magnetic              Data availability
+noise of the iron-based nanocrystalline magnetic shielding box and the total noise
+calculated by the equation.
+                                                                                                  Data will be made available on request.
+
+
+                                                                                               Acknowledgments
+magnetic noise of the nanocrystalline magnetic shielding box remained
+stable, which can be defined as Johnson noise independent of frequency
+                                                                                                  The authors thank the anonymous reviewers for their valuable sug-
+variation, while at frequencies below 10 Hz, the magnetic noise showed                         gestions. This work was supported in part by National Natural Science
+a clear trend of changing with frequency, which can be defined as                              Foundation of China (Grant No. 62203029) and "Double first-class
+thermal-magnetic noise.                                                                        guidance project (ZG216S2382).
+
+                                                                                           7
+L. Wang et al.                                                                                                                                     Measurement 227 (2024) 114276
+
+
+References                                                                                   [17] Y. Fu, J. Sun, J. Ruan, W. Quan, A nanocrystalline shield for high preci-
+                                                                                                  sion co-magnetometer operated in spin-exchange relaxation-free regime, Sensors
+ [1] J.C. Allred, R.N. Lyman, T.W. Kornack, M.V. Romalis, High-sensitivity atomic                 Actuators A 339 (2022) 113487, http://dx.doi.org/10.1016/j.sna.2022.113487.
+     magnetometer unaffected by spin-exchange relaxation, Phys. Rev. Lett. 89 (13)           [18] Y. Liu, H. Gao, L. Ma, J. Quan, W. Fan, X. Xu, Y. Fu, L. Duan, W. Quan, Study
+     (2002) 130801, http://dx.doi.org/10.1103/PhysRevLett.89.130801.                              on the magnetic noise characteristics of amorphous and nanocrystalline inner
+ [2] J. Zhao, M. Ding, J. Lu, K. Yang, D. Ma, H. Yao, B. Han, G. Liu, Determination               magnetic shield layers of SERF co-magnetometer, Materials 15 (22) (2022) 8267,
+     of spin polarization in spin-exchange relaxation-free atomic magnetometer using              http://dx.doi.org/10.3390/ma15228267.
+     transient response, IEEE Trans. Instrum. Meas. 69 (3) (2020) 845–852, http:             [19] H. Hamzehbahmani, P. Anderson, J. Hall, D. Fox, Eddy current loss estimation
+     //dx.doi.org/10.1109/TIM.2019.2905308.                                                       of edge burr-affected magnetic laminations based on equivalent electrical net-
+ [3] M.P. Ledbetter, I.M. Savukov, V.M. Acosta, D. Budker, M.V. Romalis, Spin-                    work—part II: Analytical modeling and experimental results, IEEE Trans. Power
+     exchange-relaxation-free magnetometry with cs vapor, Phys. Rev. A 77 (3) (2008)              Deliv. 29 (2) (2014) 651–659, http://dx.doi.org/10.1109/TPWRD.2013.2279634.
+     033408, http://dx.doi.org/10.1103/PhysRevA.77.033408.                                   [20] H. Hamzehbahmani, P. Anderson, J. Hall, D. Fox, Eddy current loss estima-
+ [4] T.E. Chupp, P. Fierlinger, M.J. Ramsey-Musolf, J.T. Singh, Electric dipole                   tion of edge burr-affected magnetic laminations based on equivalent electrical
+     moments of atoms, molecules, nuclei, and particles, Rev. Modern Phys. 91 (1)                 network—part i: Fundamental concepts and FEM modeling, IEEE Trans. Power
+     (2019) 015001, http://dx.doi.org/10.1103/RevModPhys.91.015001.                               Deliv. 29 (2) (2014) 642–650, http://dx.doi.org/10.1109/TPWRD.2013.2272663.
+ [5] M. Matsushima, H. Tsunakawa, Y.-i. Iijima, S. Nakazawa, A. Matsuoka, S.                 [21] J. Lu, D. Ma, K. Yang, W. Quan, J. Zhao, B. Xing, B. Han, M. Ding, Study
+     Ikegami, T. Ishikawa, H. Shibuya, H. Shimizu, F. Takahashi, Magnetic cleanliness             of magnetic noise of a multi-annular ferrite shield, IEEE Access 8 (2020)
+     program under control of electromagnetic compatibility for the SELENE (kaguya)               40918–40924, http://dx.doi.org/10.1109/ACCESS.2020.2976785.
+     spacecraft, Space Sci. Rev. 154 (1–4) (2010) 253–264, http://dx.doi.org/10.             [22] K. Yang, J. Lu, M. Ding, J. Zhao, D. Ma, Y. Li, B. Xing, B. Han, J. Fang,
+     1007/s11214-010-9655-x.                                                                      Improved measurement of the low-frequency complex permeability of ferrite
+ [6] Y. Sun, W. Xixi, Y. Zhou, J. Qin, D. Bai, Y. Wang, Z. Zhou, A single-axis                    annulus for low-noise magnetic shielding, IEEE Access 7 (2019) 126059–126065,
+     atomic magnetometer-based mouse magnetocardiography measurement system,                      http://dx.doi.org/10.1109/ACCESS.2019.2935034.
+     IEEE Trans. Instrum. Meas. 72 (2023) 1–10, http://dx.doi.org/10.1109/TIM.               [23] IEC:62044-2, Cores made of soft magnetic materials - measuring methods - part
+     2023.3265089.                                                                                2: Magnetic properties at low excitation level, 2005.
+ [7] W.C.G. Peh, J.H.M. Chan, Artifacts in musculoskeletal magnetic resonance                [24] Y. Singh, Electrical resistivity measurements: A review, Int. J. Mod. Phys.: Conf.
+     imaging: Identification and correction, Skeletal Radiol. 30 (4) (2001) 179–191,              Ser. 22 (2013) 745–756, http://dx.doi.org/10.1142/S2010194513010970.
+     http://dx.doi.org/10.1007/s002560100341.                                                [25] W. Wang, A. Nysveen, N. Magnusson, Eddy current loss in grain-oriented steel
+ [8] K. Jensen, M.A. Skarsfeldt, H. Stærkind, J. Arnbak, M.V. Balabas, S.-P. Olesen,              laminations due to normal leakage flux, IEEE Trans. Magn. 57 (6) (2021) 1–4,
+     B.H. Bentzen, E.S. Polzik, Magnetocardiography on an isolated animal heart with              http://dx.doi.org/10.1109/TMAG.2021.3069727.
+     a room-temperature optically pumped magnetometer, Sci. Rep. 8 (1) (2018)                [26] D.E. Gaona, C. Jiang, T. Long, Highly efficient 11.1-kW wireless power transfer
+     16218, http://dx.doi.org/10.1038/s41598-018-34535-z.                                         utilizing nanocrystalline ribbon cores, IEEE Trans. Power Electron. 36 (9) (2021)
+ [9] J. Iivanainen, R. Zetter, M. Grön, K. Hakkarainen, L. Parkkonen, On-scalp MEG                9955–9969, http://dx.doi.org/10.1109/TPEL.2021.3064902.
+     system utilizing an actively shielded array of optically-pumped magnetometers,          [27] K.M. Gawrylczyk, K. Trela, Frequency response modeling of transformer windings
+     NeuroImage 194 (2019) 244–258, http://dx.doi.org/10.1016/j.neuroimage.2019.                  utilizing the equivalent parameters of a laminated core, Energies 12 (12) (2019)
+     03.022.                                                                                      2371, http://dx.doi.org/10.3390/en12122371.
+[10] G.Z. Iwata, Y. Hu, A. Wickenbrock, T. Sander, M. Muthuraman, V.C. Chiru-                [28] D. E. Gaona, S. Ghosh, T. Long, Feasibility study of nanocrystalline-ribbon cores
+     mamilla, S. Groppa, Q. Liu, D. Budker, Biomagnetic signals recorded during                   for polarized inductive power transfer pads, IEEE Trans. Power Electron. 35 (7)
+     transcranial magnetic stimulation (TMS)-evoked peripheral muscular activity,                 (2020) 6799–6809, http://dx.doi.org/10.1109/TPEL.2019.2957774.
+     Biomed. Eng. / Biomed. Tech. 67 (5) (2022) 333–344, http://dx.doi.org/10.               [29] Yanhui Gao, K. Muramatsu, K. Shida, K. Fujiwara, S. Fukuchi, T. Takahata, Loss
+     1515/bmt-2021-0019.                                                                          calculation of reactor connected to inverter power supply taking account of eddy
+[11] I.K. Kominis, T.W. Kornack, J.C. Allred, M.V. Romalis, A subfemtotesla multi-                currents in laminated steel core, IEEE Trans. Magn. 45 (3) (2009) 1044–1047,
+     channel atomic magnetometer, Nature 422 (6932) (2003) 596–599, http://dx.                    http://dx.doi.org/10.1109/TMAG.2009.2012569.
+     doi.org/10.1038/nature01484.                                                            [30] J. Wang, H. Lin, Y. Huang, X. Sun, A new formulation of anisotropic equivalent
+[12] H. Ohta, T. Matsui, Y. Uchikawa, A whole-head SQUID system in a supercon-                    conductivity in laminations, IEEE Trans. Magn. 47 (5) (2011) 1378–1381, http:
+     ducting magnetic shield, IEEE Trans. Appl. Supercond. 17 (2) (2007) 730–733,                 //dx.doi.org/10.1109/TMAG.2010.2081352.
+     http://dx.doi.org/10.1109/TASC.2007.898033.                                             [31] T. Rikitake, Magnetic and Electromagnetic Shielding, Springer Science & Business
+[13] K. Yamazaki, K. Unno, H. Matsuba, T. Watanabe, D. Irisawa, K. Fujiwara,                      Media, 1987.
+     Shielding effect of superconducting magnetically shielded room, IEEE Trans.             [32] V. Kelha, J. Pukki, R. Peltonen, A. Penttinen, R. Ilmoniemi, J. Heino, Design,
+     Magn. 33 (5) (1997) 3451–3453, http://dx.doi.org/10.1109/20.617974.                          construction, and performance of a large-volume magnetic shield, IEEE Trans.
+[14] T.W. Kornack, S.J. Smullin, S.-K. Lee, M.V. Romalis, A low-noise ferrite magnetic            Magn. 18 (1) (1982) 260–270, http://dx.doi.org/10.1109/TMAG.1982.1061780.
+     shield, Appl. Phys. Lett. 90 (22) (2007) 223501, http://dx.doi.org/10.1063/1.           [33] R. Kubo, The fluctuation-dissipation theorem, Rep. Progr. Phys. 29 (1) (1966)
+     2737357.                                                                                     255, http://dx.doi.org/10.1088/0034-4885/29/1/306.
+[15] R. Hasegawa, Advances in amorphous and nanocrystalline materials, J. Magn.              [34] S.-K. Lee, M.V. Romalis, Calculation of magnetic field noise from high-
+     Magn. Mater. 324 (21) (2012) 3555–3557.                                                      permeability magnetic shields and conducting objects with simple geometry, J.
+[16] K. Nagashima, I. Sasada, K. Tashiro, High-performance bench-top cylindrical                  Appl. Phys. 103 (8) (2008) 084904, http://dx.doi.org/10.1063/1.2885711.
+     magnetic shield with magnetic shaking enhancement, IEEE Trans. Magn. 38 (5)
+     (2002) 3335–3337, http://dx.doi.org/10.1109/TMAG.2002.803123.
+
+
+
+
+                                                                                         8
+

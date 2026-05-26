@@ -1,0 +1,26 @@
+export_B0_working  2026-05-20 15:30:50
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_B0.aedt
+OpenProject: OK
+  a = 2.35mm
+  g = 0.2mm
+  T = 10mm
+
+=== B0 magnitude at center ===
+  B0_T = 3.48693141553e-09 (raw: ['3.48693141552513E-09'])
+
+=== B0 vector components at center ===
+  B0_Bx_T = -1.63222676802e-09 (raw: ['-1.63222676801753E-09'])
+  B0_By_T = 2.9808380887e-10 (raw: ['2.98083808870062E-10Stopping Batch Run: 3:31:02 PM  May 20, 2026
+1053361552281E-10'])
+
+Wrote: D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_B0.csv
+  experiment = fixedT10_g02_B0
+  layer = 4
+  T_mm = 10.0
+  a_mm = 2.35
+  g_mm = 0.2
+  B0_T = 3.48693141553e-09
+  B0_Bx_T = -1.63222676802e-09
+  B0_By_T = 2.9808380887e-10
+  B0_Bz_T = 7.91053361552e-10
+Done.

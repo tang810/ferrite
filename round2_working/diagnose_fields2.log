@@ -1,0 +1,77 @@
+diagnose_fields2  2026-05-20 15:05:07
+
+=== FieldsReporter methods ===
+  AddMarker
+  AddMarkerToPlot
+  AddNamedExpr
+  AddNamedExpression
+  CalcOp
+  CalcRead
+  CalcStack
+  CalcWrite
+  CalculatorRead
+  CalculatorWrite
+  ChangeGeomSettings
+  ClcEval
+  ClcMaterial
+  ClcMaterialValue
+  ClearAllMarkers
+  ClearAllNamedExpr
+  CopyNamedExprToStack
+  CreateFieldPlot
+  DeleteFieldPlot
+  DeleteMarker
+  DeleteNamedExpr
+  DeleteUneditabl[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:05:15 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:05:15 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:05:15 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:05:15 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:05:15 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (03:05:15 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (03:05:16 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (03:05:16 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (03:05:16 PM  May 20, 2026)
+[error] Error in command execution
+[warning] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Report Name 'DiagReport2' is already in use or invalid. Creating report with name 'DiagReport3'. (03:05:16 PM  May 20, 2026)
+Stopping Batch Run: 3:05:17 PM  May 20, 2026
+oFile(opt=['ExportFieldType:=', 'Mag_B']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_test.fld,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts,Setup1 : LastAdaptive,IronPytho
+FAIL ExportToFile(opt=['Expression:=', 'Mag_B']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_test.fld,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts,Setup1 : LastAdaptive,IronPytho
+FAIL ExportToFile(opt=['Quantity:=', 'B']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_test.fld,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts,Setup1 : LastAdaptive,IronPytho
+FAIL ExportToFile(opt=['Field:=', 'B']): ExportToFile(string outFname, string ptsFName, string solnName, Structured Array varVals, [Structured Array exportOption /*optional*/])(D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_test.fld,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts,Setup1 : LastAdaptive,IronPytho
+
+=== oDesign solution/field methods ===
+OK oDesign.GetNominalVariation: a='2.3500000000000001mm' g='0.20000000000000001mm' H='200mm' Iexc='1mA' Rin='100mm' T='10mm'
+FAIL oDesign.GetSolutionData(Setup1 : LastAdaptive): 'ADispatchWrapper' object has no attribute 'GetSolutionData'
+FAIL oDesign.GetSolutionContext: 'ADispatchWrapper' object has no attribute 'GetSolutionContext'
+
+=== Try setting field context ===
+FAIL fields.SetSolutionContext: 'ADispatchWrapper' object has no attribute 'SetSolutionContext'
+FAIL fields.LoadSolution: 'ADispatchWrapper' object has no attribute 'LoadSolution'
+FAIL fields.SetFieldSolution: 'ADispatchWrapper' object has no attribute 'SetFieldSolution'
+
+=== Calc after context setup ===
+FAIL Mag_B+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+FAIL point+Mag_B: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+FAIL point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+FAIL B+Mag+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+=== CalcOp('Eval') instead of ClcEval ===
+OK point+Mag_B+Eval: see_error
+
+=== GetFieldValue ===
+FAIL GetFieldValue(Mag_B): 'ADispatchWrapper' object has no attribute 'GetFieldValue'
+FAIL GetFieldValue(B): 'ADispatchWrapper' object has no attribute 'GetFieldValue'
+
+=== CreateReport with 7+ args ===
+OK 7args_basic: None
+OK 8args: None
+
+Done at 2026-05-20 15:05:16

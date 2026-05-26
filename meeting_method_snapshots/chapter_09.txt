@@ -1,0 +1,195 @@
+chapter=多层磁屏蔽结构对磁噪声的影响
+count=1
+- alert
+- button "arrow-left--outlined--12px 返回":
+  - img "arrow-left--outlined--12px":
+  - generic: 返回
+- generic: 唐雨梦的快速会议
+- img "edit-subject--outlined--app--16px":
+- generic: 2026/05/13 18:42:17
+- generic: 3 个文件 624.69 MB
+- generic: 总查看 13 次
+- generic: 另存为 0 次
+- generic: 890 953 253
+- generic: 共1人
+- img "share--outlined--app":
+- img "file-save--app--outlined":
+- img "arrowdown":
+- img "translate-zh2en--outlined--app":
+- text: 翻译
+- img "arrowdown":
+- img "more":
+- img "avatar"
+- region "视频播放器":
+  - generic: 正在加载 视频播放器。
+  - button "播放视频":
+    - text: 
+    - generic: 播放视频
+  - button
+  - button "静音":
+    - text: 
+    - generic: 静音
+  - text: 
+  - generic: 当前时间 1:17:38
+  - generic: /
+  - generic: 时长 1:49:36
+  - slider "进度条":
+    - generic: "加载完成: 1.50%"
+  - generic: 倍速
+  - button
+  - button
+  - text: 
+  - button "播放视频":
+    - text: 
+    - generic: 播放视频
+- generic: 正在讲话：
+- text:  
+- generic: 讨论了磁噪声的研究，包括使用AI算法分析大量数据中的规律，以及使用Maxwell软件计算磁噪声。同时，讨论了实验设计和结果分析，包括磁噪声的平均值、磁导数的积分值等。此外，还探讨了多层壳结构对磁噪声的影响，以及如何通过增加层数来降低磁噪声。最后，讨论了实验的限制条件，如镜像宽度、厚度和间隙大小等，并提出了未来的研究方向，如测量剩磁和屏蔽系数等。
+- text: 展开
+- img "arrow-down--outlined":
+- list:
+  - button "章节":
+    - generic: 章节
+  - button "发言人":
+    - generic: 发言人
+  - button "话题":
+    - generic: 话题
+- img "章节图片"
+- generic: 00:00
+- generic: AI在磁噪声数据处理中的应用
+- img "章节图片"
+- generic: 10:07
+- generic: 多层体结构的最优参数寻找与验证
+- img "章节图片"
+- generic: 15:46
+- generic: 材料层数与磁噪声关系分析
+- img "章节图片"
+- generic: 21:38
+- generic: 多层结构优化与噪声降低趋势
+- img "章节图片"
+- generic: 27:20
+- generic: 优化模型与实验验证的探讨
+- img "章节图片"
+- generic: 38:27
+- generic: 产品厚度与层数的优化探讨
+- img "章节图片"
+- generic: 46:03
+- generic: 磁屏蔽系统实验设计与优化探讨
+- img "章节图片"
+- generic: 53:20
+- generic: 材料厚度与噪声值的关系分析
+- img "章节图片"
+- generic: 1:06:22
+- generic: 多层壳磁噪声的计算与分析
+- img "章节图片"
+- generic: 1:17:38
+- generic: 多层磁屏蔽结构对磁噪声的影响
+- generic: 1:28:47
+- generic: 磁噪声屏蔽效果与材料特性分析
+- generic: 1:39:00
+- generic: 磁噪声屏蔽与材料选择优化探讨
+- img "add--outlined--app":
+- generic: 新增章节
+- generic: 内容由 AI 生成，仅供参考
+- img "arrow-right--app":
+- list:
+  - img "transcription--20px":
+  - generic: 转写
+  - img "summary--20px":
+  - generic: 纪要
+  - img "setting--20px":
+  - generic: 设置
+  - img "ai--filled":
+  - generic: AI小助手
+- generic: 元宝提供服务，前往元宝体验更多能力
+- generic: 智能优化版
+- img "arrow-down--outlined":
+- img "search--outlined--app":
+- button "edit--outlined--app":
+  - img "edit--outlined--app":
+- button "split-speaker--outlined":
+  - img "split-speaker--outlined":
+- generic: 固定总厚度
+- generic: 结构
+- generic: 规律
+- generic: 多层铁氧体
+- generic: 低噪声
+- generic: 镜像宽度
+- generic: 积分值
+- generic: 模型
+- generic: 伊菲特
+- generic: 磁屏蔽系统
+- generic: 唐雨梦
+- generic: 01:03:56
+- generic: 大石头。
+- generic: 孙博文
+- generic: 01:04:00
+- generic: 因为打个比方，伊菲特的噪声跟0.8菲特的噪声，一个系统里就两个磁屏蔽，比如说伊菲特的噪声，另外一个是0.8菲特的噪声，那我总的系统的磁噪声是伊菲特。
+- generic: 因为0.8菲特的噪声会被里面淹没掉吧？
+- generic: 唐雨梦
+- generic: 01:04:25
+- generic: 就这样。感觉正常思维想起来是这样。
+- generic: 孙博文
+- generic: 01:04:29
+- generic: 所以说我有可能那些层数加多之后加起来之后，它噪声变大，你比如说这个值两层的跟三层的。
+- generic: 你它那个值更大了，很有可能是因为给它加进去的值，因为它加的多了，你因为你三层是加了三层的噪声嘛，两层是加了两层的噪声。
+- generic: 你你你有没有办法导出来的，就是每一层的噪声是多少？
+- generic: 唐雨梦
+- generic: 01:05:05
+- generic: 就是它可以导每一层的气象值。
+- generic: 孙博文
+- generic: 01:05:08
+- generic: 你你导一个看看对导一层看看比如说两层的一就这个情况好了，就是两层的，1.5mm 的跟。
+- generic: 三层的1mm 的，它每一层的噪声是多大？
+- generic: 唐雨梦
+- generic: 01:05:31
+- generic: 可以在算的时候把两这是一层按两层的。
+- generic: Priorities I. Calculation 加。
+- generic: 一层的就其中一层的。
+- generic: 孙博文
+- generic: 01:06:05
+- generic: 单独的。
+- generic: 唐雨梦
+- generic: 01:06:10
+- generic: 那我原来的要不要删掉，是不是要删掉？
+- generic: 孙博文
+- generic: 01:06:14
+- generic: 用吗，你你要不先另存一下，别到时候跑的结果跑丢了。
+- generic: 唐雨梦
+- generic: 01:06:22
+- generic: 这个姐，我那等一下，我看他可以 A 选 calculation。先确定一下。
+- generic: 孙博文
+- generic: 01:06:32
+- generic: 我记得你 analyze 就是 geometry 就选值。
+- generic: 唐雨梦
+- generic: 01:06:33
+- generic: 然后。
+- generic: 我去。
+- generic: 唐雨梦
+- generic: 01:06:49
+- generic: 对三层的。
+- generic: 因为二层已经在跑了。你操作不了二层？
+- generic: 孙博文
+- generic: 01:06:51
+- generic: 好像是三层的。
+- generic: 孙博文
+- generic: 01:07:01
+- generic: 其实跑的有点多。
+- generic: 唐雨梦
+- generic: 01:07:09
+- generic: 我们在 calculation 里面还是加一个就是先加最内层，他因为一共三层。
+- generic: 一，二，三先加这层。
+- generic: 不是不要抓了？
+- generic: 他是。
+- generic: 他是两个一起跑，他那个 set up。有一个算算一层，然后算总的，如果不删的话。
+- generic: 孙博文
+- generic: 01:07:59
+- generic: 就先不删嘛，别删了，删错了都。
+- generic: 唐雨梦
+- generic: 01:08:13
+- generic: 但是那个结果我已经导出来了，就是刚刚那个跑跑偷偷的我已经导出来了就可以删了，其实先给力点一下。
+- generic: 孙博文
+- generic: 01:08:17
+- generic: 那也行。
+- generic: 也可以。
+- img "collapse--20px":

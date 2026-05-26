@@ -1,0 +1,2 @@
+experiment,layer,T_mm,a_mm,g_mm,Bcenter_T,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T
+fixedT10_g02_ext,4,10.0,2.35,0.2,2.00536394135e-09,-1.48757729545e-09,-2.14844566681e-10,1.27658896224e-09

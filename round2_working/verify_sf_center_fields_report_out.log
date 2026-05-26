@@ -1,0 +1,21 @@
+verify_sf_center_fields_report 2026-05-24 09:31:09
+
+=== shield ===
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt
+OpenProject: OK
+NominalVariation: a='2.3500000000000001mm' g='0.20000000000000001mm' H='200mm' Iexc='1mA' Rin='100mm' T='10mm'
+CreateReport: OK
+ExportToFile: OK -> D:\tangyumengnew\aaaaaaaaximukeji\round2_working\verify_shield_raw.csv
+Raw preview:
+Numeric: []
+
+=== B0 ===
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_B0.aedt
+OpenProject: OK
+NominalVariation: a='2.3500000000000001mm' g='0.20000000000000001mm' H='200mm' Iexc='1mA' Rin='100mm' T='10mm'
+CreateReport: OK
+ExportToFile: OK -> D:\tangyumengnew\aaaaaaaaximukeji\round2_working\verify_B0_raw.csv
+Raw preview:
+Numeric: []
+
+Wrote: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\verify_sf_center_fields_report.csv

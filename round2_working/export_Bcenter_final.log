@@ -1,0 +1,51 @@
+export_Bcenter_final  2026-05-20 14:51:19
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt
+OpenProject: OK
+  a = 2.35mm
+  g = 0.2mm
+  T = 10mm
+
+=== |B| magnitude at center point ===
+  point_then_Mag_B: point_then_Mag_B: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more
+  Mag_B_then_point: Mag_B_then_point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more
+  point_then_B_mag: point_then_B_mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more
+  B_mag_then_point: B_mag_then_point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more
+
+=== B vector components at center point ===
+  point_B_ScalarZ -> Bcenter_Bz_T: point_B_ScalarZ: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more 
+  B_ScalarZ_point -> Bcenter_Bz_T: B_ScalarZ_point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more 
+  ComplexMag_Bz -> Bcenter_Bz_T: ComplexMag_Bz: CopyNamedExprToStack(string exprName)(ComplexMag_Bz) - call failed. Logs or message window might have more details
+  Bz_qty -> Bcenter_Bz_T: Bz_qty: EnterQty(string quantityName)(Bz) - call failed. Logs or message window might have more details
+  point_B_ScalarY -> Bcenter_By_T: point_B_ScalarY: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more 
+  B_ScalarY_point -> Bcenter_By_T: B_ScalarY_point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more 
+  ComplexMag_By -> Bcenter_By_T: ComplexMag_By: CopyNamedExprToStack(string exprName)(ComplexMag_By) - call failed. Logs or message window might have more details
+  By_qty -> Bcenter_By_T: By_qty: EnterQty(string quantityName)(By) - call failed. Logs or message window might have more details
+  point_B_ScalarX -> Bcenter_Bx_T: point_B_ScalarX: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more 
+  B_ScalarX_point -> Bcenter_Bx_T: B_ScalarX_point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more 
+  ComplexMag_Bx -> Bcenter_Bx_T: ComplexMag_Bx: CopyNamedExprToStack(string exprName)(ComplexMag_Bx) - call failed. Logs or message window might have more details
+  Bx_qty -> Bcenter_Bx_T: Bx_qty: EnterQty(string quantityName)(Bx) - call failed. Logs or message window might have more details
+
+Wrote: D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv
+  experiment = fixedT10_g02_ext
+  layer = 4
+  T_mm = 10.0
+  a_mm = 2.35
+  g_mm = 0.2
+  Bcenter_T = N/A
+  Bcenter_Bx_T = N/A
+  Bcenter_By_T = N/A
+  Bcenter_Bz_T = N/A
+Done.
+Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Cannot find the named expression (02:51:28 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:51:28 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (02:51:28 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (02:51:28 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Cannot find the named expression (02:51:28 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:51:28 PM  May 20, 2026)
+[error] Error in command execution
+Stopping Batch Run: 2:51:29 PM  May 20, 2026

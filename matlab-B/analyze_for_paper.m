@@ -8,7 +8,7 @@
 clear; clc; close all;
 
 %% User parameters
-input_csv = fullfile('..', 'analysis_ready', 'all_results_clean.csv');
+input_csv = fullfile('..', 'analysis_ready', 'all_results_layerwise.csv');
 out_dir  = fullfile('..', 'analysis_ready', 'matlab_B_results');
 if ~exist(out_dir, 'dir')
     mkdir(out_dir);
@@ -93,7 +93,8 @@ fprintf('\n=== PART 2: c5 F-test for coupling significance ===\n');
 fid = fopen(fullfile(out_dir, 'paper_c5_ftest_results.csv'), 'w');
 fprintf(fid, 'layer,SSE_full,SSE_reduced,df_full,df_reduced,F_stat,p_value,c5,R2_full,R2_reduced,significant_at_0.05\n');
 
-for layer = [2 3 4]
+ag_layers = unique(T.layer(T.experiment == "agmatrix"));
+    for layer = ag_layers.'
     idx = T.experiment == "agmatrix" & T.layer == layer;
     if sum(idx) < 7
         fprintf('Layer %d: insufficient data (n=%d)\n', layer, sum(idx));
@@ -144,7 +145,8 @@ fprintf('\n--- Coefficient statistics (full model) ---\n');
 fid2 = fopen(fullfile(out_dir, 'paper_coefficient_statistics.csv'), 'w');
 fprintf(fid2, 'layer,coefficient,estimate,SE,t_stat,p_value\n');
 
-for layer = [2 3 4]
+ag_layers = unique(T.layer(T.experiment == "agmatrix"));
+    for layer = ag_layers.'
     idx = T.experiment == "agmatrix" & T.layer == layer;
     if sum(idx) < 7, continue; end
     sub = T(idx, :);
@@ -323,66 +325,244 @@ writetable(T_enhanced, fullfile(out_dir, 'paper_enhanced_results.csv'));
 fprintf('\nEnhanced results with eta, gamma written to paper_enhanced_results.csv\n');
 
 %% ========================================================================
-%  PART 6: SF vs B_noise trade-off prep (placeholder until SF data exists)
+%  PART 6: Shielding Factor analysis
 % ========================================================================
-fprintf('\n=== PART 6: SF trade-off prep ===\n');
-fprintf('NOTE: SF (Shielding Factor) data not yet available.\n');
-fprintf('When B0_T and Bcenter_T are exported from Maxwell, add them\n');
-fprintf('to the input CSV as columns, then re-run this script.\n');
-fprintf('The script will compute: SF = abs(B0_T) / abs(Bcenter_T)\n');
-fprintf('and generate: B_avg vs SF trade-off plot (Pareto front).\n');
+fprintf('\n=== PART 6: Shielding Factor (SF) analysis ===\n');
 
-% Check if B0_T and Bcenter_T exist in the data
+% --- Analytical B0: single-turn torus coil at center ---
+% Coil: Torus1, MajorRadius=5mm, MinorRadius=0.5mm, Iexc=1mA
+% For a thin circular loop: B_center = mu0 * I / (2 * R)
+R_coil_m  = 5e-3;    % major radius [m]
+I_coil_A  = 1e-3;    % excitation current [A]
+B0_center_T = mu0 * I_coil_A / (2 * R_coil_m);
+fprintf('Coil: MajorRadius=%.1f mm, Iexc=%.1f mA\n', R_coil_m*1e3, I_coil_A*1e3);
+fprintf('Analytical B0 at center (thin-loop approx): %.4e T = %.1f nT\n', ...
+    B0_center_T, B0_center_T*1e9);
+
+% Note: Actual torus has finite cross-section (MinorRadius=0.5mm).
+% The thin-loop formula is accurate to ~1% for r_minor << R_major.
+% More precise: B0 = mu0*I/(2*pi*R) * K(k) where K is complete elliptic integral.
+% But r_minor/R_major = 0.1, correction < 0.5%.
+
 names = string(T.Properties.VariableNames);
-has_B0 = ismember('B0_T', names);
 has_Bc = ismember('Bcenter_T', names);
-if has_B0 && has_Bc
-    fprintf('--> B0_T and Bcenter_T found! Computing SF...\n');
-    T.SF = abs(T.B0_T) ./ abs(T.Bcenter_T);
-    T.ResidualRatio = abs(T.Bcenter_T) ./ abs(T.B0_T);
 
-    % SF vs B_avg scatter
-    fig_sf = figure('Color', 'w', 'Position', [100 100 700 500]);
+if has_Bc
+    fprintf('--> Bcenter_T found! Computing SF from Maxwell data...\n');
+    T.B0_T = B0_center_T * ones(height(T), 1);  % analytical B0 for all rows
+    T.Bcenter = T.Bcenter_T;  % from Maxwell
+    T.SF = abs(T.B0_T) ./ abs(T.Bcenter_T);
+    T.ResidualRatio = 1 ./ T.SF;
+
+    fprintf('SF range: [%.2f, %.2f]\n', min(T.SF), max(T.SF));
+    fprintf('Typical SF values:\n');
+
+    % SF summary by layer
+    all_layers_sf = unique(T.layer); for layer = all_layers_sf.'
+        idx = T.layer == layer & isfinite(T.SF);
+        if any(idx)
+            fprintf('  N=%d: SF = [%.1f, %.1f], median=%.1f\n', ...
+                layer, min(T.SF(idx)), max(T.SF(idx)), median(T.SF(idx)));
+        end
+    end
+
+    % --- SF vs B_noise scatter ---
+    fig_sf = figure('Color', 'w', 'Position', [100 100 900 500]);
+    subplot(1,2,1);
     hold on; grid on;
-    for i = 1:numel(layers_ag)
-        idx = T.experiment == "agmatrix" & T.layer == layers_ag(i);
+    layers_all = unique(T.layer);
+    markers_all = {'o','s','^','d'};
+    for i = 1:numel(layers_all)
+        idx = T.layer == layers_all(i) & isfinite(T.SF);
         if any(idx)
             sub = T(idx, :);
-            scatter(sub.B_avg_1_30_fT, sub.SF, 50, markers{i}, ...
-                'DisplayName', sprintf('N=%d', layers_ag(i)));
+            scatter(sub.B_avg_1_30_fT, sub.SF, 50, markers_all{i}, ...
+                'DisplayName', sprintf('N=%d', layers_all(i)));
         end
     end
     xlabel('B_{avg,1-30Hz} (fT/\surdHz)');
-    ylabel('SF = |B_0| / |B_{center}|');
-    title('Shielding Factor vs Magnetic Noise (agmatrix data)');
+    ylabel('SF = B_0 / B_{center}');
+    title('Shielding Factor vs Magnetic Noise');
     legend('Location', 'best');
+    set(gca, 'XScale', 'log');
+
+    subplot(1,2,2);
+    hold on; grid on;
+    for i = 1:numel(layers_all)
+        idx = T.layer == layers_all(i) & isfinite(T.SF);
+        if any(idx)
+            sub = T(idx, :);
+            scatter(sub.SF, sub.B_avg_1_30_fT, 50, markers_all{i}, ...
+                'DisplayName', sprintf('N=%d', layers_all(i)));
+        end
+    end
+    xlabel('SF = B_0 / B_{center}');
+    ylabel('B_{avg,1-30Hz} (fT/\surdHz)');
+    title('Magnetic Noise vs Shielding Factor');
+    legend('Location', 'best');
+    set(gca, 'YScale', 'log');
+
     saveas(fig_sf, fullfile(out_dir, 'paper_SF_vs_Bavg.png'));
 
-    % Pareto front: best points trading off SF and B_noise
-    fprintf('SF range: [%.2f, %.2f]\n', min(T.SF), max(T.SF));
+    % --- SF vs eta ---
+    fig_sf2 = figure('Color', 'w', 'Position', [100 100 600 500]);
+    hold on; grid on;
+    for i = 1:numel(layers_all)
+        idx = T.layer == layers_all(i) & isfinite(T.SF);
+        if any(idx)
+            sub = T(idx, :);
+            scatter(sub.eta, sub.SF, 50, markers_all{i}, ...
+                'DisplayName', sprintf('N=%d', layers_all(i)));
+        end
+    end
+    xlabel('\eta = N\cdota / T  (iron fill fraction)');
+    ylabel('SF = B_0 / B_{center}');
+    title('Shielding Factor vs Iron Fill Fraction');
+    legend('Location', 'best');
+    saveas(fig_sf2, fullfile(out_dir, 'paper_SF_vs_eta.png'));
+
+    % --- Pareto-optimal points (low B, high SF) ---
+    fprintf('\n--- Pareto front candidates (low B_noise AND high SF) ---\n');
+    % Normalize both to [0,1] and compute weighted score
+    idx_valid = isfinite(T.SF) & isfinite(T.B_avg_1_30_fT);
+    if any(idx_valid)
+        B_norm = (T.B_avg_1_30_fT(idx_valid) - min(T.B_avg_1_30_fT(idx_valid))) ./ ...
+                 (max(T.B_avg_1_30_fT(idx_valid)) - min(T.B_avg_1_30_fT(idx_valid)));
+        % For SF, we want HIGH SF, so invert the normalization
+        SF_norm = 1 - (T.SF(idx_valid) - min(T.SF(idx_valid))) ./ ...
+                     (max(T.SF(idx_valid)) - min(T.SF(idx_valid)));
+        score = 0.5*B_norm + 0.5*SF_norm;  % equal weight
+        sub_valid = T(idx_valid, :);
+        sub_valid.ParetoScore = score;
+        sub_valid = sortrows(sub_valid, 'ParetoScore', 'ascend');
+        fprintf('Top 5 by Pareto score (50%% B_noise, 50%% SF):\n');
+        fprintf('%-6s %-6s %-8s %-8s %-8s %-12s %-10s\n', ...
+            'N', 'Exp', 'a(mm)', 'g(mm)', 'T(mm)', 'B_avg', 'SF');
+        for j = 1:min(5, height(sub_valid))
+            fprintf('%-6d %-6s %-8.3f %-8.3f %-8.3f %-12.4f %-10.1f\n', ...
+                sub_valid.layer(j), sub_valid.experiment(j), ...
+                sub_valid.a_mm(j), sub_valid.g_eff_mm(j), ...
+                sub_valid.T_mm(j), sub_valid.B_avg_1_30_fT(j), sub_valid.SF(j));
+        end
+
+        % Write Pareto table
+        writetable(sub_valid(:, {'experiment','layer','T_mm','a_mm','g_mm','eta','gamma', ...
+            'B_avg_1_30_fT','SF','ParetoScore'}), ...
+            fullfile(out_dir, 'paper_pareto_front.csv'));
+    end
 else
-    fprintf('--> B0_T and Bcenter_T NOT found in data.\n');
-    fprintf('    Export these from Maxwell Field Calculator:\n');
-    fprintf('    B0_T    = Mag_B at center point (no shield)\n');
-    fprintf('    Bcenter_T = Mag_B at center point (with shield)\n');
+    fprintf('--> Bcenter_T NOT found in data.\n');
+    fprintf('    Analytical B0 = %.4e T (%.1f nT) can be used once Bcenter is exported.\n', ...
+        B0_center_T, B0_center_T*1e9);
+    fprintf('\n');
+    fprintf('    To export Bcenter from Maxwell:\n');
+    fprintf('    1. Fields -> Calculator, create: Mag_B at (0,0,0), named "Bcenter_T"\n');
+    fprintf('    2. Add "Bcenter_T" to Optimetrics export table\n');
+    fprintf('    3. Re-export, add Bcenter_T column to all_results_clean.csv\n');
+    fprintf('    4. Re-run this script.\n');
 end
 
-% Check for layer-wise IntH2
-has_L1 = ismember('IntH2_L1', names);
-has_L2 = ismember('IntH2_L2', names);
-has_L3 = ismember('IntH2_L3', names);
-has_L4 = ismember('IntH2_L4', names);
-fprintf('\nLayer-wise IntH2 available: L1=%d, L2=%d, L3=%d, L4=%d\n', ...
-    has_L1, has_L2, has_L3, has_L4);
-if has_L1
-    fprintf('--> Layer-wise data found! Run layer contribution analysis.\n');
-    % Layer contribution stacked bar
-    % (implement when data available)
+% Also estimate theoretical SF for reference
+fprintf('\n--- Theoretical SF estimate (single-layer cylindrical shell) ---\n');
+% Approximate shielding factor for a cylindrical shell with mu_r >> 1:
+% SF_axial ~ 1 + mu_r * t / (2 * R)
+% Using typical ferrite mu_r ~ 2000 at DC (static simulation)
+mu_r_est = 2000;
+for t_mm = [2.0, 5.0, 10.0]
+    SF_est = 1 + mu_r_est * t_mm / (2 * Rin_mm);
+    fprintf('  t=%.0f mm, mu_r=%.0f: SF ~ %.0f\n', t_mm, mu_r_est, SF_est);
+end
+fprintf('  (These are order-of-magnitude estimates; Maxwell values will differ.)\n');
+
+%% ========================================================================
+%  PART 7: Layer-wise IntH2 contribution analysis
+% ========================================================================
+fprintf('\n=== PART 7: Layer-wise IntH2 contribution ===\n');
+
+max_layers = 8;
+layer_cols_available = false(1, max_layers);
+layer_names = cell(1, max_layers);
+ratio_names = cell(1, max_layers);
+for j = 1:max_layers
+    layer_names{j} = sprintf('IntH2_L%d', j);
+    ratio_names{j} = sprintf('Qratio_L%d', j);
+    layer_cols_available(j) = ismember(layer_names{j}, names);
+end
+
+fprintf('Layer-wise IntH2 available: ');
+for j = 1:max_layers
+    fprintf('L%d=%d ', j, layer_cols_available(j));
+end
+fprintf('\n');
+
+if any(layer_cols_available)
+    fprintf('--> Computing layer contributions...\n');
+
+    for j = 1:max_layers
+        if layer_cols_available(j)
+            col = layer_names{j};
+            den = T.IntH2_total;
+            valid = isfinite(den) & isfinite(T.(col)) & abs(den) > 1e-40;
+            ratio = nan(height(T), 1);
+            ratio(valid) = T.(col)(valid) ./ den(valid);
+            T.(ratio_names{j}) = ratio;
+        end
+    end
+
+    % Print layer-wise contribution for best agmatrix points
+    idx_multi = T.layer >= 2 & T.experiment == "agmatrix";
+    all_layers = unique(T.layer(idx_multi));
+    for layer = all_layers.'
+        idx = idx_multi & T.layer == layer;
+        if any(idx)
+            sub = T(idx, :);
+            [~, best_i] = min(sub.B_avg_1_30_fT);
+            row = sub(best_i, :);
+            fprintf('\nN=%d, best agmatrix point: a=%.2f, g=%.2f, T=%.2f\n', ...
+                layer, row.a_mm, row.g_eff_mm, row.T_mm);
+            fprintf('  B_avg = %.4f fT/sqrtHz\n', row.B_avg_1_30_fT);
+            for j = 1:min(layer, max_layers)
+                if layer_cols_available(j)
+                    fprintf('  Layer %d: IntH2=%.4e, contribution=%.1f%%\n', ...
+                        j, row.(layer_names{j}), row.(ratio_names{j})*100);
+                end
+            end
+        end
+    end
+
+    % Stacked bar plot for all multilayer cases
+    idx_tc = (T.experiment == "Tcompare") & T.layer >= 2 & isfinite(T.IntH2_total);
+    if any(idx_tc)
+        n_avail = sum(layer_cols_available);
+        fig_stack = figure('Color', 'w', 'Position', [100 100 max(800, 150*n_avail) 500]);
+        sub_tc = sortrows(T(idx_tc, :), {'T_mm','layer'});
+        Y = zeros(height(sub_tc), n_avail);
+        leg_names = cell(1, n_avail);
+        k = 0;
+        for j = 1:max_layers
+            if layer_cols_available(j)
+                k = k + 1;
+                Y(:, k) = sub_tc.(ratio_names{j});
+                leg_names{k} = sprintf('L%d', j);
+            end
+        end
+        bar(categorical(compose('N%d T%.0f', sub_tc.layer, sub_tc.T_mm)), Y, 'stacked');
+        grid on;
+        xlabel('Case');
+        ylabel('Q ratio (layer contribution to total)');
+        title('Layer-wise contribution to IntH2\_total');
+        legend(leg_names, 'Location', 'best');
+        saveas(fig_stack, fullfile(out_dir, 'paper_layer_contribution_stacked.png'));
+    end
 else
-    fprintf('--> Layer-wise IntH2 NOT found. Export from Maxwell:\n');
-    fprintf('    In Field Calculator, for each ferrite layer object:\n');
-    fprintf('    IntH2_L1 = Integral(Volume(ferrite_1), Dot(H,H))\n');
-    fprintf('    (Already defined as IntH2_s1, IntH2_s2, etc. in AEDT files)\n');
+    fprintf('--> Layer-wise IntH2 NOT found. These expressions are already\n');
+    fprintf('    defined in the AEDT files but not included in the export.\n');
+    fprintf('    To export layer-wise data from Maxwell:\n');
+    fprintf('    In Optimetrics -> View Results, add to output columns:\n');
+    fprintf('      2ceng: IntH2_cyl2, IntH2_cyl4\n');
+    fprintf('      3ceng: IntH2_s1, IntH2_s2, IntH2_s3\n');
+    fprintf('      4ceng: IntH2_s1, IntH2_s2, IntH2_s3, InH2_s4\n');
+    fprintf('    Then export CSV and update all_results_clean.csv.\n');
 end
 
 %% ========================================================================

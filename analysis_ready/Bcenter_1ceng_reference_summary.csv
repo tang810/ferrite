@@ -1,0 +1,2 @@
+﻿"case","layer","a_mm","T_mm","Rin_mm","coil_major_radius_mm","coil_minor_radius_mm","Nturns","I_A","Bcenter_uT","Bcenter_T","B0_analytic_uT","B0_analytic_T","SF_analytic","ResidualRatio_analytic"
+"1ceng_nominal_center","1","10","10","100","5","0.5","1","0.001","0.125924219880035","1.25924219880035E-07","0.125663706143592","1.25663706143592E-07","0.997931186417582","1.00207310244491"

@@ -1,0 +1,54 @@
+export_Bcenter_v2 2026-05-20 14:42:26
+--- Named expression attempts ---
+  Mag_B: 'ADispatchWrapper' object has no attribute 'EnterGrid'
+  MagB: CopyNamedExprToStack(string exprName)(MagB) - call failed. Logs or message window might have more de
+  B_Mag: CopyNamedExprToStack(string exprName)(B_Mag) - call failed. Logs or message window might have more d
+  ComplexMag_B: CopyNamedExprToStack(string exprName)(ComplexMag_B) - call failed. Logs or message window might have
+  B: CopyNamedExprToStack(string exprName)(B) - call failed. Logs or message window might have more detai
+
+--- Intrinsic B vector -> Mag ---
+  EnterVector(['Bx', 'By', 'Bz'])->Mag: EnterVector(Structured Array data)(IronPython.Runtime.List) - call failed. Logs or message window mi
+  EnterVector(['BX', 'BY', 'BZ'])->Mag: EnterVector(Structured Array data)(IronPython.Runtime.List) - call failed. Logs or message window mi
+
+--- Intrinsic B scalar components ---
+  Bx: EnterScalar(Structured Array data)(Bx) - call failed. Logs or message window might have more details
+  By: EnterScalar(Structured Array data)(By) - call failed. Logs or message window might have more details
+  Bz: EnterScalar(Structured Array data)(Bz) - call failed. Logs or message window might have more details
+
+--- EnterScalarFunc ---
+  EnterScalarFunc(B): CalcOp(string data)(Complex) - call failed. Logs or message window might have more details
+  EnterScalarFunc(H): CalcOp(string data)(Complex) - call failed. Logs or message window might have more details
+  EnterScalarFunc(<Bx,By,Bz>): CalcOp(string data)(Complex) - call failed. Logs or message window might have more details
+
+--- Input Quantity approach ---
+  EnterQty(B): CalcOp(string data)(Complex) - call failed. Logs or message window might have more details
+  EnterQty(Mag_B): EnterQty(string quantityName)(Mag_B) - call failed. Logs or message window might have more details
+  EnterQty(B_Vector): EnterQty(string quantityName)(B_Vector) - call failed. Logs or message window might have more detail
+
+Wrote: D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv
+  experiment = fixedT10_g02_ext
+  layer = 4
+  T_mm = 10.0
+  a_mm = 2.35
+  g_mm = 0.2
+  Bcenter_T = N/A
+  Bcenter_Bx_T = N/A
+  Bcenter_By_T = N/A
+  Bcenter_Bz_T = N/A
+Done.
+ execution
+[error] While parsing expression: "B", an error was found near character 0. 'B' is not a defined variable name in this context.
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:42:29 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:42:29 PM  May 20, 2026)
+[error] Error in command execution
+[error] While parsing expression: "<Bx,By,Bz>", an error was found near character 0. Expected a value (number, variable, function, or expression) while parsing this expression. Instead found this: <Bx,By,Bz>.
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:42:29 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:42:29 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:42:29 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:42:29 PM  May 20, 2026)
+[error] Error in command execution
+Stopping Batch Run: 2:42:29 PM  May 20, 2026

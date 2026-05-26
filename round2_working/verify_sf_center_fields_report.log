@@ -1,0 +1,36 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/verify_sf_center_fields_report.py
+Starting Batch Run: 9:29:31 AM  May 24, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] ArgumentTypeException: open() got an unexpected keyword argument 'newline'  In file "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/verify_sf_center_fields_report.py", line 126 ---- While executing script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/verify_sf_center_fields_report.py
+      Project100_4ceng_fixedT10_g02_B0 (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/)
+        Maxwell3-- Message Window --
+      Project100_4ceng_fixedT10_g02_B0 (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [warning] Report Verify_Center_B_B0 has no data for export. (09:30:45 AM  May 24, 2026)
+      Project100_4ceng_fixedT10_g02_ext (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [warning] Report Verify_Center_B_shield has no data for export. (09:30:41 AM  May 24, 2026)
+-- Message Window --
+Stopping Batch Run: 9:30:46 AM  May 24, 2026
+sedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/verify_sf_center_fields_report.py
+Starting Batch Run: 9:30:41 AM  May 24, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      Project100_4ceng_fixedT10_g02_B0 (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [warning] Report Verify_Center_B_B0 has no data for export. (09:31:19 AM  May 24, 2026)
+      Project100_4ceng_fixedT10_g02_ext (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [warning] Report Verify_Center_B_shield has no data for export. (09:31:16 AM  May 24, 2026)
+-- Message Window --
+Stopping Batch Run: 9:31:20 AM  May 24, 2026

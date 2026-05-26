@@ -1,0 +1,85 @@
+solve_external_model  2026-05-20 14:11:30
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_external.aedt
+OpenProject: OK
+Project: Project100_4ceng_fixedT10_g02_external
+  Rin = 100mm
+  H = 200mm
+  Iexc = 1mA
+  a = 2.35mm
+  g = 0.2mm
+  T = 10mm
+
+Starting AnalyzeAll at 2026-05-20 14:11:32
+This may take 10-60 minutes depending on mesh complexity...
+AnalyzeAll: OK at 2026-05-20 18:21:30
+Done at 2026-05-20 18:21:30
+Project saved.
+g_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:11:35 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Normal completion of simulation on server: Local Machine. (02:19:35 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Parametric Analysis on P_asweep1 has been started. (02:19:35 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='0.5mm') has been requested using the following machines: Local Machine. (02:19:36 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:19:37 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='0.8mm') has been requested using the following machines: Local Machine. (02:30:45 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:30:46 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1mm') has been requested using the following machines: Local Machine. (02:42:45 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:42:46 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1.2mm') has been requested using the following machines: Local Machine. (02:53:31 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:53:32 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1.5mm') has been requested using the following machines: Local Machine. (03:03:58 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (03:04:00 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='2mm') has been requested using the following machines: Local Machine. (03:19:40 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (03:19:41 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Parametric Analysis is done. (03:35:12 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Parametric Analysis on P_Tcompare1 has been started. (03:35:13 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (T='5mm') has been requested using the following machines: Local Machine. (03:35:15 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (03:35:16 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (T='8mm') has been requested using the following machines: Local Machine. (03:46:54 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (03:46:55 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (T='10mm') has been requested using the following machines: Local Machine. (03:56:44 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Failed to copy file D:/tangyumengnew/aaaaaaaaximukeji/round2_working/Project100_4ceng_fixedT10_g02_external.aedtresults/Maxwell3DDesign1.results/DV1038_S481_V1052.cmesh1057/current.fac to local file Setup1.fac. Error: 系统找不到指定的路径。. (03:56:45 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Failed to copy file D:/tangyumengnew/aaaaaaaaximukeji/round2_working/Project100_4ceng_fixedT10_g02_external.aedtresults/Maxwell3DDesign1.results/DV1038_V1051.imesh/initial.fac to local file initial.fac. Error: 系统找不到指定的路径。. (03:56:45 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Failed to copy local file C:\Users\86135\AppData\Local\Temp\maxwell_LAPTOP-SD92UF55_17056.pjt/initial.fac to file D:/tangyumengnew/aaaaaaaaximukeji/round2_working/Project100_4ceng_fixedT10_g02_external.aedtresults/Maxwell3DDesign1.results/DV1038_V1051.imesh/initial.fac. Error: 系统找不到指定的文件。. (03:57:54 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Unable to save current mesh data for simulation: Setup1 (03:57:54 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Unable to save current mesh data for simulation: %1 (03:57:54 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Failed to extract solution for 'a='2.3500000000000001mm' g='0.20000000000000001mm' H='200mm' Iexc='1mA' Rin='100mm' T='10mm''. (03:57:55 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Failed to evaluate calculation 'IntH2_total'. (03:57:55 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Parametric Analysis is done. (03:57:55 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Parametric Analysis on P_agmatrix_4ceng_T1 has been started. (03:57:55 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='0.5mm' g='0.2mm' T='2.6mm') has been requested using the following machines: Local Machine. (03:57:57 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (03:57:58 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='0.5mm' g='0.5mm' T='3.5mm') has been requested using the following machines: Local Machine. (04:10:38 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (04:10:39 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Adaptive passp, process 3dnms : Insufficient memory (04:22:37 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='0.5mm' g='1mm' T='5mm') has been requested using the following machines: Local Machine. (04:22:58 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (04:22:59 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Memory allocation error. (04:32:43 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='0.5mm' g='1.5mm' T='6.5mm') has been requested using the following machines: Local Machine. (04:32:53 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (04:32:55 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1mm' g='0.2mm' T='4.6mm') has been requested using the following machines: Local Machine. (04:40:43 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (04:40:45 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1mm' g='0.5mm' T='5.5mm') has been requested using the following machines: Local Machine. (04:51:57 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (04:51:58 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1mm' g='1mm' T='7mm') has been requested using the following machines: Local Machine. (05:03:11 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (05:03:12 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Memory allocation error. (05:08:15 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1mm' g='1.5mm' T='8.5mm') has been requested using the following machines: Local Machine. (05:08:29 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (05:08:31 PM  May 20, 2026)
+[warning] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Com Engine non-responsive since 17:08:30, May 20, 2026. 
+ Can be due to CPU intensive processing or network problems. 
+ If persisting for long, manually kill the com engine process and restart analysis. Retrying.....  (05:38:31 PM  May 20, 2026)
+[warning] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Com Engine has responded to the application at 17:38:39, May 20, 2026. (05:38:39 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1.5mm' g='0.2mm' T='6.6mm') has been requested using the following machines: Local Machine. (05:47:59 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (05:48:00 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Memory allocation error. (05:51:15 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1.5mm' g='0.5mm' T='7.5mm') has been requested using the following machines: Local Machine. (05:51:23 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (05:51:24 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='1.5mm' g='1mm' T='9mm') has been requested using the following machines: Local Machine. (06:00:59 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (06:01:00 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='2mm' g='0.2mm' T='8.6mm') has been requested using the following machines: Local Machine. (06:10:47 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (06:10:48 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Adaptive passp, process 3dnms : Insufficient memory (06:16:06 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), A variation (a='2mm' g='0.5mm' T='9.5mm') has been requested using the following machines: Local Machine. (06:16:12 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (06:16:13 PM  May 20, 2026)
+[error] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Adaptive passp, process 3dnms : Insufficient memory (06:21:25 PM  May 20, 2026)
+[info] Project:Project100_4ceng_fixedT10_g02_external, Design:Maxwell3DDesign1 (Magnetostatic), Parametric Analysis is done. (06:21:30 PM  May 20, 2026)
+Stopping Batch Run: 6:21:32 PM  May 20, 2026

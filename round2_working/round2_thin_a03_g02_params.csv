@@ -1,0 +1,6 @@
+experiment,layer,a_mm,g_mm,T_mm,notes
+thin_a03_g02,4,0.3,0.2,1.8,thin-layer manufacturability check
+thin_a03_g02,5,0.3,0.2,2.3,thin-layer manufacturability check
+thin_a03_g02,6,0.3,0.2,2.8,thin-layer manufacturability check
+thin_a03_g02,7,0.3,0.2,3.3,thin-layer manufacturability check
+thin_a03_g02,8,0.3,0.2,3.8,thin-layer manufacturability check

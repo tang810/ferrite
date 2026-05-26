@@ -1,0 +1,62 @@
+test_calcop_eval  2026-05-20 15:10:47
+
+=== Test 1: CalcOp('Eval') with Mag_B ===
+
+--- point_then_Mag_B ---
+  Build+Eval failed: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+
+--- Mag_B_then_point ---
+  Build+Eval failed: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+
+--- point_then_B_Mag ---
+  Build+Eval failed: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+
+--- B_Mag_then_point ---
+  Build+Eval failed: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+
+=== Test 2: CalcOp('Value') then Eval ===
+--- B_Mag_Value_point ---
+  Build+Eval failed: CalcOp(string data)(Value) - call failed. Logs or message window might have more details
+
+=== Test 3: GetTopEntryValue without soln ===
+  Attempt 0: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+  Attempt 1: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+  Attempt 2: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+  Attempt 3: CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+
+=== Test 4: Alternative CalcOp operations ===
+  CalcOp('Value'): OK
+    GetTopEntryValue = ['2.00536394134692E-09']
+  CalcOp('Eval'): CalcOp(string data)(Eval) - call failed. Logs or message window might have more details
+  CalcOp('Evaluate'): CalcOp(string data)(Evaluate) - call failed. Logs or message window might have more details
+  CalcOp('Smooth'): CalcOp(string data)(Smooth) - call failed. Logs or message window might have more details
+  CalcOp('RL'): CalcOp(string data)(RL) - call failed. Logs or message window might have more details
+  CalcOp('EnterSurf'): CalcOp(string data)(EnterSurf) - call failed. Logs or message window might have more details
+
+=== Test 5: Stack inspection ===
+FAIL CalcStack('read'): CalcStack(string stackOp)(read) - call failed. Logs or message window might have more details
+FAIL CalcStack('check'): CalcStack(string stackOp)(check) - call failed. Logs or message window might have more details
+FAIL CalcStack('show'): CalcStack(string stackOp)(show) - call failed. Logs or message window might have more details
+FAIL CalcStack('top'): CalcStack(string stackOp)(top) - call failed. Logs or message window might have more details
+
+=== Test 6: CalcWrite/CalcRead ===
+  CalcWrite: CalcWrite(string fName, string solnName, Structured Array varVals) expects at least 3 arguments. 2 arguments provided
+
+Done at 2026-05-20 15:10:56
+ PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (03:10:56 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:10:56 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:10:56 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:10:56 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:10:56 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:10:56 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (03:10:56 PM  May 20, 2026)
+[error] Error in command execution
+Stopping Batch Run: 3:10:57 PM  May 20, 2026

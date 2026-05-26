@@ -1279,7 +1279,7 @@ $begin 'AnsoftProject'
 					IsEnabled=true
 					NextUniqueID=1
 					MoveBackwards=false
-					GoalSetupVersion=1
+					GoalSetupVersion=2
 					Version=0
 					$begin 'ProdOptiSetupDataV2'
 						SaveFields=false
@@ -1313,6 +1313,34 @@ $begin 'AnsoftProject'
 							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 							Calculation='IntH2_total'
 							Name='IntH2_total'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=39
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_cyl2'
+							Name='IntH2_cyl2'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=39
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_cyl4'
+							Name='IntH2_cyl4'
 							$begin 'Ranges'
 							$end 'Ranges'
 						$end 'Goal'
@@ -1598,7 +1626,7 @@ $begin 'AnsoftProject'
 					PlotDefinitionType='Mesh_field_type'
 					PlotName='Mag_H1'
 					PlotDefinitionId=0
-					VersionID=94
+					VersionID=96
 					SolutionId=39
 					UserSpecifyName=0
 					UserSpecifyFolder=0

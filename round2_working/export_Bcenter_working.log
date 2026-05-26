@@ -1,0 +1,27 @@
+export_Bcenter_working  2026-05-20 15:13:36
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt
+OpenProject: OK
+  a = 2.35mm
+  g = 0.2mm
+  T = 10mm
+
+=== B magnitude at center ===
+  Bcenter_T = 2.00536394135e-09 (raw: ['2.00536394134692E-09'])
+
+=== B vector components at center ===
+  Bcenter_Bx_T (Scalar approach) = -1.48757729545e-09 (raw: ['-1.48757729544745E-09'])
+  Bcenter_By_T (Scalar approacStopping Batch Run: 3:13:46 PM  May 20, 2026
+278E-10'])
+  Bcenter_Bz_T (Scalar approach) = 1.27658896224e-09 (raw: ['1.27658896223783E-09'])
+
+Wrote: D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv
+  experiment = fixedT10_g02_ext
+  layer = 4
+  T_mm = 10.0
+  a_mm = 2.35
+  g_mm = 0.2
+  Bcenter_T = 2.00536394135e-09
+  Bcenter_Bx_T = -1.48757729545e-09
+  Bcenter_By_T = -2.14844566681e-10
+  Bcenter_Bz_T = 1.27658896224e-09
+Done.

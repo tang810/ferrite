@@ -1,0 +1,8 @@
+experiment,layer,T_mm,g_mm,a_mm,notes
+fixedT10_g02,1,10,0,10,T=10mm fixed; no inter-layer gap for 1 layer
+fixedT10_g02,2,10,0.2,4.9,T=10mm fixed; a=(T-(N-1)g)/N
+fixedT10_g02,3,10,0.2,3.2,T=10mm fixed; a=(T-(N-1)g)/N
+fixedT10_g02,4,10,0.2,2.35,T=10mm fixed; a=(T-(N-1)g)/N
+fixedT10_g02,5,10,0.2,1.84,T=10mm fixed; a=(T-(N-1)g)/N
+fixedT10_g02,6,10,0.2,1.5,T=10mm fixed; a=(T-(N-1)g)/N
+fixedT10_g02,7,10,0.2,1.257142857,T=10mm fixed; a=(T-(N-1)g)/N

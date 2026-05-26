@@ -1,0 +1,14 @@
+case_id,stage,model_type,layer,T_mm,a_mm,g_mm,N_segments,circumferential_gap_mm,coverage_phi,priority
+M0_B0,reference,no_shield,0,0,0,0,0,0,0,0
+C1_N1_t008,continuous_shell,continuous_shell,1,0.08,0.08,0,0,0,1,1
+C1_N1_t020,continuous_shell,continuous_shell,1,0.20,0.20,0,0,0,1,1
+C1_N1_t040,continuous_shell,continuous_shell,1,0.40,0.40,0,0,0,1,1
+C1_N1_t060,continuous_shell,continuous_shell,1,0.60,0.60,0,0,0,1,1
+C2_N2_t020_g010,continuous_shell,continuous_shell,2,0.50,0.20,0.10,0,0,1,1
+C2_N3_t020_g010,continuous_shell,continuous_shell,3,0.80,0.20,0.10,0,0,1,1
+C2_N4_t015_g008,continuous_shell,continuous_shell,4,0.84,0.15,0.08,0,0,1,1
+C2_N6_t010_g008,continuous_shell,continuous_shell,6,1.00,0.10,0.08,0,0,1,2
+S1_N1_t020_seg12_cov095,segmentation_check,segmented_shell_3d,1,0.20,0.20,0,12,1.6,0.95,2
+S1_N1_t060_seg12_cov095,segmentation_check,segmented_shell_3d,1,0.60,0.60,0,12,1.6,0.95,2
+S2_N3_t020_g010_seg12_cov095,segmentation_check,segmented_shell_3d,3,0.80,0.20,0.10,12,1.6,0.95,2
+S2_N4_t015_g008_seg12_cov095,segmentation_check,segmented_shell_3d,4,0.84,0.15,0.08,12,1.6,0.95,2

@@ -1,0 +1,5 @@
+OpenProject skipped/failed, trying existing open project.
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/validate_fixedT10_g02.py", line 20, in main
+    oProject = oDesktop.SetActiveProject("Project100_4ceng_fixedT10_g02")
+Exception: SetActiveProject(string projName) -> IDispatch(Project100_4ceng_fixedT10_g02) - call failed. Logs or message window might have more details

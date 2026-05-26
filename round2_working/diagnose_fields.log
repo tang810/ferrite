@@ -1,0 +1,71 @@
+diagnose_fields  2026-05-20 14:55:03
+OpenProject: OK
+
+=== Solution info ===
+  solution='Setup1 : LastAdaptive': OK -> Setup1 : LastAdaptive
+  solution='Setup1 : Adaptive_1': OK -> Setup1 : Adaptive_1
+  solution='Setup1': OK -> Setup1
+
+=== FieldsReporter methods (dir) ===
+  dir(fields): OK -> ['AddMarker', 'AddMarkerToPlot', 'AddNamedExpr', 'AddNamedExpression', 'CalcOp', 'CalcRead', 'CalcStack', 'CalcWrite', 'CalculatorRead', 'Calculato[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:05 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:05 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:05 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:05 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:05 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: The stack contents are incompatible with the current operation. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[warning] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), The variable  'X Component' doesn't have an associated sweep and is excluded from the definition of trace. (02:55:11 PM  May 20, 2026)
+[warning] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), The variable  'Y Component' doesn't have an associated sweep and is excluded from the definition of trace. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), No Solution found, make sure the solution name 'Setup1 : Adaptive_1' is correct. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Project:Project100_4ceng_fixedT10_g02_ext, Design:Maxwell3DDesign1 (Magnetostatic), No Solution found, make sure the solution name 'Setup1' is correct. (02:55:11 PM  May 20, 2026)
+[error] Error in command execution
+[error] Error in command execution
+[error] Error in command execution
+[error] Error in command execution
+Stopping Batch Run: 2:55:11 PM  May 20, 2026
+ured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+    point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+    B+Mag+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+--- soln='Setup1 : Adaptive_1' ---
+    point+Mag_B: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : Adaptive_1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+    point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : Adaptive_1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+    B+Mag+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1 : Adaptive_1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+--- soln='Setup1' ---
+    point+Mag_B: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+    point+B+Mag: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+    B+Mag+point: ClcEval(string solnName, Structured Array varVals, [string fldType /*optional*/])(Setup1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+=== Field report attempts ===
+  CreateReport(Setup1 : LastAdaptive): CreateReport(string reportNameArg, string reportTypeArg, string displayTypeArg, string solutionNameArg, Structured Array simValueCtxtArg, Structured Array pointSetArg, Structured Array expressionsOfTr
+  CreateReport(Setup1 : Adaptive_1): CreateReport(string reportNameArg, string reportTypeArg, string displayTypeArg, string solutionNameArg, Structured Array simValueCtxtArg, Structured Array pointSetArg, Structured Array expressionsOfTr
+  CreateReport(Setup1): CreateReport(string reportNameArg, string reportTypeArg, string displayTypeArg, string solutionNameArg, Structured Array simValueCtxtArg, Structured Array pointSetArg, Structured Array expressionsOfTr
+
+=== Direct GetTopEntryValue (no stack build) ===
+  direct GetTopEntryValue(Setup1 : LastAdaptive): GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+  direct GetTopEntryValue(Setup1 : Adaptive_1): GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : Adaptive_1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+  direct GetTopEntryValue(Setup1): GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Done at 2026-05-20 14:55:11

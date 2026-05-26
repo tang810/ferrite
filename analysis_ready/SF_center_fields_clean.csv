@@ -1,0 +1,2 @@
+experiment,layer,T_mm,a_mm,g_mm,B0_T,Bcenter_T,SF,ResidualRatio,B0_source,Bcenter_source
+fixedT10_g02_ext,4,10.0,2.35,0.2,3.48693141553e-09,2.00536394135e-09,1.738802,0.575109,SF_4ceng_fixedT10_g02_B0.csv,SF_4ceng_fixedT10_g02_Bcenter.csv

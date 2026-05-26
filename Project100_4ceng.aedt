@@ -1885,7 +1885,7 @@ $begin 'AnsoftProject'
 					IsEnabled=true
 					NextUniqueID=1
 					MoveBackwards=false
-					GoalSetupVersion=2
+					GoalSetupVersion=3
 					Version=0
 					$begin 'ProdOptiSetupDataV2'
 						SaveFields=false
@@ -1919,6 +1919,62 @@ $begin 'AnsoftProject'
 							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 							Calculation='IntH2_total'
 							Name='IntH2_intotal'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=483
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_s1'
+							Name='IntH2_s1'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=483
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_s2'
+							Name='IntH2_s2'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=483
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='IntH2_s3'
+							Name='IntH2_s3'
+							$begin 'Ranges'
+							$end 'Ranges'
+						$end 'Goal'
+						$begin 'Goal'
+							$begin 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+								DesignID=0
+								SolutionID=483
+								$begin 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+									ReportType=9
+									SimValueContext(0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+								$end 'REPORT_TYPE_SIM_VALUE_CONTEXT'
+							$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
+							Calculation='InH2_s4'
+							Name='InH2_s4'
 							$begin 'Ranges'
 							$end 'Ranges'
 						$end 'Goal'
@@ -2072,13 +2128,6 @@ $begin 'AnsoftProject'
 					EnterVolume('Cylinder4', 56)
 					Operation('VolumeValue')
 					Operation('Integrate')
-				$end 'Named_Expression'
-				$begin 'Named_Expression'
-					Name('IntH2_legacy2')
-					ExpressionID(10006)
-					NameOfExpression('IntH2_cyl2')
-					NameOfExpression('IntH2_cyl4')
-					Operation('+')
 				$end 'Named_Expression'
 				$begin 'Named_Expression'
 					Name('IntH2_s1')

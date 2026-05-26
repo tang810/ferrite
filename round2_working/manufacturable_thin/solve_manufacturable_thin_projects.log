@@ -1,0 +1,27 @@
+solve_manufacturable_thin_projects 2026-05-26 17:57:15
+
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt
+  OpenProject: OK
+  a = 0.08mm
+  g = 0mm
+  T = 0.08mm
+  Solve Setup1: OK
+  Save: OK
+  CloseProject: OK
+  elapsed_s = 20.7
+
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_B0.aedt
+  OpenProject: OK
+  a = 0.08mm
+  g = 0mm
+  T = 0.08mm
+  Solve Setup1: OK
+  Save: OK
+  CloseProject: OK
+  elapsed_s = 17.0
+
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t020_shield.aedt
+  OpenProject: OK
+  a = 0.2mm
+  g = 0mm
+  T = 0.2mm

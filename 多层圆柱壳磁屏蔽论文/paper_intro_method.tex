@@ -1,0 +1,243 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{hyperref}
+
+\geometry{left=2.6cm,right=2.6cm,top=2.5cm,bottom=2.5cm}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+
+\title{多层铁氧体圆柱屏蔽结构的磁噪声与屏蔽性能优化}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{引言}
+
+超高灵敏度弱磁测量技术已经被用于原子陀螺仪、SERF 原子磁强计和生物磁信号测量等场景。Allred 等人较早展示了无自旋交换弛豫原子磁强计的高灵敏度测量能力\cite{Allred2002SERF}；Kominis 等人进一步实现了亚飞特斯拉量级的多通道原子磁强计\cite{Kominis2003Subfemtotesla}。在这类系统中，待测信号通常很弱，外部环境磁场和屏蔽材料自身噪声都会直接影响测量精度。因此，磁屏蔽系统不仅要降低中心区域的残余磁场，还要控制屏蔽材料本身带来的低频磁噪声。
+
+传统磁屏蔽装置常采用高磁导率合金层与高电导率金属层组合。高磁导率层主要通过磁分流作用削弱低频外部磁场，高电导率层主要依靠涡流效应衰减较高频磁场。然而，高磁导率和高电导率材料也会引入 Johnson 电流噪声和热磁化噪声，这一点已经成为弱磁测量系统灵敏度继续提高时必须处理的问题\cite{LeeRomalis2008Noise,Wang2024Nanocrystalline}。从材料角度看，超导屏蔽、铁氧体、非晶和纳米晶材料都被用于低噪声磁屏蔽研究。其中，铁氧体材料电导率较低，涡流噪声较小，Kornack 等人已经验证了低噪声铁氧体屏蔽在原子传感器中的应用价值\cite{Kornack2007Ferrite}。Lu 等人对多环铁氧体屏蔽的磁噪声进行了研究，说明铁氧体环形结构的磁噪声可以通过材料参数和几何场分布共同估算\cite{Lu2020FerriteNoise}。
+
+多层屏蔽结构能够在有限空间内改变磁通路径和材料中的场分布，因此常被用于提高屏蔽性能。Wang 等人在叠层纳米晶磁屏蔽系统中指出，层间绝缘和叠层系数会同时影响等效磁导率、电导率、屏蔽系数和磁噪声\cite{Wang2024Nanocrystalline}。该工作先测量不同叠层系数下纳米晶环的复磁导率，再建立屏蔽系数与磁噪声模型，并用有限元仿真和实验进行对比。虽然本文研究对象从纳米晶方形屏蔽体转为铁氧体圆柱壳，但其中“材料有效参数--有限元场分布--中心剩磁--磁噪声”的分析路线对本文仍有参考意义。对于圆柱壳结构，层数 \(N\)、单层厚度 \(a\) 和层间间隙 \(g\) 会共同影响材料内部的 \(H\) 场分布，进而影响磁噪声源强和屏蔽效果。
+
+磁噪声计算通常可以从涨落耗散定理出发，将材料内部的耗散功率与等效磁场噪声联系起来\cite{Kubo1966FDT,LeeRomalis2008Noise}。在数值计算中，屏蔽材料区域内的
+\(\int H^2 dV\)
+是一个关键几何相关量。该积分反映了铁氧体中磁场强度平方的空间累积，可以由 Maxwell 3D 的 Field Calculator 直接得到，再结合材料损耗磁导率换算为目标频段的等效磁噪声。相比只用解析公式估算，有限元方法可以保留多层圆柱壳、空气间隙和边界区域引起的场分布差异，更适合本课题中对层数和几何参数的比较。
+
+另一方面，低磁噪声并不等同于高屏蔽能力。屏蔽系数 \(SF\) 应该由同一外部场激励下无屏蔽中心场和有屏蔽中心残余场的比值得到，即
+\[
+SF = |B_0|/|B_{\mathrm{center}}|.
+\]
+参考 Wang 等人的有限元屏蔽系数计算思路，中心残余磁场可以作为屏蔽性能评价量\cite{Wang2024Nanocrystalline}。因此，本文将磁噪声指标和正式屏蔽系数分开计算：磁噪声部分使用铁氧体内部的 \(H^2\) 体积分；屏蔽系数部分使用外部场模型中中心点的 \(B\) 场衰减。
+
+本文围绕多层铁氧体圆柱壳结构开展参数化研究。首先建立 1--4 层圆柱壳 Maxwell 模型，分别进行固定总厚度对比、固定间隙厚度扫描和 \(a-g\) 二维矩阵扫描；然后由
+\(\int H^2dV\)
+计算 \(1\)--\(\SI{30}{Hz}\) 频段平均磁噪声，并用二次响应面描述厚度和间隙的耦合影响；最后给出同一外部场激励下 \(B_0\)、\(B_{\mathrm{center}}\) 和 \(SF\) 的计算流程，为后续同时考虑低噪声、高屏蔽和材料用量的结构优化提供数据基础。
+
+\section{方法}
+
+\subsection{几何模型与参数定义}
+
+研究对象为同轴多层铁氧体圆柱壳结构。所有模型采用相同的内半径和高度，内半径记为 \(R_{\mathrm{in}}\)，圆柱高度记为 \(H\)。铁氧体层数记为 \(N\)，单层铁氧体径向厚度记为 \(a\)，相邻两层铁氧体之间的空气间隙记为 \(g\)，总径向厚度记为 \(T\)。对于 \(N\) 层结构，总厚度满足
+\begin{equation}
+    T = Na + (N-1)g .
+\end{equation}
+
+本文 Maxwell 模型中统一采用
+\[
+R_{\mathrm{in}}=\SI{100}{mm}, \qquad H=\SI{200}{mm}.
+\]
+1--4 层结构分别建立独立工程，避免在同一个 design 中通过删除或抑制几何体改变层数。这样可以保持每个层数模型的几何关系清晰，也便于分别导出每一层铁氧体中的 \(H^2\) 体积分。
+
+对于四层结构，各层半径从内向外依次为
+\begin{align}
+r_{1,\mathrm{in}} &= R_{\mathrm{in}}, &
+r_{1,\mathrm{out}} &= R_{\mathrm{in}} + a, \\
+r_{2,\mathrm{in}} &= R_{\mathrm{in}} + a + g, &
+r_{2,\mathrm{out}} &= R_{\mathrm{in}} + 2a + g, \\
+r_{3,\mathrm{in}} &= R_{\mathrm{in}} + 2a + 2g, &
+r_{3,\mathrm{out}} &= R_{\mathrm{in}} + 3a + 2g, \\
+r_{4,\mathrm{in}} &= R_{\mathrm{in}} + 3a + 3g, &
+r_{4,\mathrm{out}} &= R_{\mathrm{in}} + 4a + 3g .
+\end{align}
+
+\subsection{Maxwell 参数扫描}
+
+本文设置三组参数实验。第一组为固定总厚度的层数对比实验，用于比较在相同 \(T\) 下 1--4 层结构的磁噪声差异。该实验中 \(T\) 为自变量，层间间隙 \(g\) 固定，单层厚度由
+\begin{equation}
+    a = \frac{T-(N-1)g}{N}
+\end{equation}
+计算得到。
+
+第二组为固定间隙的单层厚度扫描实验。该实验中 \(g\) 固定，扫描 \(a\)，并由式
+\(T=Na+(N-1)g\)
+得到对应总厚度。该实验用于观察同一层数下增加铁氧体厚度对磁噪声的影响。
+
+第三组为 \(a-g\) 二维矩阵实验。该实验同时扫描单层厚度 \(a\) 和层间间隙 \(g\)，并施加总厚度约束
+\begin{equation}
+    T = Na + (N-1)g \leq \SI{10}{mm}.
+\end{equation}
+二维矩阵数据用于建立响应面模型，分析厚度和间隙之间的耦合影响。
+
+\subsection{磁噪声指标计算}
+
+Maxwell 中通过 Field Calculator 对所有铁氧体区域计算
+\begin{equation}
+    Q_{\mathrm{int}} = \int_{\Omega_{\mathrm{ferrite}}} H^2 dV ,
+\end{equation}
+其中 \(\Omega_{\mathrm{ferrite}}\) 表示铁氧体材料区域。对于多层结构，进一步导出各层积分
+\begin{equation}
+    Q_i = \int_{\Omega_i} H^2 dV ,
+\end{equation}
+并满足
+\begin{equation}
+    Q_{\mathrm{int}} = \sum_{i=1}^{N} Q_i .
+\end{equation}
+各层贡献比例定义为
+\begin{equation}
+    \eta_i = \frac{Q_i}{Q_{\mathrm{int}}}.
+\end{equation}
+
+磁噪声换算采用铁氧体磁损耗引起的等效噪声模型。材料损耗相关的功率项可写为
+\begin{equation}
+    P_{\mathrm{hyst}} = \pi f \mu'' Q_{\mathrm{int}},
+\end{equation}
+其中 \(f\) 为频率，\(\mu''\) 为铁氧体材料的损耗磁导率虚部。等效磁噪声幅值按
+\begin{equation}
+    B(f) =
+    \frac{\sqrt{8k_{\mathrm{B}}T_{\mathrm{temp}}P_{\mathrm{hyst}}}}
+    {A_{\mathrm{pickup}}N_{\mathrm{turns}}I\omega}
+\end{equation}
+计算。这里 \(k_{\mathrm{B}}\) 为玻尔兹曼常数，\(T_{\mathrm{temp}}\) 为热力学温度，\(A_{\mathrm{pickup}}\) 为等效 pickup 线圈面积，\(N_{\mathrm{turns}}\) 为匝数，\(I\) 为激励电流，\(\omega=2\pi f\)。
+
+本文主要使用 \(1\)--\(\SI{30}{Hz}\) 频段平均磁噪声作为结构评价指标：
+\begin{equation}
+    B_{\mathrm{avg},1-30} =
+    \frac{1}{30}\sum_{f=1}^{30} B(f).
+\end{equation}
+该指标由 MATLAB 后处理脚本根据 Maxwell 导出的 \(Q_{\mathrm{int}}\) 批量计算。
+
+\subsection{响应面模型与连续优化}
+
+为了描述 \(a\) 与 \(g\) 对磁噪声的耦合影响，本文对 \(a-g\) 二维矩阵结果进行二次响应面拟合：
+\begin{equation}
+    B_{\mathrm{avg}} =
+    c_0 + c_1a + c_2g + c_3a^2 + c_4g^2 + c_5ag .
+\end{equation}
+其中 \(c_5\) 表示单层厚度和层间间隙之间的耦合项。拟合后记录决定系数 \(R^2\)、设计矩阵秩和条件数，用于判断响应面模型在当前扫描范围内的可靠性。
+
+在响应面基础上，对每个层数求解约束优化问题：
+\begin{equation}
+\begin{aligned}
+    \min_{a,g}\quad & B_{\mathrm{avg}}(a,g), \\
+    \mathrm{s.t.}\quad & Na+(N-1)g \leq \SI{10}{mm}, \\
+    & a>0,\quad g>0 .
+\end{aligned}
+\end{equation}
+连续优化结果再通过密集网格复核，并输出候选点用于 Maxwell 反验证。
+
+\subsection{屏蔽系数计算方法}
+
+磁噪声指标反映屏蔽材料自身引入的噪声水平，但不能直接代表外部磁场被削弱的程度。因此本文另外引入正式屏蔽系数 \(SF\)。屏蔽系数必须在外部场激励下计算，不能使用内部 pickup 线圈中心场替代。
+
+对于同一组外部场激励，分别建立两个工况：
+\begin{enumerate}
+    \item 无屏蔽工况：将铁氧体屏蔽壳材料改为 vacuum，保持外部线圈、电流、空气区域和中心点位置不变，得到中心参考磁场 \(B_0\)；
+    \item 有屏蔽工况：保留铁氧体屏蔽壳材料为 ferrite，在同一外部场激励下得到中心残余磁场 \(B_{\mathrm{center}}\)。
+\end{enumerate}
+
+中心场采用三分量合成得到：
+\begin{equation}
+    B_0 =
+    \sqrt{B_{0x}^2+B_{0y}^2+B_{0z}^2},
+\end{equation}
+\begin{equation}
+    B_{\mathrm{center}} =
+    \sqrt{B_{\mathrm{center},x}^2+
+          B_{\mathrm{center},y}^2+
+          B_{\mathrm{center},z}^2}.
+\end{equation}
+屏蔽系数和残余场比例定义为
+\begin{equation}
+    SF = \frac{|B_0|}{|B_{\mathrm{center}}|},
+\end{equation}
+\begin{equation}
+    \mathrm{ResidualRatio}
+    = \frac{|B_{\mathrm{center}}|}{|B_0|}.
+\end{equation}
+
+当前外部场模型采用两个同轴 torus 线圈近似 Helmholtz 线圈，线圈轴线沿 \(x\) 方向，两个线圈中心分别位于
+\((+\SI{150}{mm},0,0)\)
+和
+\((-\SI{150}{mm},0,0)\)，主半径为 \(\SI{300}{mm}\)，截面半径为 \(\SI{2}{mm}\)。有屏蔽和无屏蔽两个工况中，外部线圈位置、电流大小和电流方向保持一致。
+
+中心残余场导出时需要同时检查
+\begin{equation}
+    |B| =
+    \sqrt{B_x^2+B_y^2+B_z^2}
+\end{equation}
+是否成立。如果 Maxwell 直接导出的 \(|B|\) 与三分量合成结果不一致，则以三分量重新导出和合成为准，并重新核对外部线圈电流量级。本文后续多目标评价中使用自洽的 \(B_0\) 和 \(B_{\mathrm{center}}\) 数据。
+
+\subsection{多目标评价}
+
+在同时考虑磁噪声、屏蔽性能和材料用量时，单一指标不能完整描述结构优劣。本文记录以下指标：
+\begin{equation}
+    B_{\mathrm{avg},1-30}, \qquad
+    SF, \qquad
+    \mathrm{ResidualRatio}, \qquad
+    V_{\mathrm{material}} .
+\end{equation}
+其中 \(B_{\mathrm{avg},1-30}\) 越低表示材料磁噪声越小，\(SF\) 越高表示外部磁场衰减越强，\(\mathrm{ResidualRatio}\) 越低表示中心残余场越小，\(V_{\mathrm{material}}\) 越小表示材料用量越低。后处理时可对各指标归一化，形成多目标评分，用于筛选低噪声、高屏蔽且材料用量较低的候选结构。
+
+\begin{thebibliography}{99}
+
+\bibitem{Allred2002SERF}
+J. C. Allred, R. N. Lyman, T. W. Kornack, and M. V. Romalis,
+``High-sensitivity atomic magnetometer unaffected by spin-exchange relaxation,''
+\emph{Physical Review Letters}, vol. 89, no. 13, p. 130801, 2002.
+
+\bibitem{Kominis2003Subfemtotesla}
+I. K. Kominis, T. W. Kornack, J. C. Allred, and M. V. Romalis,
+``A subfemtotesla multichannel atomic magnetometer,''
+\emph{Nature}, vol. 422, no. 6932, pp. 596--599, 2003.
+
+\bibitem{Kornack2007Ferrite}
+T. W. Kornack, S. J. Smullin, S.-K. Lee, and M. V. Romalis,
+``A low-noise ferrite magnetic shield,''
+\emph{Applied Physics Letters}, vol. 90, no. 22, p. 223501, 2007.
+
+\bibitem{LeeRomalis2008Noise}
+S.-K. Lee and M. V. Romalis,
+``Calculation of magnetic field noise from high-permeability magnetic shields and conducting objects with simple geometry,''
+\emph{Journal of Applied Physics}, vol. 103, no. 8, p. 084904, 2008.
+
+\bibitem{Lu2020FerriteNoise}
+J. Lu, D. Ma, K. Yang, W. Quan, J. Zhao, B. Xing, B. Han, and M. Ding,
+``Study of magnetic noise of a multi-annular ferrite shield,''
+\emph{IEEE Access}, vol. 8, pp. 40918--40924, 2020.
+
+\bibitem{Kubo1966FDT}
+R. Kubo,
+``The fluctuation-dissipation theorem,''
+\emph{Reports on Progress in Physics}, vol. 29, no. 1, pp. 255--284, 1966.
+
+\bibitem{Wang2024Nanocrystalline}
+L. Wang, M. Shi, Y. Le, X. Zhang, J. Yang, S. Yuan, and Y. Ma,
+``Quantitative evaluation and investigation of shielding coefficient and magnetic noise in stacked nanocrystalline magnetic shielding system,''
+\emph{Measurement}, vol. 227, p. 114276, 2024.
+
+\bibitem{Rikitake1987Shielding}
+T. Rikitake,
+\emph{Magnetic and Electromagnetic Shielding}.
+Springer, 1987.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,144 @@
+run_manufacturable_thin_continuous 2026-05-26 17:47:59
+ANALYZE = False
+Cases: C1_N1_t008, C1_N1_t020, C1_N1_t040, C1_N1_t060, C2_N2_t020_g010, C2_N3_t020_g010, C2_N4_t015_g008
+
+======================================================================
+Preparing C1_N1_t008 from D:\tangyumengnew\aaaaaaaaximukeji\Project100_1ceng.aedt
+open shield project: OK -> IDispatch(ISProject2)
+set variables: OK
+section Torus2: OK -> ['Torus2_Section1']
+section Torus3: OK -> ['Torus3_Section1']
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+assign Iext_plus: OK
+assign Iext_minus: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+save shield: OK
+close shield project: OK (C1_N1_t008_shield)
+open B0 project: OK -> IDispatch(ISProject2)
+Cylinder2 -> vacuum: OK
+save B0: OK
+close B0 project: OK (C1_N1_t008_B0)
+
+======================================================================
+Preparing C1_N1_t020 from D:\tangyumengnew\aaaaaaaaximukeji\Project100_1ceng.aedt
+open shield project: OK -> IDispatch(ISProject2)
+set variables: OK
+section Torus2: OK -> ['Torus2_Section1']
+section Torus3: OK -> ['Torus3_Section1']
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+assign Iext_plus: OK
+assign Iext_minus: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+save shield: OK
+close shield project: OK (C1_N1_t020_shield)
+open B0 project: OK -> IDispatch(ISProject2)
+Cylinder2 -> vacuum: OK
+save B0: OK
+close B0 project: OK (C1_N1_t020_B0)
+
+======================================================================
+Preparing C1_N1_t040 from D:\tangyumengnew\aaaaaaaaximukeji\Project100_1ceng.aedt
+open shield project: OK -> IDispatch(ISProject2)
+set variables: OK
+section Torus2: OK -> ['Torus2_Section1']
+section Torus3: OK -> ['Torus3_Section1']
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+assign Iext_plus: OK
+assign Iext_minus: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+save shield: OK
+close shield project: OK (C1_N1_t040_shield)
+open B0 project: OK -> IDispatch(ISProject2)
+Cylinder2 -> vacuum: OK
+save B0: OK
+close B0 project: OK (C1_N1_t040_B0)
+
+======================================================================
+Preparing C1_N1_t060 from D:\tangyumengnew\aaaaaaaaximukeji\Project100_1ceng.aedt
+open shield project: OK -> IDispatch(ISProject2)
+set variables: OK
+section Torus2: OK -> ['Torus2_Section1']
+section Torus3: OK -> ['Torus3_Section1']
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+assign Iext_plus: OK
+assign Iext_minus: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+save shield: OK
+close shield project: OK (C1_N1_t060_shield)
+open B0 project: OK -> IDispatch(ISProject2)
+Cylinder2 -> vacuum: OK
+save B0: OK
+close B0 project: OK (C1_N1_t060_B0)
+
+======================================================================
+Preparing C2_N2_t020_g010 from D:\tangyumengnew\aaaaaaaaximukeji\Project100_2ceng.aedt
+open shield project: OK -> IDispatch(ISProject2)
+set variables: OK
+section Torus2: OK -> ['Torus2_Section1']
+section Torus3: OK -> ['Torus3_Section1']
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+assign Iext_plus: OK
+assign Iext_minus: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+save shield: OK
+close shield project: OK (C2_N2_t020_g010_shield)
+open B0 project: OK -> IDispatch(ISProject2)
+Cylinder2 -> vacuum: OK
+Cylinder4 -> vacuum: OK
+save B0: OK
+close B0 project: OK (C2_N2_t020_g010_B0)
+
+======================================================================
+Preparing C2_N3_t020_g010 from D:\tangyumengnew\aaaaaaaaximukeji\Project100_3ceng.aedt
+open shield project: OK -> IDispatch(ISProject2)
+set variables: OK
+section Torus2: OK -> ['Torus2_Section1']
+section Torus3: OK -> ['Torus3_Section1']
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+assign Iext_plus: OK
+assign Iext_minus: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+save shield: OK
+close shield project: OK (C2_N3_t020_g010_shield)
+open B0 project: OK -> IDispatch(ISProject2)
+Cylinder2 -> vacuum: OK
+Cylinder4 -> vacuum: OK
+Cylinder6 -> vacuum: OK
+save B0: OK
+close B0 project: OK (C2_N3_t020_g010_B0)
+
+======================================================================
+Preparing C2_N4_t015_g008 from D:\tangyumengnew\aaaaaaaaximukeji\Project100_4ceng.aedt
+open shield project: OK -> IDispatch(ISProject2)
+set variables: OK
+section Torus2: OK -> ['Torus2_Section1']
+section Torus3: OK -> ['Torus3_Section1']
+separate Torus2_Section1: OK -> ['Torus2_Section1_Separate1']
+separate Torus3_Section1: OK -> ['Torus3_Section1_Separate1']
+assign Iext_plus: OK
+assign Iext_minus: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+save shield: OK
+close shield project: OK (C2_N4_t015_g008_shield)
+open B0 project: OK -> IDispatch(ISProject2)
+Cylinder2 -> vacuum: OK
+Cylinder4 -> vacuum: OK
+Cylinder6 -> vacuum: OK
+Cylinder8 -> vacuum: OK
+save B0: OK
+close B0 project: OK (C2_N4_t015_g008_B0)
+
+Done 2026-05-26 17:49:42

@@ -1,0 +1,8 @@
+case_id,experiment,stage,model_type,layer,T_mm,a_mm,g_mm,N_segments,circumferential_gap_mm,coverage_phi,B0_T,B0_Bx_T,B0_By_T,B0_Bz_T,Bcenter_T,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,IntH2_total,IntH2_L1,IntH2_L2,IntH2_L3,IntH2_L4
+C1_N1_t008,manufacturable_thin,continuous_shell,continuous_shell,1,0.08,0.08,0,0,0,1,3.65943171503e-08,-1.64663946855e-08,5.63735384572e-09,3.32604898501e-08,5.84086676874e-08,-2.62262880729e-08,2.56769867924e-08,4.49358214277e-08,9.68325565605e-07,9.68325565605e-07,,,
+C1_N1_t020,manufacturable_thin,continuous_shell,continuous_shell,1,0.20,0.20,0,0,0,1,,,,,2.71427178943e-09,3.8724961626e-10,-2.43256451484e-09,-7.30013375867e-10,8.35098925202e-07,8.35098925202e-07,,,
+C1_N1_t040,manufacturable_thin,continuous_shell,continuous_shell,1,0.40,0.40,0,0,0,1,,,,,,,,,,,,,
+C1_N1_t060,manufacturable_thin,continuous_shell,continuous_shell,1,0.60,0.60,0,0,0,1,,,,,,,,,,,,,
+C2_N2_t020_g010,manufacturable_thin,continuous_shell,continuous_shell,2,0.50,0.20,0.10,0,0,1,,,,,,,,,,,,,
+C2_N3_t020_g010,manufacturable_thin,continuous_shell,continuous_shell,3,0.80,0.20,0.10,0,0,1,,,,,,,,,,,,,
+C2_N4_t015_g008,manufacturable_thin,continuous_shell,continuous_shell,4,0.84,0.15,0.08,0,0,1,,,,,,,,,,,,,

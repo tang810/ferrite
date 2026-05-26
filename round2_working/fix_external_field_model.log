@@ -1,0 +1,85 @@
+Starting external field model repair
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02.aedt
+delete stale excitations: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 16, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 81, in <lambda$95>
+    safe("delete stale e-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+      Project100_4ceng_fixedT10_g02 (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [error] Script macro error: Abnormal script termination. (12:32:57 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+          [error] Script macro error: Abnormal script termination. (12:32:58 PM  May 20, 2026)
+-- Message Window --
+Stopping Batch Run: 12:33:01 PM  May 20, 2026
+ix_external_field_model.py", line 16, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 27, in <lambda$93>
+    safe("delete object " + name, lambda n=name: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 16, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 27, in <lambda$93>
+    safe("delete object " + name, lambda n=name: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Iext_plus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 16, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 27, in <lambda$93>
+    safe("delete object " + name, lambda n=name: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Iext_minus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 16, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 27, in <lambda$93>
+    safe("delete object " + name, lambda n=name: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Iext_plus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 16, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 27, in <lambda$93>
+    safe("delete object " + name, lambda n=name: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete object Iext_minus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 16, in safe
+    out = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/round2_working/fix_external_field_model.py", line 27, in <lambda$93>
+    safe("delete object " + name, lambda n=name: oEditor.Delete(["NAME:Selections", "Selections:=", n]), f)
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+set Torus2 parameters: OK
+set Torus3 parameters: OK
+create Iext_plus_sheet: OK
+create Iext_minus_sheet: OK
+assign Iext_plus: OK
+assign Iext_minus: OK
+save project: OK
+Done

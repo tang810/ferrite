@@ -1,0 +1,138 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/round2_working/run_manufacturable_thin_continuous.py
+Starting Batch Run: 5:45:41 PM  May 26, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+-- Message Window --
+Stopping Batch Run: 5:49:43 PM  May 26, 2026
+ximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (05:46:40 PM  May 26, 2026)
+      C1_N1_t060_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (05:46:51 PM  May 26, 2026)
+      C2_N2_t020_g010_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (05:47:03 PM  May 26, 2026)
+      C2_N3_t020_g010_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (05:47:14 PM  May 26, 2026)
+      C2_N4_t015_g008_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (05:47:28 PM  May 26, 2026)
+-- Message Window --
+Stopping Batch Run: 5:47:49 PM  May 26, 2026

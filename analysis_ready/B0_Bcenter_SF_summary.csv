@@ -1,0 +1,2 @@
+﻿"case","B0_source","coil_R_mm","coil_minor_radius_mm","Nturns","I_A","B0_uT","B0_T","Bcenter_source","Bcenter_uT","Bcenter_T","SF","ResidualRatio","interpretation"
+"1ceng_nominal_internal_coil_center","analytic_single_turn_loop_center","5","0.5","1","0.001","0.125663706143592","1.25663706143592E-07","Maxwell_with_ferrite_center_point","0.125924219880035","1.25924219880035E-07","0.997931186417582","1.00207310244491","internal coil center field check only; not external shielding-factor test"

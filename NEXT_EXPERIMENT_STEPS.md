@@ -2,213 +2,177 @@
 
 ## 结论先说
 
-当前文件夹已经完成了 1-4 层结构的第一轮闭环：
-
-`Maxwell 参数扫描 -> 导出 IntH2_total -> MATLAB 换算 B_avg_1_30_fT -> 响应面拟合 -> 找候选最优点`
-
-下一轮不要直接继续堆更多随机点。先把评价指标补齐，再扩展层数。
-
-## 1. 先保留现有工程，不要覆盖
-
-现有工程：
-
-- `Project100_1ceng.aedt`
-- `Project100_2ceng.aedt`
-- `Project100_3ceng.aedt`
-- `Project100_4ceng.aedt`
-
-建议新建工程副本：
-
-- `Project100_5ceng.aedt`
-- `Project100_6ceng.aedt`
-- `Project100_7ceng.aedt`
-
-如果要改 1-4 层，也先另存为：
-
-- `Project100_1ceng_next.aedt`
-- `Project100_2ceng_next.aedt`
-- `Project100_3ceng_next.aedt`
-- `Project100_4ceng_next.aedt`
-
-原因：目录里有 `.aedt.lock`，说明这些工程近期被 AEDT 打开过。不要在原工程上直接乱改。
-
-## 2. 下一轮必须导出的量
-
-会议里强调的方向是：看最内层积分值、屏蔽效果，以及层数增加后的规律。
-
-每个设计点至少导出这些列：
+下一轮不再优先做 `T=10 mm` 的厚壳固定总厚度实验。实物结构和机械约束已经改变了问题边界：
 
 ```text
-experiment
-layer
-T_mm
-a_mm
-g_mm
+MnZn 铁氧体单层厚度范围：0.08 mm <= a <= 0.60 mm
+```
+
+因此现在的仿真目标改为：
+
+```text
+在可制造薄片厚度范围内，比较单层、多层和真实周向分段结构的屏蔽系数、材料体积和磁噪声。
+```
+
+旧的 `fixedT10_g02 / fixedT10_g05` 只作为历史厚壳参考，不作为下一步优先实验。
+
+## 1. 当前主入口
+
+优先参数表已经改为：
+
+```text
+next_round_design_points.csv
+```
+
+详细薄片实验矩阵在：
+
+```text
+analysis_ready/manufacturable_thin_ferrite_sim_matrix.csv
+```
+
+说明文件：
+
+```text
+analysis_ready/README_manufacturable_thin_ferrite_sim.md
+```
+
+## 2. 两级仿真策略
+
+### 第一级：连续圆柱壳快速筛选
+
+先把铁氧体看成连续圆柱壳，忽略周向拼缝。这样模型简单、求解快，用来判断多层结构在 `0.08-0.60 mm` 厚度范围内是否有希望。
+
+优先跑：
+
+```text
+B0 reference: no shield
+
+N=1, a=0.08 mm
+N=1, a=0.20 mm
+N=1, a=0.40 mm
+N=1, a=0.60 mm
+
+N=2, a=0.20 mm, g=0.10 mm
+N=3, a=0.20 mm, g=0.10 mm
+N=4, a=0.15 mm, g=0.08 mm
+```
+
+其中：
+
+```text
+T = N*a + (N-1)*g
+```
+
+### 第二级：真实周向分段 3D 校正
+
+实物不是连续壳，而是薄片沿周向拼成的圆柱结构。连续壳筛出候选点后，再做少量真实 3D 分段模型。
+
+先用占位参数：
+
+```text
+N_segments = 12
+circumferential_gap_mm = 1.6
+coverage_phi = 0.95
+```
+
+等实物量完后，把这三个参数替换成真实值。
+
+优先校正：
+
+```text
+N=1, a=0.20 mm
+N=1, a=0.60 mm
+N=3, a=0.20 mm, g=0.10 mm
+N=4, a=0.15 mm, g=0.08 mm
+```
+
+## 3. 每个点必须导出什么
+
+无屏蔽参考模型导出：
+
+```text
+B0_T
+B0_Bx_T
+B0_By_T
+B0_Bz_T
+```
+
+有屏蔽模型导出：
+
+```text
+Bcenter_T
+Bcenter_Bx_T
+Bcenter_By_T
+Bcenter_Bz_T
 IntH2_total
 IntH2_L1
 IntH2_L2
 ...
-B0_T
-Bcenter_T
 ```
 
-含义：
-
-- `IntH2_total`：所有铁氧体层的 H^2 体积分
-- `IntH2_L1`：最内层铁氧体的 H^2 体积分
-- `IntH2_Li`：第 i 层贡献，用来算每层贡献比例
-- `B0_T`：没有屏蔽体时中心参考磁场
-- `Bcenter_T`：有屏蔽体时中心残余磁场
-- `SF = B0_T / Bcenter_T`：屏蔽系数，MATLAB 脚本已经能自动识别这两列并计算
-
-## 3. 优先做的参数表
-
-我已经放了一个表：
-
-`next_round_design_points.csv`
-
-优先级：
-
-1. `priority=1`：固定总厚度 `T=10 mm`，间隙 `g=0.2 mm`，扫 `N=1..7`
-2. `priority=2`：固定总厚度 `T=10 mm`，间隙 `g=0.5 mm`，扫 `N=1..7`
-3. `priority=3`：会议里提到的薄层可实现性，`a=0.3 mm, g=0.2 mm`，扫 `N=4..8`
-
-第一轮先跑 priority 1。跑完之后就能回答一个核心问题：
-
-在总厚度固定时，增加层数到底是降低噪声，还是因为气隙占用厚度导致噪声升高？
-
-## 4. Maxwell 里具体怎么设
-
-对每一个层数 N 建一个独立 design，别在同一个模型里硬切层数。
-
-参数定义：
+如果 `Bcenter_T` 直接导出不稳定，就导出三分量，后处理用：
 
 ```text
-Rin = 100mm
-H = 200mm
-a = 单层铁氧体厚度
-g = 层间空气间隙
-T = N*a + (N-1)*g
+Bcenter_T = sqrt(Bcenter_Bx_T^2 + Bcenter_By_T^2 + Bcenter_Bz_T^2)
 ```
 
-建模顺序：
+## 4. 正式屏蔽系数
 
-```text
-内层空气/测量区域
-铁氧体 L1
-空气间隙 G1
-铁氧体 L2
-空气间隙 G2
-...
-铁氧体 LN
-外部空气区域
-```
-
-每一层铁氧体单独命名：
-
-```text
-ferrite_L1
-ferrite_L2
-ferrite_L3
-...
-```
-
-不要把所有层 Unite 成一个实体，否则后面不能导出分层积分。
-
-## 5. Field Calculator 怎么导出
-
-对每一层做一次：
-
-```text
-Quantity: H
-Operation: Mag
-Operation: Square
-Geometry: ferrite_Li
-Operation: Integrate
-Add Named Expression: IntH2_Li
-```
-
-总积分：
-
-```text
-IntH2_total = IntH2_L1 + IntH2_L2 + ... + IntH2_LN
-```
-
-最内层积分值就是：
-
-```text
-IntH2_inner = IntH2_L1
-```
-
-如果 AEDT 里表达式名不方便，就至少导出 `IntH2_L1` 和 `IntH2_total`。
-
-## 6. 屏蔽系数怎么做
-
-同一套激励下做两个工况：
-
-1. 无屏蔽体：得到中心磁场 `B0_T`
-2. 有屏蔽体：得到中心磁场 `Bcenter_T`
-
-然后：
+正式屏蔽系数必须来自外部场模型：
 
 ```text
 SF = abs(B0_T) / abs(Bcenter_T)
 ResidualRatio = abs(Bcenter_T) / abs(B0_T)
 ```
 
-MATLAB 脚本已经支持：只要 CSV 里有 `B0_T` 和 `Bcenter_T`，会自动生成 `SF` 和 `ResidualRatio`。
+不要用内部 pickup/torus 线圈中心场替代正式 SF。
 
-## 7. 跑完之后怎么合并数据
+## 5. 材料体积
 
-把新导出的 CSV 整理成这个格式，追加到：
-
-`analysis_ready/all_results_clean.csv`
-
-推荐另存一个新文件：
-
-`analysis_ready/all_results_round2.csv`
-
-至少包含：
+连续壳第 i 层体积：
 
 ```text
-experiment,layer,T_mm,a_mm,g_mm,IntH2_total,IntH2_L1,IntH2_L2,IntH2_L3,IntH2_L4,IntH2_L5,IntH2_L6,IntH2_L7,B0_T,Bcenter_T
+V_i = pi * H * ((r_i + a_i)^2 - r_i^2)
 ```
 
-没有的层留空。
-
-## 8. MATLAB 后处理
-
-运行：
-
-```matlab
-cd('D:\tangyumengnew\aaaaaaaaximukeji\matlab-B')
-analyze_project100_results
-```
-
-我已经把 `analyze_project100_results.m` 的分层积分读取范围从 4 层扩展到了 10 层。后面导出 `IntH2_L5`、`IntH2_L6`、`IntH2_L7` 时，脚本可以自动计算：
+总材料体积：
 
 ```text
-Qratio_Li = IntH2_Li / IntH2_total
+V_f = sum(V_i)
 ```
 
-## 9. 汇报时要回答的问题
+分段壳可先用覆盖率修正：
 
-下一次组会最关键的图：
+```text
+V_segmented ~= coverage_phi * V_continuous
+```
 
-1. `N` vs `B_avg_1_30_fT`
-2. `N` vs `IntH2_L1`
-3. `N` vs `SF`
-4. 各层 `Qratio_Li` 堆叠柱状图
-5. `低噪声 + 高屏蔽系数 + 少材料体积` 的 Pareto 对比
+正式结果最好由 3D 几何体积直接导出或按真实分段尺寸计算。
 
-关键判断：
+## 6. 判据
 
-- 如果增加层数让 `B_avg` 降低、`SF` 增大，说明多层结构有效。
-- 如果增加层数让 `B_avg` 升高但 `SF` 增大，说明多层结构有屏蔽收益，但有磁噪声代价。
-- 如果增加层数让 `B_avg` 升高且 `SF` 变化不大，就说明当前静态模型下多层不划算，需要转向动态/涡流或材料实测验证。
+多层结构能支持“省材料”观点，必须同时满足：
 
-## 10. 现在最先做哪一步
+```text
+SF_multi >= SF_target
+V_multi < V_single_at_same_SF
+IntH2_total_multi 或 B_avg_1_30_fT 不明显变差
+```
 
-先跑 `next_round_design_points.csv` 里的 `priority=1`。
+第一轮先不急着设很高的 `SF_target`。先画：
 
-只要拿到这 7 个点，就能直接判断会议里“通过增加层数而不是增加厚度”这个方向是否成立。
+```text
+SF vs V_f
+IntH2_total vs V_f
+eta_S = ln(SF) / V_f
+```
+
+如果多层曲线没有高于单层曲线，就说明在当前薄片结构下，多层不能直接宣称省材料。
+
+## 7. 立即执行顺序
+
+1. 建无屏蔽参考模型，导出 `B0`。
+2. 跑连续壳 `N=1, a=0.08/0.20/0.40/0.60 mm`。
+3. 跑连续壳 `N=2,3,4` 的 priority 1 多层候选。
+4. 后处理 `SF - V_f - IntH2_total`。
+5. 只对最好的 2-3 个结构做真实周向分段 3D 校正。

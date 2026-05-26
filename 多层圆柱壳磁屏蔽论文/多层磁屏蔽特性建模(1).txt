@@ -1,0 +1,938 @@
+                                                                               Measurement 251 (2025) 117237
+
+
+                                                                          Contents lists available at ScienceDirect
+
+
+                                                                                    Measurement
+                                                          journal homepage: www.elsevier.com/locate/measurement
+
+
+
+
+Theoretical modeling and characterization of equivalent magnetic
+properties in laminated composite magnetic shielding
+Xueping Xu a,b,* , Lei Wang a,b , Wei Liu a,b , Zhenkai Zhao a,b
+a
+    School of Instrumentation and Optoelectronic Engineering, Beihang University, Beijing 100191, China
+b
+    Institute of Large-scale Scientific Facility and Centre for Zero Magnetic Field Science, Beihang University, Beijing 100191, China
+
+
+
+
+A R T I C L E I N F O                                           A B S T R A C T
+
+Keywords:                                                       Compared to conventional magnetic shielding devices, the laminated composite shielding device composed of
+Laminated composite shielding device                            permalloy and nanocrystalline (PN-LCSD) has better static and low-frequency magnetic field shielding perfor­
+Permalloy                                                       mance, ensuring the normal operation of ultrahigh-sensitivity sensors. However, the multi-thin layer charac­
+Nanocrystalline
+                                                                teristic of PN-LCSD presents significant challenges in evaluating its magnetic properties through analytical
+Equivalent magnetic properties
+Theoretical model
+                                                                methods or simulation, which hinders the shielding performance analysis of PN-LCSD. Therefore, this paper
+                                                                proposes a theoretical model for the equivalent magnetic properties of PN-LCSD. Using the equivalent circuit
+                                                                method and geometric parameter analysis, the model derives equations for the equivalent permeability and
+                                                                shielding factor (SF) of PN-LCSD, resolving mesh-generation and convergence issues in performance analysis
+                                                                caused by its multi-thin layer characteristic and offering the analytical solution for its magnetic properties.
+                                                                Multiple experiments show that the maximum deviations between the analytical and experimental remanence
+                                                                and SF are only 6.48% and 5.78%, respectively. The model proposed in this study provides an effective theo­
+                                                                retical support for the performance analysis and structural design of PN-LCSD.
+
+
+
+
+1. Introduction                                                                                        the shielding performance of the device in static and low-frequency
+                                                                                                       magnetic fields [14]. Compared to permalloy, nanocrystalline offers
+    Devices including ultrasensitive comagnetometer, atomic spin iner­                                 significant advantages in terms of higher permeability, saturation flux
+tial sensors, and biomedical magnetic signal detectors need to operate in                              density, and frequency stability [15,16]. However, nanocrystalline has a
+near-zero magnetic field conditions [1–4]. Passive magnetic shielding is                               lower electrical conductivity, which results in a relatively weak eddying
+effective against static, alternating, and random magnetic disturbances,                               effect in alternating magnetic fields [17]. Additionally, nanocrystalline
+making it the most commonly used shielding method at present [5,6].                                    films require attachment to the supporting structure for use [18,19]. Xu
+The basic principles of passive magnetic shielding include flux shunting                               et al. proposed a laminated composite shielding device composed of
+through high-permeability materials and the eddying effect via high-                                   permalloy and nanocrystalline (PN-LCSD), which combines the mag­
+conductivity materials [7]. Conventional shielding devices generally                                   netic advantages of nanocrystalline with the electrical advantages and
+adopt a single-material strategy for the shielding layer, with permalloy                               mechanical strengths of permalloy [20].
+for static and low-frequency magnetic field protection, and aluminum or                                    Compared to conventional shielding devices, PN- LCSD has better
+copper for alternating magnetic field shielding [8,9].                                                 static and low-frequency magnetic field shielding performance. Taking a
+    Conventional shielding devices require the mutual nesting of                                       PN-LCSD with a 2 mm shielding layer (1 mm 1J85 permalloy + 1 mm
+different shielding layers to achieve lower residual magnetic induction,                               1K107B nanocrystalline) and an internal space of 400 mm × 400 mm ×
+often resulting in complex structures [10]. Additionally, the perfor­                                  400 mm as an example, compared to the permalloy shielding device (2
+mance of conventional shielding devices is also limited by the use of                                  mm 1J85 permalloy), the simulation shielding factor (SF) of PN-LCSD
+single-material shielding layers [11]. Permalloy exhibits relatively low                               under static and 100 Hz magnetic fields increases by 24.47 % and
+saturation magnetization and its magnetic permeability rapidly de­                                     401.07 %, respectively. Moreover, compared to the permalloy-
+creases with frequency [12,13]. Meanwhile, aluminum and copper are                                     aluminum shielding device (1 mm 1J85 permalloy + 1 mm
+unable to provide flux diversion, which poses challenges in enhancing                                  aluminum), the simulation SF of PN-LCSD under static and 100 Hz
+
+
+    * Corresponding author.
+      E-mail address: xuxueping@buaa.edu.cn (X. Xu).
+
+https://doi.org/10.1016/j.measurement.2025.117237
+Received 5 December 2024; Received in revised form 23 February 2025; Accepted 7 March 2025
+Available online 8 March 2025
+0263-2241/© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+X. Xu et al.                                                                                                                    Measurement 251 (2025) 117237
+
+
+magnetic fields increases by 146.03 % and 281.04 %, respectively. PN-           LCSD based on its equivalent permeability. Section 2 delineates the
+LCSD also offers advantages in cost and process. Unlike conventional            material magnetic testing and structural analysis of PN-LCSD. Section 3
+shielding devices, which require complex multi-layer welding and nes­           provides the calculation method for the equivalent permeability of PN-
+ted assembly of permalloy or aluminum plates with fixed thickness se­           LCSD along with the results of simulation validation. Section 4 deduces
+ries by skilled technicians, often leading to high costs, complex               the calculation equations for SF applicable to PN-LCSD. Section 5 further
+structure, and excessive weight. The nanocrystalline film attachment            substantiates the effectiveness of the proposed theoretical model
+process of PN-LCSD can be completed by non-professionals, and the               through the experiment. Section 6 is the summary of the article. Section
+construction eliminates numerous welding and nesting processes, which           7 further discusses the application prospect of the proposed model.
+makes PN-LCSD have lower cost and simpler process and structure than
+conventional shielding devices [21].                                            2. Magnetic measurement and structural analysis of PN-LCSD
+    However, due to the multi-thin layer characteristic and magnetic
+circuit complexity of PN-LCSD, there is currently a lack of effective           2.1. Magnetic test and analysis of shielding materials
+methods for calculating its equivalent magnetic properties, which poses
+challenges to its performance analysis [20]. Dou et al. proposed a                  The magnetic properties of permalloy and nanocrystalline are crucial
+method for calculating the equivalent permeability of the composite             for the establishment of theoretical models for PN-LSCD. The soft
+core used in wireless charging systems which is not suitable for PN-LCSD        magnetic instrument developed by Hunan Lian Zhong Technology, as
+[22]. The composite core exhibits a discontinuous open magnetic                 shown in Fig. 2, is utilized to employ the simulated impact method and
+structure, without considering the coupling effect between adjacent             voltammetry for assessing the direct current (DC) and alternating cur­
+materials in its magnetic circuit. Moreover, its equivalent permeability        rent (AC) magnetic properties of 1J85 permalloy and 1K107B nano­
+calculation method is limited to cases where the magnetic field direction       crystalline, respectively. Details regarding the specific parameters of
+aligns with the core thickness and cannot be extended to calculate the          sample rings are shown in Table 1.
+shielding performance. In contrast, PN-LCSD features a continuous                   The DC magnetization curves of 1J85 and 1K107B are shown in
+closed magnetic structure with varying magnetic circuits of its shielding       Fig. 3. The initial magnetic permeability and saturation magnetization
+layers at different positions, requiring case-specific analysis and             of 1K107B are higher than those of 1J85. The amplitude permeability
+consideration of magnetic circuit coupling effect between adjacent              curves of 1J85 and 1K107B are shown in Fig. 4. The amplitude perme­
+materials. Therefore, applying the calculation method of the composite          ability of 1J85 sharply decreases with increasing frequency. Specifically,
+magnetic core to analyze the magnetic properties of PN-LCSD is obvi­            at a frequency of 100 Hz, the initial amplitude permeability of 1J85
+ously unreasonable.                                                             drops to 9.35k, which is only 18.87 % of the initial permeability under
+    For the unique magnetic circuit structure of PN-LCSD, this paper            the static magnetic field. In contrast, the amplitude permeability of
+proposes a novel theoretical model for the equivalent magnetic prop­            1K107B at 100 Hz is more than 70k, which has high-frequency stability.
+erties of PN-LCSD which can equate the composite shielding structure to         Therefore, the nanocrystalline should be attached to the outside of
+a single-layer structure for analysis. The construction process of the          permalloy to achieve better shielding effect.
+model is shown in Fig. 1. The model can obtain the equivalent perme­
+ability of PN-LCSD, effectively resolving challenges in its performance
+analysis, including mesh generation and simulation convergence issues.          2.2. Structural analysis and characterization of PN-LCSD
+Furthermore, the model provides the analytical solution for the SF of PN-
+                                                                                    The composite shielding layer structure of PN-LCSD is shown in
+                                                                                Fig. 5(a), where the nanocrystalline film is systematically layered onto
+                                                                                the surface of the permalloy sheet. This configuration promotes a path of
+                                                                                low impedance for the magnetic flux, while the permalloy substrate
+                                                                                ensures the structural stability of the composite shielding layer. The
+                                                                                films are connected by an insulating paste to avoid the introduction of
+                                                                                additional magnetic field interference and to alleviate the brittle defects
+
+
+
+
+Fig. 1. The construction flowchart of the equivalent magnetic properties
+theoretical model for PN-LCSD.                                                             Fig. 2. Soft magnetic material tester and sample rings.
+
+                                                                            2
+X. Xu et al.                                                                                                                       Measurement 251 (2025) 117237
+
+
+Table 1                                                                             nanocrystalline structure, and μN is the permeability of the
+The sample ring parameters of 1J8 5 permalloy and 1K107B nanocrystalline for        nanocrystalline.
+magnetic test.                                                                         When the direction of the external magnetic field is perpendicular to
+  Parameters                                  1J85                  1K107B          the thickness direction of the n-layer nanocrystalline structure, as shown
+  Outer diameter D (mm)                       40                    30
+                                                                                    in Fig. 6(b), nanocrystalline films are connected in parallel with each
+  Inner diameter d (mm)                       30                    20              other in the magnetic circuit. The total magnetoresistance RP of the n-
+  Thickness t (mm)                            2                     10              layer nanocrystalline structure in parallel magnetic circuit can be
+  Quality m (g)                               9.18                  30              expressed as:
+  Stacking factor                             1                     0.82
+  The primary winding turns N1                20                    17
+                                                                                    ⎧       (                       )− 1
+                                                                                    ⎪          1     1           1              lN
+  The second winding turns N2                 40                    31              ⎪ RP =
+                                                                                    ⎪             +     + ... +          =
+                                                                                    ⎨         RP1 RP2           RPn         w N h N μN
+                                                                                                                                                            (2)
+                                                                                    ⎪
+                                                                                    ⎪                                    nlN
+of the nanocrystalline film after annealing. The complex thin-layer
+                                                                                    ⎪
+                                                                                    ⎩       RP1 = RP2 = ... = RPn =
+                                                                                                                     w N h N μN
+structure of PN-LCSD makes theoretical analysis and simulation diffi­
+cult. For engineering applications, the non-magnetic properties and                 where RP1 to RPn are the magnetoresistance of the 1st to n layer nano­
+thin-layer characteristics of the insulating paste allow its influence on           crystalline film in the parallel circuit. Based on Eq. (1) and Eq. (2), the
+the composite shielding layer to be approximately neglected. Addi­                  multilayer nanocrystalline structure can be analyzed as a whole magnet
+tionally, when the direction of the external magnetic field is parallel to          in the magnetic circuit. Therefore, as shown in Fig. 5(b), the composite
+the thickness direction of the n-layer nanocrystalline structure, as shown          shielding layer of PN-LCSD can be conceptually simplified to a bilayer
+in Fig. 6(a), nanocrystalline films are connected in series with each other         structure for analysis.
+in the magnetic circuit. The total magnetoresistance (the magnetic
+resistance of material) RS of the n-layer nanocrystalline structure in se­          3. Permeability analytical model of PN-LCSD
+ries magnetic circuit can be expressed as:
+⎧                                                                                      The PN-LCSD comprises six composite shielding layers. The com­
+                                    hN
+⎨ RS = RS1 + RS2 + ... + RSn = lN wN μ
+⎪
+⎪
+⎪                                                                                   posite shielding layer where the direction of the magnetic field is aligned
+                                       N
+                                                                        (1)         with the thickness direction is defined as vertical layer (VL), and the
+⎪
+⎪
+⎪ RS1 = RS2 = ... = RSn =        hN                                                 composite shielding layer where the direction of the magnetic field is
+⎩
+                             nlN wN μN                                              perpendicular to the thickness direction is defined as horizontal layer
+                                                                                    (HL), as shown in Fig. 7.
+where RS1 to RSn are the magnetoresistance of the 1st to n layer nano­
+crystalline film in the series circuit, lN and wN are the length and width of
+the nanocrystalline film, hN is the thickness of the n-layer
+
+
+
+
+                                                     Fig. 3. DC magnetization curves. (a) 1J85, (b) 1K107B.
+
+
+
+
+                                                 Fig. 4. Amplitude permeability curves. (a) 1J85, (b) 1K107B.
+
+                                                                                3
+X. Xu et al.                                                                                                                             Measurement 251 (2025) 117237
+
+
+                                                                                    ⎧
+                                                                                    ⎪            lB                lT
+                                                                                    ⎪
+                                                                                    ⎪  RBx =             R =
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪        μBx wB dB Tx μTx wT dT
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪            wB               wT
+                                                                                    ⎪ RBy =
+                                                                                    ⎪                    RTy =
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪          μBy lB dB       μTy lT dT
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎨            dB               dT
+                                                                                        RBz =            R =                                                      (3)
+                                                                                    ⎪
+                                                                                    ⎪         μBz lB wB Tz μTz lT wT
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪                 RBx RBy RBz
+                                                                                    ⎪
+                                                                                    ⎪ RB =
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪       RBx RBy + RBx RBz + RBy RBz
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪                 RTx RTy RTz
+                                                                                    ⎩ RT =
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                            RTx RTy + RTx RTz + RTy RTz
+
+                                                                                    where lB, wB and dB are the length, width and thickness of the bottom
+                                                                                    layer, respectively. lT, wT and dT are the length, width and thickness of
+                                                                                    the top layer, respectively. μBx, μBy and μBz are the permeabilities of the
+                                                                                    bottom layer in the x ,y, and z directions, respectively. μTx, μTy and μTz
+                                                                                    are the permeabilities of the top layer in the x ,y, and z directions,
+                                                                                    respectively. According to Fig. 8(b) and the series–parallel theory of
+Fig. 5. The composite shielding layer structure of PN-LCSD. (a) Actual struc­       magnetoresistance, the total magnetoresistance RV of VL can be calcu­
+ture, (b) simplified structure.                                                     lated as:
+                                                                                                      RBx RBy (RBz + RT )
+                                                                                    RV =                                                                          (4)
+                                                                                           RBx RBy + RBx (RBz + RT ) + RBy (RBz + RT )
+
+                                                                                       In accordance with the principle of magnetic flux conservation, the
+                                                                                    magnetic flux components of VL in the x , y and z directions satisfy:
+                                                                                    ⎧
+                                                                                    ⎨ φVx = φBx + φTx
+                                                                                      φ = φBy + φTy                                                       (5)
+                                                                                    ⎩ Vy
+                                                                                         φVz = φTz
+
+                                                                                    where φBx, φTx, φBy, φTy, φBz and φTz are the outgoing magnetic flux
+                                                                                    components of the bottom and top materials in the x , y and z directions.
+                                                                                    From the magnetomotive force theory and Kirchhoff ’s law of magnetic
+                                                                                    circuits, the outgoing magnetic flux components of the bottom and top
+Fig. 6. Magnetic circuit of n-layer nanocrystalline structure. (a) Series
+connection, (b) parallel connection.                                                materials can be written as follows:
+                                                                                    ⎧
+                                                                                    ⎪         RV φV      RV φV        RV φV
+                                                                                    ⎪
+3.1. Construction of equivalent permeability calculation model                      ⎨ φBx = RBx φBy = RBy φBz = RBz + RT
+                                                                                    ⎪
+                                                                                                                                                          (6)
+                                                                                    ⎪ φTx = RT φBz φTy = RT φBz φTz = RT φBz
+                                                                                    ⎪
+                                                                                    ⎪
+    The magnetic circuit corresponding to VL is shown in Fig. 8(a) and              ⎩
+                                                                                                RTx         RTy        RTz
+the nanocrystalline and permalloy are placed at the bottom and top
+layers, respectively. Within the three-dimensional coordinate system,               where φV is the total inflow flux of VL. Considering the VL as a whole,
+RBx and RTx represent the magnetoresistance of the bottom and top                   the magnetoresistance of VL along the x , y and z directions can be
+materials along the x direction, respectively. RBy and RTy represent the            calculated as:
+magnetoresistance of the bottom and top materials along the y direction,            ⎧
+respectively. RBz and RTz represent the magnetoresistance of the bottom                      RV φV
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪ RVx =
+and top materials along the z direction, respectively. RB and RT represent          ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                              φVx
+                                                                                    ⎪
+the total magnetoresistance of the bottom and top materials, respec­                ⎨        RV φV
+                                                                                      RVy =                                                             (7)
+tively. The magnetoresistance of the bottom and top materials can be                ⎪
+                                                                                    ⎪         φVy
+                                                                                    ⎪
+expressed as:                                                                       ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪        R φ
+                                                                                    ⎩ RVz = V V
+                                                                                    ⎪
+                                                                                              φVz
+                                                                                       Substituting Eq. (3) to Eq. (6) into Eq. (7), the magnetoresistance of
+                                                                                    VL along the x , y and z directions can be calculated as:
+                                                                                    ⎧
+                                                                                               RBx RTx (RBz + RT )
+                                                                                    ⎪ RVx =
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪       R Bx RT + RTx (RBz + RT )
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎨          RBy RTy (RBz + RT )
+                                                                                      RVy =                                                               (8)
+                                                                                    ⎪
+                                                                                    ⎪       RBy RT + RTy (RBz + RT )
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪             RTz (RBz + RT )
+                                                                                    ⎪
+                                                                                    ⎩     RVz =
+                                                                                                        RT
+                                                                                        According to Fig. 8(a), l = (lB + lT) / 2, w = (wB + wT) / 2 and d = dB +
+                                                                                    dT represent the length, width and thickness of the composite shielding
+                                                                                    layer, respectively. Therefore, the equivalent permeability equation of
+         Fig. 7. The division of the vertical layer and horizontal layer.
+                                                                                    VL can be written as:
+
+
+                                                                                4
+X. Xu et al.                                                                                                                        Measurement 251 (2025) 117237
+
+
+
+
+                                     Fig. 8. Magnetic circuit of VL. (a) Circuit diagram, (b) magnetoresistance relationship.
+
+⎧                                       [                          ]
+⎪
+⎪           l          (lB + lT )        RBx RT + RTx (RBz + RT )                   ⎧
+                                                                                            RH φH
+⎪
+⎪ μ Vx =         =                                                                  ⎪ RHx =
+⎪
+⎪
+⎪        wdRVx (wB + wT )(dB + dT )          RBx RTx (RBz + RT )                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪        φHx
+⎪
+⎪                                     [                          ]                  ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+⎨            w        (wB + wT )        RBy RT + RTy (RBz + RT )                    ⎪
+                                                                                    ⎨       RH φH
+    μVy =        =                                                        (9)         RHy =                                                                 (13)
+⎪
+⎪         ldRVy (lB + lT )(dB + dT )      RBy RTy (RBz + RT )                       ⎪        φHy
+⎪
+⎪                                           [                ]                      ⎪
+                                                                                    ⎪
+⎪
+⎪                d        4(d      d                RT                              ⎪
+                                                                                    ⎪
+                                                                                    ⎪ RHz = RH φH
+⎪
+⎪                             B  +  T )                                             ⎪
+                                                                                    ⎪
+⎪
+⎩       μVz =       =
+               lwRVz (lB + lT )(wB + wT ) RTz (RBz + RT )                           ⎩
+                                                                                             φHz
+
+where μVx, μVy and μVz are the permeabilities of VL in the x , y, and z                 Substituting Eq. (3), Eq. (10), Eq. (11) and Eq. (12) into Eq. (13), the
+directions. The magnetic circuit corresponding to HL is shown in Fig. 9             magnetoresistance of HL along the x , y and z directions can be obtained
+(a) and the nanocrystalline and permalloy are placed at the bottom and              as:
+top layers, respectively.                                                           ⎧
+                                                                                    ⎪          RBx RTx
+    The incident magnetic flux components φB and φT of the bottom and               ⎪
+                                                                                    ⎪  RHx =
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪        RBx + RTx
+top materials in HL satisfy:                                                        ⎨
+                                                                                               RBy RTy                                                     (14)
+⎧                                                                                   ⎪  RHy =
+⎪
+⎪         RT φH                                                                     ⎪
+                                                                                    ⎪
+                                                                                    ⎪        R By + RTy
+⎨ φB = R + R
+⎪                                                                                   ⎪
+                                                                                    ⎪
+                                                                                    ⎩
+          B       T
+                                                                   (10)                RHz = RBz + RTz
+⎪
+⎪
+⎪ φT =    R B φ H
+⎩
+        RB + RT                                                                        Therefore, the equivalent permeability equation of HL can be
+                                                                                    expressed as:
+where φH is the total inflow flux of HL. According to Fig. 9(b), the total          ⎧                                     (            )
+                                                                                    ⎪           l        (lB + lT )         RBx + RTx
+magnetoresistance RH of HL can be calculated as:                                    ⎪
+                                                                                    ⎪ μHx =        =
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪       wdRHx (wB + wT )(dB + dT )        RBx RTx
+                                                                                    ⎪
+        RB RT                                                                       ⎪
+                                                                                    ⎨            w      (wB + wT )
+                                                                                                                         (
+                                                                                                                           RBy + RTy
+                                                                                                                                     )
+RH =                                                                     (11)                                                                   (15)
+       RB + RT                                                                      ⎪
+                                                                                       μHy =       =
+                                                                                              ldRHy (lB + lT )(dB + dT )    RBy RTy
+                                                                                    ⎪
+                                                                                    ⎪
+                                                                                    ⎪
+   According to the magnetic flux theory, the outgoing magnetic flux of             ⎪
+                                                                                    ⎪
+                                                                                    ⎪            d      4(dB + dT )
+                                                                                                                         (
+                                                                                                                               1
+                                                                                                                                      )
+                                                                                    ⎪
+HL in the x, y and z directions can be expressed as:                                ⎪
+                                                                                    ⎩ μHz =        =
+                                                                                             lwRHz (lB + lT )(wB + wT ) RBz + RTz
+⎧
+⎪                    RB φB RT φT
+⎪
+⎪
+⎪
+⎪
+  φHx = φBx + φTx =
+                      RBx
+                           +
+                              RTx                                                   where μHx, μHy and μHz are the permeabilities of HL in the x , y, and z
+⎪
+⎪
+⎪                                                                                   directions. Therefore, the equivalent permeability in three directions for
+⎨                    RB φB RT φT
+  φHy = φBy + φTy =        +                                       (12)             PN-LCSD can be calculated using Eq. (3), Eq. (9) and Eq. (15).
+⎪
+⎪                     RBy     RTy
+⎪
+⎪
+⎪
+⎪                  RH φH
+⎪
+⎪
+⎩         φHz =                                                                     3.2. Characteristic analysis of equivalent permeability calculation model
+                 RBz + RTz
+   Considering the HL as a whole, the magnetoresistance of HL in the x ,               When dB = dT = 2 mm, the variation in the equivalent permeability of
+y and z directions can be expressed as:                                             VL and HL in three directions with l and w is shown in Fig. 10. The
+
+
+
+
+                                     Fig. 9. Magnetic circuit of HL. (a) Circuit diagram, (b) magnetoresistance relationship.
+
+                                                                                5
+X. Xu et al.                                                                                                                                 Measurement 251 (2025) 117237
+
+
+variation in the equivalent permeability of VL and HL in three directions                ⎧
+is minimal with l and w in the range of 100 to 2000 mm and the influence                 ⎪
+                                                                                         ⎪             (1 + p2 )μB μT + pμ2B
+                                                                                         ⎪ μVx = μVy =
+of l and w on the equivalent permeability can be ignored. The variation
+                                                                                         ⎪
+                                                                                         ⎪
+                                                                                         ⎪              (1 + p)(μB + pμT )
+                                                                                         ⎪
+                                                                                         ⎪
+in the equivalent permeability with dB and dT when l = w = 400 mm is
+                                                                                         ⎨                   pμ + μT
+                                                                                                μHx = μHy = B                                                          (17)
+shown in Fig. 11. The permeability variation of VL and HL with respect                   ⎪
+                                                                                         ⎪                     1+p
+                                                                                         ⎪
+                                                                                         ⎪
+to dB and dT appears to be complex. However, when the thickness ratio p                  ⎪
+                                                                                         ⎪
+                                                                                         ⎪                 (1 + p)μB μT
+                                                                                         ⎪     μVz = μHz =
+= dB / dT is fixed, the equivalent permeability of the composite shielding               ⎩
+                                                                                                             μB + pμT
+layer becomes independent of the specific values of dB and dT. Therefore,
+p is the decisive factor of the equivalent permeability for PN-LCSD,
+which characterizes the proportion of nanocrystalline and permalloy                      3.3. Verification of equivalent permeability calculation model
+in the composite shielding layer.
+    The variation in the equivalent permeability with p is shown in                          According to Eq. (17), p of 0.5 (dB = 1 mm, dT = 2 mm), 1 (dB = dT =
+Fig. 12, when p gradually increases, the equivalent permeability of VL                   2 mm), 1.5 (dB = 1.5 mm, dT = 1 mm) and 2 (dB = 2 mm, dT = 1 mm)
+and HL transitions from 1J85 to 1K107B. Given that the composite                         correspond to the equivalent permeability of PN-LCSD are shown in
+shielding layer consists of uniformly shaped plates and that the effects of              Table 2. Utilizing COMSOL software, the layered model (L-model) and
+l and w on the equivalent permeability are negligible, it can be assumed                 the equivalent model (E-model) are established according to the test
+that lB = lT = l and wB = wT = w. Substituting Eq. (3), Eq. (9) and Eq.                  permeability and equivalent permeability respectively. The remanence
+(15), the equivalent permeability equation can be obtained as:                           (the residual magnetic induction) simulation analyses are conducted on
+⎧                               ( 2 2                       ) 2                          L-model and E-model, both featuring internal dimension of 400 mm ×
+⎪ μVx = μVy = l w [(dT μB μT + l w + l d)T + w dT dB μB μT ]+ l w dB dT μB
+⎪                2 2 2                       2 2        2 2          2 2 2
+⎪
+⎪                                                                                        400 mm × 400 mm. The internal remanence distribution of L-model and
+⎪
+⎪                      l w + l dT + w dT dB μT + l w dT μB (dB + dT )
+                        2 2    2  2       2   2            2  2
+⎪
+⎪
+⎪                                                                                        E-model is basically the same, as shown in Fig. 13.
+⎪
+⎪
+⎪
+⎪                                l2 w2 dT μB μ2T (dB + dT )                                  The comparison of average remanence Br in the central region (200
+⎪
+⎪             μVz = ( 2 2 2 2
+⎨                                             )
+                      l w + l dT + w2 d2T dB dT μ2T + l2 w2 d2T μB μT                    mm × 200 mm × 200 mm) between L-model and E-model is presented in
+⎪                                                                                        Fig. 14(a), and the maximum deviation of Br is merely 1.60 %. The
+⎪
+⎪                                           d μ + d T μT                                 variation trends presented in Fig. 14(a) are further analyzed as follows.
+⎪
+⎪
+⎪                          μHx = μHy = B B
+⎪
+⎪
+⎪                                               dB + dT                                  Under the static magnetic field, the Br of PN-LCSD decreases with the
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪                                    (d B  +   d T )μB μT                                increase in both the shielding layer thickness and p, which explains the
+⎩                            μHz =
+                                       dB μT + dT μ B                                    changing trend of Br shown in Fig. 14(a). Moreover, as the difficulty of
+                                                                              (16)       mesh generation and convergence of the PN-LCSD simulation model
+                                                                                         decreases with the increase in the shielding layer thickness, a negative
+where μB represents the permeability of nanocrystalline, and μT repre­                   correlation trend emerges between the Br deviation of L-model and E-
+sents the permeability of permalloy. Since dB and dT of the composite                    model and the shielding layer thickness of PN-LCSD. This explains the
+shielding layer is much smaller than l and w, Eq. (16) can be simplified                 fluctuation trend of the Br deviation depicted in Fig. 14(a).
+as:                                                                                          In addition to static magnetic fields, PN-LCSD also require operation
+                                                                                         within low-frequency magnetic fields. The L-model and E-model,
+
+
+
+
+Fig. 10. The variation of the equivalent permeability with l and w. (a) The x and y directions of VL, (b) the z direction of VL, (c) the x and y directions of HL, (d) the z
+direction of HL.
+
+                                                                                     6
+X. Xu et al.                                                                                                                                 Measurement 251 (2025) 117237
+
+
+
+
+Fig. 11. The variation of the equivalent permeability with dB and dT. (a) The x and y directions of VL, (b) the z direction of VL, (c) the x and y directions of HL, (d) the
+z direction of HL.
+
+
+                                                                                         effect, electrical conductivity is set to zero. According to Eq. (17) and the
+                                                                                         initial amplitude permeabilities of 1J85 and 1K107B, the equivalent
+                                                                                         permeabilities of E-model at frequencies of 25 Hz, 50 Hz, 75 Hz, and
+                                                                                         100 Hz are shown in Table 3.
+                                                                                             The internal remanence distribution obtained from the simulation is
+                                                                                         shown in Fig. 15, which demonstrates a high level of consistency be­
+                                                                                         tween L-model and E-model. The comparison of Br for L-model and E-
+                                                                                         model under the alternating magnetic field is presented in Fig. 14(b),
+                                                                                         and the maximum deviation of Br is merely 0.57 %. The simulation re­
+                                                                                         sults validate the accuracy and effectiveness of the equivalent perme­
+                                                                                         ability calculation model.
+
+                                                                                         4. Shielding performance analytical model of PN-LCSD
+
+                                                                                             The SF is the key indicator for evaluating the performance of the
+                                                                                         magnetic shielding device. Based on the equivalent permeability, the
+                                                                                         equivalent magnetic circuit of PN-LCSD is shown in Fig. 16. The total
+                                                                                         magnetic flux φ0, the magnetic flux within the composite shielding layer
+                                                                                         φS, and the magnetic flux in the shielding space φI can be expressed as
+                                                                                         follows:
+ Fig. 12. The variation of the equivalent permeability for VL and HL with p.             ⎧
+                                                                                         ⎨ φ 0 = μ0 H 0 a
+                                                                                              φS = 2μHx HS t                                                 (18)
+                                                                                         ⎩
+Table 2                                                                                     φI = μ0 HI (a − 2t)
+The equivalent permeability of simulation models for PN-LCSD at different
+thickness ratios.                                                                        where μ0 is the vacuum permeability, H0 is the external magnetic field
+  p            μVx (k)   μVy (k)    μVz (k)      μHx (k)      μHy (k)     μHz (k)        intensity, HI is the internal magnetic field intensity, a is the side length of
+                                                                                         the rectangular section, and t is the thickness of the composite shielding
+  0.5          49.38     49.38      55.65        57.66        57.66       55.65
+  1            51.79     51.79      59.32        61.73        61.73       59.32          layer. Since φ0 = φS + φI and according to Eq. (18), it follows that:
+  1.5          54.24     54.24      61.76        64.17        64.17       61.76
+  2            56.34     56.34      63.50        65.80        65.80       63.50
+                                                                                         μ0 H0 a = 2μHx HS t + μ0 HI (a − 2t)                                          (19)
+                                                                                            For the magnetic circuit CS, the magnetomotive force US can be
+                                                                                         expressed as:
+corresponding to p = 1, are subjected to simulation analysis under
+alternating magnetic fields at frequencies of 25 Hz, 50 Hz, 75 Hz, and
+100 Hz, respectively. To remove the interference caused by the eddying
+
+
+                                                                                     7
+X. Xu et al.                                                                                                                           Measurement 251 (2025) 117237
+
+
+
+
+               Fig. 13. The distribution of remanence for L-model compared to E-model with different p. (a) p = 0.5, (b) p = 1, (c) p = 1.5, (d) p = 2.
+
+
+
+
+                                  Fig. 14. Comparison of Br between L-model and E-model. (a) Different p, (b) different frequency.
+
+
+                                                                                      ⎧
+Table 3                                                                                      a
+                                                                                      ⎪
+                                                                                      ⎪ R =
+The equivalent permeability of simulation models for PN-LCSD at different             ⎨ Sx 2μ t
+                                                                                      ⎪
+                                                                                                  Vx
+frequencies.                                                                                                                                                   (21)
+                                                                                      ⎪       b − 2t
+                                                                                      ⎩ RSz =
+                                                                                      ⎪
+                                                                                      ⎪
+  Frequency (Hz)     μVx (k)    μVy (k)   μVz (k)   μHx (k)   μHy (k)   μHz (k)                μHx t
+  25                 47.22      47.22     29.50     48.90     48.90     29.50
+                                                                                         Similarly, for the magnetic circuit CI, the magnetomotive force UI can
+  50                 45.26      45.26     23.14     46.26     46.26     23.14
+  75                 45.93      45.93     19.73     46.60     46.60     19.72         be expressed as:
+  100                44.88      44.88     16.64     45.35     45.35     16.64         ⎧
+                                                                                      ⎨ UI = 2UIz + UIS
+                                                                                          UIz = RIz φI                                                    (22)
+                                                                                      ⎩
+⎧
+  US = 2USx + USz                                                                         UIS = RIS φI
+⎪
+⎪
+⎪
+⎪
+⎪
+⎨         RSx φS
+    USx =                                                                             where RIz is the magnetoresistance of CI along the z direction, and RIS is
+            2                                                              (20)
+⎪
+⎪                                                                                     the internal space magnetoresistance of CI. The RIz and RIS can be
+⎪
+⎪         RSz φS                                                                      calculated as:
+⎩ USz =
+⎪
+            2                                                                         ⎧
+                                                                                                     t
+                                                                                      ⎨ RIz = μVz (a − 2t)
+                                                                                      ⎪
+                                                                                      ⎪
+where RSx is the magnetoresistance of CS along the x direction, RSz is the            ⎪
+magnetoresistance of CS along the z direction, and b is the height of PN-                                                                                  (23)
+                                                                                      ⎪ RIS = b − 2t
+                                                                                      ⎪
+                                                                                      ⎪
+LCSD. The RSx and RSz can be calculated as:                                           ⎩
+                                                                                               μ0 (a − 2t)
+                                                                                         Based on Eq. (18) to Eq. (23), the following can be derived:
+
+
+                                                                                  8
+X. Xu et al.                                                                                                                          Measurement 251 (2025) 117237
+
+
+
+
+          Fig. 15. The distribution of remanence for L-model compared to E-model with different frequencies. (a) 25 Hz, (b) 50 Hz, (c) 75 Hz, (d) 100 Hz.
+
+
+
+                                                                                     Table 4
+                                                                                     The comparison of simulated and calculated SF for PN-LCSD at different thick­
+                                                                                     ness ratios.
+                                                                                      p             SF (simulation)        SF (calculation)         Deviation (%)
+
+                                                                                      0.5           392.62                 390.94                   0.43
+                                                                                      1             551.88                 547.27                   0.84
+                                                                                      1.5           364.30                 361.44                   0.79
+                                                                                      2             448.83                 445.94                   0.64
+
+
+
+                                                                                     of the SF calculation equation.
+
+                                                                                     5. Experimental verification
+
+                                                                                         The shielding performance test system for PN-LCSD is shown in
+                                                                                     Fig. 17. The inner support structure of the PN-LCSD used in the exper­
+                                                                                     iment is constructed by welding 2 mm thick 1J85 permalloy plates,
+                                                                                     forming an internal space of 400 mm × 400 mm × 400 mm. The
+                Fig. 16. The equivalent magnetic circuit of PN-LCSD.                 preparation process of 1J85 permalloy plates primarily includes raw
+                                                                                     material preparation, melting, casting, hot rolling, cold rolling, heat
+⎧     (                )                                                             treatment, surface treatment, and inspection. Subsequently, the 1K107B
+        μHx a
+⎪
+⎪
+⎨ S
+⎪ U =         + b − 2t   HS                                                          nanocrystalline film (20 μm / layer, a total of 40 layers) is successively
+               μVx
+          (                    )                                          (24)       laminated onto the permalloy surface using AS-DC10X-BC double-sided
+⎪
+⎪              2μ0 t                                                                 adhesive (10 μm thick) produced by ASTECH. The adhesive consists of a
+⎩ UI =
+⎪                      + b − 2t HI
+               μVz                                                                   central PET transparent film and acrylic adhesive layers on both sides,
+                                                                                     providing strong adhesion and non-magnetism. The 1K107B nano­
+   Since US = UI, and further applying Eq. (19) and Eq. (24), the SF of
+                                                                                     crystalline film used in the experiment is an iron-based nanocrystalline
+PN-LCSD can be expressed as:
+                                                                                     alloy, primarily composed of Fe, Si, B, Nb, and Cu. The preparation
+       H0 4μ0 μVx μHx t 2 + 2μVx μVz μHx (b − 2t)t a − 2t                            process of the 1K107B nanocrystalline film includes ribbon spraying,
+SF =      =                                       +                       (25)
+       HI   μ0 μVz μHx a2 + μ0 μVx μVz a(b − 2t)      a                              winding, annealing, coating, and lamination. A through-hole with a
+                                                                                     diameter of 20 mm is centrally located on the cover plate of the PN-LCSD
+    Due to a, b ≫ t, Eq. (25) can be approximated as follows:
+                                                                                     for circuit layout.
+       H0 4μ0 μVx μHx t 2 + 2μVx μVz μHx bt                                              A pair of square coils along the x direction in the three-axis coil
+SF =      =                                 +1                            (26)
+       HI   μ0 μVz μHx a2 + μ0 μVx μVz ab                                            system are selected as the test coils, with 30 turns and dimensions of
+                                                                                     1.68 m × 1.68 m, and a coil spacing of 0.91 m. Before starting the test, a
+   Using Eq. (25), the SF of PN-LCSD is calculated for an internal space             handheld demagnetizer is used to demagnetize the PN-LCSD and the flux
+dimension of 400 mm × 400 mm × 400 mm at values of p = 0.5 (dB = 1                   gate, signal generator, power amplifier, and current detector are turned
+mm, dT = 2 mm), p = 1 (dB = dT = 2 mm), p = 1.5 (dB = 1.5 mm, dT = 1                 on for preheating. The current generated by the signal generator is
+mm) and p = 2 (dB = 2 mm, dT = 1 mm). The comparison of calculated                   amplified by the power amplifier and then passed to the test coil, while
+value and simulative value for SF is shown in Table 4, and the maximum               the current detector is used to monitor the current in real-time. The
+deviation is only 0.84 %. The comparison results verify the effectiveness            magnetic field amplitude produced by the coil is changed through
+
+
+                                                                                 9
+X. Xu et al.                                                                                                                    Measurement 251 (2025) 117237
+
+
+
+
+                                                   Fig. 17. Shielding performance test system of PN-LCSD.
+
+
+adjusting the current during testing.                                              between the simulative and measured remanence is shown in Fig. 20(a).
+    The shielding performance of PN-LCSD in alternating magnetic fields            Compared to the measured remanence, the deviations of the simulation
+is influenced by both the magnetic properties and electrical conductivity          values across the 10 tests (Group1 to Group10) range from 3.68 % to
+of the permalloy and nanocrystalline. Since this paper focuses on the              6.48 %. The comparison results verify the accuracy of the equivalent
+equivalent magnetic properties of PN-LCSD, the static magnetic fields              permeability calculation model for PN-LCSD.
+are selected as the experimental background fields to avoid interference               Based on the equivalent permeability, combined with Eq. (25), the SF
+from eddy current effects caused by the material conductivity. As shown            of PN-LCSD used in the experiments is calculated to be 360.70. The
+in Fig. 18, the device is tested in 10 groups (Group1 to Group10) in the           comparison between the measured and calculated values of SF for the
+range of approximately 5000 to 50,000 nT. In section 2.1, the magnetic             device from Group (1) to Group (10) is shown in Fig. 20(b). Compared to
+properties of 1J85 permalloy and 1K107B nanocrystalline are measured               the measured SF, the deviations of the calculated values across the 10
+at a controlled room temperature of 25℃. To prevent temperature from               tests (Group1 to Group10) range from 2.69 % to 5.78 %. The main
+affecting the magnetic properties of the materials and thus interfering            reason for the measured performance being slightly lower than the
+with the measured results, all 10 groups of tests are also carried out at          theoretical performance is that the center hole and small gaps cause
+25℃. In each group of tests, the flux gate is placed at the center of the          partial magnetic leakage. The experimental results further demonstrate
+coil to detect the environmental magnetic field along the x direction,             the accuracy and effectiveness of the calculation method for the equiv­
+then the device is placed at the center of the coil to detect the remanence        alent magnetic properties of PN-LCSD.
+at the center of the internal space.
+    According to the initial permeability of 1J85 and 1K107B and the p             6. Conclusion
+of PN-LCSD used in the experiments, using Eq. (17), the equivalent
+permeability of the device can be obtained as: μVx = μVy = 49.02 k, μHx =              This paper proposes a novel theoretical model for the equivalent
+μHy = 56.50 k, μVz = μHz = 54.69 k. Using the equivalent permeability of           magnetic properties of PN-LCSD which can calculate the equivalent
+PN-LCSD used in the experiments as the input parameter and the static              permeability and SF of PN-LCSD, and its effectiveness is verified by the
+magnetic fields from the 10 groups of tests as the background fields, the          simulations and experiments. Using the equivalent permeability of PN-
+simulation model is constructed in COMSOL software based on the                    LCSD, combined with the equivalent surface method, the problems of
+equivalent surface method to simulate its internal remanence. The                  mesh generation and convergence caused by the multi-thin layer char­
+simulated remanence distribution of PN-LCSD used in the experiments                acteristic and magnetic circuit complexity in its performance analysis
+from Group (1) to Group (10) is shown in Fig. 19. The comparison                   can be solved. Based on the equivalent permeability, the proposed
+                                                                                   model further provides the analytical SF of PN-LCSD, which is used to
+                                                                                   evaluate its shielding performance. The proposed model provides a
+                                                                                   valuable theoretical basis for the performance analysis and design
+                                                                                   optimization of PN-LCSD.
+                                                                                       However, considering the potential challenges in the industrial
+                                                                                   application of PN-LCSD, there is still room for further improvement of
+                                                                                   the proposed model. When the volume and shielding layer thickness of
+                                                                                   PN-LCSD expand, the attachment area and layer number of nano­
+                                                                                   crystalline films and the welding difficulty of permalloy will increase,
+                                                                                   which further aggravates the magnetic leakage gaps and installation
+                                                                                   stress of PN-LCSD, thus reducing its shielding performance. Therefore,
+                                                                                   the PN-LCSD is not suitable for large-scale construction and is mainly
+                                                                                   used in medium or small shielding systems. In conclusion, establishing a
+                                                                                   theoretical model for the equivalent magnetic properties of PN-LCSD
+                                                                                   considering the influence of magnetic leakage gaps and installation
+                                                                                   stress can further improve the accuracy and effectiveness of the pro­
+                                                                                   posed model to meet a wider range of analysis and application
+                                                                                   requirements.
+
+                                                                                   7. Discussion
+
+                                                                                      The Eq. (17) and Eq. (25) demonstrate that the proposed theoretical
+    Fig. 18. The environmental field strength of Group (1) to Group (10).
+
+                                                                              10
+X. Xu et al.                                                                                                                       Measurement 251 (2025) 117237
+
+
+
+
+                                     Fig. 19. The simulated remanence distribution of PN-LCSD from Group (1) to Group (10).
+
+
+
+
+               Fig. 20. The comparison between the measured and theoretical values of the shielding performance for PN-LCSD. (a) Remanence, (b) SF.
+
+
+model for equivalent magnetic properties is constructed based on ma­                 CRediT authorship contribution statement
+terial properties and geometric parameters, which is not limited to PN-
+LCSD analysis but applicable to all laminated composite shielding device                Xueping Xu: Writing – review & editing, Supervision, Resources,
+(LCSD). By inputting the material permeabilities and dimensions of                   Funding acquisition, Conceptualization. Lei Wang: Writing – original
+composite shielding layers, the model can calculate the equivalent                   draft, Visualization, Validation, Investigation. Wei Liu: Visualization,
+permeability and SF of LCSD, enabling the evaluation of its shielding                Software, Investigation, Formal analysis. Zhenkai Zhao: Visualization,
+performance.                                                                         Validation, Software, Methodology, Formal analysis, Data curation.
+    The construction of LCSD require a comprehensive consideration of
+cost and performance metrics based on the application requirement.
+                                                                                     Declaration of competing interest
+Besides the permalloy and nanocrystalline, high-permeability silicon
+steel and low-loss ferrite are used in some specific shielding devices.
+                                                                                         The authors declare that they have no known competing financial
+High-permeability silicon steel exhibits lower cost, permeability, me­
+                                                                                     interests or personal relationships that could have appeared to influence
+chanical properties, and weldability compared to the permalloy [23].
+                                                                                     the work reported in this paper.
+Substituting the permalloy with high-permeability silicon steel can
+reduce the cost of LCSD, but it results in a degradation of its shielding
+                                                                                     Acknowledgments
+performance. Furthermore, low-loss ferrite demonstrates lower con­
+ductivity, permeability, and mechanical properties than the nano­
+                                                                                        This work is supported by the National Natural Science Foundation
+crystalline [24,25]. Replacing the nanocrystalline with low-loss ferrite
+                                                                                     of China under Grant No. 52275233, Fundamental Research Funds for
+can reduce magnetic noise in LCSD to some extent, but this substitution
+                                                                                     the Central Universities and China Association for Science and Tech­
+leads to a deterioration in its shielding performance, accompanied by an
+                                                                                     nology Youth Talent Support Project. The valuable comments and sug­
+increase in its weight and structural complexity. In conclusion, when the
+                                                                                     gestions from anonymous reviewers are highly appreciated.
+practical demand for shielding performance is low, the high-
+permeability silicon steel and low-loss ferrite may also be considered
+                                                                                     Data availability
+as alternative materials for PN-LCSD to meet specific requirements for
+cost reduction or magnetic noise minimization.
+                                                                                        Data will be made available on request.
+
+                                                                                11
+X. Xu et al.                                                                                                                                               Measurement 251 (2025) 117237
+
+
+References                                                                                        [14] H.K. Choi, A. Lee, M. Park, et al., Hierarchical porous film with layer-by-layer
+                                                                                                       assembly of 2D copper nanosheets for ultimate electromagnetic interference
+                                                                                                       shielding, ACS Nano 15 (2021) 829–839.
+ [1] Z. Wang, M. Zhang, K. Yang, et al., Coupling of magnetic field noise in multilayer
+                                                                                                  [15] X. Li, J. Zhou, L. Shen, et al., Exceptionally high saturation magnetic fluxdensity
+     magnetic shields for atomic magnetometer, IEEE Trans. Instrum. Meas. 73 (2024)
+                                                                                                       and ultralow coercivity via an amorphous-nanocrystalline transitional
+     6004808.
+                                                                                                       microstructure in an FeCo-based alloy, Adv. Mater. 35 (2022) 829–839.
+ [2] K. Wei, T. Zhao, Z. Xu, et al., Ultrasensitive atomic comagnetometer with enhanced
+                                                                                                  [16] K. Choi, C. Jung, S. Yi, Improved thermal stability of FeNiCo-based nanocrystalline
+     nuclear spin coherence, Phys. Rev. Lett. 130 (2023) 063201.
+                                                                                                       soft magnetic alloys enabled by Ni segregation in the amorphous matrix, J. Alloy.
+ [3] Y. Fu, Z. Wang, L. Xing, et al., Suppression of nonuniform magnetic fields in
+                                                                                                       Compd. 1014 (2025) 178690.
+     magnetic shielding system for SERF co-magnetometer, IEEE Trans. Instrum. Meas.
+                                                                                                  [17] X.P. Xu, W. Liu, Z.K. Zhao, et al., Optimization analysis of equivalent
+     71 (2022) 9507008.
+                                                                                                       electromagnetic parameters and magnetic noise of nanocrystalline magnetic
+ [4] E. Boto, N. Holmes, J. Leggett, et al., Moving magnetoencephalography towards
+                                                                                                       shielding, Measurement 242 (2025) 115878.
+     real-world applications with a wearable system, Nature 555 (2018) 657–661.
+                                                                                                  [18] Y. Fu, J.J. Sun, J.S. Ruan, et al., A nanocrystalline shield for high precision co-
+ [5] Q. Meng, Z. Wang, Q. Lin, et al., Theoretical analysis of a magnetic shielding
+                                                                                                       magnetometer operated in spin-exchange relaxation-free regime, Sens. Actuat. A
+     system combining active and passive modes, Nanomaterials 14 (2024) 538.
+                                                                                                       339 (2022) 113487.
+ [6] Z.Y. Sun, P. Fierlinger, J. Han, et al., Limits of low magnetic field environments in
+                                                                                                  [19] X.P. Xu, Z.K. Zhao, W. Liu, et al., Magnetic noise modeling and calculation of Fe-
+     magnetic shields, IEEE Trans. Ind. Electron. 68 (2021) 5385.
+                                                                                                       based nanocrystalline in the SERF magnetometer considering temperature effects,
+ [7] J.J. Sun, J.Y. Ren, X.P. Xu, et al., Analysis of comprehensive magnetic shielding
+                                                                                                       Sens. Actuat. A 373 (2024) 115431.
+     and optimization design of high-conductive layers in magnetic shielding devices
+                                                                                                  [20] X.P. Xu, W. Liu, Z.K. Zhao, et al., Efficient magnetic shielding by designing layered
+     for atomic magnetometer, Measurement 231 (2024) 114594.
+                                                                                                       composite with nanocrystalline and permalloy for weak magnetic measurement,
+ [8] J. Yang, X. Zhang, M. Shi, et al., Modeling and application of magnetic shaking for
+                                                                                                       Sens. Actuat. A 375 (2024) 115538.
+     improving permeability and performance of magnetic shields, IEEE Trans. Ind.
+                                                                                                  [21] X.P. Xu, W. Liu, Z.K. Zhao, et al., Modeling and analysis of magnetic noise
+     Electron. 71 (2024) 8162–8172.
+                                                                                                       characteristics of permalloy–nanocrystalline magnetic shielding devices, IEEE
+ [9] Y.N. Gao, D.Y. Ma, K. Wang, et al., A low-noise multilayer mu-metal thin shell
+                                                                                                       Sens. J. 24 (2024) 18977–18985.
+     magnetic shield for ultra-highly sensitive atomic sensors, Sens. Actuat. A 352
+                                                                                                  [22] R. Dou, X. Zhang, Y. Li, et al., Research on excellent performance nanocrystalline
+     (2023) 114207.
+                                                                                                       shielding method for wireless power transfer based on general laminated theory,
+[10] N.J. Ayres, G. Ban, G. Bison, et al., The very large n2EDM magnetically shielded
+                                                                                                       Proc. CSEE 42 (2022) 7306–7318.
+     room with an exceptional performance for fundamental physics measurements,
+                                                                                                  [23] A. Babapour, S.J. Hosseinipour, R. Jamaati, et al., The effects of antimony and hot
+     Rev. Sci. Instrum. 93 (2022) 095105.
+                                                                                                       rolling on the microstructure, texture, and magnetic properties of a non-oriented
+[11] X.P. Xu, W. Liu, Y.J. Huang, et al., Magnetic shielding mechanism and structure
+                                                                                                       electrical steel, J. Mater. Res. Technol. 27 (2023) 7986–7997.
+     design of composites at low frequency: a review, J. Magn. Magn. Mater. 570 (2023)
+                                                                                                  [24] T. Suryaprabha, S. Hong, T. Pham, et al., Superhydrophobic, self-cleaning
+     170509.
+                                                                                                       MWCNT/Ferrite/Ni Chain/PDMS-coated cotton fabrics for wearable applications:
+[12] T. Waeckerle, A. Demier, F. Godard, et al., Evolution and recent developments of
+                                                                                                       Electromagnetic shielding and underwater alerts, Chem. Eng. J. 507 (2025)
+     80%Ni permalloys, J. Magn. Magn. Mater. 505 (2020) 166635.
+                                                                                                       160378.
+[13] E.S. Kim, F. Haftlang, S.Y. Ahn, et al., Effects of processing parameters and heat
+                                                                                                  [25] Y.N. Gao, X.J. Fang, D.Y. Ma, et al., Analysis and measurement of magnetic noise in
+     treatment on the microstructure and magnetic properties of the in-situ synthesized
+                                                                                                       multilayer magnetic shielding system combined with mu-metal and ferrite for
+     Fe-Ni permalloy produced using direct energy deposition, J. Alloy. Compd. 907
+                                                                                                       atomic sensors, Measurement 233 (2024) 114745.
+     (2022) 164415.
+
+
+
+
+                                                                                             12
+

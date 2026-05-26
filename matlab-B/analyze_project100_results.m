@@ -48,6 +48,13 @@ H_mm = 200;
 wB = 0.7;
 wV = 0.3;
 
+% Multi-objective score weights used only when formal shielding-factor
+% columns exist. Lower magnetic noise, lower material volume, and lower
+% residual field ratio are better.
+wB_multi = 0.50;
+wV_multi = 0.25;
+wResidual_multi = 0.25;
+
 % Constraint used for continuous a-g response-surface optimization.
 T_max_opt = 10;
 
@@ -76,6 +83,7 @@ end
 T = check_experiment_geometry_relations(T);
 
 T = compute_optional_qratios(T);
+T = compute_optional_center_field_magnitude(T);
 T = compute_optional_shielding_factor(T);
 
 %% Calculate B metrics and material volume
@@ -117,6 +125,15 @@ end
 T.ScoreGlobal = wB*normalize01(T.B_avg_1_30_fT) + ...
     wV*normalize01(T.MaterialVolume_mm3);
 
+has_sf_metrics = all(ismember(["SF", "ResidualRatio"], string(T.Properties.VariableNames)));
+if has_sf_metrics
+    % Multi-objective score for formal external-field data:
+    % noise down, material volume down, residual field ratio down.
+    T.ScoreMultiObjective = wB_multi*normalize01(T.B_avg_1_30_fT) + ...
+        wV_multi*normalize01(T.MaterialVolume_mm3) + ...
+        wResidual_multi*normalize01(T.ResidualRatio);
+end
+
 %% Best rows
 % BestByExperimentLayer is based on minimum B_avg_1_30_fT.
 best_rows = false(n, 1);
@@ -138,6 +155,13 @@ OverallBestByB = T(idx_best_B, :);
 [~, idx_best_score] = min(T.ScoreGlobal);
 OverallBestByScore = T(idx_best_score, :);
 
+if has_sf_metrics
+    [~, idx_best_multi] = min(T.ScoreMultiObjective);
+    OverallBestByMultiObjective = T(idx_best_multi, :);
+else
+    OverallBestByMultiObjective = table();
+end
+
 %% Agmatrix quadratic response surfaces and constrained optima
 AgCoefTable = fit_ag_quadratic_models(T);
 AgOptTable = optimize_ag_response_surface(T, AgCoefTable, T_max_opt);
@@ -148,6 +172,10 @@ writetable(T, fullfile(out_dir, 'project100_Bmetrics_all.csv'));
 writetable(BestByExperimentLayer, fullfile(out_dir, 'project100_best_by_experiment_layer.csv'));
 writetable(OverallBestByB, fullfile(out_dir, 'project100_overall_best_by_B.csv'));
 writetable(OverallBestByScore, fullfile(out_dir, 'project100_overall_best_by_score.csv'));
+if has_sf_metrics
+    writetable(OverallBestByMultiObjective, ...
+        fullfile(out_dir, 'project100_overall_best_multiobjective.csv'));
+end
 writetable(AgCoefTable, fullfile(out_dir, 'project100_agmatrix_quadratic_coefficients.csv'));
 writetable(AgOptTable, fullfile(out_dir, 'project100_agmatrix_optimized_candidates.csv'));
 writetable(ValidationPoints, fullfile(out_dir, 'project100_maxwell_validation_points.csv'));
@@ -165,6 +193,12 @@ disp(OverallBestByB(:, {'experiment','layer','T_mm','a_mm','g_mm','Qint', ...
 disp('===== Overall best by Score =====');
 disp(OverallBestByScore(:, {'experiment','layer','T_mm','a_mm','g_mm','Qint', ...
     'B_avg_1_30_fT','B_1Hz_fT','MaterialVolume_mm3','ScoreWithinExperiment','ScoreGlobal'}));
+
+if has_sf_metrics
+    disp('===== Overall best by multi-objective score =====');
+    disp(OverallBestByMultiObjective(:, {'experiment','layer','T_mm','a_mm','g_mm','Qint', ...
+        'B_avg_1_30_fT','MaterialVolume_mm3','SF','ResidualRatio','ScoreMultiObjective'}));
+end
 
 %% Plots
 plot_layer_compare(T, fullfile(out_dir, 'project100_layer_compare_Bavg.png'));
@@ -184,6 +218,8 @@ for layer = [2 3 4]
 end
 
 plot_layer_qratio_stacked(T, fullfile(out_dir, 'project100_layer_Qratio_stacked.png'));
+plot_sf_tradeoff(T, fullfile(out_dir, 'project100_SF_vs_Bavg.png'));
+plot_residual_field_components(T, fullfile(out_dir, 'project100_residual_field_components.png'));
 
 fprintf('\n完成。结果已写入：\n%s\n', out_dir);
 fprintf('关键输出文件：\n');
@@ -191,6 +227,10 @@ fprintf('  project100_Bmetrics_all.csv\n');
 fprintf('  project100_best_by_experiment_layer.csv\n');
 fprintf('  project100_overall_best_by_B.csv\n');
 fprintf('  project100_overall_best_by_score.csv\n');
+if has_sf_metrics
+    fprintf('  project100_overall_best_multiobjective.csv\n');
+    fprintf('  project100_SF_vs_Bavg.png\n');
+end
 fprintf('  project100_agmatrix_quadratic_coefficients.csv\n');
 fprintf('  project100_agmatrix_optimized_candidates.csv\n');
 fprintf('  project100_maxwell_validation_points.csv\n');
@@ -217,6 +257,28 @@ function T = compute_optional_qratios(T)
             ratio = nan(height(T), 1);
             ratio(valid) = T.(col)(valid) ./ den(valid);
             T.(ratio_name) = ratio;
+        end
+    end
+end
+
+function T = compute_optional_center_field_magnitude(T)
+    names = string(T.Properties.VariableNames);
+
+    % Formal shielding-factor exports can either provide scalar magnitudes
+    % directly as B0_T/Bcenter_T, or provide vector components that are then
+    % converted to magnitudes here. Component columns are optional.
+    if ~ismember("B0_T", names)
+        b0_cols = ["B0_Bx_T", "B0_By_T", "B0_Bz_T"];
+        if all(ismember(b0_cols, names))
+            T.B0_T = sqrt(T.B0_Bx_T.^2 + T.B0_By_T.^2 + T.B0_Bz_T.^2);
+        end
+    end
+
+    names = string(T.Properties.VariableNames);
+    if ~ismember("Bcenter_T", names)
+        bc_cols = ["Bcenter_Bx_T", "Bcenter_By_T", "Bcenter_Bz_T"];
+        if all(ismember(bc_cols, names))
+            T.Bcenter_T = sqrt(T.Bcenter_Bx_T.^2 + T.Bcenter_By_T.^2 + T.Bcenter_Bz_T.^2);
         end
     end
 end
@@ -645,5 +707,70 @@ function plot_layer_qratio_stacked(T, out_png)
     ylabel('Q ratio');
     title('Layer-wise Qint ratio');
     legend(ratio_cols, 'Location', 'best');
+    saveas(fig, out_png);
+end
+
+function plot_sf_tradeoff(T, out_png)
+    names = string(T.Properties.VariableNames);
+    if ~all(ismember(["SF", "ResidualRatio"], names))
+        return;
+    end
+
+    valid = isfinite(T.SF) & isfinite(T.B_avg_1_30_fT);
+    if ~any(valid)
+        return;
+    end
+
+    fig = figure('Color', 'w', 'Name', 'SF vs Bavg tradeoff');
+    hold on; grid on;
+    experiments = unique(T.experiment(valid), 'stable');
+    for e = 1:numel(experiments)
+        idx = valid & T.experiment == experiments(e);
+        scatter(T.SF(idx), T.B_avg_1_30_fT(idx), 70, T.layer(idx), ...
+            'filled', 'DisplayName', char(experiments(e)));
+    end
+    xlabel('Shielding factor SF = |B0| / |Bcenter|');
+    ylabel('B_{avg,1-30Hz} (fT/sqrt(Hz))');
+    title('Shielding-noise tradeoff');
+    cb = colorbar;
+    cb.Label.String = 'Layer number';
+    legend('Location', 'best');
+    hold off;
+    saveas(fig, out_png);
+end
+
+function plot_residual_field_components(T, out_png)
+    names = string(T.Properties.VariableNames);
+    component_cols = ["Bcenter_Bx_T", "Bcenter_By_T", "Bcenter_Bz_T"];
+    if ~all(ismember(component_cols, names))
+        return;
+    end
+
+    valid = isfinite(T.Bcenter_Bx_T) & isfinite(T.Bcenter_By_T) & isfinite(T.Bcenter_Bz_T);
+    if ~any(valid)
+        return;
+    end
+
+    sub = T(valid, :);
+    fig = figure('Color', 'w', 'Name', 'residual field components');
+    tiledlayout(3, 1);
+
+    nexttile;
+    scatter(sub.layer, sub.Bcenter_Bx_T, 55, 'filled');
+    grid on;
+    ylabel('Bx (T)');
+    title('Center residual field components');
+
+    nexttile;
+    scatter(sub.layer, sub.Bcenter_By_T, 55, 'filled');
+    grid on;
+    ylabel('By (T)');
+
+    nexttile;
+    scatter(sub.layer, sub.Bcenter_Bz_T, 55, 'filled');
+    grid on;
+    xlabel('Layer number');
+    ylabel('Bz (T)');
+
     saveas(fig, out_png);
 end
