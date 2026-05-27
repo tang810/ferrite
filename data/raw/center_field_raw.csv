@@ -1,8 +1,8 @@
 case_id,field_dir,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,Bcenter_Mag_T,source_project,status
-C1_N1_t008_x,x,1.00089070612e-06,-2.87629371144e-09,-9.7859911139e-10,1.00089531736e-06,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt,exported
-C1_N1_t020_x,x,8.38340580294e-07,-2.32374866397e-08,2.86451426722e-10,8.38662620729e-07,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t020_shield.aedt,exported
-C1_N1_t040_x,x,5.88628894423e-07,-9.93257654698e-09,2.18241603685e-09,5.88716735252e-07,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t040_shield.aedt,exported
-C1_N1_t060_x,x,4.47820456963e-07,3.45778784488e-10,5.9710974477e-10,4.47820988538e-07,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_shield.aedt,exported
-C2_N2_t020_g010_x,x,5.62338382191e-07,-2.36349126727e-09,1.46454334962e-09,5.62345256104e-07,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N2_t020_g010_shield.aedt,exported
-C2_N3_t020_g010_x,x,4.36635595548e-07,-9.67599370619e-10,6.96568124572e-09,4.36692226016e-07,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_shield.aedt,exported
-C2_N4_t015_g008_x,x,3.35118015252e-07,-6.50732337618e-10,2.62580651207e-08,3.36145792154e-07,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt,exported
+C1_N1_t008_x,x,9.37472502461e-07,-2.06064708443e-08,2.13941381503e-08,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt,exported
+C1_N1_t020_x,x,8.35289421146e-07,-2.22753765617e-08,-9.00396408911e-11,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t020_shield.aedt,exported
+C1_N1_t040_x,x,5.83249302251e-07,-1.24183795092e-08,3.96637340435e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t040_shield.aedt,exported
+C1_N1_t060_x,x,4.4176858814e-07,-1.01877918866e-09,2.84338320302e-09,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_shield.aedt,exported
+C2_N2_t020_g010_x,x,5.6157605805e-07,-2.32204793649e-09,7.93412529868e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N2_t020_g010_shield.aedt,exported
+C2_N3_t020_g010_x,x,4.19744915902e-07,-3.85861780038e-09,4.40799939634e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_shield.aedt,exported
+C2_N4_t015_g008_x,x,3.46266099326e-07,-1.59169138475e-08,-5.56193290753e-08,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt,exported

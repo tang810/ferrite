@@ -1,0 +1,4 @@
+case_id,segment_pattern,coverage_phi,Bcenter_Bx_T,SFx,SFx_seg_over_SFx_cont,LeakageRatiox,IntH2_total,IntH2_seg_over_IntH2_cont,status,interpretation
+C2_N4_t015_g008_x,continuous,1.0,3.35118015252e-07,3.7498337,1,0.266678493,4.218493221e-06,1,processed,continuous baseline
+S_N4_t015_g008_seg12_aligned_x,aligned,0.95,,,,,,,pending,TODO export segmented result
+S_N4_t015_g008_seg12_staggered_x,staggered,0.95,,,,,,,pending,TODO export segmented result

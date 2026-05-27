@@ -1,0 +1,4 @@
+case_id,baseline_case,segment_pattern,N_segments,circumferential_gap_mm,coverage_phi,Bcenter_Bx_T,SFx,LeakageRatiox,IntH2_total,status,source_project,notes
+C2_N4_t015_g008_x,C2_N4_t015_g008_x,continuous,0,0,1.0,3.35118015252e-07,3.7498337,0.266678493,4.21849322113e-06,exported,data/processed/metrics_table.csv,continuous baseline from processed transverse dataset
+S_N4_t015_g008_seg12_aligned_x,C2_N4_t015_g008_x,aligned,12,1.6,0.95,,,,,planned,,TODO build/export segmented aligned AEDT case
+S_N4_t015_g008_seg12_staggered_x,C2_N4_t015_g008_x,staggered,12,1.6,0.95,,,,,planned,,TODO build/export segmented staggered AEDT case

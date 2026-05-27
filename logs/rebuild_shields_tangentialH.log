@@ -1,5 +1,690 @@
-rebuild_shields_tangentialH 2026-05-27 11:51:29
-Cases: ['C2_N2_t020_g010_x', 'C2_N3_t020_g010_x', 'C2_N4_t015_g008_x']
+rebuild_shields_tangentialH 2026-05-27 15:14:46
+Mesh: MESH_DIVISOR=3 (MaxLength = a/3)
+Cases: ['C1_N1_t008_x', 'C1_N1_t020_x', 'C1_N1_t040_x', 'C1_N1_t060_x', 'C2_N2_t020_g010_x', 'C2_N3_t020_g010_x', 'C2_N4_t015_g008_x']
+
+======================================================================
+Processing C1_N1_t008_x
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete boundary B0x_TH_64: OK
+delete boundary B0x_TH_65: OK
+delete boundary B0x_TH_66: OK
+delete boundary B0x_TH_68: OK
+delete boundary B0x_open_flux_faces: OK
+delete boundary Current1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_minus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_plus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Zero Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Cleared 0 existing mesh operations
+WARNING: no ferrite objects found for mesh assignment
+Box1 faces: [(64, [0.0, 0.0, 400.0]), (66, [0.0, -400.0, 0.0]), (67, [-400.0, 0.0, 0.0]), (68, [0.0, 400.0, 0.0]), (65, [0.0, 0.0, -400.0]), (69, [400.0, 0.0, 0.0])]
+x-normal faces: [67, 69]
+x-tangential H faces: [66, 68, 64, 65]
+AssignTangentialHField face 66: OK
+AssignTangentialHField face 68: OK
+AssignTangentialHField face 64: OK
+AssignTangentialHField face 65: OK
+AssignZeroTangentialHField x-normal faces: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 1.00089070613e-06
+eval Bcenter_By: OK -> -2.87629375711e-09
+eval Bcenter_Bz: OK -> -9.78599102428e-10
+eval Bcenter_Mag: OK -> 1.00089531737e-06
+Center field: {'status': 'exported', 'case_id': 'C1_N1_t008_x', 'field_dir': 'x', 'Bcenter_Bz_T': -9.7859910242783407e-10, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t008_shield.aedt', 'Bcenter_By_T': -2.8762937571115899e-09, 'Bcenter_Mag_T': 1.0008953173714101e-06, 'Bcenter_Bx_T': 1.00089070612854e-06}
+eval IntH2_total via IntH2_total: OK -> 3.40720179241e-06
+eval IntH2_L1 via IntH2_L1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
+    if not found:
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
+    def append_center_field(row):
+Exception: CopyNamedExprToStack(string exprName)(IntH2_L1) - call failed. Logs or message window might have more details
+
+eval IntH2_L1 via IntH2_total: OK -> 3.40720179241e-06
+IntH2: {'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t008_x', 'notes': '', 'IntH2_total': 3.4072017924106101e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t008_shield.aedt', 'IntH2_L1': 3.4072017924106101e-06}
+Save project: OK
+CloseProject: OK
+
+======================================================================
+Processing C1_N1_t020_x
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t020_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete boundary B0x_TH_64: OK
+delete boundary B0x_TH_65: OK
+delete boundary B0x_TH_66: OK
+delete boundary B0x_TH_68: OK
+delete boundary B0x_open_flux_faces: OK
+delete boundary Current1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_minus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_plus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Zero Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Cleared 0 existing mesh operations
+WARNING: no ferrite objects found for mesh assignment
+Box1 faces: [(64, [0.0, 0.0, 400.0]), (66, [0.0, -400.0, 0.0]), (67, [-400.0, 0.0, 0.0]), (68, [0.0, 400.0, 0.0]), (65, [0.0, 0.0, -400.0]), (69, [400.0, 0.0, 0.0])]
+x-normal faces: [67, 69]
+x-tangential H faces: [66, 68, 64, 65]
+AssignTangentialHField face 66: OK
+AssignTangentialHField face 68: OK
+AssignTangentialHField face 64: OK
+AssignTangentialHField face 65: OK
+AssignZeroTangentialHField x-normal faces: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 8.38340580297e-07
+eval Bcenter_By: OK -> -2.32374866375e-08
+eval Bcenter_Bz: OK -> 2.86451427772e-10
+eval Bcenter_Mag: OK -> 8.38662620732e-07
+Center field: {'status': 'exported', 'case_id': 'C1_N1_t020_x', 'field_dir': 'x', 'Bcenter_Bz_T': 2.8645142777203202e-10, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t020_shield.aedt', 'Bcenter_By_T': -2.3237486637525e-08, 'Bcenter_Mag_T': 8.3866262073184498e-07, 'Bcenter_Bx_T': 8.3834058029726602e-07}
+eval IntH2_total via IntH2_total: OK -> 4.40990981185e-06
+eval IntH2_L1 via IntH2_L1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
+    if not found:
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
+    def append_center_field(row):
+Exception: CopyNamedExprToStack(string exprName)(IntH2_L1) - call failed. Logs or message window might have more details
+
+eval IntH2_L1 via IntH2_total: OK -> 4.40990981185e-06
+IntH2: {'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t020_x', 'notes': '', 'IntH2_total': 4.4099098118511199e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t020_shield.aedt', 'IntH2_L1': 4.4099098118511199e-06}
+Save project: OK
+CloseProject: OK
+
+======================================================================
+Processing C1_N1_t040_x
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t040_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete boundary B0x_TH_64: OK
+delete boundary B0x_TH_65: OK
+delete boundary B0x_TH_66: OK
+delete boundary B0x_TH_68: OK
+delete boundary B0x_open_flux_faces: OK
+delete boundary Current1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_minus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_plus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Zero Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Cleared 0 existing mesh operations
+WARNING: no ferrite objects found for mesh assignment
+Box1 faces: [(64, [0.0, 0.0, 400.0]), (66, [0.0, -400.0, 0.0]), (67, [-400.0, 0.0, 0.0]), (68, [0.0, 400.0, 0.0]), (65, [0.0, 0.0, -400.0]), (69, [400.0, 0.0, 0.0])]
+x-normal faces: [67, 69]
+x-tangential H faces: [66, 68, 64, 65]
+AssignTangentialHField face 66: OK
+AssignTangentialHField face 68: OK
+AssignTangentialHField face 64: OK
+AssignTangentialHField face 65: OK
+AssignZeroTangentialHField x-normal faces: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 5.88628894423e-07
+eval Bcenter_By: OK -> -9.93257654569e-09
+eval Bcenter_Bz: OK -> 2.18241603628e-09
+eval Bcenter_Mag: OK -> 5.88716735253e-07
+Center field: {'status': 'exported', 'case_id': 'C1_N1_t040_x', 'field_dir': 'x', 'Bcenter_Bz_T': 2.1824160362758498e-09, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t040_shield.aedt', 'Bcenter_By_T': -9.9325765456944407e-09, 'Bcenter_Mag_T': 5.8871673525285205e-07, 'Bcenter_Bx_T': 5.8862889442346095e-07}
+eval IntH2_total via IntH2_total: OK -> 5.06587792626e-06
+eval IntH2_L1 via IntH2_L1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
+    if not found:
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
+    def append_center_field(row):
+Exception: CopyNamedExprToStack(string exprName)(IntH2_L1) - call failed. Logs or message window might have more details
+
+eval IntH2_L1 via IntH2_total: OK -> 5.06587792626e-06
+IntH2: {'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t040_x', 'notes': '', 'IntH2_total': 5.0658779262591199e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t040_shield.aedt', 'IntH2_L1': 5.0658779262591097e-06}
+Save project: OK
+CloseProject: OK
+
+======================================================================
+Processing C1_N1_t060_x
+Project: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete boundary B0x_TH_64: OK
+delete boundary B0x_TH_65: OK
+delete boundary B0x_TH_66: OK
+delete boundary B0x_TH_68: OK
+delete boundary B0x_open_flux_faces: OK
+delete boundary Current1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_minus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_plus: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Zero Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
+    safe(fp, "delete external-field object {}".format(obj),
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus2_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
+    def ensure_ferrite_material(fp, oEditor):
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Cleared 0 existing mesh operations
+WARNING: no ferrite objects found for mesh assignment
+Box1 faces: [(64, [0.0, 0.0, 400.0]), (66, [0.0, -400.0, 0.0]), (67, [-400.0, 0.0, 0.0]), (68, [0.0, 400.0, 0.0]), (65, [0.0, 0.0, -400.0]), (69, [400.0, 0.0, 0.0])]
+x-normal faces: [67, 69]
+x-tangential H faces: [66, 68, 64, 65]
+AssignTangentialHField face 66: OK
+AssignTangentialHField face 68: OK
+AssignTangentialHField face 64: OK
+AssignTangentialHField face 65: OK
+AssignZeroTangentialHField x-normal faces: OK
+create BcenterPoint_0_0_0: OK
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 4.47820456963e-07
+eval Bcenter_By: OK -> 3.45778785156e-10
+eval Bcenter_Bz: OK -> 5.97109744685e-10
+eval Bcenter_Mag: OK -> 4.47820988538e-07
+Center field: {'status': 'exported', 'case_id': 'C1_N1_t060_x', 'field_dir': 'x', 'Bcenter_Bz_T': 5.9710974468453805e-10, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_shield.aedt', 'Bcenter_By_T': 3.4577878515637202e-10, 'Bcenter_Mag_T': 4.47820988538019e-07, 'Bcenter_Bx_T': 4.4782045696288102e-07}
+eval IntH2_total via IntH2_total: OK -> 4.84840552783e-06
+eval IntH2_L1 via IntH2_L1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
+    log(fp, "{}: FAILED".format(label))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
+    if not found:
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
+    def append_center_field(row):
+Exception: CopyNamedExprToStack(string exprName)(IntH2_L1) - call failed. Logs or message window might have more details
+
+eval IntH2_L1 via IntH2_total: OK -> 4.84840552783e-06
+IntH2: {'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t060_x', 'notes': '', 'IntH2_total': 4.8484055278324101e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_shield.aedt', 'IntH2_L1': 4.8484055278324101e-06}
+Save project: OK
+CloseProject: OK
 
 ======================================================================
 Processing C2_N2_t020_g010_x
@@ -12,132 +697,134 @@ delete boundary B0x_TH_99: OK
 delete boundary B0x_open_flux_faces: OK
 delete boundary Current1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Current2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Iext_minus: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Iext_plus: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Tangential H Field: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Zero Tangential H Field: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2_Section1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3_Section1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2_Section1_Separate1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3_Section1_Separate1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_plus_sheet: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_minus_sheet: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_plus_sheet_1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_minus_sheet_1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
+Cleared 0 existing mesh operations
+WARNING: no ferrite objects found for mesh assignment
 Box1 faces: [(99, [0.0, 0.0, 400.0]), (101, [0.0, -400.0, 0.0]), (102, [-400.0, 0.0, 0.0]), (103, [0.0, 400.0, 0.0]), (100, [0.0, 0.0, -400.0]), (104, [400.0, 0.0, 0.0])]
 x-normal faces: [102, 104]
 x-tangential H faces: [101, 103, 99, 100]
@@ -149,55 +836,55 @@ AssignZeroTangentialHField x-normal faces: OK
 create BcenterPoint_0_0_0: OK
 ValidateDesign: OK -> 1
 Analyze Setup1: OK -> 0
-eval Bcenter_Bx: OK -> 5.62338382191e-07
-eval Bcenter_By: OK -> -2.36349126727e-09
-eval Bcenter_Bz: OK -> 1.46454334962e-09
-eval Bcenter_Mag: OK -> 5.62345256104e-07
-Center field: {'status': 'exported', 'case_id': 'C2_N2_t020_g010_x', 'field_dir': 'x', 'Bcenter_Bz_T': 1.46454334961917e-09, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N2_t020_g010_shield.aedt', 'Bcenter_By_T': -2.36349126726929e-09, 'Bcenter_Mag_T': 5.6234525610447204e-07, 'Bcenter_Bx_T': 5.6233838219084002e-07}
-eval IntH2_total via IntH2_total: OK -> 4.93935847895e-06
+eval Bcenter_Bx: OK -> 5.62338370399e-07
+eval Bcenter_By: OK -> -2.3634899966e-09
+eval Bcenter_Bz: OK -> 1.46455126493e-09
+eval Bcenter_Mag: OK -> 5.62345244328e-07
+Center field: {'status': 'exported', 'case_id': 'C2_N2_t020_g010_x', 'field_dir': 'x', 'Bcenter_Bz_T': 1.4645512649297e-09, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N2_t020_g010_shield.aedt', 'Bcenter_By_T': -2.36348999659881e-09, 'Bcenter_Mag_T': 5.6234524432814004e-07, 'Bcenter_Bx_T': 5.6233837039908895e-07}
+eval IntH2_total via IntH2_total: OK -> 4.93935847894e-06
 eval IntH2_L1 via IntH2_L1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L1) - call failed. Logs or message window might have more details
 
 eval IntH2_L1 via IntH2_s1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_s1) - call failed. Logs or message window might have more details
 
 eval IntH2_L1 via IntH2_cyl2: OK -> 2.43851582265e-06
 eval IntH2_L2 via IntH2_L2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L2) - call failed. Logs or message window might have more details
 
 eval IntH2_L2 via IntH2_s2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_s2) - call failed. Logs or message window might have more details
 
 eval IntH2_L2 via IntH2_cyl4: OK -> 2.5008426563e-06
-IntH2: {'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N2_t020_g010_x', 'notes': '', 'IntH2_total': 4.9393584789532501e-06, 'IntH2_L2': 2.5008426563009199e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N2_t020_g010_shield.aedt', 'IntH2_L1': 2.4385158226523302e-06}
+IntH2: {'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N2_t020_g010_x', 'notes': '', 'IntH2_total': 4.9393584789426901e-06, 'IntH2_L2': 2.5008426562956501e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N2_t020_g010_shield.aedt', 'IntH2_L1': 2.4385158226470299e-06}
 Save project: OK
 CloseProject: OK
 
@@ -212,132 +899,134 @@ delete boundary B0x_TH_99: OK
 delete boundary B0x_open_flux_faces: OK
 delete boundary Current1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Current2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Iext_minus: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Iext_plus: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Tangential H Field: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Zero Tangential H Field: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2_Section1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3_Section1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2_Section1_Separate1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3_Section1_Separate1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_plus_sheet: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_minus_sheet: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_plus_sheet_1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_minus_sheet_1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
+Cleared 0 existing mesh operations
+WARNING: no ferrite objects found for mesh assignment
 Box1 faces: [(99, [0.0, 0.0, 400.0]), (101, [0.0, -400.0, 0.0]), (102, [-400.0, 0.0, 0.0]), (103, [0.0, 400.0, 0.0]), (100, [0.0, 0.0, -400.0]), (104, [400.0, 0.0, 0.0])]
 x-normal faces: [102, 104]
 x-tangential H faces: [101, 103, 99, 100]
@@ -350,52 +1039,52 @@ create BcenterPoint_0_0_0: OK
 ValidateDesign: OK -> 1
 Analyze Setup1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 383, in <lambda$105>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 484, in <lambda$270>
     center_row = export_center_field(fp, oDesign, case_id)
 Exception: Analyze(string simulationName, [bool isBlocking /*optional*/]) -> long(Setup1) - call failed. Logs or message window might have more details
 
-eval Bcenter_Bx: OK -> 4.36635595548e-07
-eval Bcenter_By: OK -> -9.67599370619e-10
-eval Bcenter_Bz: OK -> 6.96568124572e-09
-eval Bcenter_Mag: OK -> 4.36692226016e-07
-Center field: {'status': 'exported', 'case_id': 'C2_N3_t020_g010_x', 'field_dir': 'x', 'Bcenter_Bz_T': 6.9656812457216898e-09, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_shield.aedt', 'Bcenter_By_T': -9.6759937061894093e-10, 'Bcenter_Mag_T': 4.3669222601615297e-07, 'Bcenter_Bx_T': 4.3663559554757401e-07}
-eval IntH2_total via IntH2_total: OK -> 4.8969926573e-06
+eval Bcenter_Bx: OK -> 4.36635606654e-07
+eval Bcenter_By: OK -> -9.67602997796e-10
+eval Bcenter_Bz: OK -> 6.96569057351e-09
+eval Bcenter_Mag: OK -> 4.36692237278e-07
+Center field: {'status': 'exported', 'case_id': 'C2_N3_t020_g010_x', 'field_dir': 'x', 'Bcenter_Bz_T': 6.9656905735059302e-09, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_shield.aedt', 'Bcenter_By_T': -9.6760299779644893e-10, 'Bcenter_Mag_T': 4.3669223727840903e-07, 'Bcenter_Bx_T': 4.3663560665444499e-07}
+eval IntH2_total via IntH2_total: OK -> 4.89699265727e-06
 eval IntH2_L1 via IntH2_L1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L1) - call failed. Logs or message window might have more details
 
-eval IntH2_L1 via IntH2_s1: OK -> 1.25403401457e-06
+eval IntH2_L1 via IntH2_s1: OK -> 1.25403401456e-06
 eval IntH2_L2 via IntH2_L2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L2) - call failed. Logs or message window might have more details
 
-eval IntH2_L2 via IntH2_s2: OK -> 1.75581193274e-06
+eval IntH2_L2 via IntH2_s2: OK -> 1.75581193273e-06
 eval IntH2_L3 via IntH2_L3: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L3) - call failed. Logs or message window might have more details
 
-eval IntH2_L3 via IntH2_s3: OK -> 1.88714670999e-06
-IntH2: {'IntH2_L3': 1.8871467099879401e-06, 'IntH2_total': 4.8969926572954297e-06, 'IntH2_L2': 1.7558119327386799e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N3_t020_g010_x', 'notes': '', 'IntH2_L1': 1.2540340145687999e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_shield.aedt'}
+eval IntH2_L3 via IntH2_s3: OK -> 1.88714670998e-06
+IntH2: {'IntH2_L3': 1.8871467099813201e-06, 'IntH2_total': 4.8969926572708301e-06, 'IntH2_L2': 1.75581193272699e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N3_t020_g010_x', 'notes': '', 'IntH2_L1': 1.25403401456252e-06, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_shield.aedt'}
 Save project: OK
 CloseProject: OK
 
@@ -410,132 +1099,134 @@ delete boundary B0x_TH_99: OK
 delete boundary B0x_open_flux_faces: OK
 delete boundary Current1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Current2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Iext_minus: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Iext_plus: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Tangential H Field: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete boundary Zero Tangential H Field: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 120, in <lambda$93>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 138, in <lambda$255>
     safe(fp, "delete external-field object {}".format(obj),
 Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2_Section1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3_Section1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus2_Section1_Separate1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Torus3_Section1_Separate1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_plus_sheet: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_minus_sheet: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_plus_sheet_1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
 delete external-field object Iext_minus_sheet_1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 126, in <lambda$94>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 144, in <lambda$256>
     def ensure_ferrite_material(fp, oEditor):
 Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
 
+Cleared 0 existing mesh operations
+WARNING: no ferrite objects found for mesh assignment
 Box1 faces: [(99, [0.0, 0.0, 400.0]), (101, [0.0, -400.0, 0.0]), (102, [-400.0, 0.0, 0.0]), (103, [0.0, 400.0, 0.0]), (100, [0.0, 0.0, -400.0]), (104, [400.0, 0.0, 0.0])]
 x-normal faces: [102, 104]
 x-tangential H faces: [101, 103, 99, 100]
@@ -547,68 +1238,68 @@ AssignZeroTangentialHField x-normal faces: OK
 create BcenterPoint_0_0_0: OK
 ValidateDesign: OK -> 1
 Analyze Setup1: OK -> 0
-eval Bcenter_Bx: OK -> 3.35118015252e-07
-eval Bcenter_By: OK -> -6.50732337618e-10
-eval Bcenter_Bz: OK -> 2.62580651207e-08
-eval Bcenter_Mag: OK -> 3.36145792154e-07
-Center field: {'status': 'exported', 'case_id': 'C2_N4_t015_g008_x', 'field_dir': 'x', 'Bcenter_Bz_T': 2.62580651206603e-08, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_shield.aedt', 'Bcenter_By_T': -6.5073233761832602e-10, 'Bcenter_Mag_T': 3.36145792153674e-07, 'Bcenter_Bx_T': 3.3511801525158699e-07}
-eval IntH2_total via IntH2_total: OK -> 4.21849322113e-06
+eval Bcenter_Bx: OK -> 3.35118015268e-07
+eval Bcenter_By: OK -> -6.50732336919e-10
+eval Bcenter_Bz: OK -> 2.62580650921e-08
+eval Bcenter_Mag: OK -> 3.36145792168e-07
+Center field: {'status': 'exported', 'case_id': 'C2_N4_t015_g008_x', 'field_dir': 'x', 'Bcenter_Bz_T': 2.6258065092088701e-08, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_shield.aedt', 'Bcenter_By_T': -6.5073233691939004e-10, 'Bcenter_Mag_T': 3.3614579216820802e-07, 'Bcenter_Bx_T': 3.3511801526840499e-07}
+eval IntH2_total via IntH2_total: OK -> 4.21849322112e-06
 eval IntH2_L1 via IntH2_L1: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L1) - call failed. Logs or message window might have more details
 
-eval IntH2_L1 via IntH2_s1: OK -> 8.15534482415e-07
+eval IntH2_L1 via IntH2_s1: OK -> 8.15534482411e-07
 eval IntH2_L2 via IntH2_L2: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L2) - call failed. Logs or message window might have more details
 
-eval IntH2_L2 via IntH2_s2: OK -> 8.27641338704e-07
+eval IntH2_L2 via IntH2_s2: OK -> 8.276413387e-07
 eval IntH2_L3 via IntH2_L3: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L3) - call failed. Logs or message window might have more details
 
-eval IntH2_L3 via IntH2_s3: OK -> 8.39537315278e-07
+eval IntH2_L3 via IntH2_s3: OK -> 8.39537315274e-07
 eval IntH2_L4 via IntH2_L4: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_L4) - call failed. Logs or message window might have more details
 
 eval IntH2_L4 via IntH2_s4: FAILED
 Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 83, in safe
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 101, in safe
     log(fp, "{}: FAILED".format(label))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 313, in <lambda$102>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 409, in <lambda$267>
     if not found:
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 228, in eval_named_expr
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py", line 324, in eval_named_expr
     def append_center_field(row):
 Exception: CopyNamedExprToStack(string exprName)(IntH2_s4) - call failed. Logs or message window might have more details
 
-eval IntH2_L4 via InH2_s4: OK -> 1.73578008474e-06
-IntH2: {'IntH2_L3': 8.3953731527760903e-07, 'IntH2_total': 4.2184932211347996e-06, 'IntH2_L2': 8.2764133870400196e-07, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N4_t015_g008_x', 'notes': '', 'IntH2_L1': 8.1553448241491602e-07, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_shield.aedt', 'IntH2_L4': 1.73578008473827e-06}
+eval IntH2_L4 via InH2_s4: OK -> 1.73578008473e-06
+IntH2: {'IntH2_L3': 8.3953731527408304e-07, 'IntH2_total': 4.2184932211170703e-06, 'IntH2_L2': 8.2764133870044304e-07, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N4_t015_g008_x', 'notes': '', 'IntH2_L1': 8.1553448241135203e-07, 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_shield.aedt', 'IntH2_L4': 1.7357800847311899e-06}
 Save project: OK
 CloseProject: OK
 
-Done 2026-05-27 11:54:23
+Done 2026-05-27 15:18:52

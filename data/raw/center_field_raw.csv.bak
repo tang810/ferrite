@@ -1,0 +1,8 @@
+case_id,field_dir,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,Bcenter_Mag_T,source_project,status
+C1_N1_t008_x,x,1.00089070613e-06,-2.87629375711e-09,-9.78599102428e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt,exported
+C1_N1_t020_x,x,8.38340580297e-07,-2.32374866375e-08,2.86451427772e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t020_shield.aedt,exported
+C1_N1_t040_x,x,5.88628894423e-07,-9.93257654569e-09,2.18241603628e-09,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t040_shield.aedt,exported
+C1_N1_t060_x,x,4.47820456963e-07,3.45778785156e-10,5.97109744685e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_shield.aedt,exported
+C2_N2_t020_g010_x,x,5.62338370399e-07,-2.3634899966e-09,1.46455126493e-09,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N2_t020_g010_shield.aedt,exported
+C2_N3_t020_g010_x,x,4.36635606654e-07,-9.67602997796e-10,6.96569057351e-09,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_shield.aedt,exported
+C2_N4_t015_g008_x,x,3.35118015268e-07,-6.50732336919e-10,2.62580650921e-08,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt,exported

@@ -1,0 +1,50 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py
+Starting Batch Run: 2:00:26 PM  May 27, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Abnormal script termination. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Invalid PropServer 'Cylinder4'. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Invalid PropServer 'Cylinder6'. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[error] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Script macro error: Invalid PropServer 'Cylinder8'. (02:00:38 PM  May 27, 2026)
+[error] Error in command execution
+[info] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:00:38 PM  May 27, 2026)
+[info] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Verify conduction path: Conduction path validate success. (02:00:45 PM  May 27, 2026)
+[info] Project:B0_reference_z, Design:Maxwell3DDesign1 (Magnetostatic), Normal completion of simulation on server: Local Machine. (02:01:02 PM  May 27, 2026)
+Stopping Batch Run: 2:01:03 PM  May 27, 2026

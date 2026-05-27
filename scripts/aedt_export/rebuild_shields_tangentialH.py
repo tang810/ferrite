@@ -31,18 +31,36 @@ SOLN = "Setup1 : LastAdaptive"
 H0 = "1"
 
 CASES = [
-    # Single-layer (already done, skip if output exists)
-    # {"case_id": "C1_N1_t008_x", "project": "C1_N1_t008_shield.aedt", "layers": 1},
-    # {"case_id": "C1_N1_t020_x", "project": "C1_N1_t020_shield.aedt", "layers": 1},
-    # {"case_id": "C1_N1_t040_x", "project": "C1_N1_t040_shield.aedt", "layers": 1},
-    # {"case_id": "C1_N1_t060_x", "project": "C1_N1_t060_shield.aedt", "layers": 1},
-    # Multilayer
+    {"case_id": "C1_N1_t008_x", "project": "C1_N1_t008_shield.aedt", "layers": 1},
+    {"case_id": "C1_N1_t020_x", "project": "C1_N1_t020_shield.aedt", "layers": 1},
+    {"case_id": "C1_N1_t040_x", "project": "C1_N1_t040_shield.aedt", "layers": 1},
+    {"case_id": "C1_N1_t060_x", "project": "C1_N1_t060_shield.aedt", "layers": 1},
     {"case_id": "C2_N2_t020_g010_x", "project": "C2_N2_t020_g010_shield.aedt", "layers": 2},
     {"case_id": "C2_N3_t020_g010_x", "project": "C2_N3_t020_g010_shield.aedt", "layers": 3},
     {"case_id": "C2_N4_t015_g008_x", "project": "C2_N4_t015_g008_shield.aedt", "layers": 4},
 ]
 
 FERRITE_OBJECTS = ["Cylinder2", "Cylinder4", "Cylinder6", "Cylinder8"]
+
+# ---- Mesh refinement settings ----
+# Each ferrite layer gets a LengthBased mesh operation with MaxLength = a / MESH_DIVISOR.
+# For convergence studies, decrease MESH_DIVISOR to increase mesh density.
+#    coarse : MESH_DIVISOR = 1   (MaxLength = a)
+#    medium : MESH_DIVISOR = 3   (MaxLength = a/3)
+#    fine   : MESH_DIVISOR = 5   (MaxLength = a/5)
+# Default medium ensures ~3 tetrahedra across each layer thickness.
+MESH_DIVISOR = 3
+# For single-layer cases, the ferrite thickness is extracted from the case_id.
+# Multilayer cases use FERRITE_LAYER_THICKNESS_MM below.
+FERRITE_LAYER_THICKNESS_MM = {
+    "C1_N1_t008_x": 0.08,
+    "C1_N1_t020_x": 0.20,
+    "C1_N1_t040_x": 0.40,
+    "C1_N1_t060_x": 0.60,
+    "C2_N2_t020_g010_x": 0.20,
+    "C2_N3_t020_g010_x": 0.20,
+    "C2_N4_t015_g008_x": 0.15,
+}
 
 EXTERNAL_FIELD_OBJECTS = [
     "Torus2", "Torus3",
@@ -143,6 +161,80 @@ def ensure_ferrite_material(fp, oEditor):
                  ]))
         except Exception:
             pass
+
+
+def clear_mesh_operations(fp, oDesign):
+    """Delete all existing mesh operations to ensure a clean baseline."""
+    try:
+        mesh_module = oDesign.GetModule("MeshSetup")
+        existing = []
+        try:
+            existing = list(mesh_module.GetMeshOperations())
+        except Exception:
+            pass
+        for name in existing:
+            safe(fp, "delete mesh op {}".format(name),
+                 lambda n=name: mesh_module.DeleteMeshOperations([n]))
+        log(fp, "Cleared {} existing mesh operations".format(len(existing)))
+    except Exception:
+        log(fp, "clear_mesh_operations: {}".format(traceback.format_exc()))
+
+
+def assign_ferrite_mesh(fp, oDesign, oEditor, case_id, layers):
+    """Apply LengthBased mesh refinement on every ferrite layer.
+
+    Each layer gets MaxLength = a / MESH_DIVISOR, where a is the per-layer
+    ferrite thickness.  The same length constraint is applied to both surface
+    (RefineInside=false) and volume (RefineInside=true) operations.
+    """
+    a_mm = FERRITE_LAYER_THICKNESS_MM.get(case_id)
+    if a_mm is None:
+        log(fp, "WARNING: no thickness for {}, skipping mesh ops".format(case_id))
+        return
+
+    max_len_mm = a_mm / MESH_DIVISOR
+    max_len = "{}mm".format(max_len_mm)
+    ferrite_objs = []
+    for obj in FERRITE_OBJECTS[:layers]:
+        try:
+            oEditor.GetObjectByName(obj)
+            ferrite_objs.append(obj)
+        except Exception:
+            pass
+
+    if not ferrite_objs:
+        log(fp, "WARNING: no ferrite objects found for mesh assignment")
+        return
+
+    mesh_module = oDesign.GetModule("MeshSetup")
+    for obj_name in ferrite_objs:
+        # Surface refinement (RefineInside=false)
+        safe(fp, "Mesh surface {}".format(obj_name),
+             lambda n=obj_name, ml=max_len:
+             mesh_module.AssignLengthOp([
+                 "NAME:Length_surf_{}".format(n),
+                 "RefineInside:=", False,
+                 "Objects:=", [n],
+                 "RestrictElem:=", True,
+                 "NumMaxElem:=", "2000",
+                 "RestrictLength:=", True,
+                 "MaxLength:=", ml,
+             ]))
+        # Volume refinement (RefineInside=true)
+        safe(fp, "Mesh volume  {}".format(obj_name),
+             lambda n=obj_name, ml=max_len:
+             mesh_module.AssignLengthOp([
+                 "NAME:Length_vol_{}".format(n),
+                 "RefineInside:=", True,
+                 "Objects:=", [n],
+                 "RestrictElem:=", True,
+                 "NumMaxElem:=", "2000",
+                 "RestrictLength:=", True,
+                 "MaxLength:=", ml,
+             ]))
+
+    log(fp, "Assigned mesh: a=%.3fmm, MaxLength=%.4fmm (divisor=%d) on %s" % (
+        a_mm, max_len_mm, MESH_DIVISOR, str(ferrite_objs)))
 
 
 def face_centers(oEditor):
@@ -367,6 +459,11 @@ def process_case(fp, oDesktop, case_info):
     # ---- Ensure ferrite is ferrite (not vacuum) ----
     ensure_ferrite_material(fp, oEditor)
 
+    # ---- Apply per-layer mesh refinement ----
+    clear_mesh_operations(fp, oDesign)
+    layers = case_info.get("layers", 1)
+    assign_ferrite_mesh(fp, oDesign, oEditor, case_id, layers)
+
     # ---- Apply x-directed tangential-H ----
     faces = face_centers(oEditor)
     log(fp, "Box1 faces: {}".format(faces))
@@ -413,11 +510,21 @@ def process_case(fp, oDesktop, case_info):
 def run():
     ensure_dirs()
 
-    # Do NOT clear existing output files; append new cases to existing data
+    # ---- Full rebuild: clear old CSV exports so we start fresh ----
+    for csv_path in [CENTER_FIELD_OUT, INTH2_OUT]:
+        if os.path.exists(csv_path):
+            bak = csv_path + ".bak"
+            if os.path.exists(bak):
+                os.remove(bak)
+            os.rename(csv_path, bak)
+    # ---- Also back up the old-mesh backups made manually ----
+    # (center_field_raw_old_mesh.csv and intH2_layerwise_raw_old_mesh.csv
+    #  are already safe from the manual cp step.)
 
     with open(LOG_PATH, "w") as fp:
         log(fp, "rebuild_shields_tangentialH {}".format(
             time.strftime("%Y-%m-%d %H:%M:%S")))
+        log(fp, "Mesh: MESH_DIVISOR={} (MaxLength = a/{})".format(MESH_DIVISOR, MESH_DIVISOR))
         log(fp, "Cases: {}".format([c["case_id"] for c in CASES]))
 
         import ScriptEnv

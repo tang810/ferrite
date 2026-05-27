@@ -1,0 +1,155 @@
+mesh_convergence v2 2026-05-27 15:02:39
+Target: ['C1_N1_t008_x', 'C2_N4_t015_g008_x']
+Levels: [('coarse', 1), ('medium', 3), ('fine', 5)]
+Work dir: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work
+ALL FORMAT STRINGS REMOVED -- IronPython 2.7 safe
+
+
+------------------------------------------------------------
+C1_N1_t008_x | level=coarse | a=0.080mm | MaxLength=0.0800mm
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedt
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedtresults
+copied D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedt
+copied results folder
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces found: 4 (need >= 4)
+GetMeshOperations() not available; assuming empty
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+applied mesh: a=0.080mm MaxLength=0.08mm divisor=1 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_x: OK -> 9.26455148894e-07
+eval IntH2_total: OK -> 3.7998318302e-06
+Result: SFx=1.35635276192 IntH2=3.7998e-06
+CloseProject: OK
+
+------------------------------------------------------------
+C1_N1_t008_x | level=medium | a=0.080mm | MaxLength=0.0267mm
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedt
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedtresults
+copied D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedt
+copied results folder
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces found: 4 (need >= 4)
+GetMeshOperations() not available; assuming empty
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+applied mesh: a=0.080mm MaxLength=0.0266666666667mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_x: OK -> 9.37472502357e-07
+eval IntH2_total: OK -> 3.81894499749e-06
+Result: SFx=1.34041264873 IntH2=3.8189e-06
+CloseProject: OK
+
+------------------------------------------------------------
+C1_N1_t008_x | level=fine | a=0.080mm | MaxLength=0.0160mm
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedt
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedtresults
+copied D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t008_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C1_N1_t008_shield.aedt
+copied results folder
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces found: 4 (need >= 4)
+GetMeshOperations() not available; assuming empty
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+applied mesh: a=0.080mm MaxLength=0.016mm divisor=5 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_x: OK -> 9.37472502438e-07
+eval IntH2_total: OK -> 3.81894499818e-06
+Result: SFx=1.34041264862 IntH2=3.8189e-06
+CloseProject: OK
+
+------------------------------------------------------------
+C2_N4_t015_g008_x | level=coarse | a=0.150mm | MaxLength=0.1500mm
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedt
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedtresults
+copied D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedt
+copied results folder
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces found: 4 (need >= 4)
+GetMeshOperations() not available; assuming empty
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+applied mesh: a=0.150mm MaxLength=0.15mm divisor=1 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_x: OK -> 3.46266099239e-07
+eval IntH2_total: OK -> 4.16011287329e-06
+Result: SFx=3.62900094107 IntH2=4.1601e-06
+CloseProject: OK
+
+------------------------------------------------------------
+C2_N4_t015_g008_x | level=medium | a=0.150mm | MaxLength=0.0500mm
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedt
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedtresults
+copied D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedt
+copied results folder
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces found: 4 (need >= 4)
+GetMeshOperations() not available; assuming empty
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+applied mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_x: OK -> 3.46266099292e-07
+eval IntH2_total: OK -> 4.16011287327e-06
+Result: SFx=3.62900094051 IntH2=4.1601e-06
+CloseProject: OK
+
+------------------------------------------------------------
+C2_N4_t015_g008_x | level=fine | a=0.150mm | MaxLength=0.0300mm
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedt
+removed stale: D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedtresults
+copied D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\data\mesh_study_work\C2_N4_t015_g008_shield.aedt
+copied results folder
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces found: 4 (need >= 4)
+GetMeshOperations() not available; assuming empty
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+applied mesh: a=0.150mm MaxLength=0.03mm divisor=5 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_x: OK -> 3.46266099357e-07
+eval IntH2_total: OK -> 4.16011287325e-06
+Result: SFx=3.62900093984 IntH2=4.1601e-06
+CloseProject: OK
+
+============================================================
+CONVERGENCE SUMMARY
+  C1_N1_t008_x | coarse | SFx=1.3564 | dSFx=0.0000% | IntH2=3.7998e-06 | dIntH2=0.00%
+  C1_N1_t008_x | medium | SFx=1.3404 | dSFx=-1.1752% | IntH2=3.8189e-06 | dIntH2=0.50%
+  C1_N1_t008_x | fine | SFx=1.3404 | dSFx=-1.1752% | IntH2=3.8189e-06 | dIntH2=0.50%
+  C2_N4_t015_g008_x | coarse | SFx=3.6290 | dSFx=0.0000% | IntH2=4.1601e-06 | dIntH2=0.00%
+  C2_N4_t015_g008_x | medium | SFx=3.6290 | dSFx=-0.0000% | IntH2=4.1601e-06 | dIntH2=-0.00%
+  C2_N4_t015_g008_x | fine | SFx=3.6290 | dSFx=-0.0000% | IntH2=4.1601e-06 | dIntH2=-0.00%
+
+Done 2026-05-27 15:05:49

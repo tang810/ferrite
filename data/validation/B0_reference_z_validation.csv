@@ -1,0 +1,2 @@
+reference,field_dir,abs_B0_Bx_T,abs_B0_By_T,abs_B0_Bz_T,direction_ratio_z,validation_status,notes
+B0_reference_z,z,2.46819833e-15,3.3608759e-14,1.25663644e-06,37390147,passed,primary z component dominates transverse components

@@ -1,0 +1,3 @@
+run_id,case_id,field_dir,repeat_index,Bapp_T,Bcenter_T,u_Bapp_T,u_Bcenter_T,correlation_rho,sensor,coil_system,demagnetization_state,status,notes
+TODO_EXP_001,C1_N1_t060_x,x,1,,,,,,,planned,TODO,not measured
+TODO_EXP_002,C2_N4_t015_g008_x,x,1,,,,,,,planned,TODO,not measured

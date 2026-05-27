@@ -1,0 +1,4 @@
+case_id,N_layers,t_ferrite_mm,g_radial_mm,Vf_mm3,Bcenter_Bz_T,SFz,LeakageRatioz,SFz_over_SFx,status,notes
+C1_N1_t060_z,1,0.60,0,75624.4184,,,,,pending,TODO export z-directed shielded center field
+C2_N3_t020_g010_z,3,0.20,0.10,75699.8166,,,,,pending,TODO export z-directed shielded center field
+C2_N4_t015_g008_z,4,0.15,0.08,75714.8962,,,,,pending,TODO export z-directed shielded center field

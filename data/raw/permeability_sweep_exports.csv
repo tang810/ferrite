@@ -1,0 +1,9 @@
+case_id,base_case,mu_r,Bcenter_Bx_T,SFx,LeakageRatiox,IntH2_total,etaS_star,rhoH,chiH,status,source_project,notes
+MU_C1_N1_t060_x_mu500,C1_N1_t060_x,500,,,,,,,,planned,,TODO export permeability sweep
+C1_N1_t060_x,C1_N1_t060_x,1000,4.47820456963e-07,2.80611751,0.356364263,4.84840552783e-06,1.03180186,6.41116406e-11,4.69896956e-06,exported,data/processed/metrics_table.csv,baseline screening material result
+MU_C1_N1_t060_x_mu2000,C1_N1_t060_x,2000,,,,,,,,planned,,TODO export permeability sweep
+MU_C1_N1_t060_x_mu5000,C1_N1_t060_x,5000,,,,,,,,planned,,TODO export permeability sweep
+MU_C2_N4_t015_g008_x_mu500,C2_N4_t015_g008_x,500,,,,,,,,planned,,TODO export permeability sweep
+C2_N4_t015_g008_x,C2_N4_t015_g008_x,1000,3.35118015252e-07,3.7498337,0.266678493,4.21849322113e-06,1.32013207,5.57154989e-11,3.1916899e-06,exported,data/processed/metrics_table.csv,baseline screening material result
+MU_C2_N4_t015_g008_x_mu2000,C2_N4_t015_g008_x,2000,,,,,,,,planned,,TODO export permeability sweep
+MU_C2_N4_t015_g008_x_mu5000,C2_N4_t015_g008_x,5000,,,,,,,,planned,,TODO export permeability sweep

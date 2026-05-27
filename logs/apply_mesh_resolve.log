@@ -1,0 +1,235 @@
+apply_mesh_resolve_all 2026-05-27 16:31:29
+MESH_DIVISOR=3 (MaxLength = a/3)
+Cases: ['C1_N1_t008_x', 'C1_N1_t020_x', 'C1_N1_t040_x', 'C1_N1_t060_x', 'C2_N2_t020_g010_x', 'C2_N3_t020_g010_x', 'C2_N4_t015_g008_x']
+ALL str.format() FREE -- IronPython 2.7 safe
+
+
+------------------------------------------------------------
+Processing C1_N1_t008_x | layers=1 | a=0.080mm
+OpenProject: OK -> IDispatch(ISProject2)
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+assigned mesh: a=0.080mm MaxLength=0.0266666666667mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 9.37472502461e-07
+eval Bcenter_By: OK -> -2.06064708443e-08
+eval Bcenter_Bz: OK -> 2.13941381503e-08
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 83, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 311, in <lambda$102>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 203, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFx=1.34041264859
+Center field: {'Bcenter_Bx_T': 9.3747250246075597e-07, 'Bcenter_Mag_T': '', 'case_id': 'C1_N1_t008_x', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t008_shield.aedt', 'Bcenter_Bz_T': 2.1394138150324599e-08, 'Bcenter_By_T': -2.0606470844267299e-08}
+eval IntH2_total: OK -> 3.81894499816e-06
+eval IntH2_L1: OK
+IntH2: {'IntH2_L3': '', 'IntH2_total': 3.8189449981552103e-06, 'IntH2_L2': '', 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t008_x', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t008_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C1_N1_t020_x | layers=1 | a=0.200mm
+OpenProject: OK -> IDispatch(ISProject2)
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 8.35289421146e-07
+eval Bcenter_By: OK -> -2.22753765617e-08
+eval Bcenter_Bz: OK -> -9.00396408911e-11
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 83, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 311, in <lambda$102>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 203, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFx=1.50438874022
+Center field: {'Bcenter_Bx_T': 8.3528942114616297e-07, 'Bcenter_Mag_T': '', 'case_id': 'C1_N1_t020_x', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t020_shield.aedt', 'Bcenter_Bz_T': -9.0039640891120904e-11, 'Bcenter_By_T': -2.2275376561697902e-08}
+eval IntH2_total: OK -> 4.3833280975e-06
+eval IntH2_L1: OK
+IntH2: {'IntH2_L3': '', 'IntH2_total': 4.3833280974962899e-06, 'IntH2_L2': '', 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t020_x', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t020_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C1_N1_t040_x | layers=1 | a=0.400mm
+OpenProject: OK -> IDispatch(ISProject2)
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+assigned mesh: a=0.400mm MaxLength=0.133333333333mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 5.83249302251e-07
+eval Bcenter_By: OK -> -1.24183795092e-08
+eval Bcenter_Bz: OK -> 3.96637340435e-10
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 83, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 311, in <lambda$102>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 203, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFx=2.15448178875
+Center field: {'Bcenter_Bx_T': 5.8324930225113404e-07, 'Bcenter_Mag_T': '', 'case_id': 'C1_N1_t040_x', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t040_shield.aedt', 'Bcenter_Bz_T': 3.96637340434606e-10, 'Bcenter_By_T': -1.2418379509201901e-08}
+eval IntH2_total: OK -> 4.97256263539e-06
+eval IntH2_L1: OK
+IntH2: {'IntH2_L3': '', 'IntH2_total': 4.9725626353875097e-06, 'IntH2_L2': '', 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t040_x', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t040_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C1_N1_t060_x | layers=1 | a=0.600mm
+OpenProject: OK -> IDispatch(ISProject2)
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+assigned mesh: a=0.600mm MaxLength=0.2mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 4.4176858814e-07
+eval Bcenter_By: OK -> -1.01877918866e-09
+eval Bcenter_Bz: OK -> 2.84338320302e-09
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 83, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 311, in <lambda$102>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 203, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFx=2.84447566834
+Center field: {'Bcenter_Bx_T': 4.4176858814025598e-07, 'Bcenter_Mag_T': '', 'case_id': 'C1_N1_t060_x', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_shield.aedt', 'Bcenter_Bz_T': 2.8433832030175602e-09, 'Bcenter_By_T': -1.01877918865962e-09}
+eval IntH2_total: OK -> 4.64859407934e-06
+eval IntH2_L1: OK
+IntH2: {'IntH2_L3': '', 'IntH2_total': 4.6485940793394197e-06, 'IntH2_L2': '', 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C1_N1_t060_x', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C2_N2_t020_g010_x | layers=2 | a=0.200mm
+OpenProject: OK -> IDispatch(ISProject2)
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2', 'Cylinder4']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 5.6157605805e-07
+eval Bcenter_By: OK -> -2.32204793649e-09
+eval Bcenter_Bz: OK -> 7.93412529868e-10
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 83, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 311, in <lambda$102>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 203, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFx=2.23763100650
+Center field: {'Bcenter_Bx_T': 5.6157605805037805e-07, 'Bcenter_Mag_T': '', 'case_id': 'C2_N2_t020_g010_x', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N2_t020_g010_shield.aedt', 'Bcenter_Bz_T': 7.9341252986827196e-10, 'Bcenter_By_T': -2.32204793648673e-09}
+eval IntH2_total: OK -> 4.91730797733e-06
+eval IntH2_L1: OK
+eval IntH2_L2: OK
+IntH2: {'IntH2_L3': '', 'IntH2_total': 4.9173079773253402e-06, 'IntH2_L2': True, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N2_t020_g010_x', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N2_t020_g010_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C2_N3_t020_g010_x | layers=3 | a=0.200mm
+OpenProject: OK -> IDispatch(ISProject2)
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 4.19744915902e-07
+eval Bcenter_By: OK -> -3.85861780038e-09
+eval Bcenter_Bz: OK -> 4.40799939634e-10
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 83, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 311, in <lambda$102>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 203, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFx=2.99372297887
+Center field: {'Bcenter_Bx_T': 4.1974491590172403e-07, 'Bcenter_Mag_T': '', 'case_id': 'C2_N3_t020_g010_x', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_shield.aedt', 'Bcenter_Bz_T': 4.4079993963420699e-10, 'Bcenter_By_T': -3.8586178003825998e-09}
+eval IntH2_total: OK -> 4.38092548018e-06
+eval IntH2_L1: OK -> 1.12486305556e-06
+eval IntH2_L2: OK -> 1.58194909981e-06
+eval IntH2_L3: OK -> 1.67411332481e-06
+IntH2: {'IntH2_L3': 1.6741133248115e-06, 'IntH2_total': 4.38092548017931e-06, 'IntH2_L2': 1.58194909981013e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N3_t020_g010_x', 'notes': '', 'IntH2_L1': 1.1248630555576699e-06, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C2_N4_t015_g008_x | layers=4 | a=0.150mm
+OpenProject: OK -> IDispatch(ISProject2)
+cleared 0 mesh ops
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 3.46266099326e-07
+eval Bcenter_By: OK -> -1.59169138475e-08
+eval Bcenter_Bz: OK -> -5.56193290753e-08
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 83, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 311, in <lambda$102>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/apply_mesh_resolve_all.py", line 203, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFx=3.62900094016
+Center field: {'Bcenter_Bx_T': 3.4626609932569499e-07, 'Bcenter_Mag_T': '', 'case_id': 'C2_N4_t015_g008_x', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_shield.aedt', 'Bcenter_Bz_T': -5.56193290753292e-08, 'Bcenter_By_T': -1.5916913847497699e-08}
+eval IntH2_total: OK -> 4.16011287324e-06
+eval IntH2_L1: OK -> 8.12695419473e-07
+eval IntH2_L2: OK -> 8.25286085808e-07
+eval IntH2_L3: OK -> 8.57167197064e-07
+eval IntH2_L4: OK -> 1.6649641709e-06
+IntH2: {'IntH2_L3': 8.5716719706424495e-07, 'IntH2_total': 4.1601128732412102e-06, 'IntH2_L2': 8.25286085807736e-07, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'C2_N4_t015_g008_x', 'notes': '', 'IntH2_L1': 8.1269541947296104e-07, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_shield.aedt', 'IntH2_L4': 1.6649641708962699e-06, 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+Done 2026-05-27 16:39:57
