@@ -1,13 +1,14 @@
-case_id,experiment,stage,model_type,layer,T_mm,a_mm,g_mm,N_segments,circumferential_gap_mm,coverage_phi,B0_T,B0_Bx_T,B0_By_T,B0_Bz_T,Bcenter_T,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,IntH2_total,IntH2_L1,IntH2_L2,IntH2_L3,IntH2_L4,IntH2_L5,IntH2_L6,comment
-C1_N1_t008,manufacturable_thin,continuous_shell,continuous_shell,1,0.08,0.08,0,0,0,1,,,,,,,,,,,,,,,,minimum manufacturable single layer
-C1_N1_t020,manufacturable_thin,continuous_shell,continuous_shell,1,0.20,0.20,0,0,0,1,,,,,,,,,,,,,,,,practical single layer
-C1_N1_t040,manufacturable_thin,continuous_shell,continuous_shell,1,0.40,0.40,0,0,0,1,,,,,,,,,,,,,,,,mid-thickness single layer
-C1_N1_t060,manufacturable_thin,continuous_shell,continuous_shell,1,0.60,0.60,0,0,0,1,,,,,,,,,,,,,,,,maximum manufacturable single layer
-C2_N2_t020_g010,manufacturable_thin,continuous_shell,continuous_shell,2,0.50,0.20,0.10,0,0,1,,,,,,,,,,,,,,,,two-layer candidate
-C2_N3_t020_g010,manufacturable_thin,continuous_shell,continuous_shell,3,0.80,0.20,0.10,0,0,1,,,,,,,,,,,,,,,,three-layer candidate with 0.60 mm ferrite total
-C2_N4_t015_g008,manufacturable_thin,continuous_shell,continuous_shell,4,0.84,0.15,0.08,0,0,1,,,,,,,,,,,,,,,,four-layer candidate with 0.60 mm ferrite total
-C2_N6_t010_g008,manufacturable_thin,continuous_shell,continuous_shell,6,1.00,0.10,0.08,0,0,1,,,,,,,,,,,,,,,,optional high-layer-count screen
-S1_N1_t020_seg12_cov095,manufacturable_thin,segmentation_check,segmented_shell_3d,1,0.20,0.20,0,12,1.6,0.95,,,,,,,,,,,,,,,,segmented single-layer correction
-S1_N1_t060_seg12_cov095,manufacturable_thin,segmentation_check,segmented_shell_3d,1,0.60,0.60,0,12,1.6,0.95,,,,,,,,,,,,,,,,segmented max-thickness correction
-S2_N3_t020_g010_seg12_cov095,manufacturable_thin,segmentation_check,segmented_shell_3d,3,0.80,0.20,0.10,12,1.6,0.95,,,,,,,,,,,,,,,,segmented three-layer correction
-S2_N4_t015_g008_seg12_cov095,manufacturable_thin,segmentation_check,segmented_shell_3d,4,0.84,0.15,0.08,12,1.6,0.95,,,,,,,,,,,,,,,,segmented four-layer correction
+case_id,experiment,stage,model_type,field_dir,coil_dir,N_layers,t_ferrite_mm,g_radial_mm,N_segments,circumferential_gap_mm,coverage_phi,B0_Bx_T,B0_By_T,B0_Bz_T,B0_Mag_T,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,Bcenter_Mag_T,IntH2_total,IntH2_L1,IntH2_L2,IntH2_L3,IntH2_L4,IntH2_L5,IntH2_L6,comment
+M0_B0_x,manufacturable_thin,reference,no_shield,x,,0,0,0,0,0,0,,,,,,,,,,,,,,,,no-shield transverse reference
+C1_N1_t008_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,1,0.08,0,0,0,1,,,,,,,,,,,,,,,,minimum manufacturable single-layer baseline
+C1_N1_t020_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,1,0.20,0,0,0,1,,,,,,,,,,,,,,,,practical thin single-layer baseline
+C1_N1_t040_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,1,0.40,0,0,0,1,,,,,,,,,,,,,,,,mid-thickness single-layer baseline
+C1_N1_t060_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,1,0.60,0,0,0,1,,,,,,,,,,,,,,,,maximum manufacturable single-layer baseline
+C2_N2_t020_g010_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,2,0.20,0.10,0,0,1,,,,,,,,,,,,,,,,two-layer thin candidate
+C2_N3_t020_g010_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,3,0.20,0.10,0,0,1,,,,,,,,,,,,,,,,three-layer same-material candidate
+C2_N4_t015_g008_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,4,0.15,0.08,0,0,1,,,,,,,,,,,,,,,,four-layer same-material candidate
+C2_N6_t010_g008_x,manufacturable_thin,screen_continuous,continuous_shell,x,x,6,0.10,0.08,0,0,1,,,,,,,,,,,,,,,,optional high-layer-count candidate
+M0_B0_z,manufacturable_thin,reference,no_shield,z,,0,0,0,0,0,0,,,,,,,,,,,,,,,,planned axial reference
+C2_N3_t020_g010_z,manufacturable_thin,screen_continuous,continuous_shell,z,z,3,0.20,0.10,0,0,1,,,,,,,,,,,,,,,,planned axial selected candidate
+S2_N3_t020_g010_seg12_aligned_x,manufacturable_thin,segmentation_check,segmented_shell_3d,x,x,3,0.20,0.10,12,1.6,0.95,,,,,,,,,,,,,,,,planned aligned-slot segmented correction
+S2_N3_t020_g010_seg12_staggered_x,manufacturable_thin,segmentation_check,segmented_shell_3d,x,x,3,0.20,0.10,12,1.6,0.95,,,,,,,,,,,,,,,,planned staggered-slot segmented correction
