@@ -7,6 +7,7 @@
 # Temporary files
 *.tmp
 *.temp
+*.baiduyun.uploading.cfg
 ~$*
 
 # MATLAB auto-save
