@@ -15,6 +15,20 @@ ROOT = Path(__file__).resolve().parents[2]
 METRICS = ROOT / "data" / "processed" / "metrics_table.csv"
 VALIDATION = ROOT / "data" / "validation" / "layerwise_intH2_validation.csv"
 OUTDIR = ROOT / "figures"
+TRANSVERSE_CASES = [
+    "C1_N1_t008_x",
+    "C1_N1_t020_x",
+    "C1_N1_t040_x",
+    "C1_N1_t060_x",
+    "C2_N2_t020_g010_x",
+    "C2_N3_t020_g010_x",
+    "C2_N4_t015_g008_x",
+]
+LAYERWISE_CASES = [
+    "C2_N2_t020_g010_x",
+    "C2_N3_t020_g010_x",
+    "C2_N4_t015_g008_x",
+]
 
 
 def f(value):
@@ -34,6 +48,17 @@ def read_csv(path):
         return []
     with path.open("r", newline="", encoding="utf-8-sig") as file:
         return list(csv.DictReader(file))
+
+
+def processed_transverse_rows(rows):
+    wanted = set(TRANSVERSE_CASES)
+    return [
+        row for row in rows
+        if row.get("case_id") in wanted
+        and row.get("metric_status") == "processed"
+        and row.get("model_type") == "continuous_shell"
+        and row.get("external_field_direction") == "x"
+    ]
 
 
 def save_placeholder(path, title, message):
@@ -84,7 +109,7 @@ def bar_metrics(path, rows):
     import matplotlib.pyplot as plt
 
     keys = ["etaS_star", "rhoH", "chiH"]
-    complete = [row for row in rows if any(f(row.get(k, "")) == f(row.get(k, "")) for k in keys)]
+    complete = [row for row in rows if all(finite(f(row.get(k, ""))) for k in keys)]
     if not complete:
         save_placeholder(path, "Fig. 5 etaS*, rhoH, chiH comparison", "Pending: no complete metric rows available.")
         return
@@ -95,6 +120,7 @@ def bar_metrics(path, rows):
         values = [0 if not finite(v) else v for v in values]
         ax.bar(labels, values)
         ax.set_ylabel(key)
+        ax.set_title("Preliminary continuous-shell transverse-field results" if key == keys[0] else "")
         ax.grid(True, axis="y", alpha=0.3)
     axes[-1].tick_params(axis="x", rotation=45, labelsize=7)
     fig.tight_layout()
@@ -103,11 +129,17 @@ def bar_metrics(path, rows):
     print(f"Wrote {path}")
 
 
-def layer_fraction(path, rows):
+def layer_fraction(path, rows, validation_rows):
     import matplotlib.pyplot as plt
 
+    passed = {
+        row["case_id"] for row in validation_rows
+        if row.get("validation_status") == "passed"
+    }
     complete = []
     for row in rows:
+        if row.get("case_id") not in LAYERWISE_CASES or row.get("case_id") not in passed:
+            continue
         total = f(row.get("IntH2_total", ""))
         vals = [f(row.get(f"IntH2_L{i}", "")) for i in range(1, 7)]
         vals = [v for v in vals if finite(v)]
@@ -125,6 +157,7 @@ def layer_fraction(path, rows):
         ax.bar(labels, vals, bottom=bottoms, label=f"L{i+1}")
         bottoms = [b + v for b, v in zip(bottoms, vals)]
     ax.set_ylabel("IntH2_Li / IntH2_total")
+    ax.set_title("Preliminary continuous-shell transverse-field results")
     ax.legend()
     ax.tick_params(axis="x", rotation=45, labelsize=7)
     fig.tight_layout()
@@ -136,19 +169,20 @@ def layer_fraction(path, rows):
 def main():
     parser = argparse.ArgumentParser(description="Generate paper figures or pending-data placeholders.")
     parser.add_argument("--metrics", type=Path, default=METRICS)
+    parser.add_argument("--validation", type=Path, default=VALIDATION)
     parser.add_argument("--outdir", type=Path, default=OUTDIR)
     args = parser.parse_args()
 
-    rows = read_csv(args.metrics)
+    rows = processed_transverse_rows(read_csv(args.metrics))
+    validation_rows = read_csv(args.validation)
     args.outdir.mkdir(parents=True, exist_ok=True)
 
-    scatter(args.outdir / "Fig3_SFx_vs_Vf.png", rows, "Vf_mm3", "SFx", "Fig. 3 SFx versus Vf", "Vf (mm^3)", "SFx", "model_type")
-    scatter(args.outdir / "Fig4_IntH2_vs_Vf.png", rows, "Vf_mm3", "IntH2_total", "Fig. 4 IntH2_total,x versus Vf", "Vf (mm^3)", "IntH2_total,x")
+    title_prefix = "Preliminary continuous-shell transverse-field results"
+    scatter(args.outdir / "Fig3_SFx_vs_Vf.png", rows, "Vf_mm3", "SFx", f"{title_prefix}: SFx versus Vf", "Vf (mm^3)", "SFx", "N_layers")
+    scatter(args.outdir / "Fig4_IntH2_vs_Vf.png", rows, "Vf_mm3", "IntH2_total", f"{title_prefix}: IntH2_total versus Vf", "Vf (mm^3)", "IntH2_total")
     bar_metrics(args.outdir / "Fig5_eta_chi_comparison.png", rows)
-    layer_fraction(args.outdir / "Fig6_layerwise_IntH2_fraction.png", rows)
-    scatter(args.outdir / "Fig7_SFx_vs_Tspace.png", rows, "T_space_mm", "SFx", "Fig. 7 SFx versus total radial occupation", "T_space (mm)", "SFx", "N_layers")
-    scatter(args.outdir / "Fig8_axial_vs_transverse_selected.png", rows, "SFx", "SFz", "Fig. 8 axial versus transverse selected candidates", "SFx", "SFz")
-    scatter(args.outdir / "Fig9_segmented_penalty.png", rows, "slot_pattern", "SFx", "Fig. 9 segmented penalty", "slot pattern", "SFx")
+    layer_fraction(args.outdir / "Fig6_layerwise_IntH2_fraction.png", rows, validation_rows)
+    scatter(args.outdir / "Fig7_SFx_vs_Tspace.png", rows, "T_space_mm", "SFx", f"{title_prefix}: SFx versus total radial occupation", "T_space (mm)", "SFx", "N_layers")
 
 
 if __name__ == "__main__":
