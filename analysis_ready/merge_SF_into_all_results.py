@@ -3,7 +3,7 @@ merge_SF_into_all_results.py
 =============================
 Merges the computed SF summary (from compute_SF_from_B0_Bcenter.py) into the
 main all_results_clean.csv, adding B0_T, Bcenter_T, Bcenter component, SF, and
-ResidualRatio columns.
+LeakageRatio columns.
 
 This makes the SF data available to the MATLAB analysis pipeline.
 
@@ -58,10 +58,10 @@ def merge_sf_into_all_results():
     sf_columns = [
         "B0_T", "B0_Bx_T", "B0_By_T", "B0_Bz_T",
         "Bcenter_T", "Bcenter_Bx_T", "Bcenter_By_T", "Bcenter_Bz_T",
-        "SF", "ResidualRatio",
-        "SF_Bx", "ResidualRatio_Bx",
-        "SF_By", "ResidualRatio_By",
-        "SF_Bz", "ResidualRatio_Bz",
+        "SF", "LeakageRatio",
+        "SF_Bx", "LeakageRatio_Bx",
+        "SF_By", "LeakageRatio_By",
+        "SF_Bz", "LeakageRatio_Bz",
     ]
 
     # Ensure all columns exist in all_rows (add if missing)
@@ -107,7 +107,7 @@ def update_sf_registry():
 
     registry_fields = [
         "experiment", "layer", "T_mm", "a_mm", "g_mm",
-        "B0_T", "Bcenter_T", "SF", "ResidualRatio",
+        "B0_T", "Bcenter_T", "SF", "LeakageRatio",
         "B0_source", "Bcenter_source",
     ]
 

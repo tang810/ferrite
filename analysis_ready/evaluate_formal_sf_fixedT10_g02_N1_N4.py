@@ -65,7 +65,7 @@ def main():
             bc_t = magnitude(bc_bx, bc_by, bc_bz)
 
         sf = ratio(b0_t, bc_t)
-        residual = ratio(bc_t, b0_t)
+        leakage = ratio(bc_t, b0_t)
         int_h2 = as_float(row.get("IntH2_total", ""))
 
         if layer == 1:
@@ -77,7 +77,7 @@ def main():
         out["B0_T_used"] = fmt(b0_t)
         out["Bcenter_T_used"] = fmt(bc_t)
         out["SF"] = fmt(sf)
-        out["ResidualRatio"] = fmt(residual)
+        out["LeakageRatio"] = fmt(leakage)
         out["SF_Bx"] = fmt(ratio(b0_bx, bc_bx))
         out["SF_By"] = fmt(ratio(b0_by, bc_by))
         out["SF_Bz"] = fmt(ratio(b0_bz, bc_bz))

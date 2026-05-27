@@ -2,6 +2,7 @@ import csv
 import os
 import re
 import shutil
+import sys
 
 
 BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
@@ -39,6 +40,13 @@ OUT_FIELDS = [
     "IntH2_L3",
     "IntH2_L4",
 ]
+
+LEGACY_ALIASES = {
+    "IntH2_L1": ["IntH2_cyl2", "IntH2_s1"],
+    "IntH2_L2": ["IntH2_cyl4", "IntH2_s2"],
+    "IntH2_L3": ["IntH2_s3"],
+    "IntH2_L4": ["InH2_s4", "IntH2_s4"],
+}
 
 
 def clean_header(name):
@@ -117,6 +125,22 @@ def normalize_row(row, experiment, layer, clean_to_raw):
     return out
 
 
+def warn_legacy_aliases(clean_to_raw, filename):
+    seen = []
+    for canonical, aliases in LEGACY_ALIASES.items():
+        for alias in aliases:
+            if alias in clean_to_raw:
+                seen.append("{}->{}".format(alias, canonical))
+    if seen:
+        print(
+            "WARNING legacy-compatible IntH2 names in {}: {}. "
+            "Rename AEDT expressions to IntH2_Li/IntH2_total for new exports.".format(
+                filename, ", ".join(seen)
+            ),
+            file=sys.stderr,
+        )
+
+
 def validate_rows(rows):
     problems = []
     for i, row in enumerate(rows, start=2):
@@ -147,6 +171,7 @@ def main():
         with open(path, "r", newline="") as f:
             reader = csv.DictReader(f)
             clean_to_raw = {clean_header(name): name for name in reader.fieldnames}
+            warn_legacy_aliases(clean_to_raw, filename)
             for row in reader:
                 rows_out.append(normalize_row(row, experiment, layer, clean_to_raw))
 

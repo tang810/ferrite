@@ -69,6 +69,29 @@ def directional_values(row):
     return math.nan, math.nan
 
 
+def b0_direction_validation(row, dominance_ratio=10.0):
+    q = row["external_field_direction"]
+    bx = abs(f(row.get("B0_Bx_T", "")))
+    by = abs(f(row.get("B0_By_T", "")))
+    bz = abs(f(row.get("B0_Bz_T", "")))
+    if q == "x":
+        primary = bx
+        transverse = max(by if finite(by) else 0.0, bz if finite(bz) else 0.0)
+    elif q == "z":
+        primary = bz
+        transverse = max(bx if finite(bx) else 0.0, by if finite(by) else 0.0)
+    elif q == "y":
+        primary = by
+        transverse = max(bx if finite(bx) else 0.0, bz if finite(bz) else 0.0)
+    else:
+        return "failed_validation", "unknown external_field_direction"
+    if not finite(primary):
+        return "missing", "B0 primary component missing"
+    if transverse == 0.0 or primary >= dominance_ratio * transverse:
+        return "passed", "B0 primary component dominates transverse components"
+    return "failed_validation", "B0 primary component does not dominate transverse components"
+
+
 def main():
     parser = argparse.ArgumentParser(description="Compute metrics for ferrite paper dataset.")
     parser.add_argument("--infile", type=Path, default=INFILE)
@@ -87,6 +110,7 @@ def main():
         out = dict(row)
         vf = volumes[row["case_id"]]
         b0_q, bc_q = directional_values(row)
+        b0_validation, b0_notes = b0_direction_validation(row)
         sf = abs(b0_q) / abs(bc_q) if finite(b0_q) and finite(bc_q) and abs(bc_q) > 0 else math.nan
         leakage = abs(bc_q) / abs(b0_q) if finite(b0_q) and finite(bc_q) and abs(b0_q) > 0 else math.nan
         ln_sf = math.log(sf) if finite(sf) and sf > 0 else math.nan
@@ -107,7 +131,19 @@ def main():
         out["etaS_star"] = fmt(eta_s_star)
         out["rhoH"] = fmt(rho_h)
         out["chiH"] = fmt(chi_h)
-        out["metric_status"] = "processed" if finite(sf) else "missing"
+        out["B0_direction_validation"] = b0_validation
+        out["SF_validation_notes"] = b0_notes
+        if b0_validation != "passed":
+            metric_status = b0_validation
+        elif not finite(sf):
+            metric_status = "missing"
+            out["SF_validation_notes"] = "SF cannot be computed from directional B0/Bcenter components"
+        elif sf < 1.0 and row["model_type"] != "no_shield":
+            metric_status = "failed_validation"
+            out["SF_validation_notes"] = "SFq < 1; verify B0 model, shield model, field direction, center point, Mag_B misuse, and re-solve state"
+        else:
+            metric_status = "processed"
+        out["metric_status"] = metric_status
         out["used_in_paper"] = "no"
         out_rows.append(out)
 

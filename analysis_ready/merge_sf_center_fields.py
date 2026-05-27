@@ -51,20 +51,20 @@ def main():
             Bc = math.sqrt(Bx*Bx + By*By + Bz*Bz)
 
         SF = math.nan
-        residual = math.nan
+        leakage = math.nan
         if math.isfinite(B0) and math.isfinite(Bc) and abs(B0) > 0:
-            residual = abs(Bc) / abs(B0)
+            leakage = abs(Bc) / abs(B0)
         if math.isfinite(B0) and math.isfinite(Bc) and abs(Bc) > 0:
             SF = abs(B0) / abs(Bc)
 
         out = dict(row)
         out["Bcenter_T"] = Bc
         out["SF"] = SF
-        out["ResidualRatio"] = residual
+        out["LeakageRatio"] = leakage
         out_rows.append(out)
 
     fieldnames = list(out_rows[0].keys())
-    for extra in ["SF", "ResidualRatio"]:
+    for extra in ["SF", "LeakageRatio"]:
         if extra not in fieldnames:
             fieldnames.append(extra)
 

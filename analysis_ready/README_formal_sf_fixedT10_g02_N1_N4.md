@@ -53,7 +53,7 @@ Then compute:
 
 ```text
 SF = abs(B0_T) / abs(Bcenter_T)
-ResidualRatio = abs(Bcenter_T) / abs(B0_T)
+LeakageRatio = abs(Bcenter_T) / abs(B0_T)
 ```
 
 ## Current status

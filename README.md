@@ -5,6 +5,10 @@
 当前目标不是给出实验结论，而是保证 AEDT 导出、后处理、验证和绘图都有明确入口。
 没有真实 AEDT 导出的 case 只能保持 `planned`、`missing` 或 `pending`，不能写成论文结果。
 
+当前优先任务是修正 B0/SF 数据链路。`docs/B0_SF_VALIDATION_STATUS.md`
+记录了现有 `B0_reference_x` 方向验证失败、`SFx` 正式计算公式以及单层
+case 的重跑顺序；在该验证完成前，不写“多层优于单层”的结论。
+
 This repository supports a finite-element-based design and evaluation framework for multilayer cylindrical thin-ferrite shells.
 
 The current goal is reproducibility, not claiming unsupported numerical results. Missing AEDT exports are marked as `planned`, `missing`, or `pending`; no script should fabricate field values or conclusions.

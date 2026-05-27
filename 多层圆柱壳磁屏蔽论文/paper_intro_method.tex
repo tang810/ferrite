@@ -169,7 +169,7 @@ Maxwell 中通过 Field Calculator 对所有铁氧体区域计算
     SF = \frac{|B_0|}{|B_{\mathrm{center}}|},
 \end{equation}
 \begin{equation}
-    \mathrm{ResidualRatio}
+    \mathrm{LeakageRatio}
     = \frac{|B_{\mathrm{center}}|}{|B_0|}.
 \end{equation}
 
@@ -191,10 +191,10 @@ Maxwell 中通过 Field Calculator 对所有铁氧体区域计算
 \begin{equation}
     B_{\mathrm{avg},1-30}, \qquad
     SF, \qquad
-    \mathrm{ResidualRatio}, \qquad
+    \mathrm{LeakageRatio}, \qquad
     V_{\mathrm{material}} .
 \end{equation}
-其中 \(B_{\mathrm{avg},1-30}\) 越低表示材料磁噪声越小，\(SF\) 越高表示外部磁场衰减越强，\(\mathrm{ResidualRatio}\) 越低表示中心残余场越小，\(V_{\mathrm{material}}\) 越小表示材料用量越低。后处理时可对各指标归一化，形成多目标评分，用于筛选低噪声、高屏蔽且材料用量较低的候选结构。
+其中 \(B_{\mathrm{avg},1-30}\) 越低表示材料磁噪声越小，\(SF\) 越高表示外部磁场衰减越强，\(\mathrm{LeakageRatio}\) 越低表示中心泄漏场越小，\(V_{\mathrm{material}}\) 越小表示材料用量越低。后处理时可对各指标归一化，形成多目标评分，用于筛选低噪声、高屏蔽且材料用量较低的候选结构。
 
 \begin{thebibliography}{99}
 

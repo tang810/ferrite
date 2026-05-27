@@ -112,7 +112,9 @@ def main():
 
         missing = [key for key in required_for_row(row) if str(out.get(key, "")).strip() == ""]
         out["missing_fields"] = ";".join(missing)
-        if row["status"] in ("planned", "missing") and missing:
+        if row["status"] == "failed":
+            out["data_status"] = "failed"
+        elif row["status"] in ("planned", "missing") and missing:
             out["data_status"] = row["status"]
         elif missing:
             out["data_status"] = "missing"

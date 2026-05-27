@@ -13,7 +13,7 @@ Output:
 
 Also computes:
   SF             = abs(B0_T) / abs(Bcenter_T)
-  ResidualRatio  = abs(Bcenter_T) / abs(B0_T)
+  LeakageRatio   = abs(Bcenter_T) / abs(B0_T)
   SF_Bx          = abs(B0_Bx_T) / abs(Bcenter_Bx_T)   [if Bx available]
   SF_By          = abs(B0_By_T) / abs(Bcenter_By_T)
   SF_Bz          = abs(B0_Bz_T) / abs(Bcenter_Bz_T)
@@ -55,7 +55,7 @@ def safe_float(val):
 
 
 def compute_sf(b0_row, bc_row):
-    """Compute SF and ResidualRatio from B0 and Bcenter rows."""
+    """Compute SF and LeakageRatio from B0 and Bcenter rows."""
     b0_T     = safe_float(b0_row.get("B0_T"))
     bc_T     = safe_float(bc_row.get("Bcenter_T"))
     b0_Bx    = safe_float(b0_row.get("B0_Bx_T"))
@@ -69,16 +69,16 @@ def compute_sf(b0_row, bc_row):
 
     if b0_T is not None and bc_T is not None and b0_T != 0 and bc_T != 0:
         result["SF"] = round(fabs(b0_T) / fabs(bc_T), 6)
-        result["ResidualRatio"] = round(fabs(bc_T) / fabs(b0_T), 6)
+        result["LeakageRatio"] = round(fabs(bc_T) / fabs(b0_T), 6)
     else:
         result["SF"] = ""
-        result["ResidualRatio"] = ""
+        result["LeakageRatio"] = ""
 
     for comp, b0_val, bc_val in [("Bx", b0_Bx, bc_Bx),
                                    ("By", b0_By, bc_By),
                                    ("Bz", b0_Bz, bc_Bz)]:
         key_sf = "SF_" + comp
-        key_rr = "ResidualRatio_" + comp
+        key_rr = "LeakageRatio_" + comp
         if b0_val is not None and bc_val is not None and b0_val != 0 and bc_val != 0:
             result[key_sf] = round(fabs(b0_val) / fabs(bc_val), 6)
             result[key_rr] = round(fabs(bc_val) / fabs(b0_val), 6)
@@ -136,7 +136,7 @@ def main():
             if k.startswith("Bcenter_"):
                 merged[k] = v
 
-        # SF & ResidualRatio
+        # SF and leakage ratio.
         merged.update(sf_data)
 
         # Write output
@@ -150,7 +150,7 @@ def main():
         print("  B0_T              = %s" % b0_row.get("B0_T", "N/A"))
         print("  Bcenter_T         = %s" % bc_row.get("Bcenter_T", "N/A"))
         print("  SF                = %s" % merged.get("SF", "N/A"))
-        print("  ResidualRatio     = %s" % merged.get("ResidualRatio", "N/A"))
+        print("  LeakageRatio      = %s" % merged.get("LeakageRatio", "N/A"))
         print("  Wrote: %s" % out_path)
 
 
