@@ -123,16 +123,26 @@ At audit time, the following are directly usable:
 
 The current partial CSV exports are not sufficient for final numerical conclusions.
 
+## Completed Data
+
+The following data have been verified and exported through the canonical pipeline:
+
+- `B0_reference_x`: canonical x-directed tangential-H no-shield reference.
+  Source: `aedt/reference/B0_reference_x.aedt`; `data/raw/B0_reference_x.csv`; `data/validation/B0_reference_validation.csv` reports `validation_status=passed`.
+  B0_Bx_T = 1.257e-06 T, B0 direction ratio > 1e7.
+- Single-layer transverse shielded center-field exports (C1_N1_t008_x, C1_N1_t020_x, C1_N1_t040_x, C1_N1_t060_x).
+  All four cases rebuilt with x-directed tangential-H matching B0_reference_x, solved, and exported to `data/raw/center_field_raw.csv`.
+  All four cases have metric_status=processed, SFx > 1, used_in_paper=no.
+- Single-layer transverse layerwise IntH2 exports for the same four cases.
+  Exported to `data/raw/intH2_layerwise_raw.csv`; IntH2_total = IntH2_L1 for all cases; `data/validation/layerwise_intH2_validation.csv` reports `validation_status=passed`.
+
 ## Missing Data
 
 The following data are missing or incomplete for a reproducible paper result set:
 
-- Verified `B0_reference_x` export with `B0_Bx_T`, `B0_By_T`, `B0_Bz_T`, `B0_Mag_T`.
-  The current clean reference is `aedt/reference/B0_reference_x.aedt`; `data/validation/B0_reference_validation.csv` reports `validation_status=passed`.
 - Verified `B0_reference_z` export with `B0_Bx_T`, `B0_By_T`, `B0_Bz_T`, `B0_Mag_T`.
-- Complete shielded center-field exports for all priority-1 continuous-shell cases.
-- Complete layerwise `IntH2_Li` exports for all priority-1 continuous-shell cases.
-- Validation that `IntH2_total` matches `sum(IntH2_Li)` within tolerance.
+- Shielded center-field exports for multilayer (`C2_*`), axial (`*_z`), segmented (`S*`), and sensitivity (`MU_*`, `MESH_*`) cases.
+- Layerwise `IntH2_Li` exports for multilayer, axial, segmented, and sensitivity cases.
 - Selected `z`-field axial extensions.
 - Segmented aligned and staggered shell corrections.
 - Mesh and boundary-domain convergence studies.

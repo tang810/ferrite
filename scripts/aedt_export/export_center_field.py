@@ -59,17 +59,38 @@ def export_with_pyaedt(args):
     except Exception as exc:
         raise RuntimeError(f"pyAEDT is not available: {exc}") from exc
 
-    # The exact field-export calls are intentionally conservative because
-    # AEDT report names differ across projects. Use the manual checklist to
-    # create named reports/expressions, then extend this function with the
-    # project-specific report extraction call if needed.
     app = Maxwell3d(project=str(args.project), non_graphical=True, new_desktop=False)
     try:
-        raise RuntimeError(
-            "Automatic center-field extraction is project-specific. "
-            "Create/export Bx, By, Bz, and Mag_B reports in AEDT or extend "
-            "export_with_pyaedt() with verified report names."
-        )
+        values = {}
+        POINT_NAME = "BcenterPoint_0_0_0"
+        SOLN = "Setup1 : LastAdaptive"
+        ofields = app.post.ofields_reporter
+
+        for comp, op, out_key in [
+            ("Bx", "ScalarX", "Bcenter_Bx_T"),
+            ("By", "ScalarY", "Bcenter_By_T"),
+            ("Bz", "ScalarZ", "Bcenter_Bz_T"),
+            ("Mag", "Mag", "Bcenter_Mag_T"),
+        ]:
+            ofields.clear_expression_cache()
+            ofields.expression_cache["Freq"] = "1MHz"
+            ofields.expression_cache["Phase"] = "0deg"
+            try:
+                result = ofields.evaluate_at_point(
+                    quantity="B",
+                    point=[0.0, 0.0, 0.0],
+                    operation=op,
+                    solution=SOLN,
+                )
+                values[out_key] = float(result) if result is not None else ""
+            except Exception:
+                values[out_key] = ""
+
+        if args.model_type == "no_shield":
+            for key in list(values.keys()):
+                b0_key = key.replace("Bcenter_", "B0_")
+                values[b0_key] = values.pop(key)
+        return values
     finally:
         app.release_desktop(close_projects=False, close_desktop=False)
 

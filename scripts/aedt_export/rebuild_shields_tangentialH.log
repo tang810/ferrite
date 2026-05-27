@@ -1,0 +1,132 @@
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py
+Starting Batch Run: 11:17:59 AM  May 27, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+-- Message Window --
+Stopping Batch Run: 11:18:24 AM  May 27, 2026
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py
+Starting Batch Run: 11:19:56 AM  May 27, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+      C1_N1_t008_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (11:20:22 AM  May 27, 2026)
+          [info] Verify conduction path: Conduction path validate success. (11:20:29 AM  May 27, 2026)
+          [info] Normal completion of simulation on server: Local Machine. (11:20:47 AM  May 27, 2026)
+      C1_N1_t020_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (11:20:50 AM  May 27, 2026)
+          [info] Verify conduction path: Conduction path validate success. (11:20:53 AM  May 27, 2026)
+          [info] Normal completion of simulation on server: Local Machine. (11:21:13 AM  May 27, 2026)
+      C1_N1_t040_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (11:21:15 AM  May 27, 2026)
+          [info] Verify conduction path: Conduction path validate success. (11:21:18 AM  May 27, 2026)
+          [info] Normal completion of simulation on server: Local Machine. (11:21:36 AM  May 27, 2026)
+      C1_N1_t060_shield (D:/tangyumengnew/aaaaaaaaximukeji/round2_working/manufacturable_thin/)
+        Maxwell3DDesign1 (Magnetostatic)
+          [info] Verify conduction path: Conduction path validate success. (11:21:38 AM  May 27, 2026)
+          [info] Verify conduction path: Conduction path validate success. (11:21:41 AM  May 27, 2026)
+          [info] Normal completion of simulation on server: Local Machine. (11:21:57 AM  May 27, 2026)
+-- Message Window --
+Stopping Batch Run: 11:21:59 AM  May 27, 2026
+ 
+Ansys Electronics Desktop Version 2025.1.0, Build: 2024-11-30 15:03:33
+Location: D:\Programs Files\ANSYS Inc\v251\AnsysEM\ansysedt.exe
+Batch Script: D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_shields_tangentialH.py
+Starting Batch Run: 11:23:00 AM  May 27, 2026
+Running as user : LAPTOP-SD92UF55\86135
+Temp directory: C:\Users\86135\AppData\Local\Temp
+Project directory: C:\Users\86135\法国海军 Dropbox\tang yumeng\PC\Documents\Ansoft
+-- Message Window --
+      *Global - Messages
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+        [error] Error in command execution
+-- Message Window --
+Stopping Batch Run: 11:25:08 AM  May 27, 2026

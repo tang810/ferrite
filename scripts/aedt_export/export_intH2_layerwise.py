@@ -57,11 +57,23 @@ def export_with_pyaedt(args):
 
     app = Maxwell3d(project=str(args.project), non_graphical=True, new_desktop=False)
     try:
-        raise RuntimeError(
-            "Automatic named-expression extraction is project-specific. "
-            "Ensure IntH2_total and IntH2_Li expressions exist, then extend "
-            "export_with_pyaedt() with verified calculator/report calls."
-        )
+        values = {}
+        SOLN = "Setup1 : LastAdaptive"
+        ofields = app.post.ofields_reporter
+
+        expr_names = ["IntH2_total"] + [
+            f"IntH2_L{i}" for i in range(1, args.layers + 1)
+        ]
+        for expr_name in expr_names:
+            try:
+                result = ofields.evaluate_expression(
+                    expression=expr_name,
+                    solution=SOLN,
+                )
+                values[expr_name] = float(result) if result is not None else ""
+            except Exception:
+                values[expr_name] = ""
+        return values
     finally:
         app.release_desktop(close_projects=False, close_desktop=False)
 
