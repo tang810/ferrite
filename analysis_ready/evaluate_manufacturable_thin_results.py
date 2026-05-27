@@ -102,7 +102,7 @@ def main():
             bc_t = magnitude(bc_bx, bc_by, bc_bz)
 
         sf = ratio(b0_t, bc_t)
-        residual = ratio(bc_t, b0_t)
+        leakage = ratio(bc_t, b0_t)
         volume = ferrite_volume(layer, a, g, coverage)
         total_ferrite_t = layer * a if layer > 0 and finite(a) else 0.0
         eta_s = math.log(sf) / volume if finite(sf) and sf > 0 and volume > 0 else math.nan
@@ -112,7 +112,7 @@ def main():
         out["B0_T_used"] = fmt(b0_t)
         out["Bcenter_T_used"] = fmt(bc_t)
         out["SF"] = fmt(sf)
-        out["ResidualRatio"] = fmt(residual)
+        out["LeakageRatio"] = fmt(leakage)
         out["MaterialVolume_mm3"] = fmt(volume)
         out["TotalFerriteThickness_mm"] = fmt(total_ferrite_t)
         out["eta_lnS_per_mm3"] = fmt(eta_s)

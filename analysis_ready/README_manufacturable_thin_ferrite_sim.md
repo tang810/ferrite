@@ -42,11 +42,11 @@ This checks how much the real slots reduce shielding performance.
 
 For every candidate:
 
-1. Use the same no-shield reference model to export `B0_T`, `B0_Bx_T`, `B0_By_T`, `B0_Bz_T`.
+1. Use the same no-shield reference model to export `B0_Mag_T`, `B0_Bx_T`, `B0_By_T`, `B0_Bz_T`.
 2. Export the shielded center field:
 
 ```text
-Bcenter_T
+Bcenter_Mag_T
 Bcenter_Bx_T
 Bcenter_By_T
 Bcenter_Bz_T
@@ -62,9 +62,12 @@ IntH2_L1, IntH2_L2, ...
 Compute:
 
 ```text
-SF = abs(B0_T) / abs(Bcenter_T)
-ResidualRatio = abs(Bcenter_T) / abs(B0_T)
-eta_S = ln(SF) / V_f
+SFq = abs(B0_q) / abs(Bcenter_q)
+LeakageRatioq = abs(Bcenter_q) / abs(B0_q)
+eta_S = ln(SFq) / V_f
+eta_S_star = V_ref * ln(SFq) / V_f
+rhoH = IntH2_total / V_f
+chiH = IntH2_total / ln(SFq)
 ```
 
 ## Decision rule
