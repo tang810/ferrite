@@ -1,3 +1,3 @@
 reference,field_dir,abs_B0_Bx_T,abs_B0_By_T,abs_B0_Bz_T,primary_to_largest_transverse_ratio,validation_status,notes
-B0_reference_x,x,1.64663947e-08,5.63735385e-09,3.32604899e-08,0.495073727,failed_validation,primary component does not dominate transverse components
+B0_reference_x,x,1.25663683e-06,3.82793443e-15,1.94324559e-13,6466690.73,passed,primary component dominates
 B0_reference_z,z,,,,,missing,reference file missing

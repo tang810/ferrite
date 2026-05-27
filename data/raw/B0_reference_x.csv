@@ -1,2 +1,2 @@
-case_id,model_type,field_dir,B0_Bx_T,B0_By_T,B0_Bz_T,B0_Mag_T,source,validation_note
-B0_reference_x,no_shield,x,-1.64663946855e-08,5.63735384572e-09,3.32604898501e-08,3.65943171503e-08,analysis_ready/manufacturable_thin_center_fields_exported.csv,"existing export copied for audit only; fails x-direction dominance and must be rerun before SF use"
+case_id,field_dir,B0_Bx_T,B0_By_T,B0_Bz_T,B0_Mag_T,source_project,status
+B0_reference_x,x,1.25663682659e-06,-3.82793442545e-15,-1.9432455921e-13,1.25663682659e-06,D:\tangyumengnew\aaaaaaaaximukeji\aedt\reference\B0_reference_x.aedt,exported

@@ -5,12 +5,12 @@
 ## 当前结论边界
 
 - data pipeline has been prepared.
-- preliminary exported data are incomplete.
-- B0/SF validation is ongoing.
+- `B0_reference_x` has been rebuilt and passed direction validation.
+- Shielded single-layer exports are still incomplete.
 
 ## 已发现的问题
 
-`analysis_ready/manufacturable_thin_center_fields_exported.csv` 中 `C1_N1_t008` 行包含一组 B0 导出：
+旧的 `analysis_ready/manufacturable_thin_center_fields_exported.csv` 中 `C1_N1_t008` 行包含一组 B0 导出：
 
 | quantity | value |
 |---|---:|
@@ -40,11 +40,44 @@ LeakageRatiox = abs(Bcenter_Bx_T) / abs(B0_Bx_T)
 6. 确认 B0 工程和 shield 工程都重新求解后再导出。
 7. 先完成四个单层 case，只有全部 `SFx >= 1` 且随厚度趋势合理后，再继续 N=2/3/4。
 
+## 已重建的 x 向 B0 reference
+
+`B0_reference_x` 已重建为：
+
+```text
+aedt/reference/B0_reference_x.aedt
+```
+
+采用方式：
+
+- 复制单层 shield case 作为几何模板，以保持空气域、边界尺度和 `BcenterPoint_0_0_0` 一致。
+- 删除旧的 torus/current 外场对象和边界。
+- 将单层 ferrite object `Cylinder2` 设置为 `vacuum`。
+- 在空气盒 y/z 外表面施加 x-directed tangential H-field boundary。
+- x-normal 两端面使用 zero tangential H-field boundary，允许法向通量通过。
+
+导出文件：
+
+```text
+data/raw/B0_reference_x.csv
+```
+
+验证结果：
+
+| quantity | value |
+|---|---:|
+| `B0_Bx_T` | `1.25663682659e-06` |
+| `B0_By_T` | `-3.82793442545e-15` |
+| `B0_Bz_T` | `-1.9432455921e-13` |
+| `B0_Mag_T` | `1.25663682659e-06` |
+| `primary_to_largest_transverse_ratio` | `6466690.73` |
+| `validation_status` | `passed` |
+
 ## 当前允许重跑的 case
 
 | case_id | required exports |
 |---|---|
-| `B0_reference_x` | `B0_Bx_T;B0_By_T;B0_Bz_T;B0_Mag_T` |
+| `B0_reference_x` | completed and passed |
 | `C1_N1_t008_x` | `Bcenter_Bx_T;Bcenter_By_T;Bcenter_Bz_T;Bcenter_Mag_T;IntH2_total;IntH2_L1` |
 | `C1_N1_t020_x` | `Bcenter_Bx_T;Bcenter_By_T;Bcenter_Bz_T;Bcenter_Mag_T;IntH2_total;IntH2_L1` |
 | `C1_N1_t040_x` | `Bcenter_Bx_T;Bcenter_By_T;Bcenter_Bz_T;Bcenter_Mag_T;IntH2_total;IntH2_L1` |

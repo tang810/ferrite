@@ -1,0 +1,122 @@
+rebuild_B0_reference_x 2026-05-27 10:34:25
+Copied template to D:\tangyumengnew\aaaaaaaaximukeji\aedt\reference\B0_reference_x.aedt
+delete boundary Current: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 88, in <lambda$93>
+    safe(fp, "delete external-field object {}".format(obj), lambda o=obj: oEditor.Delete([
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 88, in <lambda$93>
+    safe(fp, "delete external-field object {}".format(obj), lambda o=obj: oEditor.Delete([
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Current2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 88, in <lambda$93>
+    safe(fp, "delete external-field object {}".format(obj), lambda o=obj: oEditor.Delete([
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary Iext_minus: OK
+delete boundary Iext_plus: OK
+delete external-field object Torus2: OK
+delete external-field object Torus3: OK
+delete external-field object Torus2_Section1: OK
+delete external-field object Torus3_Section1: OK
+delete external-field object Torus2_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 93, in <lambda$94>
+    for obj in FERRITE_OBJECTS:
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Torus3_Section1_Separate1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 93, in <lambda$94>
+    for obj in FERRITE_OBJECTS:
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 93, in <lambda$94>
+    for obj in FERRITE_OBJECTS:
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 93, in <lambda$94>
+    for obj in FERRITE_OBJECTS:
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_plus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 93, in <lambda$94>
+    for obj in FERRITE_OBJECTS:
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete external-field object Iext_minus_sheet_1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 93, in <lambda$94>
+    for obj in FERRITE_OBJECTS:
+Exception: Delete(Structured Array argParameters)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Cylinder2 -> vacuum: OK
+Cylinder4 -> vacuum: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 99, in <lambda$95>
+    ["NAME:Material", "Value:=", '"vacuum"'],
+Exception: ChangeProperty(Structured Array args)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Cylinder6 -> vacuum: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 99, in <lambda$95>
+    ["NAME:Material", "Value:=", '"vacuum"'],
+Exception: ChangeProperty(Structured Array args)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Cylinder8 -> vacuum: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 52, in safe
+    log(fp, traceback.format_exc())
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_B0_reference_x.py", line 99, in <lambda$95>
+    ["NAME:Material", "Value:=", '"vacuum"'],
+Exception: ChangeProperty(Structured Array args)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Box1 faces: [(64, [0.0, 0.0, 400.0]), (66, [0.0, -400.0, 0.0]), (67, [-400.0, 0.0, 0.0]), (68, [0.0, 400.0, 0.0]), (65, [0.0, 0.0, -400.0]), (69, [400.0, 0.0, 0.0])]
+x-normal faces: [67, 69]
+x-tangential H faces: [66, 68, 64, 65]
+AssignTangentialHField face 66: OK
+AssignTangentialHField face 68: OK
+AssignTangentialHField face 64: OK
+AssignTangentialHField face 65: OK
+AssignZeroTangentialHField x-normal faces: OK
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval B0_Bx_T: OK -> 1.25663682659e-06
+eval B0_By_T: OK -> -3.82793442545e-15
+eval B0_Bz_T: OK -> -1.9432455921e-13
+eval B0_Mag_T: OK -> 1.25663682659e-06
+direction ratio abs(Bx)/max(abs(By),abs(Bz)) = 6466690.7348
+save project: OK
+Wrote D:\tangyumengnew\aaaaaaaaximukeji\data\raw\B0_reference_x.csv

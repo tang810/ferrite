@@ -128,6 +128,7 @@ The current partial CSV exports are not sufficient for final numerical conclusio
 The following data are missing or incomplete for a reproducible paper result set:
 
 - Verified `B0_reference_x` export with `B0_Bx_T`, `B0_By_T`, `B0_Bz_T`, `B0_Mag_T`.
+  The current clean reference is `aedt/reference/B0_reference_x.aedt`; `data/validation/B0_reference_validation.csv` reports `validation_status=passed`.
 - Verified `B0_reference_z` export with `B0_Bx_T`, `B0_By_T`, `B0_Bz_T`, `B0_Mag_T`.
 - Complete shielded center-field exports for all priority-1 continuous-shell cases.
 - Complete layerwise `IntH2_Li` exports for all priority-1 continuous-shell cases.
