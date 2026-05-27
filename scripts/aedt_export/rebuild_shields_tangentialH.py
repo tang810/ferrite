@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Rebuild single-layer shield projects with x-directed tangential-H external field.
+"""Rebuild shield projects with x-directed tangential-H external field.
 
 中文说明：
-本脚本将四个单层 shield 工程（C1_N1_t008/020/040/060）的外部场从旧的
-torus/current 近似改为与 B0_reference_x 完全相同的 x-directed tangential-H /
-uniform external field。脚本会删除旧的 torus/current 激励和几何体，在空气盒
-（Box1）表面施加 x 切向 H 场，保留铁氧体材料（不改为 vacuum），求解并导出
-中心场和 IntH2 数据。
+本脚本将单层及多层 shield 工程的外部场从旧的 torus/current 近似改为与
+B0_reference_x 完全相同的 x-directed tangential-H / uniform external field。
+脚本会删除旧的 torus/current 激励和几何体，在空气盒（Box1）表面施加 x 切向
+H 场，保留铁氧体材料（不改为 vacuum），求解并导出中心场和 IntH2 数据。
 
 运行方式：在 AEDT 中 Tools -> Run Script -> 选择本脚本。
 """
@@ -32,10 +31,15 @@ SOLN = "Setup1 : LastAdaptive"
 H0 = "1"
 
 CASES = [
-    {"case_id": "C1_N1_t008_x", "project": "C1_N1_t008_shield.aedt"},
-    {"case_id": "C1_N1_t020_x", "project": "C1_N1_t020_shield.aedt"},
-    {"case_id": "C1_N1_t040_x", "project": "C1_N1_t040_shield.aedt"},
-    {"case_id": "C1_N1_t060_x", "project": "C1_N1_t060_shield.aedt"},
+    # Single-layer (already done, skip if output exists)
+    # {"case_id": "C1_N1_t008_x", "project": "C1_N1_t008_shield.aedt", "layers": 1},
+    # {"case_id": "C1_N1_t020_x", "project": "C1_N1_t020_shield.aedt", "layers": 1},
+    # {"case_id": "C1_N1_t040_x", "project": "C1_N1_t040_shield.aedt", "layers": 1},
+    # {"case_id": "C1_N1_t060_x", "project": "C1_N1_t060_shield.aedt", "layers": 1},
+    # Multilayer
+    {"case_id": "C2_N2_t020_g010_x", "project": "C2_N2_t020_g010_shield.aedt", "layers": 2},
+    {"case_id": "C2_N3_t020_g010_x", "project": "C2_N3_t020_g010_shield.aedt", "layers": 3},
+    {"case_id": "C2_N4_t015_g008_x", "project": "C2_N4_t015_g008_shield.aedt", "layers": 4},
 ]
 
 FERRITE_OBJECTS = ["Cylinder2", "Cylinder4", "Cylinder6", "Cylinder8"]
@@ -53,9 +57,11 @@ CENTER_FIELD_FIELDNAMES = [
     "Bcenter_Bz_T", "Bcenter_Mag_T", "source_project", "status",
 ]
 
+MAX_LAYERS = 6
 INTH2_FIELDNAMES = [
     "case_id", "coil_dir", "source_project", "status",
-    "IntH2_total", "IntH2_L1",
+    "IntH2_total",
+] + ["IntH2_L{}".format(i) for i in range(1, MAX_LAYERS + 1)] + [
     "notes",
 ]
 
@@ -266,7 +272,7 @@ def export_center_field(fp, oDesign, case_id):
     return row
 
 
-def export_intH2(fp, oDesign, case_id):
+def export_intH2(fp, oDesign, case_id, layers):
     fields = oDesign.GetModule("FieldsReporter")
     row = {
         "case_id": case_id,
@@ -275,11 +281,44 @@ def export_intH2(fp, oDesign, case_id):
         "status": "exported",
         "notes": "",
     }
-    for expr, out_key in [("IntH2_total", "IntH2_total"),
-                           ("IntH2_total", "IntH2_L1")]:
-        value = safe(fp, "eval {}".format(out_key),
-                     lambda e=expr: eval_named_expr(fields, e))
-        row[out_key] = "" if value is None else value
+    # IntH2_total
+    for expr_name in ["IntH2_total", "IntH2_total_1"]:
+        value = safe(fp, "eval IntH2_total via {}".format(expr_name),
+                     lambda e=expr_name: eval_named_expr(fields, e))
+        if value is not None and value != "":
+            row["IntH2_total"] = value
+            break
+
+    # Per-layer IntH2 with legacy aliases (IntH2_total is NOT a valid L1 alias
+    # for multilayer; L1=total only holds for single-layer cases)
+    if layers == 1:
+        legacy_aliases = {
+            1: ["IntH2_L1", "IntH2_total", "IntH2_s1", "IntH2_cyl2", "InH2_s1"],
+        }
+    else:
+        legacy_aliases = {
+            1: ["IntH2_L1", "IntH2_s1", "IntH2_cyl2", "InH2_s1"],
+            2: ["IntH2_L2", "IntH2_s2", "IntH2_cyl4", "InH2_s2"],
+            3: ["IntH2_L3", "IntH2_s3", "InH2_s3"],
+            4: ["IntH2_L4", "IntH2_s4", "InH2_s4"],
+            5: ["IntH2_L5", "IntH2_s5"],
+            6: ["IntH2_L6", "IntH2_s6"],
+        }
+    for layer_i in range(1, layers + 1):
+        key = "IntH2_L{}".format(layer_i)
+        candidates = legacy_aliases.get(layer_i, [key])
+        found = False
+        for expr_name in candidates:
+            value = safe(fp, "eval {} via {}".format(key, expr_name),
+                         lambda e=expr_name: eval_named_expr(fields, e))
+            if value is not None and value != "":
+                row[key] = value
+                found = True
+                break
+        if not found:
+            row[key] = ""
+            log(fp, "  WARNING: no expression found for {}".format(key))
+
     return row
 
 
@@ -352,7 +391,8 @@ def process_case(fp, oDesktop, case_info):
     append_center_field(center_row)
 
     # ---- Export IntH2 ----
-    intH2_row = export_intH2(fp, oDesign, case_id)
+    layers = case_info.get("layers", 1)
+    intH2_row = export_intH2(fp, oDesign, case_id, layers)
     intH2_row["source_project"] = project_path
     log(fp, "IntH2: {}".format(intH2_row))
     append_intH2(intH2_row)
@@ -373,10 +413,7 @@ def process_case(fp, oDesktop, case_info):
 def run():
     ensure_dirs()
 
-    # Clear existing output files so each run starts fresh
-    for path in [CENTER_FIELD_OUT, INTH2_OUT]:
-        if os.path.exists(path):
-            os.remove(path)
+    # Do NOT clear existing output files; append new cases to existing data
 
     with open(LOG_PATH, "w") as fp:
         log(fp, "rebuild_shields_tangentialH {}".format(

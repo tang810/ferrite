@@ -219,7 +219,7 @@ $begin 'AnsoftProject'
 		$begin 'TemperatureSettings'
 			IncludeTemperatureDependence=false
 			EnableFeedback=false
-			Temperatures(15, '22cel', 56, '22cel', 85, '22cel', 89, '22cel', 98, '22cel', 150, '22cel', 191, '22cel', 194, '22cel', 198, '22cel', 205, '22cel')
+			Temperatures(15, '22cel', 56, '22cel', 85, '22cel', 89, '22cel', 98, '22cel', 150, '22cel')
 		$end 'TemperatureSettings'
 		ObjsEnabledForDeformation()
 		ComputeIncrementalMatrix=false
@@ -268,7 +268,7 @@ $begin 'AnsoftProject'
 			WorkingCS=1
 			$begin 'GeometryCore'
 				BlockVersionID=3
-				DataVersion=14
+				DataVersion=17
 				NativeKernel='PARASOLID'
 				NativeKernelVersionID=25
 				Units='mm'
@@ -287,7 +287,7 @@ $begin 'AnsoftProject'
 							IDServerObjectTypeID=0
 							IDServerRangeMin=0
 							IDServerRangeMax=2146483647
-							NextUniqueID=217
+							NextUniqueID=219
 							MoveBackwards=false
 						$end 'AnsoftRangedIDServer'
 						$begin 'AnsoftRangedIDServer'
@@ -1080,490 +1080,6 @@ $begin 'AnsoftProject'
 								ChildSubregions[0:]
 							$end 'SubregionDependencyInformation'
 						$end 'GeometryPart'
-						$begin 'GeometryPart'
-							$begin 'Attributes'
-								Name='Torus2'
-								Flags=''
-								Color='(255 0 0)'
-								Transparency=0
-								PartCoordinateSystem=1
-								UDMId=-1
-								GroupId=-1
-								MaterialValue='"copper"'
-								SurfaceMaterialValue='""'
-								SolveInside=true
-								ShellElement=false
-								ShellElementThickness='0mm'
-								ReferenceTemperature='20cel'
-								IsMaterialEditable=true
-								IsSurfaceMaterialEditable=true
-								UseMaterialAppearance=false
-								IsLightweight=false
-								IsAlwaysHidden=false
-							$end 'Attributes'
-							$begin 'PhysicsAttributes'
-								SuppressedForPhysics='False'
-								SuppressedForPhysicsEditable=true
-							$end 'PhysicsAttributes'
-							$begin 'Operations'
-								$begin 'Operation'
-									OperationType='Torus'
-									ID=190
-									ReferenceCoordSystemID=1
-									$begin 'TorusParameters'
-										KernelVersion=25
-										XCenter='150mm'
-										YCenter='0mm'
-										ZCenter='0mm'
-										MajorRadius='300mm'
-										MinorRadius='2mm'
-										WhichAxis='X'
-									$end 'TorusParameters'
-									ParentPartID=191
-									ReferenceUDMID=-1
-									IsSuppressed=false
-									$begin 'OperationIdentity'
-										$begin 'Topology'
-											NumLumps=1
-											NumShells=1
-											NumFaces=1
-											NumWires=0
-											NumLoops=0
-											NumCoedges=0
-											NumEdges=0
-											NumVertices=0
-										$end 'Topology'
-										BodyID=191
-										StartFaceID=192
-										StartEdgeID=-1
-										StartVertexID=-1
-										NumNewFaces=1
-										NumNewEdges=0
-										NumNewVertices=0
-										FaceNameAndIDMap()
-										EdgeNameAndIDMap()
-										VertexNameAndIDMap()
-									$end 'OperationIdentity'
-								$end 'Operation'
-								$begin 'SectionToOperation'
-									OperationType='SectionTo'
-									ID=196
-									ReferenceCoordSystemID=1
-									$begin 'SectionToParameters'
-										KernelVersion=25
-										ClonedEntity=191
-										CreateNewObjects=true
-										SectionPlane='ZX'
-									$end 'SectionToParameters'
-									ParentPartID=191
-									ReferenceUDMID=-1
-								$end 'SectionToOperation'
-							$end 'Operations'
-							$begin 'SubregionDependencyInformation'
-								ChildSubregions[0:]
-							$end 'SubregionDependencyInformation'
-						$end 'GeometryPart'
-						$begin 'GeometryPart'
-							$begin 'Attributes'
-								Name='Torus3'
-								Flags=''
-								Color='(255 0 0)'
-								Transparency=0
-								PartCoordinateSystem=1
-								UDMId=-1
-								GroupId=-1
-								MaterialValue='"copper"'
-								SurfaceMaterialValue='""'
-								SolveInside=true
-								ShellElement=false
-								ShellElementThickness='0mm'
-								ReferenceTemperature='20cel'
-								IsMaterialEditable=true
-								IsSurfaceMaterialEditable=true
-								UseMaterialAppearance=false
-								IsLightweight=false
-								IsAlwaysHidden=false
-							$end 'Attributes'
-							$begin 'PhysicsAttributes'
-								SuppressedForPhysics='False'
-								SuppressedForPhysicsEditable=true
-							$end 'PhysicsAttributes'
-							$begin 'Operations'
-								$begin 'Operation'
-									OperationType='Torus'
-									ID=193
-									ReferenceCoordSystemID=1
-									$begin 'TorusParameters'
-										KernelVersion=25
-										XCenter='-150mm'
-										YCenter='0mm'
-										ZCenter='0mm'
-										MajorRadius='300mm'
-										MinorRadius='2mm'
-										WhichAxis='X'
-									$end 'TorusParameters'
-									ParentPartID=194
-									ReferenceUDMID=-1
-									IsSuppressed=false
-									$begin 'OperationIdentity'
-										$begin 'Topology'
-											NumLumps=1
-											NumShells=1
-											NumFaces=1
-											NumWires=0
-											NumLoops=0
-											NumCoedges=0
-											NumEdges=0
-											NumVertices=0
-										$end 'Topology'
-										BodyID=194
-										StartFaceID=195
-										StartEdgeID=-1
-										StartVertexID=-1
-										NumNewFaces=1
-										NumNewEdges=0
-										NumNewVertices=0
-										FaceNameAndIDMap()
-										EdgeNameAndIDMap()
-										VertexNameAndIDMap()
-									$end 'OperationIdentity'
-								$end 'Operation'
-								$begin 'SectionToOperation'
-									OperationType='SectionTo'
-									ID=203
-									ReferenceCoordSystemID=1
-									$begin 'SectionToParameters'
-										KernelVersion=25
-										ClonedEntity=194
-										CreateNewObjects=true
-										SectionPlane='ZX'
-									$end 'SectionToParameters'
-									ParentPartID=194
-									ReferenceUDMID=-1
-								$end 'SectionToOperation'
-							$end 'Operations'
-							$begin 'SubregionDependencyInformation'
-								ChildSubregions[0:]
-							$end 'SubregionDependencyInformation'
-						$end 'GeometryPart'
-						$begin 'GeometryPart'
-							$begin 'Attributes'
-								Name='Torus2_Section1'
-								Flags=''
-								Color='(255 0 0)'
-								Transparency=0
-								PartCoordinateSystem=1
-								UDMId=-1
-								GroupId=-1
-								MaterialValue='"copper"'
-								SurfaceMaterialValue='""'
-								SolveInside=true
-								ShellElement=false
-								ShellElementThickness='0mm'
-								ReferenceTemperature='20cel'
-								IsMaterialEditable=true
-								IsSurfaceMaterialEditable=true
-								UseMaterialAppearance=false
-								IsLightweight=false
-								IsAlwaysHidden=false
-							$end 'Attributes'
-							$begin 'PhysicsAttributes'
-								SuppressedForPhysics='False'
-								SuppressedForPhysicsEditable=true
-							$end 'PhysicsAttributes'
-							$begin 'Operations'
-								$begin 'Operation'
-									OperationType='SectionFrom'
-									ID=197
-									$begin 'CloneFromParameters'
-										KernelVersion=25
-										SourceID=191
-										WhichClone=0
-									$end 'CloneFromParameters'
-									ParentPartID=198
-									ReferenceUDMID=-1
-									IsSuppressed=false
-									$begin 'OperationIdentity'
-										$begin 'Topology'
-											NumLumps=2
-											NumShells=2
-											NumFaces=2
-											NumWires=0
-											NumLoops=2
-											NumCoedges=2
-											NumEdges=2
-											NumVertices=0
-										$end 'Topology'
-										BodyID=198
-										StartFaceID=199
-										StartEdgeID=201
-										StartVertexID=-1
-										NumNewFaces=2
-										NumNewEdges=2
-										NumNewVertices=0
-										FaceNameAndIDMap()
-										EdgeNameAndIDMap()
-										VertexNameAndIDMap()
-										$begin 'GeomTopolBasedOperationIdentityHelper'
-											$begin 'NewFaces'
-												$begin 'Face'
-													NormalizedSerialNum=0
-													ID=199
-													$begin 'FaceGeomTopol'
-														FaceTopol(1, 1, 1, 0)
-														$begin 'FaceGeometry'
-															Area=12.5663706143592
-															FcUVMid(150, 0, 300)
-															$begin 'FcTolVts'
-															$end 'FcTolVts'
-														$end 'FaceGeometry'
-													$end 'FaceGeomTopol'
-												$end 'Face'
-												$begin 'Face'
-													NormalizedSerialNum=1
-													ID=200
-													$begin 'FaceGeomTopol'
-														FaceTopol(1, 1, 1, 0)
-														$begin 'FaceGeometry'
-															Area=12.5663706143592
-															FcUVMid(150, 0, -300)
-															$begin 'FcTolVts'
-															$end 'FcTolVts'
-														$end 'FaceGeometry'
-													$end 'FaceGeomTopol'
-												$end 'Face'
-											$end 'NewFaces'
-											$begin 'NewEdges'
-												$begin 'Edge'
-													NormalizedSerialNum=0
-													ID=201
-													EdgeFaces(199)
-													$begin 'EdTolVts'
-													$end 'EdTolVts'
-													EdgeMidPoint(150, 0, 298)
-												$end 'Edge'
-												$begin 'Edge'
-													NormalizedSerialNum=1
-													ID=202
-													EdgeFaces(200)
-													$begin 'EdTolVts'
-													$end 'EdTolVts'
-													EdgeMidPoint(150, 0, -302)
-												$end 'Edge'
-											$end 'NewEdges'
-											$begin 'NewVertices'
-											$end 'NewVertices'
-										$end 'GeomTopolBasedOperationIdentityHelper'
-									$end 'OperationIdentity'
-									PlaceHolderOpnId=196
-								$end 'Operation'
-								$begin 'Operation'
-									OperationType='Separate'
-									ID=210
-									$begin 'SeparateToParameters'
-										KernelVersion=25
-										SeparatedPart=198
-									$end 'SeparateToParameters'
-									ParentPartID=198
-									ReferenceUDMID=-1
-									IsSuppressed=false
-									$begin 'OperationIdentity'
-										$begin 'Topology'
-											NumLumps=1
-											NumShells=1
-											NumFaces=1
-											NumWires=0
-											NumLoops=1
-											NumCoedges=1
-											NumEdges=1
-											NumVertices=0
-										$end 'Topology'
-										BodyID=-1
-										StartFaceID=-1
-										StartEdgeID=-1
-										StartVertexID=-1
-										NumNewFaces=0
-										NumNewEdges=0
-										NumNewVertices=0
-										FaceNameAndIDMap()
-										EdgeNameAndIDMap()
-										VertexNameAndIDMap()
-										$begin 'BodyGeomTopoForSeparate'
-											FaceId=199
-											EdgeId=201
-											VertexId=-1
-											BoundingBoxLow[3: 148, 0, 298]
-											BoundingBoxHigh[3: 152, 0, 302]
-										$end 'BodyGeomTopoForSeparate'
-									$end 'OperationIdentity'
-									SeparateFromOpnIDs[1: 211]
-									ParentOperation=197
-									SeparateToLumpIndex=0
-								$end 'Operation'
-							$end 'Operations'
-							$begin 'SubregionDependencyInformation'
-								ChildSubregions[0:]
-							$end 'SubregionDependencyInformation'
-						$end 'GeometryPart'
-						$begin 'GeometryPart'
-							$begin 'Attributes'
-								Name='Torus3_Section1'
-								Flags=''
-								Color='(255 0 0)'
-								Transparency=0
-								PartCoordinateSystem=1
-								UDMId=-1
-								GroupId=-1
-								MaterialValue='"copper"'
-								SurfaceMaterialValue='""'
-								SolveInside=true
-								ShellElement=false
-								ShellElementThickness='0mm'
-								ReferenceTemperature='20cel'
-								IsMaterialEditable=true
-								IsSurfaceMaterialEditable=true
-								UseMaterialAppearance=false
-								IsLightweight=false
-								IsAlwaysHidden=false
-							$end 'Attributes'
-							$begin 'PhysicsAttributes'
-								SuppressedForPhysics='False'
-								SuppressedForPhysicsEditable=true
-							$end 'PhysicsAttributes'
-							$begin 'Operations'
-								$begin 'Operation'
-									OperationType='SectionFrom'
-									ID=204
-									$begin 'CloneFromParameters'
-										KernelVersion=25
-										SourceID=194
-										WhichClone=0
-									$end 'CloneFromParameters'
-									ParentPartID=205
-									ReferenceUDMID=-1
-									IsSuppressed=false
-									$begin 'OperationIdentity'
-										$begin 'Topology'
-											NumLumps=2
-											NumShells=2
-											NumFaces=2
-											NumWires=0
-											NumLoops=2
-											NumCoedges=2
-											NumEdges=2
-											NumVertices=0
-										$end 'Topology'
-										BodyID=205
-										StartFaceID=206
-										StartEdgeID=208
-										StartVertexID=-1
-										NumNewFaces=2
-										NumNewEdges=2
-										NumNewVertices=0
-										FaceNameAndIDMap()
-										EdgeNameAndIDMap()
-										VertexNameAndIDMap()
-										$begin 'GeomTopolBasedOperationIdentityHelper'
-											$begin 'NewFaces'
-												$begin 'Face'
-													NormalizedSerialNum=0
-													ID=206
-													$begin 'FaceGeomTopol'
-														FaceTopol(1, 1, 1, 0)
-														$begin 'FaceGeometry'
-															Area=12.5663706143592
-															FcUVMid(-150, 0, 300)
-															$begin 'FcTolVts'
-															$end 'FcTolVts'
-														$end 'FaceGeometry'
-													$end 'FaceGeomTopol'
-												$end 'Face'
-												$begin 'Face'
-													NormalizedSerialNum=1
-													ID=207
-													$begin 'FaceGeomTopol'
-														FaceTopol(1, 1, 1, 0)
-														$begin 'FaceGeometry'
-															Area=12.5663706143592
-															FcUVMid(-150, 0, -300)
-															$begin 'FcTolVts'
-															$end 'FcTolVts'
-														$end 'FaceGeometry'
-													$end 'FaceGeomTopol'
-												$end 'Face'
-											$end 'NewFaces'
-											$begin 'NewEdges'
-												$begin 'Edge'
-													NormalizedSerialNum=0
-													ID=208
-													EdgeFaces(206)
-													$begin 'EdTolVts'
-													$end 'EdTolVts'
-													EdgeMidPoint(-150, 0, 298)
-												$end 'Edge'
-												$begin 'Edge'
-													NormalizedSerialNum=1
-													ID=209
-													EdgeFaces(207)
-													$begin 'EdTolVts'
-													$end 'EdTolVts'
-													EdgeMidPoint(-150, 0, -302)
-												$end 'Edge'
-											$end 'NewEdges'
-											$begin 'NewVertices'
-											$end 'NewVertices'
-										$end 'GeomTopolBasedOperationIdentityHelper'
-									$end 'OperationIdentity'
-									PlaceHolderOpnId=203
-								$end 'Operation'
-								$begin 'Operation'
-									OperationType='Separate'
-									ID=213
-									$begin 'SeparateToParameters'
-										KernelVersion=25
-										SeparatedPart=205
-									$end 'SeparateToParameters'
-									ParentPartID=205
-									ReferenceUDMID=-1
-									IsSuppressed=false
-									$begin 'OperationIdentity'
-										$begin 'Topology'
-											NumLumps=1
-											NumShells=1
-											NumFaces=1
-											NumWires=0
-											NumLoops=1
-											NumCoedges=1
-											NumEdges=1
-											NumVertices=0
-										$end 'Topology'
-										BodyID=-1
-										StartFaceID=-1
-										StartEdgeID=-1
-										StartVertexID=-1
-										NumNewFaces=0
-										NumNewEdges=0
-										NumNewVertices=0
-										FaceNameAndIDMap()
-										EdgeNameAndIDMap()
-										VertexNameAndIDMap()
-										$begin 'BodyGeomTopoForSeparate'
-											FaceId=206
-											EdgeId=208
-											VertexId=-1
-											BoundingBoxLow[3: -152, 0, 298]
-											BoundingBoxHigh[3: -148, 0, 302]
-										$end 'BodyGeomTopoForSeparate'
-									$end 'OperationIdentity'
-									SeparateFromOpnIDs[1: 214]
-									ParentOperation=204
-									SeparateToLumpIndex=0
-								$end 'Operation'
-							$end 'Operations'
-							$begin 'SubregionDependencyInformation'
-								ChildSubregions[0:]
-							$end 'SubregionDependencyInformation'
-						$end 'GeometryPart'
 					$end 'ToplevelParts'
 					$begin 'OperandParts'
 						$begin 'GeometryPart'
@@ -1802,6 +1318,44 @@ $begin 'AnsoftProject'
 								ReferenceUDMID=-1
 							$end 'Operation'
 						$end 'GeometryPoint'
+						$begin 'GeometryPoint'
+							$begin 'Attributes'
+								Name='BcenterPoint_0_0_0_1'
+								Color='(255 255 0)'
+							$end 'Attributes'
+							$begin 'Operation'
+								OperationType='Point'
+								ID=217
+								ReferenceCoordSystemID=1
+								$begin 'PointParameters'
+									KernelVersion=25
+									PointX='0'
+									PointY='0'
+									PointZ='0'
+								$end 'PointParameters'
+								ParentPartID=-1
+								ReferenceUDMID=-1
+							$end 'Operation'
+						$end 'GeometryPoint'
+						$begin 'GeometryPoint'
+							$begin 'Attributes'
+								Name='BcenterPoint_0_0_0_2'
+								Color='(255 255 0)'
+							$end 'Attributes'
+							$begin 'Operation'
+								OperationType='Point'
+								ID=218
+								ReferenceCoordSystemID=1
+								$begin 'PointParameters'
+									KernelVersion=25
+									PointX='0'
+									PointY='0'
+									PointZ='0'
+								$end 'PointParameters'
+								ParentPartID=-1
+								ReferenceUDMID=-1
+							$end 'Operation'
+						$end 'GeometryPoint'
 					$end 'Points'
 					$begin 'GeometryEntityLists'
 					$end 'GeometryEntityLists'
@@ -1812,6 +1366,9 @@ $begin 'AnsoftProject'
 						$begin 'bcenterpoint_0_0_0'
 							bcenterpoint_0_0_0(-1)
 						$end 'bcenterpoint_0_0_0'
+						$begin 'bcenterpoint_0_0_0_'
+							bcenterpoint_0_0_0_(1, 2)
+						$end 'bcenterpoint_0_0_0_'
 						$begin 'box'
 							box(1)
 						$end 'box'
@@ -1825,17 +1382,11 @@ $begin 'AnsoftProject'
 							model(-1)
 						$end 'model'
 						$begin 'torus'
-							torus(1, 2, 3)
+							torus(1)
 						$end 'torus'
 						$begin 'torus1_section'
 							torus1_section(1)
 						$end 'torus1_section'
-						$begin 'torus2_section'
-							torus2_section(1)
-						$end 'torus2_section'
-						$begin 'torus3_section'
-							torus3_section(1)
-						$end 'torus3_section'
 					$end 'CachedNames'
 				$end 'GeometryOperations'
 				$begin 'GeometryDependencies'
@@ -1901,50 +1452,6 @@ $begin 'AnsoftProject'
 					$end 'DependencyInformation'
 					$begin 'DependencyInformation'
 						NumParents=1
-						DependencyObject('GeometryBodyOperation', 190)
-						DependencyObject('CoordinateSystem', 1)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=1
-						DependencyObject('GeometryOperation', 196)
-						DependencyObject('CoordinateSystem', 1)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=1
-						DependencyObject('GeometryBodyOperation', 193)
-						DependencyObject('CoordinateSystem', 1)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=1
-						DependencyObject('GeometryOperation', 203)
-						DependencyObject('CoordinateSystem', 1)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=3
-						DependencyObject('GeometryBodyOperation', 197)
-						DependencyObject('CoordinateSystem', 1)
-						DependencyObject('GeometryOperation', 196)
-						DependencyObject('GeometryBodyOperation', 190)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=1
-						DependencyObject('GeometryBodyOperation', 210)
-						DependencyObject('GeometryBodyOperation', 197)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=3
-						DependencyObject('GeometryBodyOperation', 204)
-						DependencyObject('CoordinateSystem', 1)
-						DependencyObject('GeometryOperation', 203)
-						DependencyObject('GeometryBodyOperation', 193)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=1
-						DependencyObject('GeometryBodyOperation', 213)
-						DependencyObject('GeometryBodyOperation', 204)
-					$end 'DependencyInformation'
-					$begin 'DependencyInformation'
-						NumParents=1
 						DependencyObject('GeometryBodyOperation', 5)
 						DependencyObject('CoordinateSystem', 1)
 					$end 'DependencyInformation'
@@ -1963,10 +1470,140 @@ $begin 'AnsoftProject'
 						DependencyObject('GeometryOperation', 216)
 						DependencyObject('CoordinateSystem', 1)
 					$end 'DependencyInformation'
+					$begin 'DependencyInformation'
+						NumParents=1
+						DependencyObject('GeometryOperation', 217)
+						DependencyObject('CoordinateSystem', 1)
+					$end 'DependencyInformation'
+					$begin 'DependencyInformation'
+						NumParents=1
+						DependencyObject('GeometryOperation', 218)
+						DependencyObject('CoordinateSystem', 1)
+					$end 'DependencyInformation'
 				$end 'GeometryDependencies'
 			$end 'GeometryCore'
 			$begin 'AssignedEntities'
-				AssignedObject[5: 15, 56, 150, 198, 205]
+				AssignedObject[3: 15, 56, 150]
+				$begin 'AssignedFace'
+					kID=99
+					$begin 'FaceData'
+						ParentObjectID=98
+						NormalValid=false
+						$begin 'FaceGeomTopol'
+							FaceTopol(1, 4, 4, 4)
+							$begin 'FaceGeometry'
+								Area=640000
+								FcUVMid(0, 0, 400)
+								$begin 'FcTolVts'
+									TolVt(400, -400, 400, 5e-07)
+									TolVt(400, 400, 400, 5e-07)
+									TolVt(-400, 400, 400, 5e-07)
+									TolVt(-400, -400, 400, 5e-07)
+								$end 'FcTolVts'
+							$end 'FaceGeometry'
+						$end 'FaceGeomTopol'
+					$end 'FaceData'
+				$end 'AssignedFace'
+				$begin 'AssignedFace'
+					kID=100
+					$begin 'FaceData'
+						ParentObjectID=98
+						NormalValid=false
+						$begin 'FaceGeomTopol'
+							FaceTopol(1, 4, 4, 4)
+							$begin 'FaceGeometry'
+								Area=640000
+								FcUVMid(0, 0, -400)
+								$begin 'FcTolVts'
+									TolVt(400, -400, -400, 5e-07)
+									TolVt(-400, -400, -400, 5e-07)
+									TolVt(-400, 400, -400, 5e-07)
+									TolVt(400, 400, -400, 5e-07)
+								$end 'FcTolVts'
+							$end 'FaceGeometry'
+						$end 'FaceGeomTopol'
+					$end 'FaceData'
+				$end 'AssignedFace'
+				$begin 'AssignedFace'
+					kID=101
+					$begin 'FaceData'
+						ParentObjectID=98
+						NormalValid=false
+						$begin 'FaceGeomTopol'
+							FaceTopol(1, 4, 4, 4)
+							$begin 'FaceGeometry'
+								Area=640000
+								FcUVMid(0, -400, 0)
+								$begin 'FcTolVts'
+									TolVt(400, -400, 400, 5e-07)
+									TolVt(-400, -400, 400, 5e-07)
+									TolVt(-400, -400, -400, 5e-07)
+									TolVt(400, -400, -400, 5e-07)
+								$end 'FcTolVts'
+							$end 'FaceGeometry'
+						$end 'FaceGeomTopol'
+					$end 'FaceData'
+				$end 'AssignedFace'
+				$begin 'AssignedFace'
+					kID=102
+					$begin 'FaceData'
+						ParentObjectID=98
+						NormalValid=false
+						$begin 'FaceGeomTopol'
+							FaceTopol(1, 4, 4, 4)
+							$begin 'FaceGeometry'
+								Area=640000
+								FcUVMid(-400, 0, 0)
+								$begin 'FcTolVts'
+									TolVt(-400, -400, 400, 5e-07)
+									TolVt(-400, 400, 400, 5e-07)
+									TolVt(-400, 400, -400, 5e-07)
+									TolVt(-400, -400, -400, 5e-07)
+								$end 'FcTolVts'
+							$end 'FaceGeometry'
+						$end 'FaceGeomTopol'
+					$end 'FaceData'
+				$end 'AssignedFace'
+				$begin 'AssignedFace'
+					kID=103
+					$begin 'FaceData'
+						ParentObjectID=98
+						NormalValid=false
+						$begin 'FaceGeomTopol'
+							FaceTopol(1, 4, 4, 4)
+							$begin 'FaceGeometry'
+								Area=640000
+								FcUVMid(0, 400, 0)
+								$begin 'FcTolVts'
+									TolVt(-400, 400, 400, 5e-07)
+									TolVt(400, 400, 400, 5e-07)
+									TolVt(400, 400, -400, 5e-07)
+									TolVt(-400, 400, -400, 5e-07)
+								$end 'FcTolVts'
+							$end 'FaceGeometry'
+						$end 'FaceGeomTopol'
+					$end 'FaceData'
+				$end 'AssignedFace'
+				$begin 'AssignedFace'
+					kID=104
+					$begin 'FaceData'
+						ParentObjectID=98
+						NormalValid=false
+						$begin 'FaceGeomTopol'
+							FaceTopol(1, 4, 4, 4)
+							$begin 'FaceGeometry'
+								Area=640000
+								FcUVMid(400, 0, 0)
+								$begin 'FcTolVts'
+									TolVt(400, 400, -400, 5e-07)
+									TolVt(400, 400, 400, 5e-07)
+									TolVt(400, -400, 400, 5e-07)
+									TolVt(400, -400, -400, 5e-07)
+								$end 'FcTolVts'
+							$end 'FaceGeometry'
+						$end 'FaceGeomTopol'
+					$end 'FaceData'
+				$end 'AssignedFace'
 			$end 'AssignedEntities'
 			GroupByMaterial=true
 			GroupSheetByMaterial=true
@@ -1992,28 +1629,163 @@ $begin 'AnsoftProject'
 				$end 'MuLinkSrcObjs'
 			$end 'GlobalBoundData'
 			$begin 'Boundaries'
-				NextUniqueID=5
+				NextUniqueID=15
 				MoveBackwards=false
-				$begin 'Iext_plus'
-					ID=3
-					BoundType='Current'
+				$begin 'B0x_TH_101'
+					ID=10
+					BoundType='Tangential H Field'
 					IsComponent=false
-					Objects(198)
+					Faces(101)
 					ParentBndID=-1
-					Current='1A'
-					IsSolid=true
-					'Point out of terminal'=false
-				$end 'Iext_plus'
-				$begin 'Iext_minus'
-					ID=4
-					BoundType='Current'
+					ComponentXReal='1'
+					ComponentYReal='0'
+					$begin 'CoordSysVector'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=true
+							EntityID=101
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							hasXYZ=true
+							PositionType='FaceCenter'
+							UParam=0
+							VParam=0
+							XPosition='0'
+							YPosition='-400'
+							ZPosition='0'
+						$end 'GeometryPosition'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=false
+							EntityID=-1
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							PositionType='AbsolutePosition'
+							UParam=0
+							VParam=0
+							XPosition='10mm'
+							YPosition='-400mm'
+							ZPosition='0mm'
+						$end 'GeometryPosition'
+					$end 'CoordSysVector'
+					ReverseV=false
+				$end 'B0x_TH_101'
+				$begin 'B0x_TH_103'
+					ID=11
+					BoundType='Tangential H Field'
 					IsComponent=false
-					Objects(205)
+					Faces(103)
 					ParentBndID=-1
-					Current='1A'
-					IsSolid=true
-					'Point out of terminal'=true
-				$end 'Iext_minus'
+					ComponentXReal='1'
+					ComponentYReal='0'
+					$begin 'CoordSysVector'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=true
+							EntityID=103
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							hasXYZ=true
+							PositionType='FaceCenter'
+							UParam=0
+							VParam=0
+							XPosition='0'
+							YPosition='400'
+							ZPosition='0'
+						$end 'GeometryPosition'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=false
+							EntityID=-1
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							PositionType='AbsolutePosition'
+							UParam=0
+							VParam=0
+							XPosition='10mm'
+							YPosition='400mm'
+							ZPosition='0mm'
+						$end 'GeometryPosition'
+					$end 'CoordSysVector'
+					ReverseV=false
+				$end 'B0x_TH_103'
+				$begin 'B0x_TH_99'
+					ID=12
+					BoundType='Tangential H Field'
+					IsComponent=false
+					Faces(99)
+					ParentBndID=-1
+					ComponentXReal='1'
+					ComponentYReal='0'
+					$begin 'CoordSysVector'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=true
+							EntityID=99
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							hasXYZ=true
+							PositionType='FaceCenter'
+							UParam=0
+							VParam=0
+							XPosition='0'
+							YPosition='0'
+							ZPosition='400'
+						$end 'GeometryPosition'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=false
+							EntityID=-1
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							PositionType='AbsolutePosition'
+							UParam=0
+							VParam=0
+							XPosition='10mm'
+							YPosition='0mm'
+							ZPosition='400mm'
+						$end 'GeometryPosition'
+					$end 'CoordSysVector'
+					ReverseV=false
+				$end 'B0x_TH_99'
+				$begin 'B0x_TH_100'
+					ID=13
+					BoundType='Tangential H Field'
+					IsComponent=false
+					Faces(100)
+					ParentBndID=-1
+					ComponentXReal='1'
+					ComponentYReal='0'
+					$begin 'CoordSysVector'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=true
+							EntityID=100
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							hasXYZ=true
+							PositionType='FaceCenter'
+							UParam=0
+							VParam=0
+							XPosition='0'
+							YPosition='0'
+							ZPosition='-400'
+						$end 'GeometryPosition'
+						$begin 'GeometryPosition'
+							IsAttachedToEntity=false
+							EntityID=-1
+							FacetedBodyTriangleIndex=-1
+							TriangleVertexIndex=-1
+							PositionType='AbsolutePosition'
+							UParam=0
+							VParam=0
+							XPosition='10mm'
+							YPosition='0mm'
+							ZPosition='-400mm'
+						$end 'GeometryPosition'
+					$end 'CoordSysVector'
+					ReverseV=false
+				$end 'B0x_TH_100'
+				$begin 'B0x_open_flux_faces'
+					ID=14
+					BoundType='Zero Tangential H Field'
+					IsComponent=false
+					Faces(102, 104)
+					ParentBndID=-1
+				$end 'B0x_open_flux_faces'
 			$end 'Boundaries'
 			$begin 'ProductSpecificData'
 			$end 'ProductSpecificData'
@@ -2493,10 +2265,10 @@ $begin 'AnsoftProject'
 							MoveBackwards=false
 							IDMap()
 						$end 'QuantityIDs'
-						SimValue('IntH2_total', 1, 90, false, SimValueID=633, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
-						SimValue('IntH2_s1', 1, 90, false, SimValueID=634, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
-						SimValue('IntH2_s2', 1, 90, false, SimValueID=635, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
-						SimValue('IntH2_s3', 1, 90, false, SimValueID=636, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_total', 1, 90, false, SimValueID=785, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_s1', 1, 90, false, SimValueID=786, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_s2', 1, 90, false, SimValueID=787, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_s3', 1, 90, false, SimValueID=788, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
 						$begin 'Sweeps'
 							$begin 'PostprocessSweep'
 								Variable='NormalizedDistance'
@@ -2569,12 +2341,12 @@ $begin 'AnsoftProject'
 				$end 'Solution'
 			$end 'SimSetup'
 			$begin 'Version ID Map'
-				V=645
+				V=730
 				$begin 'Setup'
 					N='Setup1'
-					V=645
-					Soln(N='AdaptivePass', V=647)
-					Soln(N='LastAdaptive', V=647)
+					V=730
+					Soln(N='AdaptivePass', V=797)
+					Soln(N='LastAdaptive', V=797)
 				$end 'Setup'
 			$end 'Version ID Map'
 			$begin 'ID Map'
@@ -2625,7 +2397,7 @@ $begin 'AnsoftProject'
 				DesignInstanceID=1
 				$begin 'WindowPosition'
 					$begin 'EditorWindow'
-						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(1, -1, -1, -13, -58, -351, 27, 1601, 565), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -3.25485968589783, 3.25485968589783, -1, 1, 2.63148880004883, 8.87770080566406), Drawings[9: 'Cylinder2', 'Cylinder4', 'Torus1', 'Torus1_Section1', 'Cylinder6', 'Torus2', 'Torus3', 'Torus2_Section1', 'Torus3_Section1'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=100, dYForGrid=100, dZForGrid=100, dRForGrid=100, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
+						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -13, -58, -351, 27, 1601, 565), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -0.131525084376335, 0.212222576141357, 0.0135820582509041, 0.129748031497002, 4.55497932434082, 6.95420932769775), Drawings[5: 'Cylinder2', 'Cylinder4', 'Torus1', 'Torus1_Section1', 'Cylinder6'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=5, dYForGrid=5, dZForGrid=5, dRForGrid=5, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
 					$end 'EditorWindow'
 				$end 'WindowPosition'
 				$begin 'ReportSetup'
@@ -2790,7 +2562,7 @@ LyS2CiiimUf/2Q=='
 		DesignName='Maxwell3DDesign1'
 		Notes=''
 		Factory='Maxwell 3D'
-		IsSolved=false
+		IsSolved=true
 		'Nominal Setups'[1: 'Setup1']
 		'Nominal Setup Types'[1: '']
 		'Optimetrics Setups'[3: 'P_Tcompare1', 'P_asweep1', 'P_agmatrix_3ceng_T1']

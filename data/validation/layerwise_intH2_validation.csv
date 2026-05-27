@@ -5,9 +5,9 @@ C1_N1_t008_x,3.40720179e-06,3.40720179e-06,0,passed,no
 C1_N1_t020_x,4.40990981e-06,4.40990981e-06,0,passed,no
 C1_N1_t040_x,5.06587793e-06,5.06587793e-06,0,passed,no
 C1_N1_t060_x,4.84840553e-06,4.84840553e-06,0,passed,no
-C2_N2_t020_g010_x,,,,missing,no
-C2_N3_t020_g010_x,,,,missing,no
-C2_N4_t015_g008_x,,,,missing,no
+C2_N2_t020_g010_x,4.93935848e-06,4.93935848e-06,0,passed,no
+C2_N3_t020_g010_x,4.89699266e-06,4.89699266e-06,0,passed,no
+C2_N4_t015_g008_x,4.21849322e-06,4.21849322e-06,1.65933188e-12,passed,no
 C1_N1_t060_z,,,,missing,no
 C2_N3_t020_g010_z,,,,missing,no
 C2_N4_t015_g008_z,,,,missing,no
