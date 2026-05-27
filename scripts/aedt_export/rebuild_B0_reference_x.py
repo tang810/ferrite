@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
-"""Rebuild and validate the clean x-directed B0 reference in AEDT.
+"""Rebuild and validate a clean B0 reference in AEDT.
 
 中文说明：
-本脚本只处理 `B0_reference_x`。它复制已有单层 shield 工程作为几何模板，
-删除旧的 torus/current 外场近似，将 ferrite 设置为 vacuum，并在空气盒外表面
-施加 x-directed tangential H-field boundary。脚本求解后只导出
-`data/raw/B0_reference_x.csv`，不会导出任何 shielded case。
-"""
+本脚本复制已有单层 shield 工程作为几何模板，删除旧的 torus/current
+外场近似，将 ferrite 设置为 vacuum，并在空气盒外表面施加明确的
+tangential H-field boundary。默认导出 x-directed B0 reference；如需导出
+z-directed reference，运行前设置环境变量 `B0_DIRECTION=z`。脚本只导出
+`data/raw/B0_reference_x.csv` 或 `data/raw/B0_reference_z.csv`，不导出任何
+shielded case。"""
 
 import csv
 import math
@@ -17,10 +18,13 @@ import traceback
 
 
 ROOT = r"D:\tangyumengnew\aaaaaaaaximukeji"
+FIELD_DIR = os.environ.get("B0_DIRECTION", "x").strip().lower()
+if FIELD_DIR not in ("x", "z"):
+    FIELD_DIR = "x"
 TEMPLATE_PROJECT = os.path.join(ROOT, "round2_working", "manufacturable_thin", "C1_N1_t008_shield.aedt")
-OUT_PROJECT = os.path.join(ROOT, "aedt", "reference", "B0_reference_x.aedt")
-OUT_CSV = os.path.join(ROOT, "data", "raw", "B0_reference_x.csv")
-LOG_PATH = os.path.join(ROOT, "logs", "rebuild_B0_reference_x.log")
+OUT_PROJECT = os.path.join(ROOT, "aedt", "reference", "B0_reference_{}.aedt".format(FIELD_DIR))
+OUT_CSV = os.path.join(ROOT, "data", "raw", "B0_reference_{}.csv".format(FIELD_DIR))
+LOG_PATH = os.path.join(ROOT, "logs", "rebuild_B0_reference_{}.log".format(FIELD_DIR))
 
 DESIGN_NAME = "Maxwell3DDesign1"
 POINT_NAME = "BcenterPoint_0_0_0"
@@ -122,30 +126,33 @@ def classify_box_faces(faces):
     return groups
 
 
-def assign_x_tangential_h(fp, oBoundary, groups):
-    tangent_faces = [face for face, _ in groups["y"] + groups["z"]]
-    normal_faces = [face for face, _ in groups["x"]]
-    log(fp, "x-normal faces: {}".format(normal_faces))
-    log(fp, "x-tangential H faces: {}".format(tangent_faces))
+def assign_tangential_h(fp, oBoundary, groups, field_dir):
+    tangent_axes = [axis for axis in ("x", "y", "z") if axis != field_dir]
+    normal_faces = [face for face, _ in groups[field_dir]]
+    axis_index = {"x": 0, "y": 1, "z": 2}[field_dir]
+    log(fp, "{}-normal faces: {}".format(field_dir, normal_faces))
 
     assigned = 0
-    for face, center in groups["y"] + groups["z"]:
-        origin = ["{}mm".format(center[0]), "{}mm".format(center[1]), "{}mm".format(center[2])]
-        upos = ["{}mm".format(center[0] + 10.0), "{}mm".format(center[1]), "{}mm".format(center[2])]
-        result = safe(fp, "AssignTangentialHField face {}".format(face), lambda face=face, origin=origin, upos=upos: oBoundary.AssignTangentialHField([
-            "NAME:B0x_TH_{}".format(face),
-            "ComponentXReal:=", H0,
-            "ComponentYReal:=", "0",
-            ["NAME:CoordSysVector", "Origin:=", origin, "UPos:=", upos],
-            "ReverseV:=", False,
-            "Faces:=", [face],
-        ]))
-        if result is not None:
-            assigned += 1
+    for axis in tangent_axes:
+        for face, center in groups[axis]:
+            origin = ["{}mm".format(center[0]), "{}mm".format(center[1]), "{}mm".format(center[2])]
+            u_point = [center[0], center[1], center[2]]
+            u_point[axis_index] += 10.0
+            upos = ["{}mm".format(u_point[0]), "{}mm".format(u_point[1]), "{}mm".format(u_point[2])]
+            result = safe(fp, "AssignTangentialHField face {}".format(face), lambda face=face, origin=origin, upos=upos: oBoundary.AssignTangentialHField([
+                "NAME:B0{}_TH_{}".format(field_dir, face),
+                "ComponentXReal:=", H0,
+                "ComponentYReal:=", "0",
+                ["NAME:CoordSysVector", "Origin:=", origin, "UPos:=", upos],
+                "ReverseV:=", False,
+                "Faces:=", [face],
+            ]))
+            if result is not None:
+                assigned += 1
 
     if normal_faces:
-        safe(fp, "AssignZeroTangentialHField x-normal faces", lambda: oBoundary.AssignZeroTangentialHField([
-            "NAME:B0x_open_flux_faces",
+        safe(fp, "AssignZeroTangentialHField {}-normal faces".format(field_dir), lambda: oBoundary.AssignZeroTangentialHField([
+            "NAME:B0{}_open_flux_faces".format(field_dir),
             "Faces:=", normal_faces,
         ]))
     return assigned
@@ -194,7 +201,7 @@ def write_csv(row):
 def run():
     ensure_dirs()
     with open(LOG_PATH, "w") as fp:
-        log(fp, "rebuild_B0_reference_x {}".format(time.strftime("%Y-%m-%d %H:%M:%S")))
+        log(fp, "rebuild_B0_reference_{} {}".format(FIELD_DIR, time.strftime("%Y-%m-%d %H:%M:%S")))
         try:
             fresh_project_copy(fp)
 
@@ -213,7 +220,7 @@ def run():
             faces = face_centers(oEditor)
             log(fp, "Box1 faces: {}".format(faces))
             groups = classify_box_faces(faces)
-            assigned_h_faces = assign_x_tangential_h(fp, oBoundary, groups)
+            assigned_h_faces = assign_tangential_h(fp, oBoundary, groups, FIELD_DIR)
             safe(fp, "ValidateDesign", lambda: oDesign.ValidateDesign())
 
             solved = None
@@ -223,8 +230,8 @@ def run():
                 log(fp, "No tangential H field boundaries were assigned; skipping Analyze.")
             fields = oDesign.GetModule("FieldsReporter")
             row = {
-                "case_id": "B0_reference_x",
-                "field_dir": "x",
+                "case_id": "B0_reference_{}".format(FIELD_DIR),
+                "field_dir": FIELD_DIR,
                 "source_project": OUT_PROJECT,
                 "status": "exported" if solved is not None else "failed",
             }
@@ -238,11 +245,15 @@ def run():
                 row[out_key] = "" if value is None else value
 
             try:
-                bx = abs(float(row["B0_Bx_T"]))
-                by = abs(float(row["B0_By_T"]))
-                bz = abs(float(row["B0_Bz_T"]))
-                ratio = bx / max(by, bz, 1e-300)
-                log(fp, "direction ratio abs(Bx)/max(abs(By),abs(Bz)) = {}".format(ratio))
+                values = {
+                    "x": abs(float(row["B0_Bx_T"])),
+                    "y": abs(float(row["B0_By_T"])),
+                    "z": abs(float(row["B0_Bz_T"])),
+                }
+                primary = values[FIELD_DIR]
+                transverse = max(v for k, v in values.items() if k != FIELD_DIR)
+                ratio = primary / max(transverse, 1e-300)
+                log(fp, "direction ratio primary/max(transverse) = {}".format(ratio))
                 if ratio < 10.0:
                     row["status"] = "failed"
             except Exception:
@@ -259,8 +270,8 @@ def run():
             log(fp, "SCRIPT FAILED")
             log(fp, traceback.format_exc())
             write_csv({
-                "case_id": "B0_reference_x",
-                "field_dir": "x",
+                "case_id": "B0_reference_{}".format(FIELD_DIR),
+                "field_dir": FIELD_DIR,
                 "B0_Bx_T": "",
                 "B0_By_T": "",
                 "B0_Bz_T": "",
@@ -271,3 +282,4 @@ def run():
 
 
 run()
+
