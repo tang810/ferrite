@@ -1,5 +1,9 @@
 # Results Section Skeleton
 
+中文说明：
+本文档是论文 Results 部分的占位骨架。每一节只说明需要哪些数据、对应哪个 CSV、
+应生成哪张图以及数据缺失时如何标记 pending；禁止在这里填写没有 AEDT 导出支撑的数值结论。
+
 This file is a paper-ready scaffold for the multilayer cylindrical thin-ferrite shell study. It must not be converted into numerical claims until the required AEDT exports and validation outputs exist.
 
 ## III. Results

@@ -1,5 +1,9 @@
 # AEDT Manual Execution Checklist
 
+中文说明：
+本文档是手动补全 AEDT 实验的逐步操作清单。每完成一个 case，都应按本文档导出中心场和
+IntH2 分层结果，再运行后处理和验证脚本。没有完成导出的 case 不应进入论文图表。
+
 This checklist is for the multilayer cylindrical thin-ferrite shell project. It must be followed without inventing missing exports. If a step cannot be completed, mark the corresponding case as `missing` or `failed` in `data/experiment_matrix_main.csv` and document the reason.
 
 ## 1. Build `B0_reference_x`

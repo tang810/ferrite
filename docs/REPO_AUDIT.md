@@ -1,5 +1,9 @@
 # Ferrite Repository Audit
 
+中文说明：
+本文档记录当前 ferrite 仓库的文件审计结果，用于区分 current manufacturable thin-ferrite
+主实验、legacy thick-shell 历史数据、可直接用于论文的材料，以及仍缺失的数据。
+
 Date: 2026-05-27
 
 Branch: `experiment-completion-pipeline`

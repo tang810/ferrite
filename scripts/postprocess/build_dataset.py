@@ -1,3 +1,9 @@
+"""中文说明：
+本脚本合并实验矩阵、B0 reference、中心场导出和 IntH2 分层导出，
+生成 data/processed/main_dataset.csv。它只做数据合并和缺失字段标记，
+不会计算论文结论，也不会把缺失数据填成 0。
+"""
+
 import argparse
 import csv
 import math

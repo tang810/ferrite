@@ -1,5 +1,10 @@
 # Ferrite Experiment Completion Pipeline
 
+中文说明：
+本仓库用于把多层圆柱薄铁氧体壳磁屏蔽项目整理成“可执行、可复现、可出论文图表”的流程。
+当前目标不是给出实验结论，而是保证 AEDT 导出、后处理、验证和绘图都有明确入口。
+没有真实 AEDT 导出的 case 只能保持 `planned`、`missing` 或 `pending`，不能写成论文结果。
+
 This repository supports a finite-element-based design and evaluation framework for multilayer cylindrical thin-ferrite shells.
 
 The current goal is reproducibility, not claiming unsupported numerical results. Missing AEDT exports are marked as `planned`, `missing`, or `pending`; no script should fabricate field values or conclusions.

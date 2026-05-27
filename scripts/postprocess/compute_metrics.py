@@ -1,3 +1,10 @@
+"""中文说明：
+本脚本基于 data/processed/main_dataset.csv 计算论文需要的派生指标，
+包括 SFq、LeakageRatioq、Vf、etaS、etaS_star、rhoH 和 chiH。
+正式 SF 按外场方向取对应分量计算：x 向用 Bx，z 向用 Bz；
+Mag_B 只作为辅助检查，不作为正式 SF 的默认来源。
+"""
+
 import argparse
 import csv
 import math

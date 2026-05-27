@@ -1,3 +1,9 @@
+"""中文说明：
+本脚本检查 IntH2_total 是否等于各层 IntH2_Li 之和。
+验证条件为 abs(IntH2_total - sum(IntH2_Li)) / IntH2_total < 1e-3。
+未通过验证的 case 标记为 failed_validation，不能进入论文图表。
+"""
+
 import argparse
 import csv
 import math

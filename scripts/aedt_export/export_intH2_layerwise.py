@@ -1,3 +1,10 @@
+"""中文说明：
+本脚本用于从 AEDT 工程导出虚拟拾取线圈工况下的 IntH2_total 和各层
+IntH2_Li。新工程必须统一使用 IntH2_L1/IntH2_L2/.../IntH2_total 命名；
+如果检测到旧命名体系，只记录 legacy-compatible warning，不把缺失值当成 0。
+输出目标：data/raw/intH2_layerwise_raw.csv。
+"""
+
 import argparse
 import csv
 import logging

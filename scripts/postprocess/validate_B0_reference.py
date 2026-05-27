@@ -1,3 +1,10 @@
+"""中文说明：
+本脚本检查 B0 reference 是否真的代表目标外场方向。
+x 向 reference 要求 B0_Bx 显著大于 B0_By/B0_Bz；
+z 向 reference 要求 B0_Bz 显著大于 B0_Bx/B0_By。
+缺失或方向不合格的 reference 会阻止对应方向进入论文结果。
+"""
+
 import argparse
 import csv
 import math

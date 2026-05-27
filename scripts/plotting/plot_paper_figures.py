@@ -1,3 +1,10 @@
+"""中文说明：
+本脚本根据 data/processed/metrics_table.csv 生成论文图。
+如果某张图所需数据缺失，脚本会生成明确写有 pending/missing 的占位图，
+不会生成伪造数据点或伪造趋势线。
+输出目录：figures/。
+"""
+
 import argparse
 import csv
 import math

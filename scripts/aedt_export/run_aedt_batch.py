@@ -1,3 +1,10 @@
+"""中文说明：
+本脚本读取 data/experiment_matrix_main.csv，批量调用 AEDT 导出脚本。
+默认只处理 status 为 built 或 solved 的 case；planned/missing 不会执行。
+支持 --dry-run 检查将要执行的命令，适合在没有 AEDT/pyAEDT 环境时验证流程。
+日志输出：logs/aedt_export.log。
+"""
+
 import argparse
 import csv
 import logging

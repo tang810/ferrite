@@ -1,3 +1,10 @@
+"""中文说明：
+本脚本用于从指定 AEDT 工程导出中心点磁感应强度 Bx/By/Bz/Mag_B。
+它不会伪造结果；如果当前环境没有 pyAEDT 或工程内没有可复用报表，
+脚本会把该 case 记录为 missing，并在 logs/aedt_export.log 中写明原因。
+输出目标：data/raw/center_field_raw.csv。
+"""
+
 import argparse
 import csv
 import logging
