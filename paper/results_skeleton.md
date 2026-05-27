@@ -33,7 +33,7 @@ Interpretation:
 - For `B0_reference_z`, `B0_Bz_T` should dominate `B0_Bx_T` and `B0_By_T`.
 - If either reference is missing or fails direction validation, all corresponding shielding factors remain pending.
 
-Status: pending.
+Status: partially available. `B0_reference_x` has passed validation; `B0_reference_z` remains pending.
 
 ### B. Continuous-Shell Single-Layer Baselines
 
@@ -60,7 +60,17 @@ Interpretation:
 - Report `SFx`, `LeakageRatiox`, `Vf_mm3`, `etaS_star`, and `IntH2_total` only for complete and validated rows.
 - Missing rows remain pending.
 
-Status: pending.
+Limitations for the currently available rows:
+
+- continuous-shell approximation
+- x-directed transverse external field
+- linear ferrite screening material with `mu_r = 1000`
+- no segmented-shell correction yet
+- no axial-field validation yet
+- no mesh/boundary convergence yet
+- no permeability sensitivity yet
+
+Status: preliminary available.
 
 ### C. Multilayer Continuous-Shell Screening
 
@@ -85,7 +95,19 @@ Interpretation:
 - Compare multilayer continuous-shell cases against single-layer baselines.
 - Do not include `C2_N6_t010_g008_x` in the main results unless priority-1 results show clear multilayer benefit and the optional case is solved, exported, processed, and validated.
 
-Status: pending.
+Limitations for the currently available rows:
+
+- continuous-shell approximation
+- x-directed transverse external field
+- linear ferrite screening material with `mu_r = 1000`
+- no segmented-shell correction yet
+- no axial-field validation yet
+- no mesh/boundary convergence yet
+- no permeability sensitivity yet
+
+The preliminary transverse continuous-shell results indicate trends to be further verified by axial-field, segmented-shell, convergence, and material-sensitivity studies.
+
+Status: preliminary available.
 
 ### D. Fixed-Ferrite-Volume Comparison
 
@@ -109,7 +131,19 @@ Interpretation:
 - Compare `SFx`, `LeakageRatiox`, `etaS_star`, `rhoH`, and `chiH`.
 - Avoid claiming material saving unless the target shielding factor and validation conditions are both satisfied.
 
-Status: pending.
+Limitations for the currently available rows:
+
+- continuous-shell approximation
+- x-directed transverse external field
+- linear ferrite screening material with `mu_r = 1000`
+- no segmented-shell correction yet
+- no axial-field validation yet
+- no mesh/boundary convergence yet
+- no permeability sensitivity yet
+
+The preliminary transverse continuous-shell results indicate trends to be further verified by axial-field, segmented-shell, convergence, and material-sensitivity studies.
+
+Status: preliminary available.
 
 ### E. Layer-Resolved IntH2 Contributions
 
@@ -129,7 +163,19 @@ Interpretation:
 - Cases with `failed_validation` must be excluded from paper figures.
 - Discuss whether inner or outer layers dominate only after validation passes.
 
-Status: pending.
+Limitations for the currently available rows:
+
+- continuous-shell approximation
+- x-directed transverse external field
+- linear ferrite screening material with `mu_r = 1000`
+- no segmented-shell correction yet
+- no axial-field validation yet
+- no mesh/boundary convergence yet
+- no permeability sensitivity yet
+
+The preliminary transverse continuous-shell results indicate trends to be further verified by axial-field, segmented-shell, convergence, and material-sensitivity studies.
+
+Status: preliminary available.
 
 ### F. Axial-Field Extension for Selected Candidates
 
