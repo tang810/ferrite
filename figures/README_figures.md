@@ -29,12 +29,13 @@ These figures are preliminary continuous-shell transverse-field results. They do
 ## Passed Checks
 
 - `B0_reference_x` validation status is `passed`.
+- `B0_reference_z` validation status is `passed` (axial shielded cases remain pending).
 - The seven x-directed continuous-shell cases have `metric_status = processed`.
 - Layerwise `IntH2_total` consistency is `passed` for all seven included cases.
 
 ## Pending Checks
 
-- `B0_reference_z` and axial-field shielded cases remain pending.
+- `B0_reference_z` has passed validation, but axial-field shielded cases remain pending.
 - Segmented-shell aligned/staggered correction remains pending.
 - Mesh and boundary convergence remain pending.
 - Permeability sensitivity remains pending.

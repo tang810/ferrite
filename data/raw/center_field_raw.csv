@@ -6,3 +6,12 @@ C1_N1_t060_x,x,4.4176858814e-07,-1.01877918866e-09,2.84338320302e-09,,D:\tangyum
 C2_N2_t020_g010_x,x,5.6157605805e-07,-2.32204793649e-09,7.93412529868e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N2_t020_g010_shield.aedt,exported
 C2_N3_t020_g010_x,x,4.19744915902e-07,-3.85861780038e-09,4.40799939634e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_shield.aedt,exported
 C2_N4_t015_g008_x,x,3.46266099326e-07,-1.59169138475e-08,-5.56193290753e-08,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt,exported
+C1_N1_t060_z,z,0.0,0.0,0.0,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_z_shield.aedt,exported
+C2_N3_t020_g010_z,z,0.0,0.0,0.0,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_z_shield.aedt,exported
+C2_N4_t015_g008_z,z,0.0,0.0,0.0,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_z_shield.aedt,exported
+C1_N1_t060_z,z,0.0,0.0,0.0,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_z_shield.aedt,exported
+C2_N3_t020_g010_z,z,0.0,0.0,0.0,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_z_shield.aedt,exported
+C2_N4_t015_g008_z,z,0.0,0.0,0.0,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_z_shield.aedt,exported
+MU_C2_N3_t020_g010_x_mu500,x,4.19744915905e-07,-3.8586177869e-09,4.40799936664e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\MU_C2_N3_t020_g010_x_mu500_shield.aedt,exported
+MU_C2_N3_t020_g010_x_mu2000,x,4.19744915898e-07,-3.85861779734e-09,4.40799939558e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\MU_C2_N3_t020_g010_x_mu2000_shield.aedt,exported
+MU_C2_N3_t020_g010_x_mu5000,x,4.19744915888e-07,-3.85861779257e-09,4.40799938127e-10,,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\MU_C2_N3_t020_g010_x_mu5000_shield.aedt,exported

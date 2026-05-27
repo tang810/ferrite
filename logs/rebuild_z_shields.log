@@ -1,0 +1,398 @@
+rebuild_z_shields 2026-05-27 19:48:03
+MESH_DIVISOR=3
+Cases: ['C1_N1_t060_z', 'C2_N3_t020_g010_z', 'C2_N4_t015_g008_z']
+
+
+------------------------------------------------------------
+Processing C1_N1_t060_z | layers=1 | a=0.600mm
+Copy: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C1_N1_t060_z_shield.aedt
+copied project file
+OpenProject: OK -> IDispatch(ISProject2)
+delete boundary B0x_TH_66: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_68: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_64: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_65: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_open_flux_faces: OK
+delete boundary Zero Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+cleared 10 boundary/excitations
+Box1 faces: [(64, [0.0, 0.0, 400.0]), (66, [0.0, -400.0, 0.0]), (67, [-400.0, 0.0, 0.0]), (68, [0.0, 400.0, 0.0]), (65, [0.0, 0.0, -400.0]), (69, [400.0, 0.0, 0.0])]
+z-normal faces (open flux): [64, 65]
+z-tangential H faces: [67, 69, 66, 68]
+AssignTangentialHField_z face 67: OK
+AssignTangentialHField_z face 69: OK
+AssignTangentialHField_z face 66: OK
+AssignTangentialHField_z face 68: OK
+AssignZeroTangentialHField z-normal faces: OK
+cleared 0 mesh ops
+SURF Cylinder2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+assigned mesh: a=0.600mm MaxLength=0.2mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 0.0
+eval Bcenter_By: OK -> 0.0
+eval Bcenter_Bz: OK -> 0.0
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 389, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 257, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFz=
+Center field: {'Bcenter_Bx_T': 0.0, 'Bcenter_Mag_T': '', 'case_id': 'C1_N1_t060_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_z_shield.aedt', 'Bcenter_Bz_T': 0.0, 'Bcenter_By_T': 0.0}
+eval IntH2_total: OK -> 0.0
+eval IntH2_L1: OK
+IntH2: {'IntH2_L3': '', 'IntH2_total': 0.0, 'IntH2_L2': '', 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C1_N1_t060_z', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_z_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C2_N3_t020_g010_z | layers=3 | a=0.200mm
+Copy: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N3_t020_g010_z_shield.aedt
+copied project file
+OpenProject: OK -> IDispatch(ISProject2)
+delete boundary B0x_TH_101: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_103: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_99: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_100: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_open_flux_faces: OK
+delete boundary Zero Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+cleared 10 boundary/excitations
+Box1 faces: [(99, [0.0, 0.0, 400.0]), (101, [0.0, -400.0, 0.0]), (102, [-400.0, 0.0, 0.0]), (103, [0.0, 400.0, 0.0]), (100, [0.0, 0.0, -400.0]), (104, [400.0, 0.0, 0.0])]
+z-normal faces (open flux): [99, 100]
+z-tangential H faces: [102, 104, 101, 103]
+AssignTangentialHField_z face 102: OK
+AssignTangentialHField_z face 104: OK
+AssignTangentialHField_z face 101: OK
+AssignTangentialHField_z face 103: OK
+AssignZeroTangentialHField z-normal faces: OK
+cleared 0 mesh ops
+SURF Cylinder2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+SURF Cylinder4: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder4: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+SURF Cylinder6: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder6: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6']
+ValidateDesign: OK -> 1
+Analyze Setup1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 379, in <lambda$102>
+    safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+Exception: Analyze(string simulationName, [bool isBlocking /*optional*/]) -> long(Setup1) - call failed. Logs or message window might have more details
+
+eval Bcenter_Bx: OK -> 0.0
+eval Bcenter_By: OK -> 0.0
+eval Bcenter_Bz: OK -> 0.0
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 389, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 257, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFz=
+Center field: {'Bcenter_Bx_T': 0.0, 'Bcenter_Mag_T': '', 'case_id': 'C2_N3_t020_g010_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_z_shield.aedt', 'Bcenter_Bz_T': 0.0, 'Bcenter_By_T': 0.0}
+eval IntH2_total: OK -> 0.0
+eval IntH2_L1: OK -> 0.0
+eval IntH2_L2: OK -> 0.0
+eval IntH2_L3: OK -> 0.0
+IntH2: {'IntH2_L3': 0.0, 'IntH2_total': 0.0, 'IntH2_L2': 0.0, 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C2_N3_t020_g010_z', 'notes': '', 'IntH2_L1': 0.0, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_z_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing C2_N4_t015_g008_z | layers=4 | a=0.150mm
+Copy: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_shield.aedt -> D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_z_shield.aedt
+copied project file
+OpenProject: OK -> IDispatch(ISProject2)
+delete boundary B0x_TH_101: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_103: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_99: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_TH_100: OK
+delete boundary Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+delete boundary B0x_open_flux_faces: OK
+delete boundary Zero Tangential H Field: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 118, in <lambda$93>
+    lambda n=name: oBoundary.DeleteBoundaries([n]))
+Exception: DeleteBoundaries(Structured Array namesArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+cleared 10 boundary/excitations
+Box1 faces: [(99, [0.0, 0.0, 400.0]), (101, [0.0, -400.0, 0.0]), (102, [-400.0, 0.0, 0.0]), (103, [0.0, 400.0, 0.0]), (100, [0.0, 0.0, -400.0]), (104, [400.0, 0.0, 0.0])]
+z-normal faces (open flux): [99, 100]
+z-tangential H faces: [102, 104, 101, 103]
+AssignTangentialHField_z face 102: OK
+AssignTangentialHField_z face 104: OK
+AssignTangentialHField_z face 101: OK
+AssignTangentialHField_z face 103: OK
+AssignZeroTangentialHField z-normal faces: OK
+cleared 0 mesh ops
+SURF Cylinder2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder2: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+SURF Cylinder4: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder4: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+SURF Cylinder6: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder6: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+SURF Cylinder8: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+VOL  Cylinder8: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
+    mesh_module.AssignLengthOp([
+Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 0.0
+eval Bcenter_By: OK -> 0.0
+eval Bcenter_Bz: OK -> 0.0
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 389, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 257, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+SFz=
+Center field: {'Bcenter_Bx_T': 0.0, 'Bcenter_Mag_T': '', 'case_id': 'C2_N4_t015_g008_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_z_shield.aedt', 'Bcenter_Bz_T': 0.0, 'Bcenter_By_T': 0.0}
+eval IntH2_total: OK -> 0.0
+eval IntH2_L1: OK -> 0.0
+eval IntH2_L2: OK -> 0.0
+eval IntH2_L3: OK -> 0.0
+eval IntH2_L4: OK -> 0.0
+IntH2: {'IntH2_L3': 0.0, 'IntH2_total': 0.0, 'IntH2_L2': 0.0, 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C2_N4_t015_g008_z', 'notes': '', 'IntH2_L1': 0.0, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_z_shield.aedt', 'IntH2_L4': 0.0, 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+Done 2026-05-27 19:51:49

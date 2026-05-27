@@ -110,6 +110,22 @@ def main():
         for key in ("IntH2_total", "IntH2_L1", "IntH2_L2", "IntH2_L3", "IntH2_L4", "IntH2_L5", "IntH2_L6"):
             out[key] = first_nonempty(row.get(key, ""), h2_row.get(key, ""))
 
+        # ---- Auto-compute Bcenter_Mag_T from vector components when missing ----
+        mag_computed = False
+        if str(out.get("Bcenter_Mag_T", "")).strip() == "":
+            bx = out.get("Bcenter_Bx_T", "")
+            by = out.get("Bcenter_By_T", "")
+            bz = out.get("Bcenter_Bz_T", "")
+            try:
+                bx_v = float(bx)
+                by_v = float(by)
+                bz_v = float(bz)
+                mag = math.sqrt(bx_v * bx_v + by_v * by_v + bz_v * bz_v)
+                out["Bcenter_Mag_T"] = mag
+                mag_computed = True
+            except (ValueError, TypeError):
+                pass
+
         missing = [key for key in required_for_row(row) if str(out.get(key, "")).strip() == ""]
         out["missing_fields"] = ";".join(missing)
         if row["status"] == "failed":
@@ -120,6 +136,14 @@ def main():
             out["data_status"] = "missing"
         else:
             out["data_status"] = "exported"
+
+        if mag_computed:
+            existing_note = str(out.get("notes", "")).strip()
+            tag = "Bcenter_Mag_T computed_from_components"
+            if existing_note:
+                out["notes"] = existing_note + "; " + tag
+            else:
+                out["notes"] = tag
         out_rows.append(out)
 
     fieldnames = list(matrix[0].keys()) + [name for name in FIELDNAMES_EXTRA if name not in matrix[0]]

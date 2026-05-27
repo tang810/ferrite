@@ -33,7 +33,7 @@ Interpretation:
 - For `B0_reference_z`, `B0_Bz_T` should dominate `B0_Bx_T` and `B0_By_T`.
 - If either reference is missing or fails direction validation, all corresponding shielding factors remain pending.
 
-Status: partially available. `B0_reference_x` has passed validation; `B0_reference_z` remains pending.
+Status: both references available and passed. `B0_reference_x` and `B0_reference_z` have both passed direction validation. x-directed shielded cases are available; z-directed shielded cases remain pending.
 
 ### B. Continuous-Shell Single-Layer Baselines
 
