@@ -1557,7 +1557,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(67)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1594,7 +1594,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(69)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1631,7 +1631,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(66)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1668,7 +1668,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(68)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1737,7 +1737,7 @@ $begin 'AnsoftProject'
 				AllowPhiForLayeredGeometry=false
 			$end 'MeshSettings'
 			$begin 'MeshOperations'
-				NextUniqueID=2
+				NextUniqueID=4
 				MoveBackwards=false
 				$begin 'Length_surf_Cylinder2'
 					RefineInside=false
@@ -1763,6 +1763,30 @@ $begin 'AnsoftProject'
 					RestrictLength=true
 					MaxLength='0.2mm'
 				$end 'Length_vol_Cylinder2'
+				$begin 'Length_surf_z_Cylinder2'
+					RefineInside=false
+					ID=2
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(24)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.2mm'
+				$end 'Length_surf_z_Cylinder2'
+				$begin 'Length_vol_z_Cylinder2'
+					RefineInside=true
+					ID=3
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(24)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.2mm'
+				$end 'Length_vol_z_Cylinder2'
 			$end 'MeshOperations'
 		$end 'MeshSetup'
 		$begin 'AnalysisSetup'
@@ -1933,11 +1957,11 @@ $begin 'AnsoftProject'
 					$begin 'Scale3DSettings'
 						unit=104
 						m_nLevels=10
-						minvalue=0
-						maxvalue=0
+						minvalue=6.47346749524758e-05
+						maxvalue=0.00034699813863591
 						log=false
-						IntrinsicMin=0
-						IntrinsicMax=0
+						IntrinsicMin=6.47346749524758e-05
+						IntrinsicMax=0.00034699813863591
 						LimitFieldValuePrecision=false
 						FieldValuePrecisionDigits=4
 						dB=false
@@ -1946,7 +1970,7 @@ $begin 'AnsoftProject'
 						UserSpecifyValues(11, 8.35139422894482e-12, 2.91469140489831e-11, 4.99424321342978e-11, 7.07379571585065e-11, 9.15334752438213e-11, 1.12328993329136e-10, 1.33124511414451e-10, 1.53920029499766e-10, 1.7471554758508e-10, 1.95511065670395e-10, 2.1630658375571e-10)
 						ValueNumberFormatTypeAuto=0
 						ValueNumberFormatTypeScientific=false
-						ValueNumberFormatWidth=5
+						ValueNumberFormatWidth=7
 						ValueNumberFormatPrecision=3
 					$end 'Scale3DSettings'
 					$begin 'Marker3DSettings'
@@ -1965,8 +1989,8 @@ $begin 'AnsoftProject'
 						ArrowMaxMagnitude=0.500000000216307
 						ArrowMagnitudeThreshold=0
 						ArrowMagnitudeFilteringFlag=false
-						ArrowMinIntrinsicMagnitude=-0.5
-						ArrowMaxIntrinsicMagnitude=0.5
+						ArrowMinIntrinsicMagnitude=-0.499935265325048
+						ArrowMaxIntrinsicMagnitude=0.500346998138636
 					$end 'Arrow3DSettings'
 					$begin 'DeformScaleSettings'
 						ShowDeformation=true
@@ -1990,11 +2014,11 @@ $begin 'AnsoftProject'
 					$begin 'Scale3DSettings'
 						unit=107
 						m_nLevels=10
-						minvalue=0
-						maxvalue=0
+						minvalue=0.0515142175405008
+						maxvalue=0.276132345037062
 						log=false
-						IntrinsicMin=0
-						IntrinsicMax=0
+						IntrinsicMin=0.0515142175405008
+						IntrinsicMax=0.276132345037062
 						LimitFieldValuePrecision=false
 						FieldValuePrecisionDigits=4
 						dB=false
@@ -2022,8 +2046,8 @@ $begin 'AnsoftProject'
 						ArrowMaxMagnitude=0.500000172131311
 						ArrowMagnitudeThreshold=0
 						ArrowMagnitudeFilteringFlag=false
-						ArrowMinIntrinsicMagnitude=-0.5
-						ArrowMaxIntrinsicMagnitude=0.5
+						ArrowMinIntrinsicMagnitude=-0.448485782459499
+						ArrowMaxIntrinsicMagnitude=0.776132345037062
 					$end 'Arrow3DSettings'
 					$begin 'DeformScaleSettings'
 						ShowDeformation=true
@@ -2038,7 +2062,7 @@ $begin 'AnsoftProject'
 					PlotDefinitionType='Mesh_field_type'
 					PlotName='Mag_H1'
 					PlotDefinitionId=0
-					VersionID=113
+					VersionID=116
 					SolutionId=20
 					UserSpecifyName=0
 					UserSpecifyFolder=0
@@ -2075,7 +2099,7 @@ $begin 'AnsoftProject'
 					PlotDefinitionType='Mesh_field_type'
 					PlotName='Mag_B1'
 					PlotDefinitionId=2
-					VersionID=113
+					VersionID=116
 					SolutionId=20
 					UserSpecifyName=0
 					UserSpecifyFolder=0
@@ -2112,7 +2136,7 @@ $begin 'AnsoftProject'
 					PlotDefinitionType='Mesh_field_type'
 					PlotName='Mag_H2'
 					PlotDefinitionId=3
-					VersionID=113
+					VersionID=116
 					SolutionId=20
 					UserSpecifyName=0
 					UserSpecifyFolder=0
@@ -2182,10 +2206,10 @@ $begin 'AnsoftProject'
 							MoveBackwards=false
 							IDMap()
 						$end 'QuantityIDs'
-						SimValue('Mag_H', 1, 107, false, SimValueID=453, 3, 0, 2, 0, false, false, 24, 1, 0, 1, 1, '', 0, 0)
-						SimValue('Mag_B', 1, 103, false, SimValueID=454, 3, 0, 2, 0, false, false, 24, 1, 0, 1, 1, '', 0, 0)
-						SimValue('IntH2_total', 1, 90, false, SimValueID=455, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
-						SimValue('Mag_B', 1, 103, false, SimValueID=456, 0, 0, 2, 0, false, false, 99, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('Mag_H', 1, 107, false, SimValueID=401, 3, 0, 2, 0, false, false, 24, 1, 0, 1, 1, '', 0, 0)
+						SimValue('Mag_B', 1, 103, false, SimValueID=402, 3, 0, 2, 0, false, false, 24, 1, 0, 1, 1, '', 0, 0)
+						SimValue('IntH2_total', 1, 90, false, SimValueID=403, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('Mag_B', 1, 103, false, SimValueID=404, 0, 0, 2, 0, false, false, 99, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
 						$begin 'Sweeps'
 							$begin 'PostprocessSweep'
 								Variable='NormalizedDistance'
@@ -2267,8 +2291,8 @@ $begin 'AnsoftProject'
 				$begin 'Setup'
 					N='Setup1'
 					V=259
-					Soln(N='AdaptivePass', V=510)
-					Soln(N='LastAdaptive', V=510)
+					Soln(N='AdaptivePass', V=413)
+					Soln(N='LastAdaptive', V=413)
 				$end 'Setup'
 			$end 'Version ID Map'
 			$begin 'ID Map'
@@ -2279,7 +2303,7 @@ $begin 'AnsoftProject'
 					Soln(N='LastAdaptive', I=20)
 				$end 'Setup'
 			$end 'ID Map'
-			ValidationCacheHeader='HDR61B33765217798824893.tmp'
+			ValidationCacheHeader='HDR6F294440017799337163.tmp'
 		$end 'SolutionManager'
 		$begin 'UserDefinedSolutionMgr'
 			NextUniqueID=1000000
@@ -2292,7 +2316,7 @@ $begin 'AnsoftProject'
 		Notes=$begin_cdata$ $end_cdata$
 		$begin 'AnimationSetups'
 		$end 'AnimationSetups'
-		CacheHeaderFile='HDR61E73765217798825057.tmp'
+		CacheHeaderFile='HDR6F9E4440017799337528.tmp'
 	$end 'Maxwell3DModel'
 	$begin 'DataInstances'
 		DesignEditor='TopLevel'
@@ -2319,7 +2343,7 @@ $begin 'AnsoftProject'
 				DesignInstanceID=1
 				$begin 'WindowPosition'
 					$begin 'EditorWindow'
-						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -13, -58, 0, 0, 262, 71), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -2.88847589492798, 2.88847589492798, -1, 1, 5.70089817047119, 5.80829048156738), Drawings[6: 'Torus1', 'Torus1_Split1', 'Torus1_Section1', 'Torus1_Section1_Separate1', 'Length_surf_Cylinder2', 'Length_vol_Cylinder2'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=100, dYForGrid=100, dZForGrid=100, dRForGrid=100, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
+						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -13, -58, 0, 0, 262, 71), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -2.88847589492798, 2.88847589492798, -1, 1, 5.70089817047119, 5.80829048156738), Drawings[8: 'Torus1', 'Torus1_Split1', 'Torus1_Section1', 'Torus1_Section1_Separate1', 'Length_surf_Cylinder2', 'Length_vol_Cylinder2', 'Length_surf_z_Cylinder2', 'Length_vol_z_Cylinder2'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=100, dYForGrid=100, dZForGrid=100, dRForGrid=100, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
 					$end 'EditorWindow'
 				$end 'WindowPosition'
 				$begin 'ReportSetup'

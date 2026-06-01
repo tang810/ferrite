@@ -1661,7 +1661,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(102)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1698,7 +1698,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(104)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1735,7 +1735,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(101)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1772,7 +1772,7 @@ $begin 'AnsoftProject'
 					IsComponent=false
 					Faces(103)
 					ParentBndID=-1
-					ComponentXReal='0'
+					ComponentXReal='1'
 					ComponentYReal='0'
 					$begin 'CoordSysVector'
 						$begin 'GeometryPosition'
@@ -1841,7 +1841,7 @@ $begin 'AnsoftProject'
 				AllowPhiForLayeredGeometry=false
 			$end 'MeshSettings'
 			$begin 'MeshOperations'
-				NextUniqueID=6
+				NextUniqueID=12
 				MoveBackwards=false
 				$begin 'Length_surf_Cylinder2'
 					RefineInside=false
@@ -1915,6 +1915,78 @@ $begin 'AnsoftProject'
 					RestrictLength=true
 					MaxLength='0.0666666666667mm'
 				$end 'Length_vol_Cylinder6'
+				$begin 'Length_surf_z_Cylinder2'
+					RefineInside=false
+					ID=6
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(15)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.0666666666667mm'
+				$end 'Length_surf_z_Cylinder2'
+				$begin 'Length_vol_z_Cylinder2'
+					RefineInside=true
+					ID=7
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(15)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.0666666666667mm'
+				$end 'Length_vol_z_Cylinder2'
+				$begin 'Length_surf_z_Cylinder4'
+					RefineInside=false
+					ID=8
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(56)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.0666666666667mm'
+				$end 'Length_surf_z_Cylinder4'
+				$begin 'Length_vol_z_Cylinder4'
+					RefineInside=true
+					ID=9
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(56)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.0666666666667mm'
+				$end 'Length_vol_z_Cylinder4'
+				$begin 'Length_surf_z_Cylinder6'
+					RefineInside=false
+					ID=10
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(150)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.0666666666667mm'
+				$end 'Length_surf_z_Cylinder6'
+				$begin 'Length_vol_z_Cylinder6'
+					RefineInside=true
+					ID=11
+					Type='LengthBased'
+					IsComponent=false
+					Enabled=true
+					Objects(150)
+					RestrictElem=true
+					NumMaxElem='2000'
+					RestrictLength=true
+					MaxLength='0.0666666666667mm'
+				$end 'Length_vol_z_Cylinder6'
 			$end 'MeshOperations'
 		$end 'MeshSetup'
 		$begin 'AnalysisSetup'
@@ -2361,10 +2433,10 @@ $begin 'AnsoftProject'
 							MoveBackwards=false
 							IDMap()
 						$end 'QuantityIDs'
-						SimValue('IntH2_total', 1, 90, false, SimValueID=927, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
-						SimValue('IntH2_s1', 1, 90, false, SimValueID=928, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
-						SimValue('IntH2_s2', 1, 90, false, SimValueID=929, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
-						SimValue('IntH2_s3', 1, 90, false, SimValueID=930, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_total', 1, 90, false, SimValueID=877, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_s1', 1, 90, false, SimValueID=878, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_s2', 1, 90, false, SimValueID=879, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
+						SimValue('IntH2_s3', 1, 90, false, SimValueID=880, 0, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0, 'PC', false, '1')
 						$begin 'Sweeps'
 							$begin 'PostprocessSweep'
 								Variable='NormalizedDistance'
@@ -2441,8 +2513,8 @@ $begin 'AnsoftProject'
 				$begin 'Setup'
 					N='Setup1'
 					V=730
-					Soln(N='AdaptivePass', V=939)
-					Soln(N='LastAdaptive', V=939)
+					Soln(N='AdaptivePass', V=889)
+					Soln(N='LastAdaptive', V=889)
 				$end 'Setup'
 			$end 'Version ID Map'
 			$begin 'ID Map'
@@ -2453,7 +2525,7 @@ $begin 'AnsoftProject'
 					Soln(N='LastAdaptive', I=391)
 				$end 'Setup'
 			$end 'ID Map'
-			ValidationCacheHeader='HDR61F437652177988250912.tmp'
+			ValidationCacheHeader='HDR6FAB44400177993375613.tmp'
 		$end 'SolutionManager'
 		$begin 'UserDefinedSolutionMgr'
 			NextUniqueID=1000000
@@ -2466,7 +2538,7 @@ $begin 'AnsoftProject'
 		Notes=$begin_cdata$ $end_cdata$
 		$begin 'AnimationSetups'
 		$end 'AnimationSetups'
-		CacheHeaderFile='HDR642C37652177988268316.tmp'
+		CacheHeaderFile='HDR78BA44400177993446621.tmp'
 	$end 'Maxwell3DModel'
 	$begin 'DataInstances'
 		DesignEditor='TopLevel'
@@ -2493,7 +2565,7 @@ $begin 'AnsoftProject'
 				DesignInstanceID=1
 				$begin 'WindowPosition'
 					$begin 'EditorWindow'
-						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -13, -58, -351, 0, -89, 71), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -2.88847589492798, 2.88847589492798, -1, 1, 4.55497932434082, 6.95420932769775), Drawings[11: 'Cylinder2', 'Cylinder4', 'Torus1', 'Torus1_Section1', 'Cylinder6', 'Length_surf_Cylinder2', 'Length_vol_Cylinder2', 'Length_surf_Cylinder4', 'Length_vol_Cylinder4', 'Length_surf_Cylinder6', 'Length_vol_Cylinder6'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=100, dYForGrid=100, dZForGrid=100, dRForGrid=100, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
+						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -13, -58, -351, 0, -89, 71), OrientationMatrix(0.000974278547801077, -0.000562499975785613, 0.000795495114289224, 0, 0.000974278547801077, 0.000562499975785613, -0.000795495114289224, 0, 0, 0.00112499995157123, 0.000795495114289224, 0, 0, 0, -5.75459480285645, 1, 0, -2.88847589492798, 2.88847589492798, -1, 1, 4.55497932434082, 6.95420932769775), Drawings[17: 'Cylinder2', 'Cylinder4', 'Torus1', 'Torus1_Section1', 'Cylinder6', 'Length_surf_Cylinder2', 'Length_vol_Cylinder2', 'Length_surf_Cylinder4', 'Length_vol_Cylinder4', 'Length_surf_Cylinder6', 'Length_vol_Cylinder6', 'Length_surf_z_Cylinder2', 'Length_vol_z_Cylinder2', 'Length_surf_z_Cylinder4', 'Length_vol_z_Cylinder4', 'Length_surf_z_Cylinder6', 'Length_vol_z_Cylinder6'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=100, dYForGrid=100, dZForGrid=100, dRForGrid=100, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
 					$end 'EditorWindow'
 				$end 'WindowPosition'
 				$begin 'ReportSetup'

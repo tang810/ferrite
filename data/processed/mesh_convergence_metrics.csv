@@ -1,7 +1,7 @@
-case_id,mesh_level,total_elements,elements_across_ferrite_thickness,air_domain_size,Bcenter_Bx_T,SFx,IntH2_total,relative_change_Bcenter_Bx_T,relative_change_SFx,relative_change_IntH2_total,status,notes
-C1_N1_t008_x,coarse,,1,,9.26455149e-07,1.356352762,3.799831831e-06,,,,processed,mesh metadata incomplete
-C1_N1_t008_x,medium,,3,,9.374725024e-07,1.340412649,3.818944998e-06,0.01175218832,0.01189194487,0.00500482903,processed,mesh metadata incomplete
-C1_N1_t008_x,fine,,5,,9.374725023e-07,1.340412649,3.818944997e-06,7.253547874e-11,1.715887993e-10,1.806781233e-10,processed,mesh metadata incomplete
-C2_N4_t015_g008_x,coarse,,1,,3.462660993e-07,3.62900094,4.160112873e-06,,,,processed,mesh metadata incomplete
-C2_N4_t015_g008_x,medium,,3,,3.462660992e-07,3.629000941,4.160112873e-06,2.223723509e-10,3.416918658e-10,8.172852094e-11,processed,mesh metadata incomplete
-C2_N4_t015_g008_x,fine,,5,,3.462660993e-07,3.62900094,4.160112873e-06,3.263385177e-10,1.928905695e-10,4.326816027e-11,processed,mesh metadata incomplete
+case_id,mesh_level,total_elements,elements_across_ferrite_thickness,adaptive_passes,air_domain_size,Bcenter_Bx_T,SFx,IntH2_total,relative_change_Bcenter_Bx_T,relative_change_SFx,relative_change_IntH2_total,status,notes
+C1_N1_t008_x,coarse,,1,,,9.26455149e-07,1.356352762,3.799831831e-06,,,,processed,total_elements adaptive_passes and air_domain_size not exported
+C1_N1_t008_x,medium,,3,,,9.374725024e-07,1.340412649,3.818944998e-06,0.01175218832,0.01189194487,0.00500482903,processed,total_elements adaptive_passes and air_domain_size not exported
+C1_N1_t008_x,fine,,5,,,9.374725023e-07,1.340412649,3.818944997e-06,7.253547874e-11,1.715887993e-10,1.806781233e-10,processed,total_elements adaptive_passes and air_domain_size not exported
+C2_N4_t015_g008_x,coarse,,1,,,3.462660993e-07,3.62900094,4.160112873e-06,,,,processed,total_elements adaptive_passes and air_domain_size not exported
+C2_N4_t015_g008_x,medium,,3,,,3.462660992e-07,3.629000941,4.160112873e-06,2.223723509e-10,3.416918658e-10,8.172852094e-11,processed,total_elements adaptive_passes and air_domain_size not exported
+C2_N4_t015_g008_x,fine,,5,,,3.462660993e-07,3.62900094,4.160112873e-06,3.263385177e-10,1.928905695e-10,4.326816027e-11,processed,total_elements adaptive_passes and air_domain_size not exported

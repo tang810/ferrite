@@ -1,7 +1,7 @@
-mu_sensitivity 2026-05-27 19:54:25
+mu_sensitivity 2026-05-28 12:53:34
 MESH_DIVISOR=3
 Cases: ['C2_N3_t020_g010_x', 'C2_N4_t015_g008_x']
-mu_r variants: [500, 2000, 5000]
+mu_r variants: [500, 1000, 1500]
 
 
 ------------------------------------------------------------
@@ -9,274 +9,88 @@ Processing MU_C2_N3_t020_g010_x_mu500 | layers=3 | a=0.200mm | mu_r=500
 copied C2_N3_t020_g010_shield.aedt -> MU_C2_N3_t020_g010_x_mu500_shield.aedt
 OpenProject: OK -> IDispatch(ISProject2)
 tangential-H faces: 4
-set material Cylinder2 -> ferrite_mu500: OK
-set material Cylinder4 -> ferrite_mu500: OK
-set material Cylinder6 -> ferrite_mu500: OK
-set material Cylinder8 -> ferrite_mu500: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 173, in <lambda$282>
-    oEditor.ChangeProperty([
-Exception: ChangeProperty(Structured Array args)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-changed ferrite material to ferrite_mu500 (mu_r=500)
-cleared 0 mesh ops
-SURF Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
+created material ferrite_mu500 mu_r=500
+assigned ferrite_mu500 to 3 ferrite objects
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
 assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6']
 ValidateDesign: OK -> 1
 Analyze Setup1: OK -> 0
-eval Bcenter_Bx: OK -> 4.19744915905e-07
-eval Bcenter_By: OK -> -3.8586177869e-09
-eval Bcenter_Bz: OK -> 4.40799936664e-10
-eval Bcenter_Mag: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 352, in <lambda$289>
-    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 215, in eval_bmag
-    fields.CalcOp("ComplexMag")
-Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
-
-SFx=2.99372297885
-Center field: {'Bcenter_Bx_T': 4.1974491590464698e-07, 'Bcenter_Mag_T': '', 'case_id': 'MU_C2_N3_t020_g010_x_mu500', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu500_shield.aedt', 'Bcenter_Bz_T': 4.4079993666427399e-10, 'Bcenter_By_T': -3.8586177868991496e-09}
-eval IntH2_total: OK -> 4.38092548022e-06
-eval IntH2_L1: OK -> 1.12486305557e-06
-eval IntH2_L2: OK -> 1.58194909982e-06
-eval IntH2_L3: OK -> 1.67411332483e-06
-IntH2: {'IntH2_L3': 1.6741133248334e-06, 'IntH2_total': 4.3809254802243798e-06, 'IntH2_L2': 1.58194909982239e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N3_t020_g010_x_mu500', 'notes': 'mu_r=500', 'IntH2_L1': 1.1248630555685901e-06, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu500_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+eval Bcenter_Bx: OK -> 6.20434472505e-07
+eval Bcenter_By: OK -> -4.81920040812e-09
+eval Bcenter_Bz: OK -> 3.45388758739e-10
+eval Bcenter_Mag (manual sqrt): 6.20453284832e-0
+SFx=2.02535490158
+Center field: {'Bcenter_Bx_T': 6.2043447250542797e-07, 'Bcenter_Mag_T': 6.2045328483219185e-07, 'case_id': 'MU_C2_N3_t020_g010_x_mu500', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu500_shield.aedt', 'Bcenter_Bz_T': 3.45388758738974e-10, 'Bcenter_By_T': -4.8192004081239602e-09}
+eval IntH2_total: OK -> 9.97577197542e-06
+eval IntH2_L1: OK -> 2.56868478338e-06
+eval IntH2_L2: OK -> 3.6007981731e-06
+eval IntH2_L3: OK -> 3.80628901894e-06
+IntH2: {'IntH2_L3': 3.80628901893869e-06, 'IntH2_total': 9.9757719754150605e-06, 'IntH2_L2': 3.6007981730967798e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N3_t020_g010_x_mu500', 'notes': 'mu_r=500', 'IntH2_L1': 2.5686847833795898e-06, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu500_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
 Save: OK
 CloseProject: OK
 
 ------------------------------------------------------------
-Processing MU_C2_N3_t020_g010_x_mu2000 | layers=3 | a=0.200mm | mu_r=2000
-copied C2_N3_t020_g010_shield.aedt -> MU_C2_N3_t020_g010_x_mu2000_shield.aedt
+Processing MU_C2_N3_t020_g010_x_mu1000 | layers=3 | a=0.200mm | mu_r=1000
+copied C2_N3_t020_g010_shield.aedt -> MU_C2_N3_t020_g010_x_mu1000_shield.aedt
 OpenProject: OK -> IDispatch(ISProject2)
 tangential-H faces: 4
-set material Cylinder2 -> ferrite_mu2000: OK
-set material Cylinder4 -> ferrite_mu2000: OK
-set material Cylinder6 -> ferrite_mu2000: OK
-set material Cylinder8 -> ferrite_mu2000: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 173, in <lambda$282>
-    oEditor.ChangeProperty([
-Exception: ChangeProperty(Structured Array args)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-changed ferrite material to ferrite_mu2000 (mu_r=2000)
-cleared 0 mesh ops
-SURF Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
+created material ferrite_mu1000 mu_r=1000
+assigned ferrite_mu1000 to 3 ferrite objects
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
 assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6']
 ValidateDesign: OK -> 1
 Analyze Setup1: OK -> 0
-eval Bcenter_Bx: OK -> 4.19744915898e-07
-eval Bcenter_By: OK -> -3.85861779734e-09
-eval Bcenter_Bz: OK -> 4.40799939558e-10
-eval Bcenter_Mag: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 352, in <lambda$289>
-    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 215, in eval_bmag
-    fields.CalcOp("ComplexMag")
-Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
-
-SFx=2.99372297890
-Center field: {'Bcenter_Bx_T': 4.19744915898165e-07, 'Bcenter_Mag_T': '', 'case_id': 'MU_C2_N3_t020_g010_x_mu2000', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu2000_shield.aedt', 'Bcenter_Bz_T': 4.4079993955838601e-10, 'Bcenter_By_T': -3.85861779734061e-09}
-eval IntH2_total: OK -> 4.38092548008e-06
-eval IntH2_L1: OK -> 1.12486305553e-06
-eval IntH2_L2: OK -> 1.58194909977e-06
-eval IntH2_L3: OK -> 1.67411332478e-06
-IntH2: {'IntH2_L3': 1.67411332477697e-06, 'IntH2_total': 4.3809254800791103e-06, 'IntH2_L2': 1.58194909977205e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N3_t020_g010_x_mu2000', 'notes': 'mu_r=2000', 'IntH2_L1': 1.1248630555300901e-06, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu2000_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+eval Bcenter_Bx: OK -> 4.20126559715e-07
+eval Bcenter_By: OK -> -4.12149046802e-09
+eval Bcenter_Bz: OK -> 3.13444131092e-10
+eval Bcenter_Mag (manual sqrt): 4.201468923e-07
+SFx=2.99100347489
+Center field: {'Bcenter_Bx_T': 4.2012655971523902e-07, 'Bcenter_Mag_T': 4.201468922996618e-07, 'case_id': 'MU_C2_N3_t020_g010_x_mu1000', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu1000_shield.aedt', 'Bcenter_Bz_T': 3.1344413109229701e-10, 'Bcenter_By_T': -4.1214904680241499e-09}
+eval IntH2_total: OK -> 4.37255567516e-06
+eval IntH2_L1: OK -> 1.12463721877e-06
+eval IntH2_L2: OK -> 1.58120464297e-06
+eval IntH2_L3: OK -> 1.66671381343e-06
+IntH2: {'IntH2_L3': 1.66671381342825e-06, 'IntH2_total': 4.3725556751648298e-06, 'IntH2_L2': 1.5812046429714101e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N3_t020_g010_x_mu1000', 'notes': 'mu_r=1000', 'IntH2_L1': 1.1246372187651701e-06, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu1000_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
 Save: OK
 CloseProject: OK
 
 ------------------------------------------------------------
-Processing MU_C2_N3_t020_g010_x_mu5000 | layers=3 | a=0.200mm | mu_r=5000
-copied C2_N3_t020_g010_shield.aedt -> MU_C2_N3_t020_g010_x_mu5000_shield.aedt
+Processing MU_C2_N3_t020_g010_x_mu1500 | layers=3 | a=0.200mm | mu_r=1500
+copied C2_N3_t020_g010_shield.aedt -> MU_C2_N3_t020_g010_x_mu1500_shield.aedt
 OpenProject: OK -> IDispatch(ISProject2)
 tangential-H faces: 4
-set material Cylinder2 -> ferrite_mu5000: OK
-set material Cylinder4 -> ferrite_mu5000: OK
-set material Cylinder6 -> ferrite_mu5000: OK
-set material Cylinder8 -> ferrite_mu5000: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 173, in <lambda$282>
-    oEditor.ChangeProperty([
-Exception: ChangeProperty(Structured Array args)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-changed ferrite material to ferrite_mu5000 (mu_r=5000)
-cleared 0 mesh ops
-SURF Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
+created material ferrite_mu1500 mu_r=1500
+assigned ferrite_mu1500 to 3 ferrite objects
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
 assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6']
 ValidateDesign: OK -> 1
 Analyze Setup1: OK -> 0
-eval Bcenter_Bx: OK -> 4.19744915888e-07
-eval Bcenter_By: OK -> -3.85861779257e-09
-eval Bcenter_Bz: OK -> 4.40799938127e-10
-eval Bcenter_Mag: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 352, in <lambda$289>
-    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 215, in eval_bmag
-    fields.CalcOp("ComplexMag")
-Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
-
-SFx=2.99372297897
-Center field: {'Bcenter_Bx_T': 4.19744915887805e-07, 'Bcenter_Mag_T': '', 'case_id': 'MU_C2_N3_t020_g010_x_mu5000', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu5000_shield.aedt', 'Bcenter_Bz_T': 4.4079993812747098e-10, 'Bcenter_By_T': -3.8586177925689599e-09}
-eval IntH2_total: OK -> 4.38092547989e-06
-eval IntH2_L1: OK -> 1.12486305548e-06
-eval IntH2_L2: OK -> 1.5819490997e-06
-eval IntH2_L3: OK -> 1.67411332471e-06
-IntH2: {'IntH2_L3': 1.6741133247108e-06, 'IntH2_total': 4.3809254798938599e-06, 'IntH2_L2': 1.58194909970002e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N3_t020_g010_x_mu5000', 'notes': 'mu_r=5000', 'IntH2_L1': 1.1248630554830499e-06, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu5000_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+eval Bcenter_Bx: OK -> 3.21240629633e-07
+eval Bcenter_By: OK -> -3.4586559063e-09
+eval Bcenter_Bz: OK -> 2.83000100841e-10
+eval Bcenter_Mag (manual sqrt): 3.21259372652e-0
+SFx=3.91170942927
+Center field: {'Bcenter_Bx_T': 3.2124062963337099e-07, 'Bcenter_Mag_T': 3.2125937265234751e-07, 'case_id': 'MU_C2_N3_t020_g010_x_mu1500', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu1500_shield.aedt', 'Bcenter_Bz_T': 2.8300010084055802e-10, 'Bcenter_By_T': -3.4586559062973302e-09}
+eval IntH2_total: OK -> 2.44585233994e-06
+eval IntH2_L1: OK -> 6.28628025695e-07
+eval IntH2_L2: OK -> 8.84880734192e-07
+eval IntH2_L3: OK -> 9.32343580048e-07
+IntH2: {'IntH2_L3': 9.3234358004839e-07, 'IntH2_total': 2.4458523399355002e-06, 'IntH2_L2': 8.8488073419220404e-07, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N3_t020_g010_x_mu1500', 'notes': 'mu_r=1500', 'IntH2_L1': 6.2862802569490998e-07, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N3_t020_g010_x_mu1500_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
 Save: OK
 CloseProject: OK
 
@@ -285,75 +99,98 @@ Processing MU_C2_N4_t015_g008_x_mu500 | layers=4 | a=0.150mm | mu_r=500
 copied C2_N4_t015_g008_shield.aedt -> MU_C2_N4_t015_g008_x_mu500_shield.aedt
 OpenProject: OK -> IDispatch(ISProject2)
 tangential-H faces: 4
-set material Cylinder2 -> ferrite_mu500: OK
-set material Cylinder4 -> ferrite_mu500: OK
-set material Cylinder6 -> ferrite_mu500: OK
-set material Cylinder8 -> ferrite_mu500: OK
-changed ferrite material to ferrite_mu500 (mu_r=500)
-cleared 0 mesh ops
-SURF Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder8: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 136, in <lambda$280>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder8: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 81, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/mu_sensitivity.py", line 147, in <lambda$281>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
+created material ferrite_mu500 mu_r=500
+assigned ferrite_mu500 to 4 ferrite objects
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
 assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
 ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 5.84427165187e-07
+eval Bcenter_By: OK -> -1.5472123648e-09
+eval Bcenter_Bz: OK -> -2.7906309305e-08
+eval Bcenter_Mag (manual sqrt): 5.85095092591e-0
+SFx=2.15013961508
+Center field: {'Bcenter_Bx_T': 5.8442716518692496e-07, 'Bcenter_Mag_T': 5.850950925905591e-07, 'case_id': 'MU_C2_N4_t015_g008_x_mu500', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N4_t015_g008_x_mu500_shield.aedt', 'Bcenter_Bz_T': -2.7906309305026799e-08, 'Bcenter_By_T': -1.5472123648036e-09}
+eval IntH2_total: OK -> 9.8238180727e-06
+eval IntH2_L1: OK -> 2.04469297077e-06
+eval IntH2_L2: OK -> 2.04950695469e-06
+eval IntH2_L3: OK -> 2.06736131935e-06
+eval IntH2_L4: OK -> 3.66225682788e-06
+IntH2: {'IntH2_L3': 2.0673613193546399e-06, 'IntH2_total': 9.8238180727000907e-06, 'IntH2_L2': 2.0495069546913899e-06, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N4_t015_g008_x_mu500', 'notes': 'mu_r=500', 'IntH2_L1': 2.04469297077491e-06, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N4_t015_g008_x_mu500_shield.aedt', 'IntH2_L4': 3.66225682787914e-06, 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing MU_C2_N4_t015_g008_x_mu1000 | layers=4 | a=0.150mm | mu_r=1000
+copied C2_N4_t015_g008_shield.aedt -> MU_C2_N4_t015_g008_x_mu1000_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces: 4
+created material ferrite_mu1000 mu_r=1000
+assigned ferrite_mu1000 to 4 ferrite objects
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 3.89946225001e-07
+eval Bcenter_By: OK -> -1.14536465056e-10
+eval Bcenter_Bz: OK -> -3.55886339453e-08
+eval Bcenter_Mag (manual sqrt): 3.91566881104e-0
+SFx=3.22249561461
+Center field: {'Bcenter_Bx_T': 3.8994622500122098e-07, 'Bcenter_Mag_T': 3.9156688110384711e-07, 'case_id': 'MU_C2_N4_t015_g008_x_mu1000', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N4_t015_g008_x_mu1000_shield.aedt', 'Bcenter_Bz_T': -3.5588633945259097e-08, 'Bcenter_By_T': -1.14536465056042e-10}
+eval IntH2_total: OK -> 4.18616389272e-06
+eval IntH2_L1: OK -> 8.73534883509e-07
+eval IntH2_L2: OK -> 8.7597275388e-07
+eval IntH2_L3: OK -> 8.87535066225e-07
+eval IntH2_L4: OK -> 1.54912118911e-06
+IntH2: {'IntH2_L3': 8.87535066224924e-07, 'IntH2_total': 4.1861638927210501e-06, 'IntH2_L2': 8.75972753879618e-07, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N4_t015_g008_x_mu1000', 'notes': 'mu_r=1000', 'IntH2_L1': 8.7353488350899204e-07, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N4_t015_g008_x_mu1000_shield.aedt', 'IntH2_L4': 1.54912118910752e-06, 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+------------------------------------------------------------
+Processing MU_C2_N4_t015_g008_x_mu1500 | layers=4 | a=0.150mm | mu_r=1500
+copied C2_N4_t015_g008_shield.aedt -> MU_C2_N4_t015_g008_x_mu1500_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces: 4
+created material ferrite_mu1500 mu_r=1500
+assigned ferrite_mu1500 to 4 ferrite objects
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 2.95952628129e-07
+eval Bcenter_By: OK -> 9.27651369557e-10
+eval Bcenter_Bz: OK -> -3.92866550428e-08
+eval Bcenter_Mag (manual sqrt): 2.98550263604e-0
+SFx=4.24594979253
+Center field: {'Bcenter_Bx_T': 2.9595262812860697e-07, 'Bcenter_Mag_T': 2.9855026360354029e-07, 'case_id': 'MU_C2_N4_t015_g008_x_mu1500', 'field_dir': 'x', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N4_t015_g008_x_mu1500_shield.aedt', 'Bcenter_Bz_T': -3.9286655042780397e-08, 'Bcenter_By_T': 9.2765136955730896e-10}
+eval IntH2_total: OK -> 2.31192119224e-06
+eval IntH2_L1: OK -> 4.82611749711e-07
+eval IntH2_L2: OK -> 4.84002972297e-07
+eval IntH2_L3: OK -> 4.91857608197e-07
+eval IntH2_L4: OK -> 8.53448862038e-07
+IntH2: {'IntH2_L3': 4.9185760819654199e-07, 'IntH2_total': 2.31192119224239e-06, 'IntH2_L2': 4.8400297229716798e-07, 'status': 'exported', 'coil_dir': 'x', 'case_id': 'MU_C2_N4_t015_g008_x_mu1500', 'notes': 'mu_r=1500', 'IntH2_L1': 4.8261174971052395e-07, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\MU_C2_N4_t015_g008_x_mu1500_shield.aedt', 'IntH2_L4': 8.5344886203815805e-07, 'IntH2_L6': ''}
+Save: OK
+CloseProject: OK
+
+Done 2026-05-28 13:22:40

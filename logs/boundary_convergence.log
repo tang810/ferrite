@@ -1,0 +1,257 @@
+boundary_convergence 2026-05-28 12:56:49
+MESH_DIVISOR=3 (medium mesh)
+Boundary levels: [('2R', 200.0), ('3R', 300.0), ('5R', 500.0)]
+Target cases: ['C1_N1_t008_x', 'C2_N4_t015_g008_x']
+
+
+------------------------------------------------------------
+BND_C1_N1_t008_x_2R | half_ext=200.0mm | 400.0mm cube
+copied -> BND_C1_N1_t008_x_2R.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete Box1: OK
+deleted Box1
+create Box1 (400.0mm cube): OK -> Box1
+created Box1: half-extent=200.0mm (400.0mm x 400.0mm x 400.0mm)
+new Box1 faces: [(133, [0.0, 0.0, 200.0]), (135, [0.0, -200.0, 0.0]), (136, [-200.0, 0.0, 0.0]), (137, [0.0, 200.0, 0.0]), (134, [0.0, 0.0, -200.0]), (138, [200.0, 0.0, 0.0])]
+AssignTangentialHField face 135: OK
+AssignTangentialHField face 137: OK
+AssignTangentialHField face 133: OK
+AssignTangentialHField face 134: OK
+AssignZeroTangentialHField x-normal faces: OK
+assigned 4 tangential-H faces
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+assigned mesh: a=0.080mm MaxLength=0.0266666666667mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 9.13995613367e-07
+eval Bcenter_By: OK -> 2.71605627475e-09
+eval Bcenter_Bz: OK -> -2.30437951198e-09
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 75, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 393, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 278, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+eval IntH2_total: OK -> 4.1680858345e-06
+SFx=1.37484248461 IntH2=4.1680858345e-06
+
+------------------------------------------------------------
+BND_C1_N1_t008_x_3R | half_ext=300.0mm | 600.0mm cube
+copied -> BND_C1_N1_t008_x_3R.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete Box1: OK
+deleted Box1
+create Box1 (600.0mm cube): OK -> Box1
+created Box1: half-extent=300.0mm (600.0mm x 600.0mm x 600.0mm)
+new Box1 faces: [(133, [0.0, 0.0, 300.0]), (135, [0.0, -300.0, 0.0]), (136, [-300.0, 0.0, 0.0]), (137, [0.0, 300.0, 0.0]), (134, [0.0, 0.0, -300.0]), (138, [300.0, 0.0, 0.0])]
+AssignTangentialHField face 135: OK
+AssignTangentialHField face 137: OK
+AssignTangentialHField face 133: OK
+AssignTangentialHField face 134: OK
+AssignZeroTangentialHField x-normal faces: OK
+assigned 4 tangential-H faces
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+assigned mesh: a=0.080mm MaxLength=0.0266666666667mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 7.88055634705e-07
+eval Bcenter_By: OK -> 7.28052721361e-09
+eval Bcenter_Bz: OK -> 2.05255144573e-09
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 75, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 393, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 278, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+eval IntH2_total: OK -> 4.53505298684e-06
+SFx=1.59455747115 IntH2=4.53505298684e-06
+
+------------------------------------------------------------
+BND_C1_N1_t008_x_5R | half_ext=500.0mm | 1000.0mm cube
+copied -> BND_C1_N1_t008_x_5R.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete Box1: OK
+deleted Box1
+create Box1 (1000.0mm cube): OK -> Box1
+created Box1: half-extent=500.0mm (1000.0mm x 1000.0mm x 1000.0mm)
+new Box1 faces: [(133, [0.0, 0.0, 500.0]), (135, [0.0, -500.0, 0.0]), (136, [-500.0, 0.0, 0.0]), (137, [0.0, 500.0, 0.0]), (134, [0.0, 0.0, -500.0]), (138, [500.0, 0.0, 0.0])]
+AssignTangentialHField face 135: OK
+AssignTangentialHField face 137: OK
+AssignTangentialHField face 133: OK
+AssignTangentialHField face 134: OK
+AssignZeroTangentialHField x-normal faces: OK
+assigned 4 tangential-H faces
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+assigned mesh: a=0.080mm MaxLength=0.0266666666667mm divisor=3 objects=['Cylinder2']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 8.35199801428e-07
+eval Bcenter_By: OK -> -7.0672201692e-09
+eval Bcenter_Bz: OK -> 1.03234653955e-08
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 75, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 393, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 278, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+eval IntH2_total: OK -> 4.01531991647e-06
+SFx=1.50455016614 IntH2=4.01531991647e-06
+
+------------------------------------------------------------
+BND_C2_N4_t015_g008_x_2R | half_ext=200.0mm | 400.0mm cube
+copied -> BND_C2_N4_t015_g008_x_2R.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete Box1: OK
+deleted Box1
+create Box1 (400.0mm cube): OK -> Box1
+created Box1: half-extent=200.0mm (400.0mm x 400.0mm x 400.0mm)
+new Box1 faces: [(317, [0.0, 0.0, 200.0]), (319, [0.0, -200.0, 0.0]), (320, [-200.0, 0.0, 0.0]), (321, [0.0, 200.0, 0.0]), (318, [0.0, 0.0, -200.0]), (322, [200.0, 0.0, 0.0])]
+AssignTangentialHField face 319: OK
+AssignTangentialHField face 321: OK
+AssignTangentialHField face 317: OK
+AssignTangentialHField face 318: OK
+AssignZeroTangentialHField x-normal faces: OK
+assigned 4 tangential-H faces
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 4.24683876785e-07
+eval Bcenter_By: OK -> 1.9477657863e-09
+eval Bcenter_Bz: OK -> 3.25373139656e-10
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 75, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 393, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 278, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+eval IntH2_total: OK -> 4.89033096277e-06
+SFx=2.95890677441 IntH2=4.89033096277e-06
+
+------------------------------------------------------------
+BND_C2_N4_t015_g008_x_3R | half_ext=300.0mm | 600.0mm cube
+copied -> BND_C2_N4_t015_g008_x_3R.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete Box1: OK
+deleted Box1
+create Box1 (600.0mm cube): OK -> Box1
+created Box1: half-extent=300.0mm (600.0mm x 600.0mm x 600.0mm)
+new Box1 faces: [(317, [0.0, 0.0, 300.0]), (319, [0.0, -300.0, 0.0]), (320, [-300.0, 0.0, 0.0]), (321, [0.0, 300.0, 0.0]), (318, [0.0, 0.0, -300.0]), (322, [300.0, 0.0, 0.0])]
+AssignTangentialHField face 319: OK
+AssignTangentialHField face 321: OK
+AssignTangentialHField face 317: OK
+AssignTangentialHField face 318: OK
+AssignZeroTangentialHField x-normal faces: OK
+assigned 4 tangential-H faces
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 4.0655061474e-07
+eval Bcenter_By: OK -> -2.06393932524e-09
+eval Bcenter_Bz: OK -> -2.58465179451e-09
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 75, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 393, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 278, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+eval IntH2_total: OK -> 4.40798506221e-06
+SFx=3.09088205611 IntH2=4.40798506221e-06
+
+------------------------------------------------------------
+BND_C2_N4_t015_g008_x_5R | half_ext=500.0mm | 1000.0mm cube
+copied -> BND_C2_N4_t015_g008_x_5R.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+delete Box1: OK
+deleted Box1
+create Box1 (1000.0mm cube): OK -> Box1
+created Box1: half-extent=500.0mm (1000.0mm x 1000.0mm x 1000.0mm)
+new Box1 faces: [(317, [0.0, 0.0, 500.0]), (319, [0.0, -500.0, 0.0]), (320, [-500.0, 0.0, 0.0]), (321, [0.0, 500.0, 0.0]), (318, [0.0, 0.0, -500.0]), (322, [500.0, 0.0, 0.0])]
+AssignTangentialHField face 319: OK
+AssignTangentialHField face 321: OK
+AssignTangentialHField face 317: OK
+AssignTangentialHField face 318: OK
+AssignZeroTangentialHField x-normal faces: OK
+assigned 4 tangential-H faces
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
+assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+ValidateDesign: OK -> 1
+Analyze Setup1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 75, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 386, in <lambda$102>
+    safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+Exception: Analyze(string simulationName, [bool isBlocking /*optional*/]) -> long(Setup1) - call failed. Logs or message window might have more details
+
+eval Bcenter_Bx: OK -> 4.11137821152e-07
+eval Bcenter_By: OK -> 8.69421798035e-09
+eval Bcenter_Bz: OK -> -6.23819362126e-09
+eval Bcenter_Mag: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 75, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 393, in <lambda$106>
+    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/boundary_convergence.py", line 278, in eval_bmag
+    fields.CalcOp("ComplexMag")
+Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
+
+eval IntH2_total: OK -> 4.37167993276e-06
+SFx=3.05639601941 IntH2=4.37167993276e-06
+
+============================================================
+BOUNDARY CONVERGENCE SUMMARY
+  BND_C1_N1_t008_x_2R | 2R | SFx=1.37484248461 | IntH2=4.1680858345e-06
+  BND_C1_N1_t008_x_3R | 3R | SFx=1.59455747115 | IntH2=4.53505298684e-06
+  BND_C1_N1_t008_x_5R | 5R | SFx=1.50455016614 | IntH2=4.01531991647e-06
+  BND_C2_N4_t015_g008_x_2R | 2R | SFx=2.95890677441 | IntH2=4.89033096277e-06
+  BND_C2_N4_t015_g008_x_3R | 3R | SFx=3.09088205611 | IntH2=4.40798506221e-06
+  BND_C2_N4_t015_g008_x_5R | 5R | SFx=3.05639601941 | IntH2=4.37167993276e-06
+
+Done 2026-05-28 13:34:26

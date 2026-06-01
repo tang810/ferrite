@@ -1,122 +1,84 @@
 # Remaining TODO Before IEEE TIM Submission
 
-中文说明：以下项目仍缺真实 AEDT 或实验导出。不得将这些项目写成已完成结果，不得用于最终论文结论。
+This file lists results that still cannot enter the paper conclusions under the current data-use rules.
 
-## 1. Boundary-Domain Convergence
+## Data Currently Eligible for Conclusions
 
-Missing exports:
+- `B0_reference_x`: passed direction validation and is used for `SFx`.
+- `B0_reference_z`: passed direction validation, but is only a reference until shielded z-directed exports exist.
+- Seven transverse continuous-shell cases are valid for current conclusions:
+  - `C1_N1_t008_x`
+  - `C1_N1_t020_x`
+  - `C1_N1_t040_x`
+  - `C1_N1_t060_x`
+  - `C2_N2_t020_g010_x`
+  - `C2_N3_t020_g010_x`
+  - `C2_N4_t015_g008_x`
+- Layerwise IntH2 checks passed for the seven transverse continuous-shell cases.
+- Mesh convergence numeric checks passed for `C1_N1_t008_x` and `C2_N4_t015_g008_x`; total elements, adaptive passes, and air-domain metadata were not exported.
+  These checks support scalar mesh-trend reporting only; they do not support a complete numerical-robustness claim.
 
-- `C2_N4_t015_g008_x`, air-domain scale `2R`
-- `C2_N4_t015_g008_x`, air-domain scale `3R`
-- `C2_N4_t015_g008_x`, air-domain scale `5R`
-- optional `7R`
+## Results Still Excluded
 
-Required output:
+### Boundary-Domain Convergence
 
-- `data/raw/boundary_convergence_exports.csv`
-- `data/processed/boundary_convergence_metrics.csv`
-- `figures/boundary_convergence.png`
+Missing valid exports for `C2_N4_t015_g008_x` at:
 
-Acceptance target:
+- `2R`
+- `3R`
+- `5R`
 
-- 3R to 5R SFx change < 1%
-- 3R to 5R IntH2_total change < 2%
+Until these are exported, the manuscript must not claim full numerical robustness or completed boundary-domain convergence.
 
-## 2. Axial Shielded Cases
+### Mesh Metadata
 
-B0_reference_z is available and validated. The following shielded cases are still missing:
+The mesh convergence rows still lack:
+
+- total element count
+- adaptive-pass count
+- air-domain scale
+
+These columns are present in the updated CSV schema, but the values remain blank because no raw export was available.
+
+### Axial Shielding
+
+`B0_reference_z` is valid, but the following shielded z cases are still missing:
 
 - `C1_N1_t060_z`
 - `C2_N3_t020_g010_z`
 - `C2_N4_t015_g008_z`
 
-Required exports:
+Therefore `SFz`, `LeakageRatioz`, and `SFz/SFx` cannot enter conclusions, and the `SFx` ranking cannot be generalized to axial shielding.
 
-- `Bcenter_Bx_T`
-- `Bcenter_By_T`
-- `Bcenter_Bz_T`
-- `Bcenter_Mag_T`
-- `IntH2_total` if virtual-coil z-direction comparison is required
+### Segmented-Shell Correction
 
-No SFz conclusion may be written until these exports exist.
+Missing valid segmented exports for `C2_N4_t015_g008_x` with `Nseg=12` and `g_phi=1.6 mm`:
 
-## 3. Segmented-Shell Correction
+- aligned slots
+- staggered slots
 
-Missing AEDT segmented cases:
+Therefore `SFx_seg/SFx_cont` and `IntH2_seg/IntH2_cont` cannot be reported as results, and manufacturable segmented assembly performance remains unverified.
 
-- `S_N4_t015_g008_seg12_aligned_x`
-- `S_N4_t015_g008_seg12_staggered_x`
+### Permeability Sensitivity
 
-Required geometry:
+Only `mu_r'=1000` baseline rows are available. Missing:
 
-- `Nseg = 12`
-- `g_phi = 1.6 mm`
-- `coverage_phi = 0.95`
-- aligned slots and staggered slots
+- `C1_N1_t060_x`: `mu_r'=500`, `2000`, `5000`
+- `C2_N4_t015_g008_x`: `mu_r'=500`, `2000`, `5000`
 
-Required exports:
+Therefore ranking robustness against permeability variation cannot be claimed.
 
-- `Bcenter_Bx_T`
-- `SFx`
-- `LeakageRatiox`
-- `IntH2_total`
+### Field-Map Exports
 
-No manufacturability claim should be made from continuous-shell results alone.
+Missing real AEDT field-map exports:
 
-## 4. Permeability Sensitivity
+- external-field `B` distribution for `C1_N1_t060_x` and `C2_N4_t015_g008_x`
+- flux lines for the same comparison
+- virtual-coil `H_vc` contours
+- virtual-coil `H_vc^2` contours
 
-Only `mu_r'=1000` baseline rows are available. Missing sweeps:
+Therefore Discussion may describe the scalar layerwise IntH2 distribution, but must not give a strong physical mechanism explanation for the high outer-layer contribution.
 
-- `C1_N1_t060_x`: `mu_r'=500, 2000, 5000`
-- `C2_N4_t015_g008_x`: `mu_r'=500, 2000, 5000`
+### Prototype Measurement
 
-Required exports:
-
-- `Bcenter_Bx_T`
-- `SFx`
-- `LeakageRatiox`
-- `IntH2_total`
-- `etaS_star`
-- `rhoH`
-- `chiH`
-
-No robustness claim with respect to `mu_r'` may be made until the sweep is complete.
-
-## 5. Field-Map Figures
-
-Missing AEDT field-map exports:
-
-- `H_vc` magnitude contour
-- `H_vc^2` contour
-- external-field `B` distribution
-- external-field flux lines
-
-Required comparisons:
-
-- `C1_N1_t060_x`
-- `C2_N4_t015_g008_x`
-
-These maps are needed to support the physical interpretation of flux redistribution and outer-layer IntH2 dominance.
-
-## 6. Prototype SF Measurement
-
-No prototype-level SF data are available.
-
-Required minimum measurement:
-
-- no-shield `B0_x`
-- shielded `Bcenter_x`
-- optional no-shield and shielded z-direction measurements
-- at least three repeats
-- uncertainty budget
-
-Use `data/raw/experimental_sfx_measurement.csv` as the input template.
-
-## 7. Mesh Metadata
-
-Mesh convergence values exist, but the following metadata are missing:
-
-- total element count
-- air-domain size used in each mesh run
-
-These should be exported before final manuscript submission.
+No prototype SF measurement data are available. The prototype section remains a protocol only.

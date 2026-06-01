@@ -5,7 +5,7 @@ Copies x-directed shield projects, changes mu_r of ferrite material,
 applies mesh refinement, solves, and exports Bcenter + IntH2 data.
 
 Cases: C2_N3_t020_g010_x and C2_N4_t015_g008_x
-mu_r values: 500, 2000, 5000 (baseline 1000 is already in main dataset)
+mu_r values: 500, 1000, 1500 (baseline 1000 is already in main dataset)
 
 IronPython 2.7 safe -- NO str.format() with precision specifiers.
 """
@@ -34,8 +34,8 @@ FERRITE_OBJECTS = ["Cylinder2", "Cylinder4", "Cylinder6", "Cylinder8"]
 
 MU_VARIANTS = [
     {"mu_r": 500, "suffix": "mu500"},
-    {"mu_r": 2000, "suffix": "mu2000"},
-    {"mu_r": 5000, "suffix": "mu5000"},
+    {"mu_r": 1000, "suffix": "mu1000"},
+    {"mu_r": 1500, "suffix": "mu1500"},
 ]
 
 CASES = [
@@ -106,20 +106,17 @@ def fmt_float3(v):
     return "%.3f" % (float(v),)
 
 
-def clear_mesh_operations(fp, oDesign):
-    try:
-        mesh_module = oDesign.GetModule("MeshSetup")
-        existing = []
-        try:
-            existing = list(mesh_module.GetMeshOperations())
-        except Exception:
-            pass
-        for name in existing:
-            safe(fp, "delete mesh op " + str(name),
-                 lambda n=name: mesh_module.DeleteMeshOperations([n]))
-        log(fp, "cleared " + str(len(existing)) + " mesh ops")
-    except Exception:
-        log(fp, "clear_mesh_operations: " + traceback.format_exc())
+def clear_all_mesh_ops_force(fp, oDesign, layers):
+    """Force-delete all expected mesh ops by known names."""
+    mesh_module = oDesign.GetModule("MeshSetup")
+    ferrite_objs = FERRITE_OBJECTS[:layers]
+    for obj_name in ferrite_objs:
+        for prefix in ["Length_surf_mu_", "Length_vol_mu_",
+                       "Length_surf_", "Length_vol_"]:
+            try:
+                mesh_module.DeleteMeshOperations([prefix + obj_name])
+            except Exception:
+                pass
 
 
 def assign_ferrite_mesh(fp, oDesign, case_info):
@@ -134,7 +131,7 @@ def assign_ferrite_mesh(fp, oDesign, case_info):
         safe(fp, "SURF " + obj_name,
              lambda n=obj_name, ml=max_len:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_surf_" + n,
+                 "NAME:Length_surf_mu_" + n,
                  "RefineInside:=", False,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -145,7 +142,7 @@ def assign_ferrite_mesh(fp, oDesign, case_info):
         safe(fp, "VOL  " + obj_name,
              lambda n=obj_name, ml=max_len:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_vol_" + n,
+                 "NAME:Length_vol_mu_" + n,
                  "RefineInside:=", True,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -158,28 +155,58 @@ def assign_ferrite_mesh(fp, oDesign, case_info):
         max_len + " divisor=" + str(MESH_DIVISOR) + " objects=" + str(ferrite_objs))
 
 
-def change_ferrite_mu(fp, oEditor, mu_r):
-    """Change the relative permeability of all ferrite objects.
+def change_ferrite_mu(fp, oProject, oEditor, mu_r, layers):
+    """Create a new ferrite material with target mu_r and assign it to all ferrite objects.
 
-    In Maxwell, material properties are set via the material library.
-    We create/adjust a material named 'ferrite_muXXX' with the target mu_r.
+    The COM wrapper for DefinitionManager.GetManager("Material").GetMaterial()
+    does not expose GetMaterial in IronPython, so we create new material definitions
+    and reassign geometry objects instead of modifying the existing material in-place.
     """
-    mat_name = "ferrite_mu" + str(mu_r)
+    mat_name = "ferrite_mu" + str(int(mu_r))
+    oDefMgr = oProject.GetDefinitionManager()
+    ferrite_objs = FERRITE_OBJECTS[:layers]
 
-    # Set all ferrite objects to use the new material
-    for obj in FERRITE_OBJECTS:
-        safe(fp, "set material " + obj + " -> " + mat_name,
-             lambda o=obj, m=mat_name:
-             oEditor.ChangeProperty([
-                 "NAME:AllTabs",
-                 ["NAME:Geometry3DAttributeTab",
-                  ["NAME:PropServers", o],
-                  ["NAME:ChangedProps",
-                   ["NAME:Material", "Value:=", '"' + m + '"'],
-                   ["NAME:Solve Inside", "Value:=", True]]],
-             ]))
+    # Step 1: Create new material definition (idempotent if already exists)
+    try:
+        oDefMgr.AddMaterial([
+            "NAME:" + mat_name,
+            "CoordinateSystemType:=", "Cartesian",
+            "BulkOrSurfaceType:=", 1,
+            ["NAME:PhysicsTypes", "Set:=", ["Electromagnetic", "Thermal"]],
+            "permeability:=", str(mu_r),
+            "conductivity:=", "0.01",
+            "dielectric_loss_tangent:=", "0",
+            "magnetic_loss_tangent:=", "0",
+        ])
+        log(fp, "created material " + mat_name + " mu_r=" + str(mu_r))
+    except Exception:
+        log(fp, "AddMaterial " + mat_name + " may already exist: " +
+            str(traceback.format_exc())[:120])
 
-    log(fp, "changed ferrite material to " + mat_name + " (mu_r=" + str(mu_r) + ")")
+    # Step 2: Assign new material to each ferrite object
+    assigned = 0
+    for obj_name in ferrite_objs:
+        try:
+            oEditor.ChangeProperty([
+                "NAME:AllTabs",
+                ["NAME:Geometry3DAttributeTab",
+                 ["NAME:PropServers", obj_name],
+                 ["NAME:ChangedProps",
+                  ["NAME:Material", "Value:=", '"' + mat_name + '"'],
+                  ["NAME:Solve Inside", "Value:=", True],
+                 ],
+                ],
+            ])
+            assigned += 1
+        except Exception:
+            log(fp, "assign " + mat_name + " to " + obj_name + " FAILED: " +
+                 str(traceback.format_exc())[:120])
+
+    if assigned == len(ferrite_objs):
+        log(fp, "assigned " + mat_name + " to " + str(assigned) + " ferrite objects")
+    else:
+        log(fp, "WARNING: assigned " + str(assigned) + "/" + str(len(ferrite_objs)) +
+            " ferrite objects to " + mat_name)
 
 
 def eval_bx(fields):
@@ -204,15 +231,6 @@ def eval_bz(fields):
     fields.CalcStack("clear")
     fields.EnterQty("B")
     fields.CalcOp("ScalarZ")
-    fields.EnterPoint(POINT_NAME)
-    fields.CalcOp("Value")
-    return extract_value(fields.GetTopEntryValue(SOLN, []))
-
-
-def eval_bmag(fields):
-    fields.CalcStack("clear")
-    fields.EnterQty("B")
-    fields.CalcOp("ComplexMag")
     fields.EnterPoint(POINT_NAME)
     fields.CalcOp("Value")
     return extract_value(fields.GetTopEntryValue(SOLN, []))
@@ -271,6 +289,22 @@ def count_tangential_h_faces(oBoundary):
     except Exception:
         return -1
     return count
+
+
+def compute_bmag_manual(Bx, By, Bz):
+    """Compute |B| = sqrt(Bx^2 + By^2 + Bz^2) from scalar components.
+
+    Avoids ComplexMag CalcOp which is not available in all AEDT versions.
+    """
+    if Bx is None or By is None or Bz is None:
+        return ""
+    try:
+        bx = float(Bx)
+        by = float(By)
+        bz = float(Bz)
+        return math.sqrt(bx * bx + by * by + bz * bz)
+    except (ValueError, TypeError):
+        return ""
 
 
 def process_variant(fp, oDesktop, case_info, mu_r, suffix):
@@ -333,11 +367,11 @@ def process_variant(fp, oDesktop, case_info, mu_r, suffix):
     if th_count < 4:
         log(fp, "WARNING: fewer than 4 tangential-H faces, boundaries may be wrong")
 
-    # Change ferrite mu_r
-    change_ferrite_mu(fp, oEditor, mu_r)
+    # Change ferrite mu_r: create new material + assign to objects
+    change_ferrite_mu(fp, oProject, oEditor, mu_r, layers)
 
-    # Apply mesh
-    clear_mesh_operations(fp, oDesign)
+    # Apply mesh with unique names to avoid conflicts
+    clear_all_mesh_ops_force(fp, oDesign, layers)
     assign_ferrite_mesh(fp, oDesign, case_info)
 
     # Validate and solve
@@ -349,7 +383,8 @@ def process_variant(fp, oDesktop, case_info, mu_r, suffix):
     Bx = safe(fp, "eval Bcenter_Bx", lambda: eval_bx(fields))
     By = safe(fp, "eval Bcenter_By", lambda: eval_by(fields))
     Bz = safe(fp, "eval Bcenter_Bz", lambda: eval_bz(fields))
-    Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
+    Bmag = compute_bmag_manual(Bx, By, Bz)
+    log(fp, "eval Bcenter_Mag (manual sqrt): " + str(Bmag)[:16])
 
     center_row = {
         "case_id": mu_case_id,
@@ -357,7 +392,7 @@ def process_variant(fp, oDesktop, case_info, mu_r, suffix):
         "Bcenter_Bx_T": Bx if Bx is not None else "",
         "Bcenter_By_T": By if By is not None else "",
         "Bcenter_Bz_T": Bz if Bz is not None else "",
-        "Bcenter_Mag_T": Bmag if Bmag is not None else "",
+        "Bcenter_Mag_T": Bmag,
         "source_project": mu_project_path,
         "status": "exported" if Bx is not None else "failed",
     }

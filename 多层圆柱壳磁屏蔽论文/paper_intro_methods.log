@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.13)  27 MAY 2026 20:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.13)  28 MAY 2026 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,59 +405,105 @@ Underfull \hbox (badness 2970) in paragraph at lines 36--37
 \OT1/ptm/m/n/10 the sen-sor and can also gen-er-ate magnetic-field noise
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+[]|\OT1/ptm/m/n/8 Measurement-oriented char-ac-ter-i-za-tion method
+ []
+
 [1{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+]
+<../figures/Fig1_measurement_framework.png, id=16, 578.16pt x 325.215pt>
+File: ../figures/Fig1_measurement_framework.png Graphic file (type png)
+<use ../figures/Fig1_measurement_framework.png>
+Package pdftex.def Info: ../figures/Fig1_measurement_framework.png  used on inp
+ut line 76.
+(pdftex.def)             Requested size: 252.0pt x 141.75023pt.
+
+Underfull \hbox (badness 1715) in paragraph at lines 77--77
+\OT1/ptm/m/n/8 Fig. 1.  Measurement-oriented char-ac-ter-i-za-tion prin-ci-ple.
+ The ex-ter-nal
+ []
+
+[2 <../figures/Fig1_measurement_framework.png>]
+<../figures/Fig2_multilayer_cylindrical_geometry.png, id=30, 578.16pt x 325.215
+pt>
+File: ../figures/Fig2_multilayer_cylindrical_geometry.png Graphic file (type pn
+g)
+<use ../figures/Fig2_multilayer_cylindrical_geometry.png>
+Package pdftex.def Info: ../figures/Fig2_multilayer_cylindrical_geometry.png  u
+sed on input line 235.
+(pdftex.def)             Requested size: 252.0pt x 141.75023pt.
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 []\OT1/ptm/m/n/10 Each shielded external-field case ex-ports $\OML/cmm/m/it/10 
 B[]$\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
-[]\OT1/ptm/m/it/10 Mesh con-ver-gence: \OT1/ptm/m/n/10 at least C1[]N1[]t008[]x
- and
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+\OT1/ptm/m/n/10 ax-ial shield-ing. The ac-cepted B0[]reference[]z model
  []
 
 
-Underfull \hbox (badness 5519) in paragraph at lines 304--305
-\OT1/ptm/m/n/10 C2[]N4[]t015[]g008[]x are solved with coarse, medium,
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+\OT1/ptm/m/n/10 pro-vides the no-shield ax-ial ref-er-ence. The re-quired
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 306--307
-[]\OT1/ptm/m/it/10 Boundary-domain con-ver-gence: \OT1/ptm/m/n/10 C2[]N4[]t015[
-]g008[]x is
+Underfull \hbox (badness 3240) in paragraph at lines 310--311
+\OT1/ptm/m/n/10 shielded cases are C1[]N1[]t060[]z, C2[]N3[]t020[]g010[]z,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
-[]\OT1/ptm/m/it/10 Permeability sen-si-tiv-ity: \OT1/ptm/m/n/10 C1[]N1[]t060[]x
- and
+Underfull \hbox (badness 2726) in paragraph at lines 310--311
+\OT1/ptm/m/n/10 field com-po-nent. The trans-verse rank-ing is not to be
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 464--467
+
+Underfull \hbox (badness 2310) in paragraph at lines 314--315
+[]\OT1/ptm/m/n/10 The pur-pose of the segmented-shell cor-rec-tion is to
+ []
+
+[4 <../figures/Fig2_multilayer_cylindrical_geometry.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+[]\OT1/ptm/m/n/10 This sub-sec-tion should re-port val-i-dated x-directed
+ []
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 338--339
+\OT1/ptm/m/n/10 continuous-shell shield-ing fac-tors, leak-age ra-tios, fer-rit
+e
+ []
+
+[5]
+Underfull \hbox (badness 4036) in paragraph at lines 374--375
+[]\OT1/ptm/m/n/10 Funding, fa-cil-i-ties, and col-lab-o-ra-tor ac-knowl-edg-men
+ts
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--505
 \OT1/ptm/m/n/8 [On-line]. Avail-able: $https : / / product . tdk . com / system
  / ^^Lles / dam / doc /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--467
+Underfull \hbox (badness 10000) in paragraph at lines 502--505
 \OT1/ptm/m/n/8 product / ferrite / ferrite / ferrite-[]core / catalog / ferrite
 []mn-[]zn[]material[]
  []
 
-[5] (./paper_intro_methods.aux) ) 
+[6] (./paper_intro_methods.aux) ) 
 Here is how much of TeX's memory you used:
- 7375 strings out of 478268
- 169020 string characters out of 5850345
- 461142 words of memory out of 5000000
- 25508 multiletter control sequences out of 15000+600000
+ 7389 strings out of 478268
+ 169683 string characters out of 5850345
+ 456124 words of memory out of 5000000
+ 25518 multiletter control sequences out of 15000+600000
  513108 words of font info for 115 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 71i,11n,79p,1937b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 71i,11n,79p,1285b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/ba
 se/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texl
@@ -471,16 +517,15 @@ i9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/20
 22/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/t
-exlive/2022/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2022/texmf
--dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/
-urw/times/utmri8a.pfb>
-Output written on paper_intro_methods.pdf (5 pages, 252878 bytes).
+pe1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive
+/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2022/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on paper_intro_methods.pdf (6 pages, 313847 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
+ 124 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -86,6 +86,7 @@ def scatter(path, rows, x_key, y_key, title, xlabel, ylabel, group_key=None):
     if not points:
         save_placeholder(path, title, f"Pending: no complete data for {x_key} versus {y_key}.")
         return
+    plt.rcParams.update({"font.size": 10, "axes.labelsize": 11, "legend.fontsize": 9})
     fig, ax = plt.subplots(figsize=(7, 4.5))
     groups = sorted(set(row.get(group_key, "") for _, _, row in points)) if group_key else [""]
     for group in groups:
@@ -95,7 +96,8 @@ def scatter(path, rows, x_key, y_key, title, xlabel, ylabel, group_key=None):
             ax.annotate(row.get("case_id", ""), (x, y), fontsize=6)
     if group_key:
         ax.legend(fontsize=8)
-    ax.set_title(title)
+    if title:
+        ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.grid(True, alpha=0.3)
@@ -113,14 +115,13 @@ def bar_metrics(path, rows):
     if not complete:
         save_placeholder(path, "Fig. 5 etaS*, rhoH, chiH comparison", "Pending: no complete metric rows available.")
         return
-    labels = [row["case_id"] for row in complete]
+    labels = [row["case_id"].replace("_x", "") for row in complete]
     fig, axes = plt.subplots(3, 1, figsize=(8, 8), sharex=True)
     for ax, key in zip(axes, keys):
         values = [f(row.get(key, "")) for row in complete]
         values = [0 if not finite(v) else v for v in values]
         ax.bar(labels, values)
         ax.set_ylabel(key)
-        ax.set_title("Preliminary continuous-shell transverse-field results" if key == keys[0] else "")
         ax.grid(True, axis="y", alpha=0.3)
     axes[-1].tick_params(axis="x", rotation=45, labelsize=7)
     fig.tight_layout()
@@ -156,8 +157,7 @@ def layer_fraction(path, rows, validation_rows):
         vals = [layers[i] if i < len(layers) else 0 for _, layers in complete]
         ax.bar(labels, vals, bottom=bottoms, label=f"L{i+1}")
         bottoms = [b + v for b, v in zip(bottoms, vals)]
-    ax.set_ylabel("IntH2_Li / IntH2_total")
-    ax.set_title("Preliminary continuous-shell transverse-field results")
+    ax.set_ylabel("Layer IntH2 fraction")
     ax.legend()
     ax.tick_params(axis="x", rotation=45, labelsize=7)
     fig.tight_layout()
@@ -177,12 +177,11 @@ def main():
     validation_rows = read_csv(args.validation)
     args.outdir.mkdir(parents=True, exist_ok=True)
 
-    title_prefix = "Preliminary continuous-shell transverse-field results"
-    scatter(args.outdir / "Fig3_SFx_vs_Vf.png", rows, "Vf_mm3", "SFx", f"{title_prefix}: SFx versus Vf", "Vf (mm^3)", "SFx", "N_layers")
-    scatter(args.outdir / "Fig4_IntH2_vs_Vf.png", rows, "Vf_mm3", "IntH2_total", f"{title_prefix}: IntH2_total versus Vf", "Vf (mm^3)", "IntH2_total")
+    scatter(args.outdir / "Fig3_SFx_vs_Vf.png", rows, "Vf_mm3", "SFx", "", "Ferrite volume, Vf (mm^3)", "SFx", "N_layers")
+    scatter(args.outdir / "Fig4_IntH2_vs_Vf.png", rows, "Vf_mm3", "IntH2_total", "", "Ferrite volume, Vf (mm^3)", "IntH2_total (A^2 m)")
     bar_metrics(args.outdir / "Fig5_eta_chi_comparison.png", rows)
     layer_fraction(args.outdir / "Fig6_layerwise_IntH2_fraction.png", rows, validation_rows)
-    scatter(args.outdir / "Fig7_SFx_vs_Tspace.png", rows, "T_space_mm", "SFx", f"{title_prefix}: SFx versus total radial occupation", "T_space (mm)", "SFx", "N_layers")
+    scatter(args.outdir / "Fig7_SFx_vs_Tspace.png", rows, "T_space_mm", "SFx", "", "Total radial occupation, Tspace (mm)", "SFx", "N_layers")
 
 
 if __name__ == "__main__":

@@ -81,13 +81,14 @@ def process_mesh() -> None:
             d_b = rel_change(b, fval(previous, "Bcenter_Bx_T") if previous else None)
             d_sfx = rel_change(sfx, fval(previous, "SFx") if previous else None)
             d_h2 = rel_change(h2, fval(previous, "IntH2_total") if previous else None)
-            meta_missing = any((row.get(k) or "").strip() == "" for k in ("total_elements", "air_domain_size"))
+            meta_missing = any((row.get(k) or "").strip() == "" for k in ("total_elements", "adaptive_passes", "air_domain_size"))
             status = "processed" if b is not None and sfx is not None and h2 is not None else "pending"
             processed = {
                 "case_id": case_id,
                 "mesh_level": row.get("mesh_level", ""),
                 "total_elements": row.get("total_elements", ""),
                 "elements_across_ferrite_thickness": row.get("elements_across_ferrite_thickness", ""),
+                "adaptive_passes": row.get("adaptive_passes", ""),
                 "air_domain_size": row.get("air_domain_size", ""),
                 "Bcenter_Bx_T": fmt(b),
                 "SFx": fmt(sfx),
@@ -96,7 +97,7 @@ def process_mesh() -> None:
                 "relative_change_SFx": fmt(d_sfx),
                 "relative_change_IntH2_total": fmt(d_h2),
                 "status": status,
-                "notes": "mesh metadata incomplete" if meta_missing else row.get("notes", ""),
+                "notes": "total_elements adaptive_passes and air_domain_size not exported" if meta_missing else row.get("notes", ""),
             }
             out.append(processed)
             processed_case_rows.append(processed)
@@ -115,19 +116,19 @@ def process_mesh() -> None:
             d_sfx_mf is not None and d_sfx_mf < 0.01 and
             d_h2_mf is not None and d_h2_mf < 0.02
         )
-        metadata_complete = all(r["total_elements"] and r["air_domain_size"] for r in processed_case_rows)
+        metadata_complete = all(r["total_elements"] and r["adaptive_passes"] and r["air_domain_size"] for r in processed_case_rows)
         validation_rows.append({
             "case_id": case_id,
             "medium_to_fine_relative_change_Bcenter_Bx_T": fmt(d_b_mf),
             "medium_to_fine_relative_change_SFx": fmt(d_sfx_mf),
             "medium_to_fine_relative_change_IntH2_total": fmt(d_h2_mf),
             "validation_status": "passed" if passed else "pending_or_failed",
-            "metadata_status": "complete" if metadata_complete else "missing_total_elements_or_air_domain_size",
+            "metadata_status": "complete" if metadata_complete else "missing_total_elements_adaptive_passes_or_air_domain_size",
             "criterion": "dBcenter<1%, dSFx<1%, dIntH2<2%",
         })
 
     fields = [
-        "case_id", "mesh_level", "total_elements", "elements_across_ferrite_thickness", "air_domain_size",
+        "case_id", "mesh_level", "total_elements", "elements_across_ferrite_thickness", "adaptive_passes", "air_domain_size",
         "Bcenter_Bx_T", "SFx", "IntH2_total", "relative_change_Bcenter_Bx_T",
         "relative_change_SFx", "relative_change_IntH2_total", "status", "notes",
     ]

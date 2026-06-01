@@ -1,4 +1,4 @@
-\documentclass[letterpaper,journal]{IEEEtran}
+﻿\documentclass[letterpaper,journal]{IEEEtran}
 
 \usepackage{amsmath,amsfonts}
 \usepackage{array}
@@ -13,10 +13,10 @@
 
 \begin{document}
 
-\title{Measurement-Oriented Evaluation of Multilayer Thin-Ferrite Cylindrical Shields for Low-Noise Magnetic Instrumentation}
+\title{Directional Shielding and Noise-Related Loss Characterization of Multilayer Thin-Ferrite Cylindrical Shields for Low-Noise Magnetic Instrumentation}
 
 \author{Author~Name%
-\thanks{Manuscript draft prepared for IEEE Transactions on Instrumentation and Measurement. Funding and author information will be added in the final manuscript.}
+\thanks{Author affiliation, funding, and correspondence information should be added before submission.}
 }
 
 \markboth{IEEE Transactions on Instrumentation and Measurement}%
@@ -25,7 +25,7 @@
 \maketitle
 
 \begin{abstract}
-Low-noise magnetic instruments are limited not only by sensor noise, but also by shield-induced leakage fields and shield-related magnetic noise. This manuscript develops a measurement-oriented finite-element evaluation framework for multilayer thin-ferrite cylindrical shields intended for ultra-sensitive magnetic measurement systems. The shield is treated as a device under test in a calibrated field configuration rather than as a passive enclosure. The framework separates two finite-element problems: an external uniform-field model for directional shielding-factor evaluation and a virtual pickup-coil model for the geometry-dependent magnetic-noise-related loss indicator $\int H^2 dV$ (IntH2). A validated no-shield directional reference is used to compute $\mathrm{SF}_x$, $\mathrm{SF}_z$, and the corresponding leakage ratios from field components rather than from vector magnitude. A compact analytical scaling argument is included to connect the finite-element matrix to thin cylindrical-shell theory without replacing the numerical model. The method also defines layer-resolved IntH2 decomposition, exact ferrite-volume calculation, volume-normalized auxiliary metrics, and a reproducible data-export and consistency-check pipeline. The current implementation targets manufacturable multilayer cylindrical thin-ferrite shells with \SI{100}{mm} inner radius, \SI{200}{mm} length, and ferrite sheet thickness from \SI{0.08}{mm} to \SI{0.60}{mm}. Validation studies required for IEEE TIM submission, including mesh and boundary-domain convergence, axial-field checks, segmented-shell correction, permeability sensitivity, and optional prototype shielding-factor measurement, are specified as part of the evaluation protocol. Numerical conclusions are reported only for cases with real AEDT exports and post-processing validation.
+Low-noise magnetic instruments are limited not only by sensor noise, but also by leakage fields through the shield and shield-induced material-loss noise. This internal review draft establishes a measurement-oriented characterization methodology for multilayer thin-ferrite cylindrical shields. The method defines component-wise directional shielding factors using validated no-shield references and uses a separate virtual pickup-coil finite-element model to evaluate the geometry-dependent magnetic-noise-related loss indicator $\int H^2dV$ (IntH2). A preliminary transverse continuous-shell data chain has been established for candidate geometries with \SI{100}{mm} inner radius and \SI{200}{mm} length. The draft also defines the paper-use criteria and validation matrix required before IEEE TIM submission, including mesh and boundary-domain convergence, axial shielding, segmented-shell correction, permeability sensitivity, field-map interpretation, and optional prototype shielding-factor measurement. The current document is an IEEE TIM-oriented internal review draft; it establishes the methodology and data-entry rules and does not make a final instrument-level recommendation.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -39,7 +39,7 @@ High-permeability metallic shields are widely used to attenuate static and low-f
 
 A monolithic cylindrical ferrite shield is mechanically difficult to fabricate when the diameter is large and the wall is thin. Ferrites are brittle after sintering, and machining a \SI{200}{mm}-diameter thin-walled cylinder with sub-millimeter wall thickness is costly and fragile. A manufacturable alternative is to assemble a shield from multilayer thin-ferrite cylindrical shells or segmented ferrite sheets. This introduces a coupled design problem: layer number $N_L$, ferrite thickness $a$, radial gap $g$, circumferential segmentation, ferrite volume $V_f$, and total radial occupation all affect the center leakage field and the geometry-dependent loss integral used in magnetic-noise calculations.
 
-Existing studies provide important foundations, but do not fully cover this measurement-oriented design problem. Kornack \textit{et al.} reported a low-noise ferrite cylinder with measured magnetic noise \cite{ref12}. Lee and Romalis derived magnetic-noise formulas for high-permeability shields and conducting objects with simple geometry \cite{ref9}. Later studies modeled cylindrical or multi-annular ferrite shields and discussed gap effects and material parameters \cite{ref13,ref14,ref17}. However, previous work has not simultaneously reported a validated no-shield directional reference, layer-resolved IntH2 analysis, and a multilayer thin-ferrite cylindrical geometry under a unified evaluation framework. Table~\ref{tab:comparison} summarizes the relationship between representative prior work and the present manuscript.
+Existing studies provide important foundations, but do not fully cover this measurement-oriented design problem. Kornack \textit{et al.} reported a low-noise ferrite cylinder with measured magnetic noise \cite{ref12}. Lee and Romalis derived magnetic-noise formulas for high-permeability shields and conducting objects with simple geometry \cite{ref9}. Later studies modeled cylindrical or multi-annular ferrite shields and discussed gap effects and material parameters \cite{ref13,ref14,ref17}. However, previous work has not simultaneously reported a validated no-shield directional reference, layer-resolved IntH2 analysis, and a multilayer thin-ferrite cylindrical geometry under a unified measurement-oriented characterization process. Table~\ref{tab:comparison} summarizes the relationship between representative prior work and the present manuscript.
 
 \begin{table*}[!t]
 \caption{Relationship to Representative Ferrite Shield Studies}
@@ -56,16 +56,14 @@ Lee and Romalis \cite{ref9} & Simple analytic shapes & Magnetic-noise formula & 
 Ma \textit{et al.} \cite{ref13} & Cylindrical ferrite shield & SF and IntH2 & Layer-resolved IntH2 not reported \\
 Lu \textit{et al.} \cite{ref14,ref17} & Multi-annular/gapped ferrite shields & Noise-related FEM analysis & Directional no-shield reference not emphasized \\
 Sun \textit{et al.} \cite{ref16} & Cubic ferrite shield & SF and measured noise & Cubic geometry, not cylindrical multilayer shell \\
-This work & Multilayer thin-ferrite cylinder & Directional SF, $V_f$, layerwise IntH2 & Measurement-oriented FEM and data pipeline \\
+This work & Multilayer thin-ferrite cylinder & Directional SF, $V_f$, layerwise IntH2 & Measurement-oriented characterization method with validation studies \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
-The novelty of this work is not simply the use of multiple ferrite layers. The contribution is a measurement-oriented evaluation framework that combines: 1) a validated no-shield directional reference for shielding-factor evaluation; 2) a virtual pickup-coil model for the geometry-dependent magnetic-noise-related loss integral; 3) layer-resolved IntH2 decomposition for multilayer shields; 4) fixed-volume comparison between single-layer and multilayer candidates; 5) unit-consistent auxiliary metrics for low-noise shield design; and 6) a reproducible raw-data, post-processing, validation, and plotting pipeline.
+The main contributions of the current internal-review draft are: 1) a component-wise directional shielding-factor characterization method based on validated no-shield references; 2) a virtual pickup-coil IntH2 characterization method for the geometry-dependent part of shield-induced material-loss noise; 3) a layer-resolved loss-integral decomposition for multilayer cylindrical ferrite shields; 4) a fixed-volume comparison logic for single-layer and multilayer thin-ferrite candidates; and 5) a validation matrix defining the remaining simulations and experiments required before IEEE TIM submission.
 
-This draft focuses on the Introduction and Model/Method sections. Section~II defines the coordinate system, two finite-element models, directional shielding factor, analytical scaling motivation, virtual pickup-coil loss integral, cylindrical geometry, simulation matrix, data-export pipeline, auxiliary metrics, validation studies, and optional experimental protocol.
-
-\section{Model and Evaluation Methodology}
+\section{Measurement-Oriented Characterization Methodology}
 
 \subsection{Coordinate System and Measurement Configuration}
 
@@ -75,14 +73,12 @@ Two finite-element models are used, as shown schematically in Fig.~\ref{fig:fram
 
 \begin{figure}[!t]
 \centering
-\fbox{\parbox{0.92\columnwidth}{\centering\vspace{1.2cm}
-Fig.~1 placeholder: measurement-oriented framework. External uniform-field model exports $B_0$ and $B_{\mathrm{center}}$ for SF calculation. Virtual pickup-coil model exports $\mathrm{IntH2}_{\mathrm{total}}$ and $\mathrm{IntH2}_{L_i}$. Post-processing computes $\eta_S$, $\eta_S^*$, $\rho_H$, and $\chi_H$.
-\vspace{1.2cm}}}
-\caption{Measurement-oriented evaluation workflow. The final manuscript will replace this placeholder with a compact vector diagram.}
+\includegraphics[width=\columnwidth]{../figures/Fig1_measurement_framework.png}
+\caption{Measurement-oriented characterization principle. The external uniform-field problem provides $B_0$, $B_{\mathrm{center}}$, $\mathrm{SF}_q$, and $\mathrm{LeakageRatio}_q$; the virtual pickup-coil problem provides IntH2 and layer-resolved IntH2.}
 \label{fig:framework}
 \end{figure}
 
-\subsection{Directional Shielding Factor}
+\subsection{Directional Shielding Factor and Leakage Ratio}
 
 For an external field applied along $q\in\{x,y,z\}$, the no-shield reference field at the observation point is
 \begin{equation}
@@ -120,7 +116,7 @@ The reference field is accepted only if the intended component dominates the oth
 \Gamma_q=\frac{|B_{0,q}|}{\max_{p\ne q}|B_{0,p}|}.
 \label{eq:purity}
 \end{equation}
-In the processing pipeline, a failed directional reference prevents the corresponding shielding factors from being used in figures or conclusions.
+In the post-processing rule set, a failed directional reference prevents the corresponding shielding factors from being used in figures or conclusions.
 
 \subsection{Analytical Scaling Motivation}
 
@@ -236,14 +232,12 @@ where $N_{\mathrm{seg}}$ is the number of circumferential segments, $g_\phi$ is 
 
 \begin{figure}[!t]
 \centering
-\fbox{\parbox{0.92\columnwidth}{\centering\vspace{1.2cm}
-Fig.~2 placeholder: multilayer cylindrical shell geometry with $R_{\mathrm{in}}$, $L$, $a$, $g$, $N_L$, $T_f$, and $T_{\mathrm{space}}$.
-\vspace{1.2cm}}}
+\includegraphics[width=\columnwidth]{../figures/Fig2_multilayer_cylindrical_geometry.png}
 \caption{Geometry definition for the multilayer thin-ferrite cylindrical shell.}
 \label{fig:geometry}
 \end{figure}
 
-\subsection{Simulation Matrix and Data Export}
+\subsection{Data Export and Paper-Use Criteria}
 
 The present main matrix is a transverse continuous-shell screening study. It is intentionally separated from axial, segmented, permeability-sensitivity, and convergence studies so that each validation stage can be tracked independently. Table~\ref{tab:matrix} lists the current main cases.
 
@@ -269,7 +263,9 @@ C2\_N4\_t015\_g008\_x & 4 & 0.15 & 0.08 & $x$ & equal-volume multilayer candidat
 \end{tabular}
 \end{table*}
 
-Each shielded external-field case exports $B_{\mathrm{center},x}$, $B_{\mathrm{center},y}$, $B_{\mathrm{center},z}$, and $B_{\mathrm{center,Mag}}$. The no-shield reference exports $B_{0,x}$, $B_{0,y}$, $B_{0,z}$, and $B_{0,\mathrm{Mag}}$. Each virtual pickup-coil case exports $\mathrm{IntH2}_{\mathrm{total}}$ and the layerwise quantities $\mathrm{IntH2}_{L_i}$. The post-processing scripts merge raw CSV exports by case ID and field direction, compute the derived metrics, and mark missing or failed rows without substituting zero values.
+Each shielded external-field case exports $B_{\mathrm{center},x}$, $B_{\mathrm{center},y}$, $B_{\mathrm{center},z}$, and $B_{\mathrm{center,Mag}}$. The no-shield reference exports $B_{0,x}$, $B_{0,y}$, $B_{0,z}$, and $B_{0,\mathrm{Mag}}$. Each virtual pickup-coil case exports $\mathrm{IntH2}_{\mathrm{total}}$ and the layerwise quantities $\mathrm{IntH2}_{L_i}$. The post-processing scripts merge raw CSV exports by case ID and field direction and compute derived metrics only from directional components.
+
+A case is promoted to paper-ready status only after the corresponding raw export is present, the B0 direction validation has passed, the directional field component needed for $\mathrm{SF}_q$ is present, and the layerwise IntH2 summation check has passed when layerwise IntH2 is used. Cases that do not satisfy these criteria remain outside the conclusion set. The vector magnitude $B_{\mathrm{Mag}}$ is retained only as an auxiliary consistency check and is never used as the formal shielding-factor denominator or numerator.
 
 \subsection{Comparison Metrics}
 
@@ -297,43 +293,85 @@ where the reference is the continuous single-layer shell with $a=\SI{0.60}{mm}$.
 \end{equation}
 The metrics are interpreted jointly with $T_{\mathrm{space}}$ and the validation status. No single auxiliary metric defines a final shield geometry.
 
-\subsection{Required Validation Studies}
+\subsection{Traceability to Prototype SF Measurement}
 
-Before the manuscript is extended to final results, the following validation studies are required.
+The FEM definitions are written so that a later laboratory shielding-factor measurement can use the same component-wise ratio. A prototype measurement would apply a calibrated field using a Helmholtz or triaxial coil, record the center-point no-shield field $B_{0,q}$ and shielded field $B_{\mathrm{center},q}$ using a calibrated magnetometer, and compute $\mathrm{SF}_{q,\mathrm{exp}}=|B_{0,q}|/|B_{\mathrm{center},q}|$. This traceability note is not experimental validation in the current draft.
 
-\textit{Mesh convergence:} at least C1\_N1\_t008\_x and C2\_N4\_t015\_g008\_x are solved with coarse, medium, and fine mesh settings. The processed table records total element count, elements across ferrite thickness, $B_{\mathrm{center},x}$, SF$_x$, IntH2$_{\mathrm{total}}$, and relative changes. The target criteria are $\Delta\mathrm{SF}_x<1\%$, $\Delta\mathrm{IntH2}_{\mathrm{total}}<2\%$, and $\Delta B_{\mathrm{center},x}<1\%$ from medium to fine mesh.
+\section{Validation Matrix and Planned Experimental Campaign}
 
-\textit{Boundary-domain convergence:} C2\_N4\_t015\_g008\_x is evaluated with air-domain scales of $2R$, $3R$, and $5R$; optional $7R$ is retained as an additional check. The target criteria are less than 1\% change in SF$_x$ and less than 2\% change in IntH2$_{\mathrm{total}}$ from $3R$ to $5R$.
+This section defines the validation campaign required before the manuscript is converted from an internal review draft to a full IEEE TIM submission. The purpose is to make each future result traceable to a specific numerical or experimental check, rather than to infer conclusions from incomplete data.
 
-\textit{Axial shielding:} a validated B0\_reference\_z model is required before shielded SF$_z$ is computed. The selected equal-volume cases are C1\_N1\_t060\_z, C2\_N3\_t020\_g010\_z, and C2\_N4\_t015\_g008\_z. The transverse ranking is not generalized to axial shielding unless these cases support it.
+\subsection{Mesh and Boundary-Domain Convergence}
 
-\textit{Segmented-shell correction:} C2\_N4\_t015\_g008\_x is compared with segmented aligned and staggered slot models using $N_{\mathrm{seg}}=12$ and $g_\phi=\SI{1.6}{mm}$. The segmented-to-continuous penalty is quantified by SF$_{x,\mathrm{seg}}$/SF$_{x,\mathrm{cont}}$ and IntH2$_{\mathrm{seg}}$/IntH2$_{\mathrm{cont}}$.
+The purpose of this validation is to establish numerical robustness of $\mathrm{SF}_x$ and IntH2 for both a very thin single-layer shield and the selected four-layer candidate. The required mesh-convergence cases are C1\_N1\_t008\_x and C2\_N4\_t015\_g008\_x. Each mesh row should record mesh level, total element count, elements across ferrite thickness, adaptive-pass count, air-domain scale, $B_{\mathrm{center},x}$, $\mathrm{SF}_x$, $\mathrm{IntH2}_{\mathrm{total}}$, and relative changes with respect to the previous mesh level. The target criteria are $\Delta\mathrm{SF}_x<1\%$ and $\Delta\mathrm{IntH2}_{\mathrm{total}}<2\%$ from the final two mesh levels. Boundary-domain convergence for C2\_N4\_t015\_g008\_x should include at least 2R, 3R, and 5R air-domain scales. This validation is designed to determine whether the current mesh and air-domain settings are sufficient for final paper use.
 
-\textit{Permeability sensitivity:} C1\_N1\_t060\_x and C2\_N4\_t015\_g008\_x are evaluated at $\mu_r'=500$, 1000, 2000, and 5000. The screening value $\mu_r'=1000$ is not treated as a measured material constant.
+\subsection{Axial Shielding Characterization}
 
-\textit{Field-map export:} the final paper should include external-field $B$ distributions, flux lines, $H_{\mathrm{vc}}$ contours, and $H_{\mathrm{vc}}^2$ contours to support the interpretation of flux redistribution and layerwise IntH2 contributions.
+The purpose of the axial shielding study is to avoid over-generalizing transverse shielding behavior to open-ended axial shielding. The accepted B0\_reference\_z model provides the no-shield axial reference. The required shielded cases are C1\_N1\_t060\_z, C2\_N3\_t020\_g010\_z, and C2\_N4\_t015\_g008\_z. The required outputs are $\mathrm{SF}_z$, $\mathrm{LeakageRatio}_z$, and $\mathrm{SF}_z/\mathrm{SF}_x$ computed from the z-directed field component. The transverse ranking is not to be transferred to axial shielding unless these component-wise axial results support it.
 
-\textit{Prototype SF protocol:} if hardware is available, the prototype SF measurement uses a calibrated Helmholtz or triaxial coil system and a calibrated magnetic sensor. For independent $B_0$ and $B_{\mathrm{center}}$ measurements,
-\begin{equation}
-\frac{u(\mathrm{SF}_{q,\mathrm{exp}})}{\mathrm{SF}_{q,\mathrm{exp}}}
-=
-\sqrt{
-\left[\frac{u(B_{0,q})}{B_{0,q}}\right]^2+
-\left[\frac{u(B_{\mathrm{center},q})}{B_{\mathrm{center},q}}\right]^2
-}.
-\label{eq:uncertainty}
-\end{equation}
-For correlated measurements,
-\begin{equation}
-u_r^2(\mathrm{SF}_{q,\mathrm{exp}})=
-u_r^2(B_0)+u_r^2(B_{\mathrm{center}})
--2\rho u_r(B_0)u_r(B_{\mathrm{center}}).
-\label{eq:corruncertainty}
-\end{equation}
-If no experimental data are available, this section remains a protocol and is not presented as completed validation.
+\subsection{Segmented-Shell Correction}
 
+The purpose of the segmented-shell correction is to connect continuous-shell behavior to manufacturable segmented ferrite assemblies. The required comparison uses C2\_N4\_t015\_g008\_x as the continuous baseline and two segmented variants: aligned circumferential slots and staggered circumferential slots. The segmentation parameters are $N_{\mathrm{seg}}=12$ and $g_\phi=\SI{1.6}{mm}$. The required outputs are $\mathrm{SF}_{x,\mathrm{seg}}/\mathrm{SF}_{x,\mathrm{cont}}$ and $\mathrm{IntH2}_{\mathrm{seg}}/\mathrm{IntH2}_{\mathrm{cont}}$. These quantities will determine whether continuous-shell results can support manufacturable assembly claims or should be treated only as idealized upper-bound behavior.
+
+\subsection{Permeability Sensitivity}
+
+The purpose of the permeability sensitivity study is to test whether the four-layer ranking depends on the screening value $\mu_r'=1000$. The required cases are C1\_N1\_t060\_x and C2\_N4\_t015\_g008\_x. The sweep values are $\mu_r'=500$, 1000, 2000, and 5000. Each row should report $\mathrm{SF}_x$, $\mathrm{IntH2}_{\mathrm{total}}$, $\eta_S^*$, and $\chi_H$. Ranking robustness with respect to permeability variation should be claimed only if these sweep results support it.
+
+\subsection{Field-Map Interpretation}
+
+The purpose of the field-map exports is to support the physical interpretation of flux redistribution and layer-resolved IntH2. The required maps are external-field $B$ distribution, external-field flux lines, virtual-coil $H_{\mathrm{vc}}$, and virtual-coil $H_{\mathrm{vc}}^2$ contours. The required comparison is the equal-volume single-layer baseline C1\_N1\_t060\_x against the four-layer candidate C2\_N4\_t015\_g008\_x. Until these maps are included in the full manuscript, interpretation of the outer-layer IntH2 contribution should remain descriptive and should not be presented as a confirmed physical mechanism.
+
+\subsection{Optional Prototype Measurement}
+
+The optional prototype campaign connects the FEM-defined $\mathrm{SF}_q$ to a laboratory measurement. The proposed setup uses a calibrated Helmholtz or triaxial coil system, a calibrated magnetometer, and center-point measurements of $B_{0,q}$ and $B_{\mathrm{center},q}$. The desired outputs are $\mathrm{SF}_{x,\mathrm{exp}}$, $\mathrm{SF}_{z,\mathrm{exp}}$, repeatability statistics, and an uncertainty budget. Prototype data should be introduced only as experimental results if the measurement chain and uncertainty analysis are complete.
+
+\section{Expected Results Organization for the Full Manuscript}
+
+The full IEEE TIM manuscript should organize the Results section according to the validation sequence below. This organization keeps the numerical and physical claims tied to the corresponding data-entry criteria.
+
+\subsection{Directional Reference Validation}
+
+This subsection should report the x- and z-directed no-shield reference checks, including component purity and agreement with the expected vacuum field for the imposed excitation.
+
+\subsection{Transverse Continuous-Shell Characterization}
+
+This subsection should report validated x-directed continuous-shell shielding factors, leakage ratios, ferrite volume, radial occupation, and IntH2 for the transverse screening matrix.
+
+\subsection{Fixed-Volume Comparison}
+
+This subsection should compare the equal-volume single-layer and multilayer candidates using $\mathrm{SF}_x$, $\mathrm{IntH2}_{\mathrm{total}}$, $\eta_S^*$, and $\chi_H$.
+
+\subsection{Layer-Resolved IntH2 Distribution}
+
+This subsection should report the layerwise IntH2 fractions for multilayer cases after the layerwise summation check has passed.
+
+\subsection{Mesh and Boundary-Domain Convergence}
+
+This subsection should report mesh-level and air-domain-scale convergence tables and should state numerical robustness only when the acceptance criteria and metadata requirements are satisfied.
+
+\subsection{Axial Shielding Characterization}
+
+This subsection should report $\mathrm{SF}_z$, $\mathrm{LeakageRatio}_z$, and $\mathrm{SF}_z/\mathrm{SF}_x$ for the selected axial cases, using B0\_reference\_z and z-directed shielded field components.
+
+\subsection{Segmented-Shell Correction}
+
+This subsection should quantify the difference between continuous and segmented shells for aligned and staggered slot patterns.
+
+\subsection{Permeability Sensitivity}
+
+This subsection should report the $\mu_r'$ sweep and determine whether the selected ranking remains stable across the tested permeability range.
+
+\subsection{Field-Map Interpretation}
+
+This subsection should use exported field maps to support the physical explanation of leakage-field attenuation and layer-resolved IntH2 distribution.
+
+\section{Summary of Current Draft and Next-Step Work}
+
+This internal review draft has established the TIM-oriented motivation, the component-wise directional shielding-factor definition, the no-shield reference validation logic, the virtual pickup-coil IntH2 model, the layer-resolved IntH2 decomposition, the fixed-volume comparison logic, and the validation-gated paper-use criteria. These components form the methodological core of the planned submission.
+
+The next-step work is to complete the boundary-domain convergence study, solve and process the shielded axial cases, evaluate aligned and staggered segmented-shell models, perform the $\mu_r'$ sensitivity sweep, export field maps for physical interpretation, and optionally perform prototype shielding-factor measurements with an uncertainty budget. Results from these tasks should enter the formal manuscript only after satisfying the paper-use criteria in Section~II-G.
 \section*{Acknowledgment}
-Funding, facilities, and collaborator acknowledgments will be added in the final manuscript.
+Funding, facilities, and collaborator acknowledgments should be added before submission.
 
 \begin{thebibliography}{31}
 
@@ -493,3 +531,4 @@ T.~Brys \textit{et al.},
 \end{thebibliography}
 
 \end{document}
+

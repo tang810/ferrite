@@ -135,6 +135,25 @@ def clear_mesh_operations(fp, oDesign):
         log(fp, "clear_mesh_operations: " + traceback.format_exc())
 
 
+def clear_all_mesh_ops_force(fp, oDesign, layers):
+    """Force-delete all expected mesh ops by their known names (z prefix)."""
+    mesh_module = oDesign.GetModule("MeshSetup")
+    ferrite_objs = FERRITE_OBJECTS[:layers]
+    for obj_name in ferrite_objs:
+        for prefix in ["Length_surf_z_", "Length_vol_z_"]:
+            try:
+                mesh_module.DeleteMeshOperations([prefix + obj_name])
+            except Exception:
+                pass
+    # Also try the unprefixed names (from original project)
+    for obj_name in ferrite_objs:
+        for prefix in ["Length_surf_", "Length_vol_"]:
+            try:
+                mesh_module.DeleteMeshOperations([prefix + obj_name])
+            except Exception:
+                pass
+
+
 def assign_ferrite_mesh(fp, oDesign, case_info):
     a_mm = case_info["a_mm"]
     layers = case_info["layers"]
@@ -147,7 +166,7 @@ def assign_ferrite_mesh(fp, oDesign, case_info):
         safe(fp, "SURF " + obj_name,
              lambda n=obj_name, ml=max_len:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_surf_" + n,
+                 "NAME:Length_surf_z_" + n,
                  "RefineInside:=", False,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -158,7 +177,7 @@ def assign_ferrite_mesh(fp, oDesign, case_info):
         safe(fp, "VOL  " + obj_name,
              lambda n=obj_name, ml=max_len:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_vol_" + n,
+                 "NAME:Length_vol_z_" + n,
                  "RefineInside:=", True,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -204,9 +223,8 @@ def assign_z_tangential_h(fp, oBoundary, groups):
                       lambda face=face, origin=origin, upos=upos:
                       oBoundary.AssignTangentialHField([
                           "NAME:B0z_TH_" + str(face),
-                          "ComponentXReal:=", "0",
+                          "ComponentXReal:=", H0,
                           "ComponentYReal:=", "0",
-                          "ComponentZReal:=", H0,
                           ["NAME:CoordSysVector",
                            "Origin:=", origin, "UPos:=", upos],
                           "ReverseV:=", False,
@@ -369,7 +387,7 @@ def process_case(fp, oDesktop, case_info):
     assigned_h_faces = assign_z_tangential_h(fp, oBoundary, groups)
 
     # Apply mesh
-    clear_mesh_operations(fp, oDesign)
+    clear_all_mesh_ops_force(fp, oDesign, layers)
     assign_ferrite_mesh(fp, oDesign, case_info)
 
     # Validate and solve

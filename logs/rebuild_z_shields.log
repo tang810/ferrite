@@ -1,4 +1,4 @@
-rebuild_z_shields 2026-05-27 19:48:03
+rebuild_z_shields 2026-05-28 10:01:50
 MESH_DIVISOR=3
 Cases: ['C1_N1_t060_z', 'C2_N3_t020_g010_z', 'C2_N4_t015_g008_z']
 
@@ -62,44 +62,29 @@ AssignTangentialHField_z face 69: OK
 AssignTangentialHField_z face 66: OK
 AssignTangentialHField_z face 68: OK
 AssignZeroTangentialHField z-normal faces: OK
-cleared 0 mesh ops
-SURF Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
 assigned mesh: a=0.600mm MaxLength=0.2mm divisor=3 objects=['Cylinder2']
 ValidateDesign: OK -> 1
 Analyze Setup1: OK -> 0
-eval Bcenter_Bx: OK -> 0.0
-eval Bcenter_By: OK -> 0.0
-eval Bcenter_Bz: OK -> 0.0
+eval Bcenter_Bx: OK -> -2.30454747835e-09
+eval Bcenter_By: OK -> -1.33798990542e-09
+eval Bcenter_Bz: OK -> 5.76065427286e-07
 eval Bcenter_Mag: FAILED
 Traceback (most recent call last):
   File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
     value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 389, in <lambda$106>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 407, in <lambda$106>
     Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 257, in eval_bmag
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 275, in eval_bmag
     fields.CalcOp("ComplexMag")
 Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
 
-SFz=
-Center field: {'Bcenter_Bx_T': 0.0, 'Bcenter_Mag_T': '', 'case_id': 'C1_N1_t060_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_z_shield.aedt', 'Bcenter_Bz_T': 0.0, 'Bcenter_By_T': 0.0}
-eval IntH2_total: OK -> 0.0
+SFz=2.18134944484
+Center field: {'Bcenter_Bx_T': -2.3045474783539402e-09, 'Bcenter_Mag_T': '', 'case_id': 'C1_N1_t060_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_z_shield.aedt', 'Bcenter_Bz_T': 5.7606542728598504e-07, 'Bcenter_By_T': -1.3379899054202201e-09}
+eval IntH2_total: OK -> 3.52667987604e-06
 eval IntH2_L1: OK
-IntH2: {'IntH2_L3': '', 'IntH2_total': 0.0, 'IntH2_L2': '', 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C1_N1_t060_z', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_z_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+IntH2: {'IntH2_L3': '', 'IntH2_total': 3.52667987603561e-06, 'IntH2_L2': '', 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C1_N1_t060_z', 'notes': '', 'IntH2_L1': True, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C1_N1_t060_z_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
 Save: OK
 CloseProject: OK
 
@@ -162,85 +147,35 @@ AssignTangentialHField_z face 104: OK
 AssignTangentialHField_z face 101: OK
 AssignTangentialHField_z face 103: OK
 AssignZeroTangentialHField z-normal faces: OK
-cleared 0 mesh ops
-SURF Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
 assigned mesh: a=0.200mm MaxLength=0.0666666666667mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6']
 ValidateDesign: OK -> 1
-Analyze Setup1: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 379, in <lambda$102>
-    safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
-Exception: Analyze(string simulationName, [bool isBlocking /*optional*/]) -> long(Setup1) - call failed. Logs or message window might have more details
-
-eval Bcenter_Bx: OK -> 0.0
-eval Bcenter_By: OK -> 0.0
-eval Bcenter_Bz: OK -> 0.0
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 9.03219908686e-10
+eval Bcenter_By: OK -> -3.12546477297e-10
+eval Bcenter_Bz: OK -> 5.73516339558e-07
 eval Bcenter_Mag: FAILED
 Traceback (most recent call last):
   File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
     value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 389, in <lambda$106>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 407, in <lambda$106>
     Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 257, in eval_bmag
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 275, in eval_bmag
     fields.CalcOp("ComplexMag")
 Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
 
-SFz=
-Center field: {'Bcenter_Bx_T': 0.0, 'Bcenter_Mag_T': '', 'case_id': 'C2_N3_t020_g010_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_z_shield.aedt', 'Bcenter_Bz_T': 0.0, 'Bcenter_By_T': 0.0}
-eval IntH2_total: OK -> 0.0
-eval IntH2_L1: OK -> 0.0
-eval IntH2_L2: OK -> 0.0
-eval IntH2_L3: OK -> 0.0
-IntH2: {'IntH2_L3': 0.0, 'IntH2_total': 0.0, 'IntH2_L2': 0.0, 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C2_N3_t020_g010_z', 'notes': '', 'IntH2_L1': 0.0, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_z_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
+SFz=2.19104481133
+Center field: {'Bcenter_Bx_T': 9.0321990868574e-10, 'Bcenter_Mag_T': '', 'case_id': 'C2_N3_t020_g010_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_z_shield.aedt', 'Bcenter_Bz_T': 5.7351633955818505e-07, 'Bcenter_By_T': -3.1254647729701902e-10}
+eval IntH2_total: OK -> 3.29433866676e-06
+eval IntH2_L1: OK -> 8.26000466494e-07
+eval IntH2_L2: OK -> 1.26506789926e-06
+eval IntH2_L3: OK -> 1.20327030101e-06
+IntH2: {'IntH2_L3': 1.2032703010140799e-06, 'IntH2_total': 3.29433866676481e-06, 'IntH2_L2': 1.2650678992563701e-06, 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C2_N3_t020_g010_z', 'notes': '', 'IntH2_L1': 8.2600046649436105e-07, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N3_t020_g010_z_shield.aedt', 'IntH2_L4': '', 'IntH2_L6': ''}
 Save: OK
 CloseProject: OK
 
@@ -303,96 +238,39 @@ AssignTangentialHField_z face 104: OK
 AssignTangentialHField_z face 101: OK
 AssignTangentialHField_z face 103: OK
 AssignZeroTangentialHField z-normal faces: OK
-cleared 0 mesh ops
-SURF Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder2: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder4: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder6: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-SURF Cylinder8: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 149, in <lambda$95>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
-VOL  Cylinder8: FAILED
-Traceback (most recent call last):
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
-    value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 160, in <lambda$96>
-    mesh_module.AssignLengthOp([
-Exception: AssignLengthOp(Structured Array dataArg)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
-
+SURF Cylinder2: OK
+VOL  Cylinder2: OK
+SURF Cylinder4: OK
+VOL  Cylinder4: OK
+SURF Cylinder6: OK
+VOL  Cylinder6: OK
+SURF Cylinder8: OK
+VOL  Cylinder8: OK
 assigned mesh: a=0.150mm MaxLength=0.05mm divisor=3 objects=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
 ValidateDesign: OK -> 1
 Analyze Setup1: OK -> 0
-eval Bcenter_Bx: OK -> 0.0
-eval Bcenter_By: OK -> 0.0
-eval Bcenter_Bz: OK -> 0.0
+eval Bcenter_Bx: OK -> -4.46988076175e-09
+eval Bcenter_By: OK -> -3.38690250153e-09
+eval Bcenter_Bz: OK -> 5.20892809375e-07
 eval Bcenter_Mag: FAILED
 Traceback (most recent call last):
   File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 78, in safe
     value = fn()
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 389, in <lambda$106>
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 407, in <lambda$106>
     Bmag = safe(fp, "eval Bcenter_Mag", lambda: eval_bmag(fields))
-  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 257, in eval_bmag
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/rebuild_z_shields.py", line 275, in eval_bmag
     fields.CalcOp("ComplexMag")
 Exception: CalcOp(string data)(ComplexMag) - call failed. Logs or message window might have more details
 
-SFz=
-Center field: {'Bcenter_Bx_T': 0.0, 'Bcenter_Mag_T': '', 'case_id': 'C2_N4_t015_g008_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_z_shield.aedt', 'Bcenter_Bz_T': 0.0, 'Bcenter_By_T': 0.0}
-eval IntH2_total: OK -> 0.0
-eval IntH2_L1: OK -> 0.0
-eval IntH2_L2: OK -> 0.0
-eval IntH2_L3: OK -> 0.0
-eval IntH2_L4: OK -> 0.0
-IntH2: {'IntH2_L3': 0.0, 'IntH2_total': 0.0, 'IntH2_L2': 0.0, 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C2_N4_t015_g008_z', 'notes': '', 'IntH2_L1': 0.0, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_z_shield.aedt', 'IntH2_L4': 0.0, 'IntH2_L6': ''}
+SFz=2.41239651879
+Center field: {'Bcenter_Bx_T': -4.4698807617469099e-09, 'Bcenter_Mag_T': '', 'case_id': 'C2_N4_t015_g008_z', 'field_dir': 'z', 'status': 'exported', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_z_shield.aedt', 'Bcenter_Bz_T': 5.20892809374513e-07, 'Bcenter_By_T': -3.3869025015272802e-09}
+eval IntH2_total: OK -> 2.97131561251e-06
+eval IntH2_L1: OK -> 5.61639287342e-07
+eval IntH2_L2: OK -> 5.55757866605e-07
+eval IntH2_L3: OK -> 5.58303502913e-07
+eval IntH2_L4: OK -> 1.29561495565e-06
+IntH2: {'IntH2_L3': 5.5830350291349805e-07, 'IntH2_total': 2.9713156125104599e-06, 'IntH2_L2': 5.5575786660519804e-07, 'status': 'exported', 'coil_dir': 'z', 'case_id': 'C2_N4_t015_g008_z', 'notes': '', 'IntH2_L1': 5.6163928734225303e-07, 'IntH2_L5': '', 'source_project': 'D:\\tangyumengnew\\aaaaaaaaximukeji\\round2_working\\manufacturable_thin\\C2_N4_t015_g008_z_shield.aedt', 'IntH2_L4': 1.29561495564951e-06, 'IntH2_L6': ''}
 Save: OK
 CloseProject: OK
 
-Done 2026-05-27 19:51:49
+Done 2026-05-28 10:21:20

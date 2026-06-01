@@ -1,0 +1,488 @@
+segmented_shell 2026-05-28 17:41:55
+N_SEGMENTS=12 GAP=1.600mm
+MESH_DIVISOR=3
+Cases: ['S1_N1_t060_seg12_aligned_x', 'S1_N1_t060_seg12_staggered_x', 'S2_N3_t020_g010_seg12_aligned_x', 'S2_N3_t020_g010_seg12_staggered_x', 'S2_N4_t015_g008_seg12_aligned_x', 'S2_N4_t015_g008_seg12_staggered_x']
+
+
+============================================================
+Processing S1_N1_t060_seg12_aligned_x
+  layers=1 a=0.600mm g=0.000mm
+  N_segments=12 gap=1.600mm staggered=False
+  copy C1_N1_t060_shield.aedt -> S1_N1_t060_seg12_aligned_x_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces: 4
+delete old ferrite Cylinder2: OK
+--- Layer 1 (Cylinder2): inner=100.000 outer=100.600
+create Cylinder2_outer: OK -> Cylinder2_outer
+create Cylinder2_inner: OK -> Cylinder2_inner
+subtract Cylinder2_inner from Cylinder2_outer -> Cylinder2: OK
+created ferrite shell: Cylinder2 R=[100.000,100.600] H=200.000
+create gap box gap_L1_s1: OK -> gap_L1_s1
+rotate gap_L1_s1 by 0.0deg: OK
+create gap box gap_L1_s2: OK -> gap_L1_s2
+rotate gap_L1_s2 by 30.0deg: OK
+create gap box gap_L1_s3: OK -> gap_L1_s3
+rotate gap_L1_s3 by 60.0deg: OK
+create gap box gap_L1_s4: OK -> gap_L1_s4
+rotate gap_L1_s4 by 90.0deg: OK
+create gap box gap_L1_s5: OK -> gap_L1_s5
+rotate gap_L1_s5 by 120.0deg: OK
+create gap box gap_L1_s6: OK -> gap_L1_s6
+rotate gap_L1_s6 by 150.0deg: OK
+create gap box gap_L1_s7: OK -> gap_L1_s7
+rotate gap_L1_s7 by 180.0deg: OK
+create gap box gap_L1_s8: OK -> gap_L1_s8
+rotate gap_L1_s8 by 210.0deg: OK
+create gap box gap_L1_s9: OK -> gap_L1_s9
+rotate gap_L1_s9 by 240.0deg: OK
+create gap box gap_L1_s10: OK -> gap_L1_s10
+rotate gap_L1_s10 by 270.0deg: OK
+create gap box gap_L1_s11: OK -> gap_L1_s11
+rotate gap_L1_s11 by 300.0deg: OK
+create gap box gap_L1_s12: OK -> gap_L1_s12
+rotate gap_L1_s12 by 330.0deg: OK
+subtract gap_L1_s1 from Cylinder2_outer: OK
+subtract gap_L1_s2 from Cylinder2_outer: OK
+subtract gap_L1_s3 from Cylinder2_outer: OK
+subtract gap_L1_s4 from Cylinder2_outer: OK
+subtract gap_L1_s5 from Cylinder2_outer: OK
+subtract gap_L1_s6 from Cylinder2_outer: OK
+subtract gap_L1_s7 from Cylinder2_outer: OK
+subtract gap_L1_s8 from Cylinder2_outer: OK
+subtract gap_L1_s9 from Cylinder2_outer: OK
+subtract gap_L1_s10 from Cylinder2_outer: OK
+subtract gap_L1_s11 from Cylinder2_outer: OK
+subtract gap_L1_s12 from Cylinder2_outer: OK
+segmented Cylinder2_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder2_outer
+total ferrite objects: 1
+cleared 0 mesh ops
+SURF Cylinder2_outer: OK
+VOL  Cylinder2_outer: OK
+mesh applied to 1 segments | MaxLength=0.2mm
+ValidateDesign: OK -> 0
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 7.78776551953e-07
+eval Bcenter_By: OK -> 2.32204220193e-09
+eval Bcenter_Bz: OK -> 1.37555617177e-09
+eval Bcenter_Mag: OK -> 7.78781228527e-07
+SFx=1.61355654179
+compute IntH2_total via Calc: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 97, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 672, in <lambda$110>
+    lambda: compute_intH2_from_calc(fp, oDesign, all_ferrite_segments))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 421, in compute_intH2_from_calc
+    Hx2 = eval_component_sq_integral("x")
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 416, in eval_component_sq_integral
+    fields.EnterVol(ferrite_objects)
+Exception: EnterVol(string geomName)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+IntH2_total=None
+Completed S1_N1_t060_seg12_aligned_x | SFx=1.61355654179 | IntH2=None
+
+============================================================
+Processing S1_N1_t060_seg12_staggered_x
+  layers=1 a=0.600mm g=0.000mm
+  N_segments=12 gap=1.600mm staggered=True
+  copy C1_N1_t060_shield.aedt -> S1_N1_t060_seg12_staggered_x_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces: 4
+delete old ferrite Cylinder2: OK
+--- Layer 1 (Cylinder2): inner=100.000 outer=100.600
+create Cylinder2_outer: OK -> Cylinder2_outer
+create Cylinder2_inner: OK -> Cylinder2_inner
+subtract Cylinder2_inner from Cylinder2_outer -> Cylinder2: OK
+created ferrite shell: Cylinder2 R=[100.000,100.600] H=200.000
+create gap box gap_L1_s1: OK -> gap_L1_s1
+rotate gap_L1_s1 by 0.0deg: OK
+create gap box gap_L1_s2: OK -> gap_L1_s2
+rotate gap_L1_s2 by 30.0deg: OK
+create gap box gap_L1_s3: OK -> gap_L1_s3
+rotate gap_L1_s3 by 60.0deg: OK
+create gap box gap_L1_s4: OK -> gap_L1_s4
+rotate gap_L1_s4 by 90.0deg: OK
+create gap box gap_L1_s5: OK -> gap_L1_s5
+rotate gap_L1_s5 by 120.0deg: OK
+create gap box gap_L1_s6: OK -> gap_L1_s6
+rotate gap_L1_s6 by 150.0deg: OK
+create gap box gap_L1_s7: OK -> gap_L1_s7
+rotate gap_L1_s7 by 180.0deg: OK
+create gap box gap_L1_s8: OK -> gap_L1_s8
+rotate gap_L1_s8 by 210.0deg: OK
+create gap box gap_L1_s9: OK -> gap_L1_s9
+rotate gap_L1_s9 by 240.0deg: OK
+create gap box gap_L1_s10: OK -> gap_L1_s10
+rotate gap_L1_s10 by 270.0deg: OK
+create gap box gap_L1_s11: OK -> gap_L1_s11
+rotate gap_L1_s11 by 300.0deg: OK
+create gap box gap_L1_s12: OK -> gap_L1_s12
+rotate gap_L1_s12 by 330.0deg: OK
+subtract gap_L1_s1 from Cylinder2_outer: OK
+subtract gap_L1_s2 from Cylinder2_outer: OK
+subtract gap_L1_s3 from Cylinder2_outer: OK
+subtract gap_L1_s4 from Cylinder2_outer: OK
+subtract gap_L1_s5 from Cylinder2_outer: OK
+subtract gap_L1_s6 from Cylinder2_outer: OK
+subtract gap_L1_s7 from Cylinder2_outer: OK
+subtract gap_L1_s8 from Cylinder2_outer: OK
+subtract gap_L1_s9 from Cylinder2_outer: OK
+subtract gap_L1_s10 from Cylinder2_outer: OK
+subtract gap_L1_s11 from Cylinder2_outer: OK
+subtract gap_L1_s12 from Cylinder2_outer: OK
+segmented Cylinder2_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder2_outer
+total ferrite objects: 1
+cleared 0 mesh ops
+SURF Cylinder2_outer: OK
+VOL  Cylinder2_outer: OK
+mesh applied to 1 segments | MaxLength=0.2mm
+ValidateDesign: OK -> 0
+Analyze Setup1: OK -> 0
+eval Bcenter_Bx: OK -> 7.78776551953e-07
+eval Bcenter_By: OK -> 2.3220422054e-09
+eval Bcenter_Bz: OK -> 1.37555617438e-09
+eval Bcenter_Mag: OK -> 7.78781228527e-07
+SFx=1.61355654180
+compute IntH2_total via Calc: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 97, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 672, in <lambda$110>
+    lambda: compute_intH2_from_calc(fp, oDesign, all_ferrite_segments))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 421, in compute_intH2_from_calc
+    Hx2 = eval_component_sq_integral("x")
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 416, in eval_component_sq_integral
+    fields.EnterVol(ferrite_objects)
+Exception: EnterVol(string geomName)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+IntH2_total=None
+Completed S1_N1_t060_seg12_staggered_x | SFx=1.61355654180 | IntH2=None
+
+============================================================
+Processing S2_N3_t020_g010_seg12_aligned_x
+  layers=3 a=0.200mm g=0.100mm
+  N_segments=12 gap=1.600mm staggered=False
+  copy C2_N3_t020_g010_shield.aedt -> S2_N3_t020_g010_seg12_aligned_x_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces: 4
+delete old ferrite Cylinder2: OK
+delete old ferrite Cylinder4: OK
+delete old ferrite Cylinder6: OK
+--- Layer 1 (Cylinder2): inner=100.000 outer=100.200
+create Cylinder2_outer: OK -> Cylinder2_outer
+create Cylinder2_inner: OK -> Cylinder2_inner
+subtract Cylinder2_inner from Cylinder2_outer -> Cylinder2: OK
+created ferrite shell: Cylinder2 R=[100.000,100.200] H=200.000
+create gap box gap_L1_s1: OK -> gap_L1_s1
+rotate gap_L1_s1 by 0.0deg: OK
+create gap box gap_L1_s2: OK -> gap_L1_s2
+rotate gap_L1_s2 by 30.0deg: OK
+create gap box gap_L1_s3: OK -> gap_L1_s3
+rotate gap_L1_s3 by 60.0deg: OK
+create gap box gap_L1_s4: OK -> gap_L1_s4
+rotate gap_L1_s4 by 90.0deg: OK
+create gap box gap_L1_s5: OK -> gap_L1_s5
+rotate gap_L1_s5 by 120.0deg: OK
+create gap box gap_L1_s6: OK -> gap_L1_s6
+rotate gap_L1_s6 by 150.0deg: OK
+create gap box gap_L1_s7: OK -> gap_L1_s7
+rotate gap_L1_s7 by 180.0deg: OK
+create gap box gap_L1_s8: OK -> gap_L1_s8
+rotate gap_L1_s8 by 210.0deg: OK
+create gap box gap_L1_s9: OK -> gap_L1_s9
+rotate gap_L1_s9 by 240.0deg: OK
+create gap box gap_L1_s10: OK -> gap_L1_s10
+rotate gap_L1_s10 by 270.0deg: OK
+create gap box gap_L1_s11: OK -> gap_L1_s11
+rotate gap_L1_s11 by 300.0deg: OK
+create gap box gap_L1_s12: OK -> gap_L1_s12
+rotate gap_L1_s12 by 330.0deg: OK
+subtract gap_L1_s1 from Cylinder2_outer: OK
+subtract gap_L1_s2 from Cylinder2_outer: OK
+subtract gap_L1_s3 from Cylinder2_outer: OK
+subtract gap_L1_s4 from Cylinder2_outer: OK
+subtract gap_L1_s5 from Cylinder2_outer: OK
+subtract gap_L1_s6 from Cylinder2_outer: OK
+subtract gap_L1_s7 from Cylinder2_outer: OK
+subtract gap_L1_s8 from Cylinder2_outer: OK
+subtract gap_L1_s9 from Cylinder2_outer: OK
+subtract gap_L1_s10 from Cylinder2_outer: OK
+subtract gap_L1_s11 from Cylinder2_outer: OK
+subtract gap_L1_s12 from Cylinder2_outer: OK
+segmented Cylinder2_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder2_outer
+--- Layer 2 (Cylinder4): inner=100.300 outer=100.500
+create Cylinder4_outer: OK -> Cylinder4_outer
+create Cylinder4_inner: OK -> Cylinder4_inner
+subtract Cylinder4_inner from Cylinder4_outer -> Cylinder4: OK
+created ferrite shell: Cylinder4 R=[100.300,100.500] H=200.000
+create gap box gap_L2_s1: OK -> gap_L2_s1
+rotate gap_L2_s1 by 0.0deg: OK
+create gap box gap_L2_s2: OK -> gap_L2_s2
+rotate gap_L2_s2 by 30.0deg: OK
+create gap box gap_L2_s3: OK -> gap_L2_s3
+rotate gap_L2_s3 by 60.0deg: OK
+create gap box gap_L2_s4: OK -> gap_L2_s4
+rotate gap_L2_s4 by 90.0deg: OK
+create gap box gap_L2_s5: OK -> gap_L2_s5
+rotate gap_L2_s5 by 120.0deg: OK
+create gap box gap_L2_s6: OK -> gap_L2_s6
+rotate gap_L2_s6 by 150.0deg: OK
+create gap box gap_L2_s7: OK -> gap_L2_s7
+rotate gap_L2_s7 by 180.0deg: OK
+create gap box gap_L2_s8: OK -> gap_L2_s8
+rotate gap_L2_s8 by 210.0deg: OK
+create gap box gap_L2_s9: OK -> gap_L2_s9
+rotate gap_L2_s9 by 240.0deg: OK
+create gap box gap_L2_s10: OK -> gap_L2_s10
+rotate gap_L2_s10 by 270.0deg: OK
+create gap box gap_L2_s11: OK -> gap_L2_s11
+rotate gap_L2_s11 by 300.0deg: OK
+create gap box gap_L2_s12: OK -> gap_L2_s12
+rotate gap_L2_s12 by 330.0deg: OK
+subtract gap_L2_s1 from Cylinder4_outer: OK
+subtract gap_L2_s2 from Cylinder4_outer: OK
+subtract gap_L2_s3 from Cylinder4_outer: OK
+subtract gap_L2_s4 from Cylinder4_outer: OK
+subtract gap_L2_s5 from Cylinder4_outer: OK
+subtract gap_L2_s6 from Cylinder4_outer: OK
+subtract gap_L2_s7 from Cylinder4_outer: OK
+subtract gap_L2_s8 from Cylinder4_outer: OK
+subtract gap_L2_s9 from Cylinder4_outer: OK
+subtract gap_L2_s10 from Cylinder4_outer: OK
+subtract gap_L2_s11 from Cylinder4_outer: OK
+subtract gap_L2_s12 from Cylinder4_outer: OK
+segmented Cylinder4_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder4_outer
+--- Layer 3 (Cylinder6): inner=100.600 outer=100.800
+create Cylinder6_outer: OK -> Cylinder6_outer
+create Cylinder6_inner: OK -> Cylinder6_inner
+subtract Cylinder6_inner from Cylinder6_outer -> Cylinder6: OK
+created ferrite shell: Cylinder6 R=[100.600,100.800] H=200.000
+create gap box gap_L3_s1: OK -> gap_L3_s1
+rotate gap_L3_s1 by 0.0deg: OK
+create gap box gap_L3_s2: OK -> gap_L3_s2
+rotate gap_L3_s2 by 30.0deg: OK
+create gap box gap_L3_s3: OK -> gap_L3_s3
+rotate gap_L3_s3 by 60.0deg: OK
+create gap box gap_L3_s4: OK -> gap_L3_s4
+rotate gap_L3_s4 by 90.0deg: OK
+create gap box gap_L3_s5: OK -> gap_L3_s5
+rotate gap_L3_s5 by 120.0deg: OK
+create gap box gap_L3_s6: OK -> gap_L3_s6
+rotate gap_L3_s6 by 150.0deg: OK
+create gap box gap_L3_s7: OK -> gap_L3_s7
+rotate gap_L3_s7 by 180.0deg: OK
+create gap box gap_L3_s8: OK -> gap_L3_s8
+rotate gap_L3_s8 by 210.0deg: OK
+create gap box gap_L3_s9: OK -> gap_L3_s9
+rotate gap_L3_s9 by 240.0deg: OK
+create gap box gap_L3_s10: OK -> gap_L3_s10
+rotate gap_L3_s10 by 270.0deg: OK
+create gap box gap_L3_s11: OK -> gap_L3_s11
+rotate gap_L3_s11 by 300.0deg: OK
+create gap box gap_L3_s12: OK -> gap_L3_s12
+rotate gap_L3_s12 by 330.0deg: OK
+subtract gap_L3_s1 from Cylinder6_outer: OK
+subtract gap_L3_s2 from Cylinder6_outer: OK
+subtract gap_L3_s3 from Cylinder6_outer: OK
+subtract gap_L3_s4 from Cylinder6_outer: OK
+subtract gap_L3_s5 from Cylinder6_outer: OK
+subtract gap_L3_s6 from Cylinder6_outer: OK
+subtract gap_L3_s7 from Cylinder6_outer: OK
+subtract gap_L3_s8 from Cylinder6_outer: OK
+subtract gap_L3_s9 from Cylinder6_outer: OK
+subtract gap_L3_s10 from Cylinder6_outer: OK
+subtract gap_L3_s11 from Cylinder6_outer: OK
+subtract gap_L3_s12 from Cylinder6_outer: OK
+segmented Cylinder6_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder6_outer
+total ferrite objects: 3
+cleared 0 mesh ops
+SURF Cylinder2_outer: OK
+VOL  Cylinder2_outer: OK
+SURF Cylinder4_outer: OK
+VOL  Cylinder4_outer: OK
+SURF Cylinder6_outer: OK
+VOL  Cylinder6_outer: OK
+mesh applied to 3 segments | MaxLength=0.0666666666667mm
+ValidateDesign: OK -> 0
+Analyze Setup1: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 97, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 644, in <lambda$105>
+    safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+Exception: Analyze(string simulationName, [bool isBlocking /*optional*/]) -> long(Setup1) - call failed. Logs or message window might have more details
+
+eval Bcenter_Bx: OK -> 7.58092039118e-07
+eval Bcenter_By: OK -> -3.34380493274e-09
+eval Bcenter_Bz: OK -> 2.84212146234e-09
+eval Bcenter_Mag: OK -> 7.58104741088e-07
+SFx=1.65758237148
+compute IntH2_total via Calc: FAILED
+Traceback (most recent call last):
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 97, in safe
+    value = fn()
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 672, in <lambda$110>
+    lambda: compute_intH2_from_calc(fp, oDesign, all_ferrite_segments))
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 421, in compute_intH2_from_calc
+    Hx2 = eval_component_sq_integral("x")
+  File "D:/tangyumengnew/aaaaaaaaximukeji/scripts/aedt_export/segmented_shell.py", line 416, in eval_component_sq_integral
+    fields.EnterVol(ferrite_objects)
+Exception: EnterVol(string geomName)(IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+IntH2_total=None
+Completed S2_N3_t020_g010_seg12_aligned_x | SFx=1.65758237148 | IntH2=None
+
+============================================================
+Processing S2_N3_t020_g010_seg12_staggered_x
+  layers=3 a=0.200mm g=0.100mm
+  N_segments=12 gap=1.600mm staggered=True
+  copy C2_N3_t020_g010_shield.aedt -> S2_N3_t020_g010_seg12_staggered_x_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+tangential-H faces: 4
+delete old ferrite Cylinder2: OK
+delete old ferrite Cylinder4: OK
+delete old ferrite Cylinder6: OK
+--- Layer 1 (Cylinder2): inner=100.000 outer=100.200
+create Cylinder2_outer: OK -> Cylinder2_outer
+create Cylinder2_inner: OK -> Cylinder2_inner
+subtract Cylinder2_inner from Cylinder2_outer -> Cylinder2: OK
+created ferrite shell: Cylinder2 R=[100.000,100.200] H=200.000
+create gap box gap_L1_s1: OK -> gap_L1_s1
+rotate gap_L1_s1 by 0.0deg: OK
+create gap box gap_L1_s2: OK -> gap_L1_s2
+rotate gap_L1_s2 by 30.0deg: OK
+create gap box gap_L1_s3: OK -> gap_L1_s3
+rotate gap_L1_s3 by 60.0deg: OK
+create gap box gap_L1_s4: OK -> gap_L1_s4
+rotate gap_L1_s4 by 90.0deg: OK
+create gap box gap_L1_s5: OK -> gap_L1_s5
+rotate gap_L1_s5 by 120.0deg: OK
+create gap box gap_L1_s6: OK -> gap_L1_s6
+rotate gap_L1_s6 by 150.0deg: OK
+create gap box gap_L1_s7: OK -> gap_L1_s7
+rotate gap_L1_s7 by 180.0deg: OK
+create gap box gap_L1_s8: OK -> gap_L1_s8
+rotate gap_L1_s8 by 210.0deg: OK
+create gap box gap_L1_s9: OK -> gap_L1_s9
+rotate gap_L1_s9 by 240.0deg: OK
+create gap box gap_L1_s10: OK -> gap_L1_s10
+rotate gap_L1_s10 by 270.0deg: OK
+create gap box gap_L1_s11: OK -> gap_L1_s11
+rotate gap_L1_s11 by 300.0deg: OK
+create gap box gap_L1_s12: OK -> gap_L1_s12
+rotate gap_L1_s12 by 330.0deg: OK
+subtract gap_L1_s1 from Cylinder2_outer: OK
+subtract gap_L1_s2 from Cylinder2_outer: OK
+subtract gap_L1_s3 from Cylinder2_outer: OK
+subtract gap_L1_s4 from Cylinder2_outer: OK
+subtract gap_L1_s5 from Cylinder2_outer: OK
+subtract gap_L1_s6 from Cylinder2_outer: OK
+subtract gap_L1_s7 from Cylinder2_outer: OK
+subtract gap_L1_s8 from Cylinder2_outer: OK
+subtract gap_L1_s9 from Cylinder2_outer: OK
+subtract gap_L1_s10 from Cylinder2_outer: OK
+subtract gap_L1_s11 from Cylinder2_outer: OK
+subtract gap_L1_s12 from Cylinder2_outer: OK
+segmented Cylinder2_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder2_outer
+--- Layer 2 (Cylinder4): inner=100.300 outer=100.500
+create Cylinder4_outer: OK -> Cylinder4_outer
+create Cylinder4_inner: OK -> Cylinder4_inner
+subtract Cylinder4_inner from Cylinder4_outer -> Cylinder4: OK
+created ferrite shell: Cylinder4 R=[100.300,100.500] H=200.000
+create gap box gap_L2_s1: OK -> gap_L2_s1
+rotate gap_L2_s1 by 15.0deg: OK
+create gap box gap_L2_s2: OK -> gap_L2_s2
+rotate gap_L2_s2 by 45.0deg: OK
+create gap box gap_L2_s3: OK -> gap_L2_s3
+rotate gap_L2_s3 by 75.0deg: OK
+create gap box gap_L2_s4: OK -> gap_L2_s4
+rotate gap_L2_s4 by 105.0deg: OK
+create gap box gap_L2_s5: OK -> gap_L2_s5
+rotate gap_L2_s5 by 135.0deg: OK
+create gap box gap_L2_s6: OK -> gap_L2_s6
+rotate gap_L2_s6 by 165.0deg: OK
+create gap box gap_L2_s7: OK -> gap_L2_s7
+rotate gap_L2_s7 by 195.0deg: OK
+create gap box gap_L2_s8: OK -> gap_L2_s8
+rotate gap_L2_s8 by 225.0deg: OK
+create gap box gap_L2_s9: OK -> gap_L2_s9
+rotate gap_L2_s9 by 255.0deg: OK
+create gap box gap_L2_s10: OK -> gap_L2_s10
+rotate gap_L2_s10 by 285.0deg: OK
+create gap box gap_L2_s11: OK -> gap_L2_s11
+rotate gap_L2_s11 by 315.0deg: OK
+create gap box gap_L2_s12: OK -> gap_L2_s12
+rotate gap_L2_s12 by 345.0deg: OK
+subtract gap_L2_s1 from Cylinder4_outer: OK
+subtract gap_L2_s2 from Cylinder4_outer: OK
+subtract gap_L2_s3 from Cylinder4_outer: OK
+subtract gap_L2_s4 from Cylinder4_outer: OK
+subtract gap_L2_s5 from Cylinder4_outer: OK
+subtract gap_L2_s6 from Cylinder4_outer: OK
+subtract gap_L2_s7 from Cylinder4_outer: OK
+subtract gap_L2_s8 from Cylinder4_outer: OK
+subtract gap_L2_s9 from Cylinder4_outer: OK
+subtract gap_L2_s10 from Cylinder4_outer: OK
+subtract gap_L2_s11 from Cylinder4_outer: OK
+subtract gap_L2_s12 from Cylinder4_outer: OK
+segmented Cylinder4_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder4_outer
+--- Layer 3 (Cylinder6): inner=100.600 outer=100.800
+create Cylinder6_outer: OK -> Cylinder6_outer
+create Cylinder6_inner: OK -> Cylinder6_inner
+subtract Cylinder6_inner from Cylinder6_outer -> Cylinder6: OK
+created ferrite shell: Cylinder6 R=[100.600,100.800] H=200.000
+create gap box gap_L3_s1: OK -> gap_L3_s1
+rotate gap_L3_s1 by 0.0deg: OK
+create gap box gap_L3_s2: OK -> gap_L3_s2
+rotate gap_L3_s2 by 30.0deg: OK
+create gap box gap_L3_s3: OK -> gap_L3_s3
+rotate gap_L3_s3 by 60.0deg: OK
+create gap box gap_L3_s4: OK -> gap_L3_s4
+rotate gap_L3_s4 by 90.0deg: OK
+create gap box gap_L3_s5: OK -> gap_L3_s5
+rotate gap_L3_s5 by 120.0deg: OK
+create gap box gap_L3_s6: OK -> gap_L3_s6
+rotate gap_L3_s6 by 150.0deg: OK
+create gap box gap_L3_s7: OK -> gap_L3_s7
+rotate gap_L3_s7 by 180.0deg: OK
+create gap box gap_L3_s8: OK -> gap_L3_s8
+rotate gap_L3_s8 by 210.0deg: OK
+create gap box gap_L3_s9: OK -> gap_L3_s9
+rotate gap_L3_s9 by 240.0deg: OK
+create gap box gap_L3_s10: OK -> gap_L3_s10
+rotate gap_L3_s10 by 270.0deg: OK
+create gap box gap_L3_s11: OK -> gap_L3_s11
+rotate gap_L3_s11 by 300.0deg: OK
+create gap box gap_L3_s12: OK -> gap_L3_s12
+rotate gap_L3_s12 by 330.0deg: OK
+subtract gap_L3_s1 from Cylinder6_outer: OK
+subtract gap_L3_s2 from Cylinder6_outer: OK
+subtract gap_L3_s3 from Cylinder6_outer: OK
+subtract gap_L3_s4 from Cylinder6_outer: OK
+subtract gap_L3_s5 from Cylinder6_outer: OK
+subtract gap_L3_s6 from Cylinder6_outer: OK
+subtract gap_L3_s7 from Cylinder6_outer: OK
+subtract gap_L3_s8 from Cylinder6_outer: OK
+subtract gap_L3_s9 from Cylinder6_outer: OK
+subtract gap_L3_s10 from Cylinder6_outer: OK
+subtract gap_L3_s11 from Cylinder6_outer: OK
+subtract gap_L3_s12 from Cylinder6_outer: OK
+segmented Cylinder6_outer: 12/12 gaps subtracted
+  ferrite shell after gaps: Cylinder6_outer
+total ferrite objects: 3
+cleared 0 mesh ops
+SURF Cylinder2_outer: OK
+VOL  Cylinder2_outer: OK
+SURF Cylinder4_outer: OK
+VOL  Cylinder4_outer: OK
+SURF Cylinder6_outer: OK
+VOL  Cylinder6_outer: OK
+mesh applied to 3 segments | MaxLength=0.0666666666667mm
+ValidateDesign: OK -> 0

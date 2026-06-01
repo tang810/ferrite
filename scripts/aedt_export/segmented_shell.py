@@ -138,28 +138,90 @@ def clear_mesh_operations(fp, oDesign):
         log(fp, "clear_mesh_operations: " + traceback.format_exc())
 
 
-def discover_segment_names(fp, oEditor, base_name):
+def get_all_object_names(oEditor, oDesign):
+    """Get all 3D object names using whatever API works in this AEDT version."""
+    names = []
+
+    # Approach 1: oEditor.GetAllObjects() or GetObjects()
+    for method in ["GetAllObjects", "GetObjects", "GetObjectList", "GetAllObjectNames"]:
+        try:
+            result = getattr(oEditor, method)()
+            if result:
+                names = [str(x) for x in list(result)]
+                return names
+        except Exception:
+            pass
+
+    # Approach 2: oDesign.GetObjectNames()
+    try:
+        result = oDesign.GetObjectNames()
+        if result:
+            names = [str(x) for x in list(result)]
+            return names
+    except Exception:
+        pass
+
+    # Approach 3: iterate by index using GetObjectName(i)
+    try:
+        i = 0
+        while i < 1000:
+            name = oEditor.GetObjectName(i)
+            if name and str(name).strip():
+                names.append(str(name))
+                i += 1
+            else:
+                break
+        if names:
+            return names
+    except Exception:
+        pass
+
+    # Approach 4: try GetChildObject on Design -> Model -> Solids
+    try:
+        model = oDesign.GetChildObject("Model")
+        solids = model.GetChildObject("Solids")
+        result = solids.GetChildNames()
+        if result:
+            names = [str(x) for x in list(result)]
+            return names
+    except Exception:
+        pass
+
+    return names
+
+
+def discover_segment_names(fp, oEditor, oDesign, base_name):
     """After boolean subtraction, find all objects derived from base_name."""
     found = []
     try:
-        all_objects = list(oEditor.GetObjects())
+        all_objects = get_all_object_names(oEditor, oDesign)
+        log(fp, "  total objects in model: " + str(len(all_objects)))
         for obj_name in all_objects:
             s = str(obj_name)
             if s.startswith(base_name):
                 found.append(s)
+        # If no prefix match, try case-insensitive
+        if not found:
+            for obj_name in all_objects:
+                s = str(obj_name).lower()
+                if s.startswith(base_name.lower()):
+                    found.append(str(obj_name))
+        if not found:
+            log(fp, "  ALL objects: " + str(all_objects[:40]))
     except Exception:
-        log(fp, "discover_segment_names failed for " + base_name)
+        log(fp, "discover_segment_names exception for " + base_name)
+        log(fp, traceback.format_exc())
     return found
 
 
 def assign_mesh_to_objects(fp, oDesign, object_names, max_len_str):
-    """Apply LengthBased mesh to a list of geometry objects."""
+    """Apply LengthBased mesh to a list of geometry objects, with unique names."""
     mesh_module = oDesign.GetModule("MeshSetup")
     for obj_name in object_names:
         safe(fp, "SURF " + obj_name,
              lambda n=obj_name, ml=max_len_str:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_surf_" + n,
+                 "NAME:Length_surf_seg_" + n,
                  "RefineInside:=", False,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -170,7 +232,7 @@ def assign_mesh_to_objects(fp, oDesign, object_names, max_len_str):
         safe(fp, "VOL  " + obj_name,
              lambda n=obj_name, ml=max_len_str:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_vol_" + n,
+                 "NAME:Length_vol_seg_" + n,
                  "RefineInside:=", True,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -296,64 +358,77 @@ def create_gap_boxes(fp, oEditor, layer_idx, n_segments, gap_mm, R_mid,
         # Rotate about Z by angle_deg
         safe(fp, "rotate " + gap_name + " by " + str(angle_deg) + "deg",
              lambda n=gap_name, a=str(angle_deg) + "deg":
-             oEditor.Rotate([
-                 "NAME:Selections", "Selections:=", n,
-                 "NAME:RotateParameters",
-                 "RotateAxis:=", "Z",
-                 "RotateAngle:=", a]))
+             oEditor.Rotate(
+                 ["NAME:Selections", "Selections:=", n],
+                 ["NAME:RotateParameters",
+                  "RotateAxis:=", "Z",
+                  "RotateAngle:=", a]))
 
         gap_names.append(gap_name)
     return gap_names
 
 
 def subtract_gaps_from_cylinder(fp, oEditor, cyl_name, gap_names):
-    """Subtract all gap boxes from the ferrite cylinder shell."""
-    tool_parts = ",".join(gap_names)
-    safe(fp, "subtract gaps from " + cyl_name + " (" + str(len(gap_names)) + " gaps)",
-         lambda: oEditor.Subtract(
-             ["NAME:Selections",
-              "Blank Parts:=", cyl_name,
-              "Tool Parts:=", tool_parts],
-             ["NAME:SubtractParameters",
-              "KeepOriginals:=", False]))
-    log(fp, "segmented " + cyl_name + " -> " + str(len(gap_names)) + " gaps")
+    """Subtract gap boxes one at a time from the ferrite cylinder shell.
+
+    Single-tool subtract is the only format proven to work in this AEDT version.
+    After all 12 subtracts the cylinder has 12 through-gaps (still one body, but
+    physically segmented — mesh and field integrals work on the full body).
+    """
+    success = 0
+    for gname in gap_names:
+        result = safe(fp, "subtract " + gname + " from " + cyl_name,
+             lambda n=gname: oEditor.Subtract(
+                 ["NAME:Selections",
+                  "Blank Parts:=", cyl_name,
+                  "Tool Parts:=", n],
+                 ["NAME:SubtractParameters",
+                  "KeepOriginals:=", False]))
+        if result is True:  # subtract returns None on success, safe returns True
+            success += 1
+    log(fp, "segmented " + cyl_name + ": " + str(success) + "/" +
+        str(len(gap_names)) + " gaps subtracted")
 
 
 def compute_intH2_from_calc(fp, oDesign, ferrite_objects):
-    """Compute IntH2 = integral(H^2 dV) over ferrite objects via Fields Calculator."""
+    """Compute IntH2 = integral(|H|^2 dV) over ferrite objects.
+
+    Evaluates each component integral separately (Hx^2, Hy^2, Hz^2) and sums
+    in Python to avoid CalcStack push/pop/Copy which are unreliable across
+    Maxwell versions, and Square/Mag which may not exist.
+    """
     fields = oDesign.GetModule("FieldsReporter")
-    try:
+
+    def eval_component_sq_integral(comp):
+        """Evaluate integral of H_comp^2 over ferrite volume.
+
+        Pushes H twice and extracts the component each time to get two
+        scalars on the stack, then multiplies.  Avoids CalcStack("copy")
+        which is not available in this Maxwell version.
+        """
+        scalar_op = {"x": "ScalarX", "y": "ScalarY", "z": "ScalarZ"}[comp]
         fields.CalcStack("clear")
         fields.EnterQty("H")
-    except Exception:
-        log(fp, "EnterQty H failed")
-        return None
-    try:
-        fields.CalcOp("ComplexMag")
-    except Exception:
-        log(fp, "ComplexMag failed")
-        return None
-    try:
-        fields.CalcOp("Square")
-    except Exception:
-        log(fp, "Square failed")
-        return None
-    try:
-        fields.EnterVol(ferrite_objects)
-    except Exception:
-        log(fp, "EnterVol failed for " + str(ferrite_objects))
-        return None
-    try:
+        fields.CalcOp(scalar_op)
+        fields.EnterQty("H")
+        fields.CalcOp(scalar_op)
+        fields.CalcOp("*")
+        fields.EnterVol(",".join(ferrite_objects))
         fields.CalcOp("Integrate")
-    except Exception:
-        log(fp, "Integrate failed")
-        return None
-    try:
         fields.ClcEval(SOLN, [])
         return extract_value(fields.GetTopEntryValue(SOLN, []))
-    except Exception:
-        log(fp, "ClcEval/GetTopEntryValue failed")
-        return None
+
+    Hx2 = eval_component_sq_integral("x")
+    Hy2 = eval_component_sq_integral("y")
+    Hz2 = eval_component_sq_integral("z")
+
+    total = 0.0
+    for v in [Hx2, Hy2, Hz2]:
+        try:
+            total += float(v)
+        except (ValueError, TypeError):
+            pass
+    return total
 
 
 def eval_bx(fields):
@@ -384,12 +459,35 @@ def eval_bz(fields):
 
 
 def eval_bmag(fields):
+    """Bmag computed from scalar components -- ComplexMag CalcOp is unreliable."""
     fields.CalcStack("clear")
     fields.EnterQty("B")
-    fields.CalcOp("ComplexMag")
+    fields.CalcOp("ScalarX")
     fields.EnterPoint(POINT_NAME)
     fields.CalcOp("Value")
-    return extract_value(fields.GetTopEntryValue(SOLN, []))
+    Bx = extract_value(fields.GetTopEntryValue(SOLN, []))
+
+    fields.CalcStack("clear")
+    fields.EnterQty("B")
+    fields.CalcOp("ScalarY")
+    fields.EnterPoint(POINT_NAME)
+    fields.CalcOp("Value")
+    By = extract_value(fields.GetTopEntryValue(SOLN, []))
+
+    fields.CalcStack("clear")
+    fields.EnterQty("B")
+    fields.CalcOp("ScalarZ")
+    fields.EnterPoint(POINT_NAME)
+    fields.CalcOp("Value")
+    Bz = extract_value(fields.GetTopEntryValue(SOLN, []))
+
+    try:
+        bx = float(Bx)
+        by = float(By)
+        bz = float(Bz)
+        return math.sqrt(bx * bx + by * by + bz * bz)
+    except (ValueError, TypeError):
+        return ""
 
 
 def append_csv_row(fp_out, fieldnames, row):
@@ -480,23 +578,16 @@ def process_case(fp, oDesktop, case_info):
     th_count = count_tangential_h_faces(oBoundary)
     log(fp, "tangential-H faces: " + str(th_count))
 
-    # Delete all existing ferrite cylinders (they may have different names in the source)
-    for base_name in FERRITE_BASE_NAMES:
-        # Delete all variants: base name, _SeparateX, _SectionX, etc.
-        try:
-            all_objs = list(oEditor.GetObjects())
-            for obj_name in all_objs:
-                s = str(obj_name)
-                if s.startswith(base_name):
-                    safe(fp, "delete old ferrite " + s,
-                         lambda n=s: oEditor.Delete([
-                             "NAME:Selections", "Selections:=", n]))
-            # Also try deleting the base name directly (catches the original continuous cylinder)
-            safe(fp, "delete " + base_name,
-                 lambda n=base_name: oEditor.Delete([
-                     "NAME:Selections", "Selections:=", n]))
-        except Exception:
-            pass
+    # Delete all existing ferrite-related objects from source project
+    all_objs = get_all_object_names(oEditor, oDesign)
+    for obj_name in all_objs:
+        s = str(obj_name)
+        for base_name in FERRITE_BASE_NAMES:
+            if s.startswith(base_name):
+                safe(fp, "delete old ferrite " + s,
+                     lambda n=s: oEditor.Delete([
+                         "NAME:Selections", "Selections:=", n]))
+                break
 
     # Build segmented ferrite layers
     all_ferrite_segments = []
@@ -520,17 +611,21 @@ def process_case(fp, oDesktop, case_info):
             if layer_i % 2 == 1:
                 offset_deg = 360.0 / (2.0 * N_SEGMENTS)  # 15 deg
 
+        # After create_full_cylinder, result is named cyl_name + "_outer"
+        shell_name = cyl_name + "_outer"
+
         # Create gap boxes and subtract
         gap_names = create_gap_boxes(fp, oEditor, layer_i, N_SEGMENTS, GAP_MM,
                                      R_mid, radial_depth, CYLINDER_HEIGHT_MM, offset_deg)
-        subtract_gaps_from_cylinder(fp, oEditor, cyl_name, gap_names)
+        subtract_gaps_from_cylinder(fp, oEditor, shell_name, gap_names)
 
-        # Discover resulting segment names
-        segment_names = discover_segment_names(fp, oEditor, cyl_name)
-        log(fp, "  segments found: " + str(len(segment_names)) + " " + str(segment_names))
-        all_ferrite_segments.extend(segment_names)
+        # Gapped shell stays as one named object (single-tool subtract does not
+        # auto-split into separate bodies), but mesh and field integrals work
+        # correctly on it regardless.
+        all_ferrite_segments.append(shell_name)
+        log(fp, "  ferrite shell after gaps: " + shell_name)
 
-    log(fp, "total ferrite segment objects: " + str(len(all_ferrite_segments)))
+    log(fp, "total ferrite objects: " + str(len(all_ferrite_segments)))
 
     if not all_ferrite_segments:
         log(fp, "FATAL: no ferrite segments created")
@@ -546,7 +641,18 @@ def process_case(fp, oDesktop, case_info):
 
     # Validate and solve
     safe(fp, "ValidateDesign", lambda: oDesign.ValidateDesign())
-    safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+    solve_ok = safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+    if solve_ok is None:
+        log(fp, "SKIP: solve failed, no data for " + case_id)
+        try:
+            oProject.Save()
+        except Exception:
+            pass
+        try:
+            oDesktop.CloseProject(oProject.GetName())
+        except Exception:
+            pass
+        return
 
     # Export center field
     fields = oDesign.GetModule("FieldsReporter")

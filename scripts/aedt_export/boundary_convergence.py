@@ -100,20 +100,17 @@ def fmt_float3(v):
     return "%.3f" % (float(v),)
 
 
-def clear_mesh_operations(fp, oDesign):
-    try:
-        mesh_module = oDesign.GetModule("MeshSetup")
-        existing = []
-        try:
-            existing = list(mesh_module.GetMeshOperations())
-        except Exception:
-            pass
-        for name in existing:
-            safe(fp, "delete mesh op " + str(name),
-                 lambda n=name: mesh_module.DeleteMeshOperations([n]))
-        log(fp, "cleared " + str(len(existing)) + " mesh ops")
-    except Exception:
-        log(fp, "clear_mesh_operations: " + traceback.format_exc())
+def clear_all_mesh_ops_force(fp, oDesign, layers):
+    """Force-delete all expected mesh ops by known names."""
+    mesh_module = oDesign.GetModule("MeshSetup")
+    ferrite_objs = FERRITE_OBJECTS[:layers]
+    for obj_name in ferrite_objs:
+        for prefix in ["Length_surf_bnd_", "Length_vol_bnd_",
+                       "Length_surf_", "Length_vol_"]:
+            try:
+                mesh_module.DeleteMeshOperations([prefix + obj_name])
+            except Exception:
+                pass
 
 
 def assign_ferrite_mesh(fp, oDesign, case_info):
@@ -128,7 +125,7 @@ def assign_ferrite_mesh(fp, oDesign, case_info):
         safe(fp, "SURF " + obj_name,
              lambda n=obj_name, ml=max_len:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_surf_" + n,
+                 "NAME:Length_surf_bnd_" + n,
                  "RefineInside:=", False,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -139,7 +136,7 @@ def assign_ferrite_mesh(fp, oDesign, case_info):
         safe(fp, "VOL  " + obj_name,
              lambda n=obj_name, ml=max_len:
              mesh_module.AssignLengthOp([
-                 "NAME:Length_vol_" + n,
+                 "NAME:Length_vol_bnd_" + n,
                  "RefineInside:=", True,
                  "Objects:=", [n],
                  "RestrictElem:=", True,
@@ -381,7 +378,7 @@ def process_level(fp, oDesktop, case_info, level_name, half_ext_mm):
     log(fp, "assigned " + str(assigned) + " tangential-H faces")
 
     # Apply mesh
-    clear_mesh_operations(fp, oDesign)
+    clear_all_mesh_ops_force(fp, oDesign, layers)
     assign_ferrite_mesh(fp, oDesign, case_info)
 
     # Validate and solve

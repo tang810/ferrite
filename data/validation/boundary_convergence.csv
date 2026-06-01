@@ -1,0 +1,7 @@
+case_id,boundary_level,half_extent_mm,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,Bcenter_Mag_T,SFx,IntH2_total,source_project,status
+BND_C1_N1_t008_x_2R,2R,200.0,9.13995613367e-07,2.71605627475e-09,-2.30437951198e-09,,1.37484248461,4.1680858345e-06,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\BND_C1_N1_t008_x_2R.aedt,exported
+BND_C1_N1_t008_x_3R,3R,300.0,7.88055634705e-07,7.28052721361e-09,2.05255144573e-09,,1.59455747115,4.53505298684e-06,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\BND_C1_N1_t008_x_3R.aedt,exported
+BND_C1_N1_t008_x_5R,5R,500.0,8.35199801428e-07,-7.0672201692e-09,1.03234653955e-08,,1.50455016614,4.01531991647e-06,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\BND_C1_N1_t008_x_5R.aedt,exported
+BND_C2_N4_t015_g008_x_2R,2R,200.0,4.24683876785e-07,1.9477657863e-09,3.25373139656e-10,,2.95890677441,4.89033096277e-06,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\BND_C2_N4_t015_g008_x_2R.aedt,exported
+BND_C2_N4_t015_g008_x_3R,3R,300.0,4.0655061474e-07,-2.06393932524e-09,-2.58465179451e-09,,3.09088205611,4.40798506221e-06,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\BND_C2_N4_t015_g008_x_3R.aedt,exported
+BND_C2_N4_t015_g008_x_5R,5R,500.0,4.11137821152e-07,8.69421798035e-09,-6.23819362126e-09,,3.05639601941,4.37167993276e-06,D:\tangyumengnew\aaaaaaaaximukeji\round2_working\manufacturable_thin\BND_C2_N4_t015_g008_x_5R.aedt,exported

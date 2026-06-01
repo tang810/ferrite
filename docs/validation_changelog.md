@@ -1,66 +1,66 @@
-# Validation Changelog for IEEE TIM Preparation
+# Manuscript and Validation Changelog
 
-中文说明：本文档记录本轮为 IEEE TIM 投稿准备新增的数据闭环、脚本、图件和论文结构。所有缺失数据均以 TODO 或 pending 标记，未编造任何 AEDT 或实验数值。
+## 2026-05-28 Update
 
-## Added Data Templates and Processed Tables
+- Reworked the manuscript into an IEEE TIM-oriented internal review draft with the requested five-section structure:
+  - I. Introduction
+  - II. Measurement-Oriented Characterization Methodology
+  - III. Validation Matrix and Planned Experimental Campaign
+  - IV. Expected Results Organization for the Full Manuscript
+  - V. Summary of Current Draft and Next-Step Work
+- Replaced the previous Results/Discussion/Conclusion structure with a planned validation campaign and full-manuscript roadmap.
+- Removed repeated Results-style statements for incomplete axial, segmented, permeability-sensitivity, and field-map studies.
+- Rewrote the Abstract as a method-and-plan abstract for internal review, without claiming completion of planned simulations or experiments.
+- Kept the current formal title.
+- Added `docs/internal_review_note_for_senior.md`, a one-page Chinese note for internal review.
 
-- Added `data/raw/mesh_convergence_exports.csv`.
-  - Contains exported mesh-convergence values for `C1_N1_t008_x` and `C2_N4_t015_g008_x`.
-  - `total_elements` and `air_domain_size` remain blank because they were not exported.
-- Added `data/raw/boundary_convergence_exports.csv`.
-  - Template for 2R/3R/5R/7R air-domain convergence.
-- Added `data/raw/axial_shielding_exports.csv`.
-  - Template for `C1_N1_t060_z`, `C2_N3_t020_g010_z`, and `C2_N4_t015_g008_z`.
-- Added `data/raw/segmented_shell_exports.csv`.
-  - Includes real continuous baseline row for `C2_N4_t015_g008_x`.
-  - Aligned and staggered segmented cases remain pending.
-- Added `data/raw/permeability_sweep_exports.csv`.
-  - Includes real `mu_r'=1000` baseline rows for `C1_N1_t060_x` and `C2_N4_t015_g008_x`.
-  - `mu_r'=500/2000/5000` rows remain pending.
-- Added `data/raw/experimental_sfx_measurement.csv`.
-  - Prototype SF measurement template only; no experimental data are present.
+## Earlier 2026-05-28 Data-Gated Draft Update
 
-## Added Scripts
+- Added a follow-up edit for the `paper_intro_methods(1).tex` / `paper_intro_methods(3).pdf` request. No separate files with those suffixes were found in the workspace, so the active `paper_intro_methods.tex` and `paper_intro_methods.pdf` were updated.
+- Rewrote the Abstract to report only completed validation and eligible transverse continuous-shell conclusions.
+- Updated the Introduction contribution language from an evaluation/data pipeline emphasis to a measurement-oriented characterization method.
+- Merged duplicate contribution paragraphs in the Introduction.
+- Compressed the prototype measurement protocol in Methods and moved the uncertainty equations to an Appendix note.
+- Reorganized Results subsections to match the requested IEEE TIM-oriented structure:
+  - IV.A Directional Reference Validation
+  - IV.B Transverse Continuous-Shell Characterization
+  - IV.C Equal-Volume Comparison
+  - IV.D Layer-Resolved IntH2 Distribution
+  - IV.E Mesh and Boundary-Domain Convergence
+  - IV.F Axial Shielding Characterization
+  - IV.G Segmented-Shell Correction
+  - IV.H Permeability Sensitivity
+  - IV.I Field-Map Interpretation
+- Expanded the mesh convergence table to include mesh level, total elements, elements across ferrite thickness, adaptive passes, `Bcenter_x`, `SFx`, `IntH2_total`, and relative change columns.
+- Expanded the mesh convergence table to include air-domain scale.
+- Marked unavailable mesh metadata explicitly: total element count, adaptive passes, and air-domain scale were not exported.
+- Kept boundary-domain convergence out of conclusions because 2R, 3R, and 5R exports are still pending.
+- Added explicit axial shielding text stating that `B0_reference_z` passed but shielded z cases are missing, so `SFz`, `LeakageRatioz`, and `SFz/SFx` are not reported.
+- Added explicit segmented-shell text for `C2_N4_t015_g008_x`, `Nseg=12`, `g_phi=1.6 mm`; aligned and staggered results remain pending.
+- Added explicit permeability-sensitivity text for the required `mu_r'=500, 1000, 2000, 5000` comparison; only `mu_r'=1000` baselines are available.
+- Rewrote Discussion to focus on low-noise instrumentation relevance, directionality, IntH2 as a magnetic-noise-related loss indicator, and unresolved material/manufacturing sensitivity.
+- Rewrote Conclusion to limit claims to transverse continuous-shell cases and avoid final instrument-level recommendations.
 
-- Added `scripts/postprocess/process_validation_studies.py`.
-  - Generates:
-    - `data/processed/mesh_convergence_metrics.csv`
-    - `data/validation/mesh_convergence_validation.csv`
-    - `data/processed/boundary_convergence_metrics.csv`
-    - `data/processed/axial_shielding_metrics.csv`
-    - `data/processed/segmented_shell_metrics.csv`
-    - `data/processed/permeability_sensitivity_metrics.csv`
-    - `data/processed/experimental_sfx_metrics.csv`
-    - `data/processed/uncertainty_budget.csv`
-- Added `scripts/plotting/plot_validation_figures.py`.
-  - Generates real plots where processed data exist.
-  - Generates explicit TODO placeholder PNGs where AEDT or experimental exports are missing.
+## Updated CSV and Tracking Files
 
-## Added Figures
+- `data/processed/mesh_convergence_metrics.csv`
+  - Added `adaptive_passes`.
+  - Retained `air_domain_size`/air-domain scale as blank because it was not exported.
+  - Preserved missing metadata as blank values rather than fabricating values.
+- `data/raw/mesh_convergence_exports.csv`
+  - Added a blank `adaptive_passes` column so future exports can fill it directly.
+- `data/validation/mesh_convergence_validation.csv`
+  - Updated metadata status to include missing adaptive-pass metadata.
+- `scripts/postprocess/process_validation_studies.py`
+  - Updated mesh processing schema so future runs preserve the adaptive-pass column.
+- `docs/remaining_todo.md`
+  - Rewritten as a clean list of results that still cannot enter conclusions.
 
-- `figures/Fig1_measurement_framework.png` placeholder.
-- `figures/Fig2_multilayer_cylindrical_geometry.png` placeholder.
-- `figures/Fig3_SFx_vs_Vf.png` from processed transverse data.
-- `figures/Fig4_fixed_volume_comparison.png` from processed transverse data.
-- `figures/Fig5_Hvc2_field_map.png` placeholder.
-- `figures/Fig6_external_B_field_comparison.png` placeholder.
-- `figures/mesh_convergence_sfx.png` from mesh-convergence data.
-- `figures/mesh_convergence_intH2.png` from mesh-convergence data.
-- `figures/boundary_convergence.png` placeholder.
-- `figures/sfx_sfz_comparison.png` placeholder because shielded z cases are missing.
-- `figures/segmented_shell_comparison.png` placeholder because segmented exports are missing.
-- `figures/permeability_sensitivity_sfx.png`, `figures/permeability_sensitivity_intH2.png`, and `figures/permeability_sensitivity_ranking.png` placeholders because the mu sweep is incomplete.
-- `figures/experimental_vs_fem_sfx.png` placeholder because experimental data are absent.
+## Results Still Not Eligible
 
-## Manuscript Updates
-
-- Added Results subsections for:
-  - Mesh and Boundary-Domain Convergence
-  - Axial Shielding Check for Equal-Volume Candidates
-  - Segmented-Shell Correction for Manufacturable Assembly
-  - Permeability Sensitivity
-  - Prototype-Level Shielding-Factor Measurement Protocol
-- Added real B0_reference_z validation values.
-- Added mesh convergence table using available exported values.
-- Explicitly marked missing shielded z, segmented, boundary-domain, permeability-sweep, field-map, and experimental data as TODO/pending.
-- Revised the Abstract and Conclusion to distinguish completed data from pending validation.
+- Boundary-domain convergence at 2R, 3R, and 5R.
+- Shielded axial cases and `SFz` metrics.
+- Segmented aligned and segmented staggered correction.
+- Permeability sweeps beyond `mu_r'=1000`.
+- Field-map-based mechanism interpretation.
+- Prototype SF measurements.
