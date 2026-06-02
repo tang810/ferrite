@@ -3,9 +3,9 @@ import traceback
 
 import ScriptEnv
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_nominal.aedt"
-OUT_TXT = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\export_4ceng_nominal_integrals.txt"
-OUT_CSV = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\round2_4ceng_fixedT10_g02_nominal.csv"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_nominal.aedt"
+OUT_TXT = r"D:\ferrite\aaaaaaaaximukeji\round2_working\export_4ceng_nominal_integrals.txt"
+OUT_CSV = r"D:\ferrite\aaaaaaaaximukeji\round2_working\round2_4ceng_fixedT10_g02_nominal.csv"
 
 EXPRESSIONS = [
     ("IntH2_L1", "IntH2_s1"),

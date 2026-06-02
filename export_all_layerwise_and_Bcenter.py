@@ -24,7 +24,7 @@ import traceback
 # -- Configuration ----------------------------------------------------------
 # ---------------------------------------------------------------------------
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 
 PROJECTS = {
     "1ceng": {

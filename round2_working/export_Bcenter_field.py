@@ -17,9 +17,9 @@ import time
 import traceback
 
 # ---------- user settings ----------
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_external.aedt"
-OUT_CSV      = r"D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
-LOG_PATH     = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\export_Bcenter_field.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_external.aedt"
+OUT_CSV      = r"D:\ferrite\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
+LOG_PATH     = r"D:\ferrite\aaaaaaaaximukeji\round2_working\export_Bcenter_field.log"
 # --------------------------------
 
 CENTRE_POINT  = "BcenterPoint_0_0_0"

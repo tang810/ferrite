@@ -16,7 +16,7 @@ import time
 import traceback
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PARAM_CSV = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin_params.csv")
 PROJECT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 OUT_CSV = os.path.join(BASE_DIR, "analysis_ready", "manufacturable_thin_center_fields_exported.csv")

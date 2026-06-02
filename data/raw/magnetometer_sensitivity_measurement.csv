@@ -1,0 +1,4 @@
+run_id,sample_id,case_id,duration_s,sampling_rate_Hz,noise_1Hz_fT_sqrtHz,noise_10Hz_fT_sqrtHz,noise_avg_1_30Hz_fT_sqrtHz,residual_DC_field_nT,drift_p2p_nT,calibration_field_pT,notes
+TODO_SENSOR_BASELINE,sensor_baseline,,600,,,,,,,,magnetometer baseline before inserting shield
+TODO_P1_NOISE,P1_ferrite_4layer,C2_N4_t015_g008_x,600,,,,,,,,magnetometer centered in four-layer ferrite-only prototype
+TODO_P2_NOISE,P2_hybrid_outer,H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap,600,,,,,,,,magnetometer centered in hybrid prototype

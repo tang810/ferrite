@@ -17,7 +17,7 @@ import time
 import traceback
 
 
-ROOT = r"D:\tangyumengnew\aaaaaaaaximukeji"
+ROOT = r"D:\ferrite\aaaaaaaaximukeji"
 FIELD_DIR = os.environ.get("B0_DIRECTION", "x").strip().lower()
 if FIELD_DIR not in ("x", "z"):
     FIELD_DIR = "x"

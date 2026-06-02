@@ -18,9 +18,9 @@ import time
 import traceback
 
 # ---------- user settings ----------
-PROJECT_SRC = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-PROJECT_DST = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_B0.aedt"
-LOG_PATH    = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\create_B0_reference_model.log"
+PROJECT_SRC = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+PROJECT_DST = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_B0.aedt"
+LOG_PATH    = r"D:\ferrite\aaaaaaaaximukeji\round2_working\create_B0_reference_model.log"
 
 ANALYZE     = False   # set True to auto-run Setup1 after creating B0 model
 # --------------------------------

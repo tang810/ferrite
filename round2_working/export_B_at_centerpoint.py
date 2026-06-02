@@ -23,11 +23,11 @@ import traceback
 # Run once with MODE="Bcenter" on the shield model, then
 #      once with MODE="B0"      on the B0 reference model.
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
 MODE         = "Bcenter"   # "Bcenter" or "B0"
 
-OUT_CSV  = r"D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_%s.csv"
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\export_B_at_centerpoint.log"
+OUT_CSV  = r"D:\ferrite\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_%s.csv"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\export_B_at_centerpoint.log"
 
 EXPERIMENT = "fixedT10_g02_external"
 LAYER      = 4

@@ -9,10 +9,10 @@ and tries alternative approaches to get field data.
 import os
 import time
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-LOG_PATH    = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\diagnose_fields2.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+LOG_PATH    = r"D:\ferrite\aaaaaaaaximukeji\round2_working\diagnose_fields2.log"
 POINT_NAME  = "BcenterPoint_0_0_0"
-POINT_FILE  = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts"
+POINT_FILE  = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_center_point.pts"
 
 
 def log(fp, msg):
@@ -72,7 +72,7 @@ def run():
         log(f, "=== ExportToFile with correct args ===")
 
         # Try with empty varVals and different export options
-        out_fld = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_test.fld"
+        out_fld = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_center_test.fld"
         for opt in [
             [],
             ["ExportFieldType:=", "Mag_B"],

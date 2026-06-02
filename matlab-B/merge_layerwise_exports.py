@@ -16,7 +16,7 @@ import csv
 import os
 import re
 
-BASE = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE = r"D:\ferrite\aaaaaaaaximukeji"
 EXPORT_DIR = os.path.join(BASE, "analysis_ready")
 INPUT_CSV = os.path.join(EXPORT_DIR, "all_results_clean.csv")
 OUTPUT_CSV = os.path.join(EXPORT_DIR, "all_results_layerwise.csv")

@@ -2,7 +2,7 @@ import csv
 import os
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 IN_CSV = os.path.join(BASE_DIR, "analysis_ready", "Bcenter_1ceng_nominal.csv")
 OUT_CSV = os.path.join(BASE_DIR, "analysis_ready", "Bcenter_1ceng_nominal_clean.csv")
 

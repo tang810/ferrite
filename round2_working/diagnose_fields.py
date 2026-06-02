@@ -8,10 +8,10 @@ import os
 import time
 import traceback
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-LOG_PATH    = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\diagnose_fields.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+LOG_PATH    = r"D:\ferrite\aaaaaaaaximukeji\round2_working\diagnose_fields.log"
 POINT_NAME  = "BcenterPoint_0_0_0"
-POINT_FILE  = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts"
+POINT_FILE  = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_center_point.pts"
 
 
 def log(fp, msg):
@@ -83,7 +83,7 @@ def run():
             ["ComplexMag_B"],
             ["Bx", "By", "Bz"],
         ]):
-            out_file = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_test_%d.fld" % idx
+            out_file = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_test_%d.fld" % idx
             safe(f, "ExportToFile(%s)" % expr_list,
                  lambda el=expr_list, of=out_file: fields.ExportToFile(of, POINT_FILE, "Setup1 : LastAdaptive", el))
 

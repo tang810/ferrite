@@ -6,8 +6,8 @@ Solve ONLY Setup1 (not parametric sweeps) on the external-field model.
 import time
 import traceback
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-LOG_PATH     = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\solve_setup1_only.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+LOG_PATH     = r"D:\ferrite\aaaaaaaaximukeji\round2_working\solve_setup1_only.log"
 
 
 def log(fp, msg):

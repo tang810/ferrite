@@ -13,9 +13,9 @@ import os
 import time
 import traceback
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-OUT_CSV  = r"D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\export_Bcenter_via_report.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+OUT_CSV  = r"D:\ferrite\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\export_Bcenter_via_report.log"
 POINT_NAME = "BcenterPoint_0_0_0"
 
 
@@ -109,7 +109,7 @@ def run():
         # ---- Step 2: Export report to CSV ----
         log(f, "")
         log(f, "=== Exporting report ===")
-        raw_csv = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_bcenter_raw.csv"
+        raw_csv = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_bcenter_raw.csv"
 
         # Try to export - AEDT might have renamed the report
         export_ok = False

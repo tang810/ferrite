@@ -26,9 +26,9 @@ import time
 import traceback
 
 # ---------- user settings ----------
-PROJECT_SRC = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_nominal.aedt"
-PROJECT_DST = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-LOG_PATH    = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\setup_external_field_complete.log"
+PROJECT_SRC = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_nominal.aedt"
+PROJECT_DST = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+LOG_PATH    = r"D:\ferrite\aaaaaaaaximukeji\round2_working\setup_external_field_complete.log"
 
 ANALYZE     = False   # set True to auto-run Setup1 after validation
 # --------------------------------

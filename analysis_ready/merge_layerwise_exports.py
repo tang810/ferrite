@@ -5,7 +5,7 @@ import shutil
 import sys
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 ANALYSIS_DIR = os.path.join(BASE_DIR, "analysis_ready")
 
 OUT_MAIN = os.path.join(ANALYSIS_DIR, "all_results_clean.csv")

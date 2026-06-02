@@ -21,7 +21,7 @@ import time
 import traceback
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PROJECT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 LOG_PATH = os.path.join(BASE_DIR, "logs", "boundary_convergence.log")
 OUT_CSV = os.path.join(BASE_DIR, "data", "validation", "boundary_convergence.csv")

@@ -3,8 +3,8 @@ import traceback
 
 import ScriptEnv
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_next.aedt"
-OUT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\inspect_Project100_4ceng_next.txt"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_next.aedt"
+OUT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\inspect_Project100_4ceng_next.txt"
 
 
 def write_line(f, text):

@@ -5,7 +5,7 @@ import traceback
 import ScriptEnv
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PROJECT_PATH = os.path.join(BASE_DIR, "Project100_1ceng.aedt")
 OUT_CSV = os.path.join(BASE_DIR, "analysis_ready", "Bcenter_1ceng_nominal.csv")
 OUT_LOG = os.path.join(BASE_DIR, "analysis_ready", "Bcenter_1ceng_nominal_log.txt")

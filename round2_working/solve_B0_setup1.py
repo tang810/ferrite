@@ -8,8 +8,8 @@ Solve Setup1 on the B0 (no-shield) reference model.
 import time
 import traceback
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_B0.aedt"
-LOG_PATH     = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\solve_B0_setup1.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_B0.aedt"
+LOG_PATH     = r"D:\ferrite\aaaaaaaaximukeji\round2_working\solve_B0_setup1.log"
 
 
 def log(fp, msg):

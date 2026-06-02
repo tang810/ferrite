@@ -3,7 +3,7 @@ import math
 from pathlib import Path
 
 
-BASE_DIR = Path(r"D:\tangyumengnew\aaaaaaaaximukeji")
+BASE_DIR = Path(r"D:\ferrite\aaaaaaaaximukeji")
 IN_CSV = BASE_DIR / "analysis_ready" / "formal_sf_fixedT10_g02_N1_N4_center_fields_template.csv"
 OUT_CSV = BASE_DIR / "analysis_ready" / "formal_sf_fixedT10_g02_N1_N4_evaluated.csv"
 

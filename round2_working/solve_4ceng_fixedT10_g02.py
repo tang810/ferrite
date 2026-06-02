@@ -3,8 +3,8 @@ import traceback
 
 import ScriptEnv
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02.aedt"
-OUT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\solve_4ceng_fixedT10_g02.txt"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02.aedt"
+OUT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\solve_4ceng_fixedT10_g02.txt"
 
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 oDesktop.RestoreWindow()

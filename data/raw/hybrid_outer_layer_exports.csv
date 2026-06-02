@@ -1,0 +1,1 @@
+case_id,base_case,outer_material,outer_wraps,outer_total_t_mm,outer_gap_from_ferrite_mm,outer_mu_r_prime,outer_mu_r_double_prime,outer_sigma_S_per_m,outer_pattern,axial_slit_width_mm,field_dir,B0_Bx_T,Bcenter_Bx_T,Bcenter_By_T,Bcenter_Bz_T,Bcenter_Mag_T,SFx,ResidualRatiox,SFx_gain,IntH2_total,IntH2_outer,IntH2_ratio,chiH,source_project,status,notes

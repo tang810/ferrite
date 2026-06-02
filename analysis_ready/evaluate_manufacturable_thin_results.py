@@ -13,7 +13,7 @@ import math
 from pathlib import Path
 
 
-BASE_DIR = Path(r"D:\tangyumengnew\aaaaaaaaximukeji")
+BASE_DIR = Path(r"D:\ferrite\aaaaaaaaximukeji")
 EXPORTED_CSV = BASE_DIR / "analysis_ready" / "manufacturable_thin_center_fields_exported.csv"
 TEMPLATE_CSV = BASE_DIR / "analysis_ready" / "manufacturable_thin_center_fields_template.csv"
 IN_CSV = EXPORTED_CSV if EXPORTED_CSV.exists() else TEMPLATE_CSV

@@ -1,5 +1,5 @@
 """Test which Python modules are available in IronPython."""
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_test_modules.log"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_test_modules.log"
 
 with open(LOG_PATH, "w") as f:
     for mod_name in ["shutil", "os", "csv", "time", "traceback", "sys"]:

@@ -9,9 +9,9 @@ import os
 import time
 import traceback
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-OUT_CSV  = r"D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\export_Bcenter_simple.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+OUT_CSV  = r"D:\ferrite\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\export_Bcenter_simple.log"
 
 
 def log(fp, msg):
@@ -145,13 +145,13 @@ def run():
         log(f, "=== ExportToFile approach ===")
 
         # Export B field on a grid that includes just the center point
-        point_list_file = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts"
+        point_list_file = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_center_point.pts"
         with open(point_list_file, "w") as pf:
             pf.write("0 0 0\n")
 
         try:
             fields.ExportToFile(
-                r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_field.fld",
+                r"D:\ferrite\aaaaaaaaximukeji\round2_working\_center_field.fld",
                 point_list_file,
                 soln,
                 ["Mag_B"],

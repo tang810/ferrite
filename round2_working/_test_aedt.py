@@ -2,7 +2,7 @@
 import sys
 import os
 
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_test_aedt.log"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_test_aedt.log"
 
 with open(LOG_PATH, "w") as f:
     f.write("AEDT test script started\n")

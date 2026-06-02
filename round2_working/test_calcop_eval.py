@@ -7,8 +7,8 @@ Also test GetTopEntryValue with and without soln args after Eval.
 import os
 import time
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-LOG_PATH    = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\test_calcop_eval.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+LOG_PATH    = r"D:\ferrite\aaaaaaaaximukeji\round2_working\test_calcop_eval.log"
 POINT_NAME  = "BcenterPoint_0_0_0"
 
 
@@ -173,7 +173,7 @@ def run():
         # ---- Test 6: CalcWrite then CalcRead approach ----
         log(f, "")
         log(f, "=== Test 6: CalcWrite/CalcRead ===")
-        expr_file = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_expr.calc"
+        expr_file = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_expr.calc"
         try:
             fields.CalcStack("clear")
             fields.EnterQty("B")

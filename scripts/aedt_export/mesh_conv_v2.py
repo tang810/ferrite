@@ -13,7 +13,7 @@ import time
 import traceback
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 ORIGINAL_PROJECT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 WORK_DIR = os.path.join(BASE_DIR, "data", "mesh_study_work")
 LOG_PATH = os.path.join(BASE_DIR, "logs", "mesh_convergence.log")

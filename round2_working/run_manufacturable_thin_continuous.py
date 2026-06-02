@@ -23,7 +23,7 @@ import time
 import traceback
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PARAM_CSV = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin_params.csv")
 OUT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 LOG_PATH = os.path.join(OUT_DIR, "run_manufacturable_thin_continuous.log")

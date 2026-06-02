@@ -21,7 +21,7 @@ import time
 import traceback
 
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PROJECT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 LOG_PATH = os.path.join(BASE_DIR, "logs", "apply_mesh_resolve.log")
 CENTER_FIELD_OUT = os.path.join(BASE_DIR, "data", "raw", "center_field_raw.csv")

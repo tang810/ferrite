@@ -4,8 +4,8 @@ Run in AEDT to understand the multi-lump section issue and find a fix.
 """
 import traceback
 
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\diagnose_torus.log"
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_external.aedt"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\diagnose_torus.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_external.aedt"
 
 
 def log(fp, msg):

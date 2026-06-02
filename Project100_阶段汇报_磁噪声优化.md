@@ -1,7 +1,7 @@
 # Project100 多层铁氧体磁屏蔽结构磁噪声优化——阶段汇报
 
 汇报日期：2026-05-14（更新：2026-05-20，补充 SF 屏蔽系数路线、外部场模型与组会汇报口径）
-项目目录：`D:\tangyumengnew\aaaaaaaaximukeji`
+项目目录：`D:\ferrite\aaaaaaaaximukeji`
 Maxwell/AEDT 工程：`Project100_1ceng` ~ `Project100_4ceng`
 MATLAB 后处理脚本：`matlab-B/analyze_project100_results.m`
 结果目录：`analysis_ready/matlab_B_results`

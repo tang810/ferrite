@@ -15,11 +15,11 @@ import os
 import time
 import traceback
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
-OUT_CSV  = r"D:\tangyumengnew\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\export_Bcenter_reports.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_ext.aedt"
+OUT_CSV  = r"D:\ferrite\aaaaaaaaximukeji\analysis_ready\SF_4ceng_fixedT10_g02_Bcenter.csv"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\export_Bcenter_reports.log"
 POINT_NAME = "BcenterPoint_0_0_0"
-POINT_FILE = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_point.pts"
+POINT_FILE = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_center_point.pts"
 
 
 def log(fp, msg):
@@ -167,7 +167,7 @@ def run():
             ["B"],
             ["ComplexMag_Bx", "ComplexMag_By", "ComplexMag_Bz"],
         ]):
-            out_fld = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\_center_field_%d.fld" % idx
+            out_fld = r"D:\ferrite\aaaaaaaaximukeji\round2_working\_center_field_%d.fld" % idx
             try:
                 fields.ExportToFile(out_fld, POINT_FILE, soln, expr_set)
                 log(f, "  ExportToFile(%s): OK -> %s" % (expr_set, out_fld))

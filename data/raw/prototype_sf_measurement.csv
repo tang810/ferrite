@@ -1,0 +1,7 @@
+run_id,sample_id,case_id,field_dir,repeat_index,B0_T,Bcenter_T,SFq,ResidualRatioq,coil_current_A,drive_frequency_Hz,sensor_position,notes
+TODO_P0_x_001,P0_no_shield,B0_reference_x,x,1,,,,,,,,no-shield reference measurement
+TODO_P1_x_001,P1_ferrite_4layer,C2_N4_t015_g008_x,x,1,,,,,,,,four-layer ferrite-only prototype
+TODO_P2_x_001,P2_hybrid_outer,H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap,x,1,,,,,,,,four-layer ferrite plus selected outer high-permeability wrap
+TODO_P0_z_001,P0_no_shield,B0_reference_z,z,1,,,,,,,,no-shield axial reference measurement
+TODO_P1_z_001,P1_ferrite_4layer,C2_N4_t015_g008_z,z,1,,,,,,,,four-layer ferrite-only prototype axial measurement
+TODO_P2_z_001,P2_hybrid_outer,H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap,z,1,,,,,,,,hybrid prototype axial measurement; update case_id after z-directed hybrid simulation exists

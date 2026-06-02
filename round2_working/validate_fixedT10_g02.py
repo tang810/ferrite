@@ -3,8 +3,8 @@ import traceback
 import ScriptEnv
 
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02.aedt"
-LOG_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\validate_fixedT10_g02.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02.aedt"
+LOG_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\validate_fixedT10_g02.log"
 
 
 def main():

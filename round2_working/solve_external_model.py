@@ -8,8 +8,8 @@ import os
 import time
 import traceback
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_external.aedt"
-LOG_PATH     = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\solve_external_model.log"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_fixedT10_g02_external.aedt"
+LOG_PATH     = r"D:\ferrite\aaaaaaaaximukeji\round2_working\solve_external_model.log"
 
 
 def log(fp, msg):

@@ -1,5 +1,5 @@
 AEDT project inspection
-Project path: D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_next.aedt
+Project path: D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_next.aedt
 AEDT version: 2025.1.0
 Active project: Project100_4ceng_next
 Top design list: ['Maxwell3DDesign1']

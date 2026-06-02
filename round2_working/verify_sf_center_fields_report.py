@@ -5,7 +5,7 @@ import time
 
 import ScriptEnv
 
-BASE_DIR = r"D:\tangyumengnew\aaaaaaaaximukeji"
+BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 OUT_DIR = os.path.join(BASE_DIR, "round2_working")
 OUT_CSV = os.path.join(OUT_DIR, "verify_sf_center_fields_report.csv")
 LOG_PATH = os.path.join(OUT_DIR, "verify_sf_center_fields_report_out.log")

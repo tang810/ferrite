@@ -2,8 +2,8 @@ import traceback
 
 import ScriptEnv
 
-PROJECT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\Project100_4ceng_next.aedt"
-OUT_PATH = r"D:\tangyumengnew\aaaaaaaaximukeji\round2_working\variables_Project100_4ceng_next.txt"
+PROJECT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\Project100_4ceng_next.aedt"
+OUT_PATH = r"D:\ferrite\aaaaaaaaximukeji\round2_working\variables_Project100_4ceng_next.txt"
 
 ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
 oDesktop.RestoreWindow()
