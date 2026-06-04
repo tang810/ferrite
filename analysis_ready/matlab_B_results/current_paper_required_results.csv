@@ -1,0 +1,7 @@
+evidence_block,paper_question,required_data,status,allowed_claim
+Structure optimization,"Why four-layer ferrite is selected as base","manufacturable_thin + current_paper_structure_basis.csv",available,"Can say four-layer is a manufacturable validation candidate, not global optimum."
+Hybrid enhancement,"Why add outer amorphous/nanocrystalline, and why prefer nanocrystalline","hybrid_outer_layer_metrics.csv + current_paper_hybrid_enhancement.csv",available for x direction,"Can say nanocrystalline is the current preferred outer layer by simulated SFx and IntH2."
+Axial cap tradeoff,"Whether single-side cap reduces axial leakage without excessive noise proxy","axial_single_nanocrystalline_cap_*.csv + current_paper_axial_cap_tradeoff.csv",available for single +Z nanocrystalline cap,"Can say cap improves SFz but increases IntH2, so PSD must decide sensitivity benefit."
+Prototype shielding factor,"Whether fabricated samples reproduce simulated SF","prototype_sf_measurement.csv",pending physical experiment,"Needed before claiming real shielding improvement."
+Magnetometer PSD,"Whether magnetometer sensitivity actually improves","magnetometer_sensitivity_measurement.csv",pending physical experiment,"Needed before claiming magnetometer sensitivity improvement."
+Material loss support,"Whether assumed mu'' values are physically defensible","datasheet or impedance/B-H loss measurement, plus current_paper_material_loss_sensitivity.csv",pending or parametric only,"Needed to avoid overclaiming magnetic-noise prediction for metallic high-mu layers."

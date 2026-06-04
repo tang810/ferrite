@@ -1,0 +1,9 @@
+export_p0_amorphous_single_shell_cap_intH2 2026-06-04 07:42:47
+PROJECT_PATH=D:\ferrite\aaaaaaaaximukeji\round2_working\p0_amorphous_single_shell_cap\P0_amorphous_single_shell_plusZ_cap_mu10000.aedt
+SHELL_OBJECTS=['P0_Amorphous_Shell']
+CAP_OBJECTS=['P0_Amorphous_Cap_PlusZ']
+OpenProject: OK -> IDispatch(ISProject2)
+IntH2 amorphous shell: OK -> 3.87629405415e-07
+IntH2 amorphous cap: OK -> 8.37223591761e-09
+RESULT IntH2_shell=3.87629405415e-07 IntH2_cap=8.37223591761e-09 IntH2_total=3.96001641333e-07 status=exported
+Done 2026-06-04 07:43:02

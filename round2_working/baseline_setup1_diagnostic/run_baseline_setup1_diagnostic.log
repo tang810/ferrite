@@ -1,0 +1,8 @@
+run_baseline_setup1_diagnostic 2026-06-02 13:27:13
+PURPOSE: solve unmodified baseline Setup1 without hybrid geometry
+copied baseline -> D:\ferrite\aaaaaaaaximukeji\round2_working\baseline_setup1_diagnostic\C2_N4_t015_g008_shield_diagnostic.aedt
+OpenProject: OK
+SetActiveDesign: OK -> Maxwell3DDesign1
+ValidateDesign: START
+ValidateDesign: RETURN -> True
+Analyze Setup1: START 2026-06-02 13:27:15

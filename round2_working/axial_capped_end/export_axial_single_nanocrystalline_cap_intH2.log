@@ -1,0 +1,9 @@
+export_axial_single_nanocrystalline_cap_intH2 2026-06-03 22:59:52
+PROJECT_PATH=D:\ferrite\aaaaaaaaximukeji\round2_working\axial_capped_end\ZCAP_C2_N4_single_nanocrystalline_cap_mu50000_shield.aedt
+FERRITE_OBJECTS=['Cylinder2', 'Cylinder4', 'Cylinder6', 'Cylinder8']
+CAP_OBJECTS=['AxialCap_Top']
+OpenProject: OK -> IDispatch(ISProject2)
+IntH2 ferrite only: OK -> 3.73541174825e-06
+IntH2 caps: OK -> 1.57310021041e-10
+RESULT IntH2_ferrite_only=3.73541174825e-06 IntH2_caps=1.57310021041e-10 IntH2_total_with_caps=3.73556905827e-06 status=exported
+Done 2026-06-03 22:59:54

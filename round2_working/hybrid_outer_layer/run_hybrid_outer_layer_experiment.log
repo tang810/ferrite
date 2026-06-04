@@ -1,16 +1,31 @@
-run_hybrid_outer_layer_experiment 2026-06-02 09:45:26
+run_hybrid_outer_layer_experiment 2026-06-02 21:34:23
 ANALYZE=True
-cases=['H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap']
+cases=['H_C2_N4_t015_g008_x_outer_amorphous_t0200_g0400']
 
 ========================================================================
-CASE H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap
-copied baseline -> D:\ferrite\aaaaaaaaximukeji\round2_working\hybrid_outer_layer\H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap_shield.aedt
+CASE H_C2_N4_t015_g008_x_outer_amorphous_t0200_g0400
+copied baseline -> D:\ferrite\aaaaaaaaximukeji\round2_working\hybrid_outer_layer\H_C2_N4_t015_g008_x_outer_amorphous_t0200_g0400_shield.aedt
 OpenProject: OK -> IDispatch(ISProject2)
-created material hybrid_outer_nanocrystalline_mu30000
+outer physical thickness mm: 0.2
+outer modeled thickness mm: 0.2
+outer modeled mu_r: 10000.0
+created material hybrid_outer_amorphous_mu10000
 create outer cylinder: OK -> HybridOuterLayer_outer
 create inner tool cylinder: OK -> HybridOuterLayer_inner
 subtract inner tool from outer shell: OK
 rename outer shell: OK
-outer shell radii mm: inner=101.04 outer=101.058
+outer shell radii mm: inner=101.24 outer=101.44
+outer mesh MaxLength mm: 0.1
 assign mesh to outer layer: OK
 ValidateDesign: OK -> True
+Analyze Setup1: START 2026-06-02 21:34:25
+Analyze Setup1: OK -> 0
+Analyze Setup1: RETURN elapsed_s=13030.5455475
+Bcenter_Bx: OK -> 1.47015226143e-07
+Bcenter_By: OK -> -2.10835026883e-09
+Bcenter_Bz: OK -> -8.18659830013e-09
+IntH2_total all ferrite plus outer: OK -> 6.28315158321e-07
+IntH2_outer: OK -> 1.56265529622e-07
+Save project: OK
+RESULT SFx=8.54766448048 SFx_gain=2.35530773753 IntH2_ratio=0.151033199691 status=exported
+Done 2026-06-03 01:11:37

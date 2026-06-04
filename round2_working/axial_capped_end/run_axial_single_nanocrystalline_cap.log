@@ -1,0 +1,28 @@
+run_axial_single_nanocrystalline_cap 2026-06-03 17:14:56
+ANALYZE=True
+BASE_PROJECT=D:\ferrite\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_z_shield.aedt
+OUTER_R_MM=100.84 CAP_T_MM=0.2 CAP_AXIAL_GAP_MM=0.1
+FERRITE_MESH_MAX_LENGTH_MM=0.05 CAP_MESH_MAX_LENGTH_MM=0.5
+CAP_MATERIAL_NAME=axial_cap_nanocrystalline_mu50000 CAP_MU_R=50000 CAP_SIGMA_S_PER_M=1
+cases=['ZCAP_C2_N4_single_nanocrystalline_cap_mu50000']
+
+========================================================================
+CASE ZCAP_C2_N4_single_nanocrystalline_cap_mu50000
+copied baseline -> D:\ferrite\aaaaaaaaximukeji\round2_working\axial_capped_end\ZCAP_C2_N4_single_nanocrystalline_cap_mu50000_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+created cap material axial_cap_nanocrystalline_mu50000
+create cap AxialCap_Top: OK -> AxialCap_Top
+cap objects: ['AxialCap_Top']
+preserve existing ferrite mesh operations from z baseline project
+assign safe cap mesh: OK
+cap mesh assigned: cap MaxLength=0.5mm
+ValidateDesign: OK -> True
+Save project before analyze: OK
+Analyze Setup1: OK -> 0
+Bcenter_Bx: OK -> -2.24561276761e-08
+Bcenter_By: OK -> -5.62343383517e-10
+Bcenter_Bz: OK -> 4.32344923541e-07
+IntH2 skipped in single nanocrystalline cap mode
+Save project: OK
+RESULT SFz=2.90655995227 LeakageRatioz=0.344049328561 IntH2_total_with_caps= status=exported_single_nanocrystalline_cap
+Done 2026-06-03 20:27:58

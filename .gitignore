@@ -12,3 +12,11 @@
 
 # MATLAB auto-save
 *.asv
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Document/render scratch workspaces
+_docx_*/
+_render_*/

@@ -1,0 +1,34 @@
+run_p0_amorphous_single_shell_cap 2026-06-04 00:20:49
+BASE_PROJECT=D:\ferrite\aaaaaaaaximukeji\aedt\reference\B0_reference_z.aedt
+CASE_ID=P0_amorphous_single_shell_plusZ_cap_mu10000
+RIN_MM=100.0 LENGTH_MM=200.0
+SHELL_T_MM=0.2 CAP_T_MM=0.2 CAP_AXIAL_GAP_MM=0.03
+AMORPHOUS_MU_R=10000 AMORPHOUS_SIGMA_S_PER_M=1
+SHELL_MESH_MAX_LENGTH_MM=0.08 CAP_MESH_MAX_LENGTH_MM=0.5
+
+========================================================================
+CASE P0_amorphous_single_shell_plusZ_cap_mu10000
+copied B0 reference -> D:\ferrite\aaaaaaaaximukeji\round2_working\p0_amorphous_single_shell_cap\P0_amorphous_single_shell_plusZ_cap_mu10000.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+created material p0_amorphous_mu10000
+create cylinder P0_Amorphous_Shell_outer: OK -> P0_Amorphous_Shell_outer
+create cylinder P0_Amorphous_Shell_inner_tool: OK -> P0_Amorphous_Shell_inner_tool
+subtract inner tool from shell: OK
+rename shell: OK
+shell radii mm: inner=100.0 outer=100.2
+create cylinder P0_Amorphous_Cap_PlusZ: OK -> P0_Amorphous_Cap_PlusZ
+plus-Z cap z_start_mm=100.03 radius_mm=100.2
+assign shell mesh: OK
+assign cap mesh: OK
+ValidateDesign: OK -> True
+Save project before analyze: OK
+Analyze Setup1: START 2026-06-04 00:20:52
+Analyze Setup1: OK -> 0
+Analyze Setup1: RETURN elapsed_s=1387.27901459
+Bcenter_Bx: OK -> 2.70430076719e-09
+Bcenter_By: OK -> -1.35843059762e-09
+Bcenter_Bz: OK -> 4.97455203785e-07
+IntH2 skipped
+Save project: OK
+RESULT SFz=2.52612985203 LeakageRatioz=0.395862468905 status=exported
+Done 2026-06-04 00:44:03

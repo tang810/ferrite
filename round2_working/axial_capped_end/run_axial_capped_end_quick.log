@@ -1,0 +1,18 @@
+run_axial_capped_end_quick 2026-06-03 11:35:04
+ANALYZE=True
+BASE_PROJECT=D:\ferrite\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_z_shield.aedt
+OUTER_R_MM=100.84 CAP_T_MM=0.15
+cases=['ZCAP_C2_N4_two_caps_bottom_hole_r2_quick']
+
+========================================================================
+CASE ZCAP_C2_N4_two_caps_bottom_hole_r2_quick
+copied baseline -> D:\ferrite\aaaaaaaaximukeji\round2_working\axial_capped_end\ZCAP_C2_N4_two_caps_bottom_hole_r2_quick_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+cap material from Cylinder2: ferrite
+create cap AxialCap_Top: OK -> AxialCap_Top
+create cap AxialCap_Bottom: OK -> AxialCap_Bottom
+create hole tool AxialCap_Bottom_hole_tool: OK -> AxialCap_Bottom_hole_tool
+subtract center hole from AxialCap_Bottom: OK
+cap objects: ['AxialCap_Top', 'AxialCap_Bottom']
+assign cap mesh: OK
+ValidateDesign: OK -> True

@@ -1,24 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Run axial capped-end AEDT experiments for the four-layer ferrite shield.
+Single-side nanocrystalline cap AEDT experiment for the four-layer ferrite shield.
 
 Run inside Ansys Electronics Desktop:
 
-    Tools -> Run Script -> round2_working/run_axial_capped_end_experiment.py
+    Tools -> Run Script -> round2_working/run_axial_single_nanocrystalline_cap.py
 
-Cases:
-  1. ZCAP_C2_N4_top_cap
-     One circular cap on the +Z end; the -Z end remains open.
-  2. ZCAP_C2_N4_two_caps_no_hole
-     Circular caps on both ends. This is the ideal capped reference.
-  3. ZCAP_C2_N4_two_caps_bottom_hole_r2
-     +Z end is fully capped; -Z end is capped with a center hole
-     of radius 2 mm for magnetometer wiring.
+Quick case:
+  1. ZCAP_C2_N4_single_nanocrystalline_cap_mu50000
+     One nanocrystalline cap on the +Z end; the -Z end remains open.
 
 The script copies the already z-directed baseline project
-C2_N4_t015_g008_z_shield.aedt, adds cap geometry, solves Setup1,
-exports center-field components, computes SFz with the validated B0_z,
-and computes IntH2 over ferrite plus cap objects.
+C2_N4_t015_g008_z_shield.aedt, adds one nanocrystalline cap, solves Setup1,
+exports center-field components and computes SFz with the validated B0_z.
+It skips IntH2 for the first-pass group-meeting configuration.
 
 This is an IronPython 2.7/AEDT script. Keep syntax conservative.
 """
@@ -34,8 +29,8 @@ import traceback
 BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PROJECT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 OUT_DIR = os.path.join(BASE_DIR, "round2_working", "axial_capped_end")
-OUT_CSV = os.path.join(BASE_DIR, "data", "raw", "axial_capped_end_exports.csv")
-LOG_PATH = os.path.join(OUT_DIR, "run_axial_capped_end_experiment.log")
+OUT_CSV = os.path.join(BASE_DIR, "data", "raw", "axial_single_nanocrystalline_cap_exports.csv")
+LOG_PATH = os.path.join(OUT_DIR, "run_axial_single_nanocrystalline_cap.log")
 
 DESIGN_NAME = "Maxwell3DDesign1"
 POINT_NAME = "BcenterPoint_0_0_0"
@@ -49,9 +44,14 @@ RIN_MM = 100.0
 LENGTH_MM = 200.0
 FERRITE_TSPACE_MM = 0.84
 OUTER_R_MM = RIN_MM + FERRITE_TSPACE_MM
-CAP_T_MM = 0.15
+CAP_T_MM = 0.20
 WIRE_HOLE_R_MM = 2.0
-MESH_DIVISOR_CAP = 3.0
+CAP_MESH_MAX_LENGTH_MM = 0.50
+CAP_AXIAL_GAP_MM = 0.10
+FERRITE_MESH_MAX_LENGTH_MM = 0.05
+CAP_MATERIAL_NAME = "axial_cap_nanocrystalline_mu50000"
+CAP_MU_R = 50000
+CAP_SIGMA_S_PER_M = 1
 
 FERRITE_OBJECTS = ["Cylinder2", "Cylinder4", "Cylinder6", "Cylinder8"]
 
@@ -59,25 +59,11 @@ ANALYZE = True
 
 CASES = [
     {
-        "case_id": "ZCAP_C2_N4_top_cap",
+        "case_id": "ZCAP_C2_N4_single_nanocrystalline_cap_mu50000",
         "top_cap": True,
         "bottom_cap": False,
         "bottom_hole_r_mm": 0.0,
-        "notes": "one-end-capped; +Z cap only; -Z open",
-    },
-    {
-        "case_id": "ZCAP_C2_N4_two_caps_no_hole",
-        "top_cap": True,
-        "bottom_cap": True,
-        "bottom_hole_r_mm": 0.0,
-        "notes": "ideal two-end-capped reference; no wiring hole",
-    },
-    {
-        "case_id": "ZCAP_C2_N4_two_caps_bottom_hole_r2",
-        "top_cap": True,
-        "bottom_cap": True,
-        "bottom_hole_r_mm": WIRE_HOLE_R_MM,
-        "notes": "two-end-capped with bottom center wiring hole, r=2 mm",
+        "notes": "single +Z nanocrystalline cap; mu_r=50000; cap t=0.20 mm; -Z open; IntH2 skipped",
     },
 ]
 
@@ -125,6 +111,16 @@ def safe(fp, label, fn):
         return None
 
 
+def is_true_result(value):
+    if value is True:
+        return True
+    try:
+        text = str(value).strip().lower()
+        return text in ["true", "1", "yes"]
+    except Exception:
+        return False
+
+
 def append_csv_row(path, fieldnames, row):
     exists = os.path.exists(path)
     fp = open(path, "ab" if exists else "wb")
@@ -165,6 +161,26 @@ def get_material_from_object(fp, oEditor, obj_name):
             pass
     log(fp, "cap material fallback: ferrite")
     return "ferrite"
+
+
+def add_nanocrystalline_cap_material(fp, oProject):
+    oDefMgr = oProject.GetDefinitionManager()
+    props = [
+        "NAME:" + CAP_MATERIAL_NAME,
+        "CoordinateSystemType:=", "Cartesian",
+        "BulkOrSurfaceType:=", 1,
+        ["NAME:PhysicsTypes", "Set:=", ["Electromagnetic", "Thermal"]],
+        "permeability:=", str(CAP_MU_R),
+        "conductivity:=", str(CAP_SIGMA_S_PER_M),
+        "dielectric_loss_tangent:=", "0",
+        "magnetic_loss_tangent:=", "0",
+    ]
+    try:
+        oDefMgr.AddMaterial(props)
+        log(fp, "created cap material " + CAP_MATERIAL_NAME)
+    except Exception:
+        log(fp, "cap material may already exist: " + CAP_MATERIAL_NAME)
+    return CAP_MATERIAL_NAME
 
 
 def delete_if_exists(oEditor, names):
@@ -244,8 +260,10 @@ def cut_center_hole(fp, oEditor, cap_name, hole_radius_mm, z_start_mm, thickness
 
 def add_caps(fp, oEditor, case_info, material_name):
     cap_objects = []
-    z_top = LENGTH_MM / 2.0
-    z_bottom = -LENGTH_MM / 2.0 - CAP_T_MM
+    # A tiny air gap avoids exact coplanar/tangent contact between the thin cap
+    # and the open cylinder end. Do not overlap solids; validation can fail.
+    z_top = LENGTH_MM / 2.0 + CAP_AXIAL_GAP_MM
+    z_bottom = -LENGTH_MM / 2.0 - CAP_T_MM - CAP_AXIAL_GAP_MM
     if case_info["top_cap"]:
         cap_objects.append(create_cap(fp, oEditor, "AxialCap_Top", z_top,
                                       OUTER_R_MM, CAP_T_MM, material_name))
@@ -260,26 +278,25 @@ def add_caps(fp, oEditor, case_info, material_name):
 
 
 def assign_cap_mesh(fp, oDesign, cap_objects):
-    if not cap_objects:
-        return
     mesh = oDesign.GetModule("MeshSetup")
-    max_len = CAP_T_MM / MESH_DIVISOR_CAP
-    if max_len <= 0:
-        max_len = 0.05
-    try:
-        mesh.DeleteMeshOperations(["Length_axial_caps"])
-    except Exception:
-        pass
-    safe(fp, "assign cap mesh",
-         lambda: mesh.AssignLengthOp([
-             "NAME:Length_axial_caps",
-             "RefineInside:=", True,
-             "Objects:=", cap_objects,
-             "RestrictElem:=", True,
-             "NumMaxElem:=", "3000",
-             "RestrictLength:=", True,
-             "MaxLength:=", str(max_len) + "mm",
-         ]))
+    log(fp, "preserve existing ferrite mesh operations from z baseline project")
+    if cap_objects:
+        try:
+            mesh.DeleteMeshOperations(["Length_single_nanocrystalline_cap"])
+        except Exception:
+            pass
+        safe(fp, "assign safe cap mesh",
+             lambda: mesh.AssignLengthOp([
+                 "NAME:Length_single_nanocrystalline_cap",
+                 "RefineInside:=", True,
+                 "Objects:=", cap_objects,
+                 "RestrictElem:=", True,
+                 "NumMaxElem:=", "4000",
+                 "RestrictLength:=", True,
+                 "MaxLength:=", str(CAP_MESH_MAX_LENGTH_MM) + "mm",
+             ]))
+    log(fp, "cap mesh assigned: cap MaxLength=" +
+        str(CAP_MESH_MAX_LENGTH_MM) + "mm")
 
 
 def eval_b_component(fields, comp):
@@ -356,15 +373,55 @@ def process_case(fp, oDesktop, case_info):
     oDesign = oProject.SetActiveDesign(DESIGN_NAME)
     oEditor = oDesign.SetActiveEditor("3D Modeler")
 
-    cap_material = get_material_from_object(fp, oEditor, "Cylinder2")
+    cap_material = add_nanocrystalline_cap_material(fp, oProject)
     delete_if_exists(oEditor, ["AxialCap_Top", "AxialCap_Bottom",
                                "AxialCap_Bottom_hole_tool"])
     cap_objects = add_caps(fp, oEditor, case_info, cap_material)
     assign_cap_mesh(fp, oDesign, cap_objects)
 
-    safe(fp, "ValidateDesign", lambda: oDesign.ValidateDesign())
+    valid = safe(fp, "ValidateDesign", lambda: oDesign.ValidateDesign())
+    if not is_true_result(valid):
+        out = {
+            "case_id": case_id,
+            "base_case": BASE_CASE_ID,
+            "field_dir": "z",
+            "outer_radius_mm": OUTER_R_MM,
+            "cap_thickness_mm": CAP_T_MM,
+            "top_cap": case_info["top_cap"],
+            "bottom_cap": case_info["bottom_cap"],
+            "bottom_hole_r_mm": case_info["bottom_hole_r_mm"],
+            "B0_Bz_T": B0_BZ_T,
+            "source_project": project_path,
+            "status": "validate_failed",
+            "notes": case_info["notes"],
+        }
+        append_csv_row(OUT_CSV, FIELDNAMES, out)
+        safe(fp, "Save invalid project for inspection", lambda: oProject.Save())
+        log(fp, "RESULT validation failed; analyze skipped")
+        return
+    safe(fp, "Save project before analyze", lambda: oProject.Save())
+    analyze_ret = True
     if ANALYZE:
-        safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+        analyze_ret = safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+    if analyze_ret is None:
+        out = {
+            "case_id": case_id,
+            "base_case": BASE_CASE_ID,
+            "field_dir": "z",
+            "outer_radius_mm": OUTER_R_MM,
+            "cap_thickness_mm": CAP_T_MM,
+            "top_cap": case_info["top_cap"],
+            "bottom_cap": case_info["bottom_cap"],
+            "bottom_hole_r_mm": case_info["bottom_hole_r_mm"],
+            "B0_Bz_T": B0_BZ_T,
+            "source_project": project_path,
+            "status": "analyze_failed",
+            "notes": case_info["notes"],
+        }
+        append_csv_row(OUT_CSV, FIELDNAMES, out)
+        safe(fp, "Save failed project for inspection", lambda: oProject.Save())
+        log(fp, "RESULT analyze failed; B export skipped")
+        return
 
     fields = oDesign.GetModule("FieldsReporter")
     bx = safe(fp, "Bcenter_Bx", lambda: eval_b_component(fields, "Bx"))
@@ -381,14 +438,12 @@ def process_case(fp, oDesktop, case_info):
         except Exception:
             pass
 
-    int_ferrite = safe(fp, "IntH2 ferrite only",
-                       lambda: eval_h2_integral_over_objects(fields, FERRITE_OBJECTS))
-    int_caps = safe(fp, "IntH2 caps",
-                    lambda: eval_h2_integral_over_objects(fields, cap_objects))
-    int_total = safe(fp, "IntH2 ferrite plus caps",
-                     lambda: eval_h2_integral_over_objects(fields, FERRITE_OBJECTS + cap_objects))
+    int_ferrite = ""
+    int_caps = ""
+    int_total = ""
+    log(fp, "IntH2 skipped in single nanocrystalline cap mode")
 
-    status = "exported" if bz not in ["", None] and int_total not in ["", None] else "failed"
+    status = "exported_single_nanocrystalline_cap" if bz not in ["", None] else "failed"
     out = {
         "case_id": case_id,
         "base_case": BASE_CASE_ID,
@@ -428,10 +483,15 @@ def run():
     ensure_dirs()
     fp = open(LOG_PATH, "wb")
     try:
-        log(fp, "run_axial_capped_end_experiment " + time.strftime("%Y-%m-%d %H:%M:%S"))
+        log(fp, "run_axial_single_nanocrystalline_cap " + time.strftime("%Y-%m-%d %H:%M:%S"))
         log(fp, "ANALYZE=" + str(ANALYZE))
         log(fp, "BASE_PROJECT=" + BASE_PROJECT)
-        log(fp, "OUTER_R_MM=" + str(OUTER_R_MM) + " CAP_T_MM=" + str(CAP_T_MM))
+        log(fp, "OUTER_R_MM=" + str(OUTER_R_MM) + " CAP_T_MM=" + str(CAP_T_MM) +
+            " CAP_AXIAL_GAP_MM=" + str(CAP_AXIAL_GAP_MM))
+        log(fp, "FERRITE_MESH_MAX_LENGTH_MM=" + str(FERRITE_MESH_MAX_LENGTH_MM) +
+            " CAP_MESH_MAX_LENGTH_MM=" + str(CAP_MESH_MAX_LENGTH_MM))
+        log(fp, "CAP_MATERIAL_NAME=" + CAP_MATERIAL_NAME + " CAP_MU_R=" +
+            str(CAP_MU_R) + " CAP_SIGMA_S_PER_M=" + str(CAP_SIGMA_S_PER_M))
         log(fp, "cases=" + str([c["case_id"] for c in CASES]))
 
         import ScriptEnv

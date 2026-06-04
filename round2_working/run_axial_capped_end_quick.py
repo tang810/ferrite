@@ -1,24 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Run axial capped-end AEDT experiments for the four-layer ferrite shield.
+Quick axial capped-end AEDT experiment for the four-layer ferrite shield.
 
 Run inside Ansys Electronics Desktop:
 
-    Tools -> Run Script -> round2_working/run_axial_capped_end_experiment.py
+    Tools -> Run Script -> round2_working/run_axial_capped_end_quick.py
 
-Cases:
-  1. ZCAP_C2_N4_top_cap
-     One circular cap on the +Z end; the -Z end remains open.
-  2. ZCAP_C2_N4_two_caps_no_hole
-     Circular caps on both ends. This is the ideal capped reference.
-  3. ZCAP_C2_N4_two_caps_bottom_hole_r2
+Quick case:
+  1. ZCAP_C2_N4_two_caps_bottom_hole_r2_quick
      +Z end is fully capped; -Z end is capped with a center hole
      of radius 2 mm for magnetometer wiring.
 
 The script copies the already z-directed baseline project
 C2_N4_t015_g008_z_shield.aedt, adds cap geometry, solves Setup1,
-exports center-field components, computes SFz with the validated B0_z,
-and computes IntH2 over ferrite plus cap objects.
+exports center-field components and computes SFz with the validated B0_z.
+It skips IntH2 to get the axial shielding trend as quickly as possible.
 
 This is an IronPython 2.7/AEDT script. Keep syntax conservative.
 """
@@ -34,8 +30,8 @@ import traceback
 BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PROJECT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 OUT_DIR = os.path.join(BASE_DIR, "round2_working", "axial_capped_end")
-OUT_CSV = os.path.join(BASE_DIR, "data", "raw", "axial_capped_end_exports.csv")
-LOG_PATH = os.path.join(OUT_DIR, "run_axial_capped_end_experiment.log")
+OUT_CSV = os.path.join(BASE_DIR, "data", "raw", "axial_capped_end_quick_exports.csv")
+LOG_PATH = os.path.join(OUT_DIR, "run_axial_capped_end_quick.log")
 
 DESIGN_NAME = "Maxwell3DDesign1"
 POINT_NAME = "BcenterPoint_0_0_0"
@@ -51,7 +47,7 @@ FERRITE_TSPACE_MM = 0.84
 OUTER_R_MM = RIN_MM + FERRITE_TSPACE_MM
 CAP_T_MM = 0.15
 WIRE_HOLE_R_MM = 2.0
-MESH_DIVISOR_CAP = 3.0
+CAP_MESH_MAX_LENGTH_MM = 5.0
 
 FERRITE_OBJECTS = ["Cylinder2", "Cylinder4", "Cylinder6", "Cylinder8"]
 
@@ -59,25 +55,11 @@ ANALYZE = True
 
 CASES = [
     {
-        "case_id": "ZCAP_C2_N4_top_cap",
-        "top_cap": True,
-        "bottom_cap": False,
-        "bottom_hole_r_mm": 0.0,
-        "notes": "one-end-capped; +Z cap only; -Z open",
-    },
-    {
-        "case_id": "ZCAP_C2_N4_two_caps_no_hole",
-        "top_cap": True,
-        "bottom_cap": True,
-        "bottom_hole_r_mm": 0.0,
-        "notes": "ideal two-end-capped reference; no wiring hole",
-    },
-    {
-        "case_id": "ZCAP_C2_N4_two_caps_bottom_hole_r2",
+        "case_id": "ZCAP_C2_N4_two_caps_bottom_hole_r2_quick",
         "top_cap": True,
         "bottom_cap": True,
         "bottom_hole_r_mm": WIRE_HOLE_R_MM,
-        "notes": "two-end-capped with bottom center wiring hole, r=2 mm",
+        "notes": "quick SFz only; two-end-capped with bottom center wiring hole, r=2 mm; IntH2 skipped",
     },
 ]
 
@@ -263,9 +245,7 @@ def assign_cap_mesh(fp, oDesign, cap_objects):
     if not cap_objects:
         return
     mesh = oDesign.GetModule("MeshSetup")
-    max_len = CAP_T_MM / MESH_DIVISOR_CAP
-    if max_len <= 0:
-        max_len = 0.05
+    max_len = CAP_MESH_MAX_LENGTH_MM
     try:
         mesh.DeleteMeshOperations(["Length_axial_caps"])
     except Exception:
@@ -381,14 +361,12 @@ def process_case(fp, oDesktop, case_info):
         except Exception:
             pass
 
-    int_ferrite = safe(fp, "IntH2 ferrite only",
-                       lambda: eval_h2_integral_over_objects(fields, FERRITE_OBJECTS))
-    int_caps = safe(fp, "IntH2 caps",
-                    lambda: eval_h2_integral_over_objects(fields, cap_objects))
-    int_total = safe(fp, "IntH2 ferrite plus caps",
-                     lambda: eval_h2_integral_over_objects(fields, FERRITE_OBJECTS + cap_objects))
+    int_ferrite = ""
+    int_caps = ""
+    int_total = ""
+    log(fp, "IntH2 skipped in quick mode")
 
-    status = "exported" if bz not in ["", None] and int_total not in ["", None] else "failed"
+    status = "exported_quick" if bz not in ["", None] else "failed"
     out = {
         "case_id": case_id,
         "base_case": BASE_CASE_ID,
@@ -428,7 +406,7 @@ def run():
     ensure_dirs()
     fp = open(LOG_PATH, "wb")
     try:
-        log(fp, "run_axial_capped_end_experiment " + time.strftime("%Y-%m-%d %H:%M:%S"))
+        log(fp, "run_axial_capped_end_quick " + time.strftime("%Y-%m-%d %H:%M:%S"))
         log(fp, "ANALYZE=" + str(ANALYZE))
         log(fp, "BASE_PROJECT=" + BASE_PROJECT)
         log(fp, "OUTER_R_MM=" + str(OUTER_R_MM) + " CAP_T_MM=" + str(CAP_T_MM))

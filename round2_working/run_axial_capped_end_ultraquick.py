@@ -1,24 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Run axial capped-end AEDT experiments for the four-layer ferrite shield.
+Ultra-quick axial capped-end AEDT experiment for the four-layer ferrite shield.
 
 Run inside Ansys Electronics Desktop:
 
-    Tools -> Run Script -> round2_working/run_axial_capped_end_experiment.py
+    Tools -> Run Script -> round2_working/run_axial_capped_end_ultraquick.py
 
-Cases:
-  1. ZCAP_C2_N4_top_cap
-     One circular cap on the +Z end; the -Z end remains open.
-  2. ZCAP_C2_N4_two_caps_no_hole
-     Circular caps on both ends. This is the ideal capped reference.
-  3. ZCAP_C2_N4_two_caps_bottom_hole_r2
+Quick case:
+  1. ZCAP_C2_N4_two_caps_bottom_hole_r2_ultraquick
      +Z end is fully capped; -Z end is capped with a center hole
      of radius 2 mm for magnetometer wiring.
 
 The script copies the already z-directed baseline project
 C2_N4_t015_g008_z_shield.aedt, adds cap geometry, solves Setup1,
-exports center-field components, computes SFz with the validated B0_z,
-and computes IntH2 over ferrite plus cap objects.
+exports center-field components and computes SFz with the validated B0_z.
+It skips IntH2 and skips cap mesh operations to get the axial shielding
+trend as quickly as possible.
 
 This is an IronPython 2.7/AEDT script. Keep syntax conservative.
 """
@@ -34,8 +31,8 @@ import traceback
 BASE_DIR = r"D:\ferrite\aaaaaaaaximukeji"
 PROJECT_DIR = os.path.join(BASE_DIR, "round2_working", "manufacturable_thin")
 OUT_DIR = os.path.join(BASE_DIR, "round2_working", "axial_capped_end")
-OUT_CSV = os.path.join(BASE_DIR, "data", "raw", "axial_capped_end_exports.csv")
-LOG_PATH = os.path.join(OUT_DIR, "run_axial_capped_end_experiment.log")
+OUT_CSV = os.path.join(BASE_DIR, "data", "raw", "axial_capped_end_ultraquick_exports.csv")
+LOG_PATH = os.path.join(OUT_DIR, "run_axial_capped_end_ultraquick.log")
 
 DESIGN_NAME = "Maxwell3DDesign1"
 POINT_NAME = "BcenterPoint_0_0_0"
@@ -51,7 +48,8 @@ FERRITE_TSPACE_MM = 0.84
 OUTER_R_MM = RIN_MM + FERRITE_TSPACE_MM
 CAP_T_MM = 0.15
 WIRE_HOLE_R_MM = 2.0
-MESH_DIVISOR_CAP = 3.0
+CAP_MESH_MAX_LENGTH_MM = 5.0
+CAP_AXIAL_GAP_MM = 0.03
 
 FERRITE_OBJECTS = ["Cylinder2", "Cylinder4", "Cylinder6", "Cylinder8"]
 
@@ -59,25 +57,11 @@ ANALYZE = True
 
 CASES = [
     {
-        "case_id": "ZCAP_C2_N4_top_cap",
-        "top_cap": True,
-        "bottom_cap": False,
-        "bottom_hole_r_mm": 0.0,
-        "notes": "one-end-capped; +Z cap only; -Z open",
-    },
-    {
-        "case_id": "ZCAP_C2_N4_two_caps_no_hole",
-        "top_cap": True,
-        "bottom_cap": True,
-        "bottom_hole_r_mm": 0.0,
-        "notes": "ideal two-end-capped reference; no wiring hole",
-    },
-    {
-        "case_id": "ZCAP_C2_N4_two_caps_bottom_hole_r2",
+        "case_id": "ZCAP_C2_N4_two_caps_bottom_hole_r2_ultraquick",
         "top_cap": True,
         "bottom_cap": True,
         "bottom_hole_r_mm": WIRE_HOLE_R_MM,
-        "notes": "two-end-capped with bottom center wiring hole, r=2 mm",
+        "notes": "ultraquick SFz only; two-end-capped with bottom center wiring hole, r=2 mm; IntH2 and cap mesh op skipped",
     },
 ]
 
@@ -123,6 +107,16 @@ def safe(fp, label, fn):
         log(fp, label + ": FAILED")
         log(fp, traceback.format_exc())
         return None
+
+
+def is_true_result(value):
+    if value is True:
+        return True
+    try:
+        text = str(value).strip().lower()
+        return text in ["true", "1", "yes"]
+    except Exception:
+        return False
 
 
 def append_csv_row(path, fieldnames, row):
@@ -244,8 +238,10 @@ def cut_center_hole(fp, oEditor, cap_name, hole_radius_mm, z_start_mm, thickness
 
 def add_caps(fp, oEditor, case_info, material_name):
     cap_objects = []
-    z_top = LENGTH_MM / 2.0
-    z_bottom = -LENGTH_MM / 2.0 - CAP_T_MM
+    # A tiny air gap avoids exact coplanar/tangent contact between the thin cap
+    # and the open cylinder end. Do not overlap solids; validation can fail.
+    z_top = LENGTH_MM / 2.0 + CAP_AXIAL_GAP_MM
+    z_bottom = -LENGTH_MM / 2.0 - CAP_T_MM - CAP_AXIAL_GAP_MM
     if case_info["top_cap"]:
         cap_objects.append(create_cap(fp, oEditor, "AxialCap_Top", z_top,
                                       OUTER_R_MM, CAP_T_MM, material_name))
@@ -260,26 +256,7 @@ def add_caps(fp, oEditor, case_info, material_name):
 
 
 def assign_cap_mesh(fp, oDesign, cap_objects):
-    if not cap_objects:
-        return
-    mesh = oDesign.GetModule("MeshSetup")
-    max_len = CAP_T_MM / MESH_DIVISOR_CAP
-    if max_len <= 0:
-        max_len = 0.05
-    try:
-        mesh.DeleteMeshOperations(["Length_axial_caps"])
-    except Exception:
-        pass
-    safe(fp, "assign cap mesh",
-         lambda: mesh.AssignLengthOp([
-             "NAME:Length_axial_caps",
-             "RefineInside:=", True,
-             "Objects:=", cap_objects,
-             "RestrictElem:=", True,
-             "NumMaxElem:=", "3000",
-             "RestrictLength:=", True,
-             "MaxLength:=", str(max_len) + "mm",
-         ]))
+    log(fp, "cap mesh operation skipped in ultraquick mode")
 
 
 def eval_b_component(fields, comp):
@@ -362,7 +339,27 @@ def process_case(fp, oDesktop, case_info):
     cap_objects = add_caps(fp, oEditor, case_info, cap_material)
     assign_cap_mesh(fp, oDesign, cap_objects)
 
-    safe(fp, "ValidateDesign", lambda: oDesign.ValidateDesign())
+    valid = safe(fp, "ValidateDesign", lambda: oDesign.ValidateDesign())
+    if not is_true_result(valid):
+        out = {
+            "case_id": case_id,
+            "base_case": BASE_CASE_ID,
+            "field_dir": "z",
+            "outer_radius_mm": OUTER_R_MM,
+            "cap_thickness_mm": CAP_T_MM,
+            "top_cap": case_info["top_cap"],
+            "bottom_cap": case_info["bottom_cap"],
+            "bottom_hole_r_mm": case_info["bottom_hole_r_mm"],
+            "B0_Bz_T": B0_BZ_T,
+            "source_project": project_path,
+            "status": "validate_failed",
+            "notes": case_info["notes"],
+        }
+        append_csv_row(OUT_CSV, FIELDNAMES, out)
+        safe(fp, "Save invalid project for inspection", lambda: oProject.Save())
+        log(fp, "RESULT validation failed; analyze skipped")
+        return
+    safe(fp, "Save project before analyze", lambda: oProject.Save())
     if ANALYZE:
         safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
 
@@ -381,14 +378,12 @@ def process_case(fp, oDesktop, case_info):
         except Exception:
             pass
 
-    int_ferrite = safe(fp, "IntH2 ferrite only",
-                       lambda: eval_h2_integral_over_objects(fields, FERRITE_OBJECTS))
-    int_caps = safe(fp, "IntH2 caps",
-                    lambda: eval_h2_integral_over_objects(fields, cap_objects))
-    int_total = safe(fp, "IntH2 ferrite plus caps",
-                     lambda: eval_h2_integral_over_objects(fields, FERRITE_OBJECTS + cap_objects))
+    int_ferrite = ""
+    int_caps = ""
+    int_total = ""
+    log(fp, "IntH2 skipped in ultraquick mode")
 
-    status = "exported" if bz not in ["", None] and int_total not in ["", None] else "failed"
+    status = "exported_ultraquick" if bz not in ["", None] else "failed"
     out = {
         "case_id": case_id,
         "base_case": BASE_CASE_ID,
@@ -428,10 +423,11 @@ def run():
     ensure_dirs()
     fp = open(LOG_PATH, "wb")
     try:
-        log(fp, "run_axial_capped_end_experiment " + time.strftime("%Y-%m-%d %H:%M:%S"))
+        log(fp, "run_axial_capped_end_ultraquick " + time.strftime("%Y-%m-%d %H:%M:%S"))
         log(fp, "ANALYZE=" + str(ANALYZE))
         log(fp, "BASE_PROJECT=" + BASE_PROJECT)
-        log(fp, "OUTER_R_MM=" + str(OUTER_R_MM) + " CAP_T_MM=" + str(CAP_T_MM))
+        log(fp, "OUTER_R_MM=" + str(OUTER_R_MM) + " CAP_T_MM=" + str(CAP_T_MM) +
+            " CAP_AXIAL_GAP_MM=" + str(CAP_AXIAL_GAP_MM))
         log(fp, "cases=" + str([c["case_id"] for c in CASES]))
 
         import ScriptEnv

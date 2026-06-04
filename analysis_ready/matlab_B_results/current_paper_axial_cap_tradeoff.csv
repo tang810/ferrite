@@ -1,0 +1,4 @@
+case_id,configuration,SFz,LeakageRatioz,IntH2_total,IntH2_ferrite,IntH2_cap,SFz_gain_vs_open,IntH2_ratio_vs_open,noise_amp_ratio_same_mu_pp,paper_claim
+open_ferrite_only,"four-layer ferrite, open ends",2.41246647623681,0.414513532042896,2.97131561251e-06,2.97131561251e-06,0,1,1,1,"Baseline for axial leakage."
+P0_amorphous_single_shell_plusZ_cap_mu10000,"P0 amorphous shell + single +Z amorphous cap",2.52612985203,0.395862468905,3.96001641333e-07,0,3.9600164133261e-07,1.04711500736395,0.133274849587076,0.36506828071893,"P0 reference improves SFz slightly and has lower IntH2 integral, but amorphous mu'' must be measured or swept."
+ZCAP_C2_N4_single_nanocrystalline_cap_mu50000,"four-layer ferrite + single +Z nanocrystalline cap",2.90655995227,0.344049328561,3.73556905827e-06,3.73541174825e-06,1.57310021041e-10,1.20480843190987,1.25721045672237,1.1212539662014,"Improves SFz but increases IntH2; PSD experiment is needed before claiming sensitivity improvement."

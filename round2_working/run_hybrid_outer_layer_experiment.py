@@ -48,12 +48,16 @@ FERRITE_LAYERS = 4
 FERRITE_T_MM = 0.15
 FERRITE_G_MM = 0.08
 FERRITE_TSPACE_MM = 0.84
+# Optional diagnostic fallback for environments where the physical thin wrap
+# cannot be meshed. Keep disabled for production exports.
+MIN_OUTER_GEOMETRY_T_MM = 0.15
+USE_EQUIVALENT_OUTER_SOLID = False
 MESH_DIVISOR_OUTER = 2.0
 
 # To start with the most defensible first run, keep only one case enabled.
 # Add more case IDs here after the first log/export is checked.
 CASE_ID_FILTER = [
-    "H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap",
+    "H_C2_N4_t015_g008_x_outer_amorphous_t0200_g0400",
 ]
 
 ANALYZE = True
@@ -114,6 +118,22 @@ def f(row, key, default=0.0):
         return default
 
 
+def modeled_outer_t_mm(row):
+    physical_t = f(row, "outer_total_t_mm")
+    if USE_EQUIVALENT_OUTER_SOLID and physical_t < MIN_OUTER_GEOMETRY_T_MM:
+        return MIN_OUTER_GEOMETRY_T_MM
+    return physical_t
+
+
+def modeled_outer_mu_r(row):
+    physical_t = f(row, "outer_total_t_mm")
+    modeled_t = modeled_outer_t_mm(row)
+    physical_mu = f(row, "outer_mu_r_prime", 10000.0)
+    if modeled_t > 0 and physical_t > 0:
+        return physical_mu * physical_t / modeled_t
+    return physical_mu
+
+
 def read_cases():
     rows = []
     with open(HYBRID_MATRIX, "r") as fp:
@@ -141,6 +161,31 @@ def append_csv_row(path, fieldnames, row):
         fp.close()
 
 
+def prepare_destination(fp, project_path):
+    lock_path = project_path + ".lock"
+    results_path = project_path + "results"
+
+    if os.path.exists(lock_path):
+        log(fp, "TARGET PROJECT LOCK EXISTS: " + lock_path)
+        log(fp, "Refusing to delete an active lock. Close the project before rerunning.")
+        return False
+
+    if os.path.exists(project_path):
+        os.remove(project_path)
+        log(fp, "removed stale target project -> " + project_path)
+
+    if os.path.isdir(results_path):
+        abs_out = os.path.abspath(OUT_DIR)
+        abs_results = os.path.abspath(results_path)
+        if not abs_results.startswith(abs_out + os.sep):
+            log(fp, "REFUSING TO REMOVE RESULTS OUTSIDE OUT_DIR: " + abs_results)
+            return False
+        shutil.rmtree(results_path)
+        log(fp, "removed stale target results -> " + results_path)
+
+    return True
+
+
 def extract_value(raw):
     if raw is None:
         return ""
@@ -156,7 +201,7 @@ def extract_value(raw):
 
 def add_or_update_material(fp, oProject, row):
     material = row["outer_material"]
-    mu = row.get("outer_mu_r_prime", "")
+    mu = modeled_outer_mu_r(row)
     sigma = row.get("outer_sigma_S_per_m", "")
     mu_pp = row.get("outer_mu_r_double_prime", "")
     mat_name = "hybrid_outer_" + material
@@ -193,7 +238,7 @@ def add_or_update_material(fp, oProject, row):
 
 
 def create_outer_shell(fp, oEditor, mat_name, row):
-    outer_t = f(row, "outer_total_t_mm")
+    outer_t = modeled_outer_t_mm(row)
     outer_gap = f(row, "outer_gap_from_ferrite_mm")
     inner_r = RIN_MM + FERRITE_TSPACE_MM + outer_gap
     outer_r = inner_r + outer_t
@@ -284,7 +329,7 @@ def cut_axial_slit(fp, oEditor, row, outer_name):
         return
 
     slit = f(row, "axial_slit_width_mm", 1.6)
-    outer_t = f(row, "outer_total_t_mm")
+    outer_t = modeled_outer_t_mm(row)
     outer_gap = f(row, "outer_gap_from_ferrite_mm")
     inner_r = RIN_MM + FERRITE_TSPACE_MM + outer_gap
     outer_r = inner_r + outer_t
@@ -333,6 +378,7 @@ def assign_outer_mesh(fp, oDesign, outer_name, outer_t_mm):
     max_len = outer_t_mm / MESH_DIVISOR_OUTER
     if max_len <= 0:
         max_len = 0.01
+    log(fp, "outer mesh MaxLength mm: " + str(max_len))
     try:
         mesh.DeleteMeshOperations(["Length_outer_hybrid"])
     except Exception:
@@ -370,7 +416,7 @@ def compute_bmag(bx, by, bz):
 
 
 def eval_h2_integral_over_objects(fields, objects):
-    def comp_integral(comp):
+    def object_comp_integral(obj, comp):
         op = {"x": "ScalarX", "y": "ScalarY", "z": "ScalarZ"}[comp]
         fields.CalcStack("clear")
         fields.EnterQty("H")
@@ -378,18 +424,15 @@ def eval_h2_integral_over_objects(fields, objects):
         fields.EnterQty("H")
         fields.CalcOp(op)
         fields.CalcOp("*")
-        fields.EnterVol(",".join(objects))
+        fields.EnterVol(obj)
         fields.CalcOp("Integrate")
         fields.ClcEval(SOLN, [])
         return extract_value(fields.GetTopEntryValue(SOLN, []))
 
     total = 0.0
-    for comp in ["x", "y", "z"]:
-        val = comp_integral(comp)
-        try:
-            total += float(val)
-        except Exception:
-            pass
+    for obj in objects:
+        for comp in ["x", "y", "z"]:
+            total += float(object_comp_integral(obj, comp))
     return total
 
 
@@ -405,16 +448,14 @@ def process_case(fp, oDesktop, row):
         log(fp, "BASE PROJECT MISSING: " + BASE_PROJECT)
         return
 
-    for path in [BASE_PROJECT, project_path]:
-        lock_path = path + ".lock"
-        if os.path.exists(lock_path):
-            try:
-                os.remove(lock_path)
-            except Exception:
-                pass
+    if os.path.exists(BASE_PROJECT + ".lock"):
+        log(fp, "BASE PROJECT LOCK EXISTS: " + BASE_PROJECT + ".lock")
+        log(fp, "Close the baseline project before rerunning.")
+        return
 
-    if os.path.exists(project_path):
-        os.remove(project_path)
+    if not prepare_destination(fp, project_path):
+        return
+
     shutil.copy2(BASE_PROJECT, project_path)
     log(fp, "copied baseline -> " + project_path)
 
@@ -423,14 +464,26 @@ def process_case(fp, oDesktop, row):
     oDesign = oProject.SetActiveDesign(DESIGN_NAME)
     oEditor = oDesign.SetActiveEditor("3D Modeler")
 
+    physical_outer_t = f(row, "outer_total_t_mm")
+    modeled_outer_t = modeled_outer_t_mm(row)
+    modeled_outer_mu = modeled_outer_mu_r(row)
+    log(fp, "outer physical thickness mm: " + str(physical_outer_t))
+    log(fp, "outer modeled thickness mm: " + str(modeled_outer_t))
+    log(fp, "outer modeled mu_r: " + str(modeled_outer_mu))
+    if modeled_outer_t != physical_outer_t:
+        log(fp, "DIAGNOSTIC equivalent-thickness outer solid; preserve mu_r * thickness")
+
     mat_name = add_or_update_material(fp, oProject, row)
     outer_name = create_outer_shell(fp, oEditor, mat_name, row)
     cut_axial_slit(fp, oEditor, row, outer_name)
-    assign_outer_mesh(fp, oDesign, outer_name, f(row, "outer_total_t_mm"))
+    assign_outer_mesh(fp, oDesign, outer_name, modeled_outer_t)
 
     safe(fp, "ValidateDesign", lambda: oDesign.ValidateDesign())
     if ANALYZE:
+        analyze_start = time.time()
+        log(fp, "Analyze Setup1: START " + time.strftime("%Y-%m-%d %H:%M:%S"))
         safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+        log(fp, "Analyze Setup1: RETURN elapsed_s=" + str(time.time() - analyze_start))
 
     fields = oDesign.GetModule("FieldsReporter")
     bx = safe(fp, "Bcenter_Bx", lambda: eval_b_component(fields, "Bx"))
@@ -465,9 +518,16 @@ def process_case(fp, oDesktop, row):
         pass
 
     status = "exported" if bx not in ["", None] and int_total not in ["", None] else "failed"
+    if status == "exported" and modeled_outer_t != physical_outer_t:
+        status = "diagnostic_exported"
     notes = "continuous outer first-pass"
     if row.get("outer_pattern", "") == "single_axial_slit":
         notes = "single axial slit outer layer"
+    if modeled_outer_t != physical_outer_t:
+        notes = (notes + "; DIAGNOSTIC equivalent-thickness solid: physical_t_mm=" +
+                 str(physical_outer_t) + " modeled_t_mm=" + str(modeled_outer_t) +
+                 " modeled_mu_r=" + str(modeled_outer_mu) +
+                 "; do not use IntH2_outer as final thin-layer value")
 
     out = {
         "case_id": case_id,

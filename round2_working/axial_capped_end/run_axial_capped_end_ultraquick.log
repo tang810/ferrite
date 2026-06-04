@@ -1,0 +1,61 @@
+run_axial_capped_end_ultraquick 2026-06-03 13:15:37
+ANALYZE=True
+BASE_PROJECT=D:\ferrite\aaaaaaaaximukeji\round2_working\manufacturable_thin\C2_N4_t015_g008_z_shield.aedt
+OUTER_R_MM=100.84 CAP_T_MM=0.15 CAP_AXIAL_GAP_MM=0.03
+cases=['ZCAP_C2_N4_two_caps_bottom_hole_r2_ultraquick']
+
+========================================================================
+CASE ZCAP_C2_N4_two_caps_bottom_hole_r2_ultraquick
+copied baseline -> D:\ferrite\aaaaaaaaximukeji\round2_working\axial_capped_end\ZCAP_C2_N4_two_caps_bottom_hole_r2_ultraquick_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+cap material from Cylinder2: ferrite
+create cap AxialCap_Top: OK -> AxialCap_Top
+create cap AxialCap_Bottom: OK -> AxialCap_Bottom
+create hole tool AxialCap_Bottom_hole_tool: OK -> AxialCap_Bottom_hole_tool
+subtract center hole from AxialCap_Bottom: OK
+cap objects: ['AxialCap_Top', 'AxialCap_Bottom']
+cap mesh operation skipped in ultraquick mode
+ValidateDesign: OK -> True
+Save project before analyze: OK
+Analyze Setup1: FAILED
+Traceback (most recent call last):
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 102, in safe
+    value = fn()
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 364, in <lambda$100>
+    safe(fp, "Analyze Setup1", lambda: oDesign.Analyze("Setup1"))
+Exception: Analyze(string simulationName, [bool isBlocking /*optional*/]) -> long(Setup1) - call failed. Logs or message window might have more details
+
+Bcenter_Bx: FAILED
+Traceback (most recent call last):
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 102, in safe
+    value = fn()
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 367, in <lambda$101>
+    bx = safe(fp, "Bcenter_Bx", lambda: eval_b_component(fields, "Bx"))
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 269, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Bcenter_By: FAILED
+Traceback (most recent call last):
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 102, in safe
+    value = fn()
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 368, in <lambda$102>
+    by = safe(fp, "Bcenter_By", lambda: eval_b_component(fields, "By"))
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 269, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+Bcenter_Bz: FAILED
+Traceback (most recent call last):
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 102, in safe
+    value = fn()
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 369, in <lambda$103>
+    bz = safe(fp, "Bcenter_Bz", lambda: eval_b_component(fields, "Bz"))
+  File "D:/ferrite/aaaaaaaaximukeji/round2_working/run_axial_capped_end_ultraquick.py", line 269, in eval_b_component
+    return extract_value(fields.GetTopEntryValue(SOLN, []))
+Exception: GetTopEntryValue(string solnName, Structured Array varVals) -> Structured Array(Setup1 : LastAdaptive,IronPython.Runtime.List) - call failed. Logs or message window might have more details
+
+IntH2 skipped in ultraquick mode
+Save project: OK
+RESULT SFz= LeakageRatioz= IntH2_total_with_caps= status=failed
+Done 2026-06-03 14:24:47

@@ -1,0 +1,2 @@
+case_id,source_project,solution,IntH2_ferrite_only,IntH2_caps,IntH2_total_with_caps,status,notes
+ZCAP_C2_N4_single_nanocrystalline_cap_mu50000,D:\ferrite\aaaaaaaaximukeji\round2_working\axial_capped_end\ZCAP_C2_N4_single_nanocrystalline_cap_mu50000_shield.aedt,Setup1 : LastAdaptive,3.73541174825e-06,1.57310021041e-10,3.73556905827e-06,exported,H^2 integral over ferrite layers plus single nanocrystalline cap

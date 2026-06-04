@@ -1,0 +1,7 @@
+field_dir,case_id,SF,Bcenter_geo_T,Bcenter_geo_uT,notes
+x,C2_N4_t015_g008_x,3.62910729,1.37774929216821e-05,13.7774929216821,linear SF scaling from 50 uT external field
+x,H_C2_N4_t015_g008_x_outer_amorphous_t0200_g0400,8.54766448048,5.84955108078742e-06,5.84955108078742,linear SF scaling from 50 uT external field
+x,H_C2_N4_t015_g008_x_outer_nanocrystalline_t0200_g0400_mu50000,25.1457778386,1.98840538244347e-06,1.98840538244347,linear SF scaling from 50 uT external field
+z,open_ferrite_only,2.41246647623681,2.07256766021448e-05,20.7256766021448,linear SF scaling from 50 uT external field
+z,P0_amorphous_single_shell_plusZ_cap_mu10000,2.52612985203,1.97931234452655e-05,19.7931234452655,linear SF scaling from 50 uT external field
+z,ZCAP_C2_N4_single_nanocrystalline_cap_mu50000,2.90655995227,1.72024664280365e-05,17.2024664280365,linear SF scaling from 50 uT external field
