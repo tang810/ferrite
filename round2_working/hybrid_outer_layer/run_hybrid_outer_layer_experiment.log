@@ -1,0 +1,16 @@
+run_hybrid_outer_layer_experiment 2026-06-02 09:45:26
+ANALYZE=True
+cases=['H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap']
+
+========================================================================
+CASE H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap
+copied baseline -> D:\ferrite\aaaaaaaaximukeji\round2_working\hybrid_outer_layer\H_C2_N4_t015_g008_x_outer_nanocrystalline_1wrap_shield.aedt
+OpenProject: OK -> IDispatch(ISProject2)
+created material hybrid_outer_nanocrystalline_mu30000
+create outer cylinder: OK -> HybridOuterLayer_outer
+create inner tool cylinder: OK -> HybridOuterLayer_inner
+subtract inner tool from outer shell: OK
+rename outer shell: OK
+outer shell radii mm: inner=101.04 outer=101.058
+assign mesh to outer layer: OK
+ValidateDesign: OK -> True
